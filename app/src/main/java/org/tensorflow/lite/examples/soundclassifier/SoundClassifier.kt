@@ -50,9 +50,9 @@ class SoundClassifier(context: Context, private val options: Options = Options()
   DefaultLifecycleObserver {
   class Options constructor(
     /** Path of the converted model label file, relative to the assets/ directory.  */
-    val metadataPath: String = "birdnet_labels.txt",
+    val metadataPath: String = "labels.txt",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
-    val modelPath: String = "BirdNET_6K_GLOBAL_MODEL.tflite",
+    val modelPath: String = "sound_classifier.tflite",
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 44100,
     /** How many milliseconds to sleep between successive audio sample pulls.  */
@@ -60,11 +60,11 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     /** Number of warm up runs to do after loading the TFLite model.  */
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
-    val pointsInAverage: Int = 2,
+    val pointsInAverage: Int = 10,
     /** Overlap factor of recognition period */
     var overlapFactor: Float = 0.8f,
     /** Probability value above which a class is labeled as active (i.e., detected) the display. (default 0.3) */
-    var probabilityThreshold: Float = 0.1f,
+    var probabilityThreshold: Float = 0.3f,
   )
 
   var isRecording: Boolean = false
@@ -349,6 +349,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 
     var j = 0 // Indices for the circular buffer next write
 
+    Log.w(TAG, "recognitionPeriod:"+recognitionPeriod);
     recognitionTask = Timer().scheduleAtFixedRate(recognitionPeriod, recognitionPeriod) task@{
       val outputBuffer = FloatBuffer.allocate(modelNumClasses)
       val recordingBuffer = ShortArray(modelInputLength)
