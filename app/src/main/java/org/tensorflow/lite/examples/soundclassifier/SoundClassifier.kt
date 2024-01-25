@@ -16,13 +16,19 @@
 
 package org.tensorflow.lite.examples.soundclassifier
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.MainThread
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
@@ -48,13 +54,17 @@ import org.tensorflow.lite.support.common.FileUtil
  */
 class SoundClassifier(context: Context, private val options: Options = Options()) :
   DefaultLifecycleObserver {
+  internal var mcontext: Context
+  init {
+    this.mcontext = context.applicationContext
+  }
   class Options constructor(
     /** Path of the converted model label file, relative to the assets/ directory.  */
-    val metadataPath: String = "labels.txt",
+    val metadataPath: String = "birdnet_labels_V2.4.txt",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
-    val modelPath: String = "sound_classifier.tflite",
+    val modelPath: String = "BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite",
     /** The required audio sample rate in Hz.  */
-    val sampleRate: Int = 44100,
+    val sampleRate: Int = 48000,
     /** How many milliseconds to sleep between successive audio sample pulls.  */
     val audioPullPeriod: Long = 50L,
     /** Number of warm up runs to do after loading the TFLite model.  */
@@ -62,7 +72,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     /** Number of points in average to reduce noise. (default 10)*/
     val pointsInAverage: Int = 10,
     /** Overlap factor of recognition period */
-    var overlapFactor: Float = 0.8f,
+    var overlapFactor: Float = 0.5f,
     /** Probability value above which a class is labeled as active (i.e., detected) the display. (default 0.3) */
     var probabilityThreshold: Float = 0.3f,
   )
@@ -98,7 +108,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     get() = options.overlapFactor
     set(value) {
       options.overlapFactor = value.also {
-        recognitionPeriod = (1000L * (1 - value)).toLong()
+        recognitionPeriod = (5000L * (1 - value)).toLong()
       }
     }
 
@@ -121,7 +131,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     private set
 
   /** How many milliseconds between consecutive model inference calls.  */
-  private var recognitionPeriod = (1000L * (1 - overlapFactor)).toLong()
+  private var recognitionPeriod = (5000L * (1 - overlapFactor)).toLong()
 
   /** The TFLite interpreter instance.  */
   private lateinit var interpreter: Interpreter
@@ -397,7 +407,19 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       val probList = predictionProbs.map {
         if (it > probabilityThreshold) it else 0f
       }
-      Log.i(TAG, "inference result: $probList")
+
+      probList.withIndex().also {
+        val max = it.maxBy { entry -> entry.value }
+        val labelAtMaxIndex = labelList[max!!.index]
+        //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
+        //Log.i(TAG, "inference result:" +probList.maxOrNull())
+        if (max.value > 0) {
+          Handler(Looper.getMainLooper()).post {
+            Toast.makeText(mcontext, labelAtMaxIndex+ " " + Math.round(max.value * 100.0) / 100.0 + " #" + max.index, Toast.LENGTH_SHORT).show()
+          }
+        }
+      }
+
       _probabilities.postValue(labelList.zip(probList).toMap())
 
       latestPredictionLatencyMs =
