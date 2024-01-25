@@ -28,7 +28,6 @@ import androidx.core.content.ContextCompat
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-  private val probabilitiesAdapter by lazy { ProbabilitiesAdapter() }
 
   private lateinit var soundClassifier: SoundClassifier
 
@@ -40,35 +39,6 @@ class MainActivity : AppCompatActivity() {
 
     soundClassifier = SoundClassifier(this, SoundClassifier.Options()).also {
       it.lifecycleOwner = this
-    }
-
-    with(binding) {
-      recyclerView.apply {
-        setHasFixedSize(true)
-        adapter = probabilitiesAdapter.apply {
-          labelList = soundClassifier.labelList
-        }
-      }
-
-      keepScreenOn(inputSwitch.isChecked)
-      inputSwitch.setOnCheckedChangeListener { _, isChecked ->
-        soundClassifier.isPaused = !isChecked
-        keepScreenOn(isChecked)
-      }
-
-      overlapFactorSlider.value = soundClassifier.overlapFactor
-      overlapFactorSlider.addOnChangeListener { _, value, _ ->
-        soundClassifier.overlapFactor = value
-      }
-    }
-
-    soundClassifier.probabilities.observe(this) { resultMap ->
-      if (resultMap.isEmpty() || resultMap.size > soundClassifier.labelList.size) {
-        Log.w(TAG, "Invalid size of probability output! (size: ${resultMap.size})")
-        return@observe
-      }
-      probabilitiesAdapter.probabilityMap = resultMap
-      probabilitiesAdapter.notifyDataSetChanged()
     }
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

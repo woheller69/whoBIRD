@@ -16,9 +16,7 @@
 
 package org.tensorflow.lite.examples.soundclassifier
 
-import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
 import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
@@ -28,7 +26,6 @@ import android.os.SystemClock
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.MainThread
-import androidx.core.app.ActivityCompat
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
@@ -79,11 +76,6 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 
   var isRecording: Boolean = false
     private set
-
-  /** As the result of sound classification, this value emits map of probabilities */
-  val probabilities: LiveData<Map<String, Float>>
-    get() = _probabilities
-  private val _probabilities = MutableLiveData<Map<String, Float>>()
 
   var isClosed: Boolean = true
     private set
@@ -187,7 +179,6 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     audioRecord.stop()
     isRecording = false
 
-    _probabilities.postValue(labelList.associateWith { 0f })
   }
 
   fun close() {
@@ -304,7 +295,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     Log.i(TAG, "bufferSize = $bufferSize")
     audioRecord = AudioRecord(
       // including MIC, UNPROCESSED, and CAMCORDER.
-      MediaRecorder.AudioSource.VOICE_RECOGNITION,
+      MediaRecorder.AudioSource.UNPROCESSED,
       options.sampleRate,
       AudioFormat.CHANNEL_IN_MONO,
       AudioFormat.ENCODING_PCM_16BIT,
@@ -409,7 +400,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       }
 
       probList.withIndex().also {
-        val max = it.maxBy { entry -> entry.value }
+        val max = it.maxByOrNull { entry -> entry.value }
         val labelAtMaxIndex = labelList[max!!.index]
         //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
         //Log.i(TAG, "inference result:" +probList.maxOrNull())
@@ -420,7 +411,6 @@ class SoundClassifier(context: Context, private val options: Options = Options()
         }
       }
 
-      _probabilities.postValue(labelList.zip(probList).toMap())
 
       latestPredictionLatencyMs =
         ((SystemClock.elapsedRealtimeNanos() - t0) / 1e6).toFloat()
