@@ -8,11 +8,11 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "org.woheller69.tflitetest"
+        applicationId "org.woheller69.birdnetlite"
         minSdk 30
         targetSdk 33
-        versionCode 16
-        versionName "1.6"
+        versionCode 10
+        versionName "1.0"
     }
 
     aaptOptions {
@@ -41,7 +41,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
     implementation "androidx.core:core-ktx:1.3.1"
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"

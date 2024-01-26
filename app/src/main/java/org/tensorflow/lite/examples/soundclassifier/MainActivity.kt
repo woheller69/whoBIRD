@@ -18,11 +18,10 @@ package org.tensorflow.lite.examples.soundclassifier
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
-import androidx.annotation.RequiresApi
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
@@ -33,27 +32,32 @@ class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
     val binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-
     soundClassifier = SoundClassifier(this, SoundClassifier.Options()).also {
       it.lifecycleOwner = this
     }
-
     requestMicrophonePermission()
   }
 
   override fun onResume() {
     super.onResume()
-    keepScreenOn(true)
-  }
-  override fun onTopResumedActivityChanged(isTopResumedActivity: Boolean) {
-    // Handles "top" resumed event on multi-window environment
-    if (isTopResumedActivity) {
+    if (checkMicrophonePermission()){
       soundClassifier.start()
     } else {
-      soundClassifier.stop()
+      Toast.makeText(this, "Audio permission not granted :(", Toast.LENGTH_LONG).show()
+    }
+    keepScreenOn(true)
+  }
+
+  override fun onTopResumedActivityChanged(isTopResumedActivity: Boolean) {
+    // Handles "top" resumed event on multi-window environment
+    if (checkMicrophonePermission()) {
+      if (isTopResumedActivity) {
+        soundClassifier.start()
+      } else {
+        soundClassifier.stop()
+      }
     }
   }
 
@@ -72,14 +76,24 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
-  private fun requestMicrophonePermission() {
+  private fun checkMicrophonePermission(): Boolean {
     if (ContextCompat.checkSelfPermission(
         this,
         Manifest.permission.RECORD_AUDIO
       ) == PackageManager.PERMISSION_GRANTED
     ) {
-      soundClassifier.start()
+      return true
     } else {
+      return false
+    }
+  }
+
+  private fun requestMicrophonePermission() {
+    if (ContextCompat.checkSelfPermission(
+        this,
+        Manifest.permission.RECORD_AUDIO
+      ) != PackageManager.PERMISSION_GRANTED
+    ) {
       requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_RECORD_AUDIO)
     }
   }
@@ -93,6 +107,6 @@ class MainActivity : AppCompatActivity() {
 
   companion object {
     const val REQUEST_RECORD_AUDIO = 1337
-    private const val TAG = "AudioDemo"
+    private const val TAG = "BirdNET-lite"
   }
 }

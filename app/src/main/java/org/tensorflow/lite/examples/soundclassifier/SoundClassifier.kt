@@ -153,9 +153,9 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     warmUpModel()
   }
 
-  override fun onResume(owner: LifecycleOwner) = start()
+//  override fun onResume(owner: LifecycleOwner) = start()
 
-  override fun onPause(owner: LifecycleOwner) = stop()
+//  override fun onPause(owner: LifecycleOwner) = stop()
 
   /**
    * Starts sound classification, which triggers running of
