@@ -18,7 +18,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue_gray800"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:foregroundGravity="top"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:src="@drawable/ic_launcher_foreground" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

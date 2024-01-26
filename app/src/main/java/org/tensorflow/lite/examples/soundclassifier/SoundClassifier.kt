@@ -16,6 +16,7 @@
 
 package org.tensorflow.lite.examples.soundclassifier
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.media.AudioFormat
 import android.media.AudioRecord
@@ -28,8 +29,6 @@ import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -62,16 +61,16 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     val modelPath: String = "BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite",
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
-    /** How many milliseconds to sleep between successive audio sample pulls.  */
-    val audioPullPeriod: Long = 50L,
+    /** Multiplier for audio samples  */
+    val audioGain: Int = 10,
     /** Number of warm up runs to do after loading the TFLite model.  */
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
-    val pointsInAverage: Int = 10,
+    val pointsInAverage: Int = 1,
     /** Overlap factor of recognition period */
     var overlapFactor: Float = 0.5f,
     /** Probability value above which a class is labeled as active (i.e., detected) the display. (default 0.3) */
-    var probabilityThreshold: Float = 0.3f,
+    var probabilityThreshold: Float = 0.1f,
   )
 
   var isRecording: Boolean = false
@@ -198,7 +197,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       val wordList = mutableListOf<String>()
       reader.useLines { lines ->
         lines.forEach {
-          wordList.add(it.split(" ").last())
+          wordList.add(it)
         }
       }
       labelList = wordList.map { it.toTitleCase() }
@@ -276,6 +275,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     isRecording = true
   }
 
+  @SuppressLint("MissingPermission")  //Permission already requested in MainActivity
   private fun setupAudioRecord() {
     var bufferSize = AudioRecord.getMinBufferSize(
       options.sampleRate,
@@ -361,10 +361,27 @@ class SoundClassifier(context: Context, private val options: Options = Options()
         return@task
       }
 
+      var cliping = false
       // Copy new data into the circular buffer
       for (i in 0 until sampleCounts) {
-        circularBuffer[j] = recordingBuffer[i]
+        var sample =
+          (recordingBuffer[i].toDouble() * options.audioGain).toInt() // Apply the gain
+        if (sample > 32767){
+          sample = 32767
+          cliping = true
+        }
+        else if (sample < -32767) {
+          sample = -32767
+          cliping = true
+        }
+
+        circularBuffer[j] = sample.toShort()
         j = (j + 1) % circularBuffer.size
+      }
+      if (cliping) {
+        Handler(Looper.getMainLooper()).post {
+          Toast.makeText(mcontext, "too loud", Toast.LENGTH_SHORT).show()
+        }
       }
 
       // Feed data to the input buffer.
@@ -401,12 +418,12 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 
       probList.withIndex().also {
         val max = it.maxByOrNull { entry -> entry.value }
-        val labelAtMaxIndex = labelList[max!!.index]
+        val labelAtMaxIndex = labelList[max!!.index].split("_").last()  //show in locale language
         //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
         //Log.i(TAG, "inference result:" +probList.maxOrNull())
         if (max.value > 0) {
           Handler(Looper.getMainLooper()).post {
-            Toast.makeText(mcontext, labelAtMaxIndex+ " " + Math.round(max.value * 100.0) / 100.0 + " #" + max.index, Toast.LENGTH_SHORT).show()
+            Toast.makeText(mcontext, labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) / 100.0 + " #" + max.index, Toast.LENGTH_SHORT).show()
           }
         }
       }
@@ -428,5 +445,5 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 private fun String.toTitleCase() =
   splitToSequence("_")
     .map { it.capitalize(Locale.ROOT) }
-    .joinToString(" ")
+    .joinToString("_")
     .trim()

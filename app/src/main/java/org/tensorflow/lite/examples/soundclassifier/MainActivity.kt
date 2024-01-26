@@ -41,11 +41,7 @@ class MainActivity : AppCompatActivity() {
       it.lifecycleOwner = this
     }
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      requestMicrophonePermission()
-    } else {
-      soundClassifier.start()
-    }
+    requestMicrophonePermission()
   }
 
   override fun onTopResumedActivityChanged(isTopResumedActivity: Boolean) {
@@ -72,7 +68,6 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
-  @RequiresApi(Build.VERSION_CODES.M)
   private fun requestMicrophonePermission() {
     if (ContextCompat.checkSelfPermission(
         this,

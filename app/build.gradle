@@ -52,9 +52,4 @@ dependencies {
     implementation "org.tensorflow:tensorflow-lite:2.6.0"
     implementation "org.tensorflow:tensorflow-lite-select-tf-ops:2.6.0"
     implementation "org.tensorflow:tensorflow-lite-support:0.1.0"
-    //implementation "org.tensorflow:tensorflow-lite-metadata:0.1.0"
-
-    testImplementation "junit:junit:4.13"
-    androidTestImplementation "androidx.test.ext:junit:1.1.2"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
 }

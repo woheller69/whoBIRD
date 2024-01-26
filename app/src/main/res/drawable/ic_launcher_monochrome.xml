@@ -1,0 +1,34 @@
+<vector android:height="108dp" android:viewportHeight="21193"
+    android:viewportWidth="21193" android:width="108dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <clip-path android:pathData="M0,0h21193v21193h-21193z"/>
+        <path
+            android:pathData="M9847,12336L8330,10984 7604,9994 7604,8345 6581,8345 7374,8049 7374,7686 9253,6334 9451,7389 13705,10357 15091,11545 14134,11182 14992,11908 13442,11413 16839,13887 17565,14678 16707,14448 13607,12105 12584,12105 9847,12336Z"
+            android:strokeColor="#00000000"
+            android:strokeLineJoin="round" android:strokeWidth="28.222"/>
+        <path
+            android:pathData="M9847,12336L8330,10984 7604,9994 7604,8345 6581,8345 7374,8049 7374,7686 9253,6334 9451,7389 13705,10357 15091,11545 14134,11182 14992,11908 13442,11413 16839,13887 17565,14678 16707,14448 13607,12105 12584,12105 9847,12336Z"
+            android:strokeColor="#000000" android:strokeLineCap="round"
+            android:strokeLineJoin="round" android:strokeWidth="441"/>
+        <path
+            android:pathData="M11136,12228L10556,12996 11611,12187"
+            android:strokeColor="#000000" android:strokeLineCap="round"
+            android:strokeLineJoin="round" android:strokeWidth="441"/>
+        <path
+            android:pathData="M9680,12187L9154,12798 9417,11953"
+            android:strokeColor="#000000" android:strokeLineCap="round"
+            android:strokeLineJoin="round" android:strokeWidth="441"/>
+        <path
+            android:pathData="M3628,11677L13294,13342 15140,14859"
+            android:strokeColor="#000000" android:strokeLineCap="round"
+            android:strokeLineJoin="round" android:strokeWidth="441"/>
+        <path
+            android:pathData="M7374,7686L8808,7686 7604,8345"
+            android:strokeColor="#000000" android:strokeLineCap="round"
+            android:strokeLineJoin="round" android:strokeWidth="441"/>
+        <path
+            android:pathData="M13442,11413L11611,10506 11298,9797 9533,9663 9302,8345 8330,9153 7604,9994"
+            android:strokeColor="#000000" android:strokeLineCap="round"
+            android:strokeLineJoin="round" android:strokeWidth="441"/>
+    </group>
+</vector>
