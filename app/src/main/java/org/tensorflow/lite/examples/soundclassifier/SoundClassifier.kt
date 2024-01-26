@@ -56,7 +56,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
   }
   class Options constructor(
     /** Path of the converted model label file, relative to the assets/ directory.  */
-    val metadataPath: String = "birdnet_labels_V2.4.txt",
+    val labelsBase: String = "labels",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
     val modelPath: String = "BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite",
     /** The required audio sample rate in Hz.  */
@@ -191,9 +191,29 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 
   /** Retrieve labels from "labels.txt" file */
   private fun loadLabels(context: Context) {
+      val localeList = context.resources.configuration.locales
+      val language = localeList.get(0).language
+      var filename = options.labelsBase+"_${language}.txt"
+
+      //Check if file exists
+      val assetManager = context.assets // Replace 'assets' with actual AssetManager instance
+      try {
+        val mapList = assetManager.list("")?.toMutableList()
+
+        if (mapList != null) {
+          if (!mapList.contains(filename)) {
+            filename = options.labelsBase+"_en.txt"
+            }
+        }
+      } catch (ex: IOException) {
+        ex.printStackTrace()
+        filename = options.labelsBase+"_en.txt"
+      }
+
+    Log.i(TAG,filename)
     try {
       val reader =
-        BufferedReader(InputStreamReader(context.assets.open(options.metadataPath)))
+        BufferedReader(InputStreamReader(context.assets.open(filename)))
       val wordList = mutableListOf<String>()
       reader.useLines { lines ->
         lines.forEach {
@@ -202,7 +222,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       }
       labelList = wordList.map { it.toTitleCase() }
     } catch (e: IOException) {
-      Log.e(TAG, "Failed to read model ${options.metadataPath}: ${e.message}")
+      Log.e(TAG, "Failed to read model ${filename}: ${e.message}")
     }
   }
 
@@ -350,7 +370,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 
     var j = 0 // Indices for the circular buffer next write
 
-    Log.w(TAG, "recognitionPeriod:"+recognitionPeriod);
+    Log.w(TAG, "recognitionPeriod:"+recognitionPeriod)
     recognitionTask = Timer().scheduleAtFixedRate(recognitionPeriod, recognitionPeriod) task@{
       val outputBuffer = FloatBuffer.allocate(modelNumClasses)
       val recordingBuffer = ShortArray(modelInputLength)
