@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// Modifications by woheller69
 
 package org.tensorflow.lite.examples.soundclassifier
 
@@ -235,7 +236,6 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       Log.e(TAG, "Failed to load TFLite model - ${e.message}")
       return
     }
-
     // Inspect input and output specs.
     val inputShape = interpreter.getInputTensor(0).shape()
     Log.i(TAG, "TFLite model input shape: ${inputShape.contentToString()}")
