@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'de.undercouch.download'
 }
 
 android {
@@ -11,8 +10,8 @@ android {
         applicationId "org.woheller69.birdnetlite"
         minSdk 30
         targetSdk 33
-        versionCode 10
-        versionName "1.0"
+        versionCode 11
+        versionName "1.1"
     }
 
     aaptOptions {
@@ -46,7 +45,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:1.2.0"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
     implementation "androidx.constraintlayout:constraintlayout:2.0.1"
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "com.google.android.material:material:1.2.1"
 
     implementation "org.tensorflow:tensorflow-lite:2.6.0"
