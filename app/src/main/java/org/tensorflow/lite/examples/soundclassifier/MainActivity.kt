@@ -38,6 +38,14 @@ class MainActivity : AppCompatActivity() {
     soundClassifier = SoundClassifier(this, SoundClassifier.Options()).also {
       it.lifecycleOwner = this
     }
+
+    with(binding) {
+      gainSlider.value = soundClassifier.audioGain
+      gainSlider.addOnChangeListener { _, value, _ ->
+        soundClassifier.audioGain = value
+      }
+    }
+
     requestMicrophonePermission()
   }
 

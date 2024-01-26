@@ -63,7 +63,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
     /** Multiplier for audio samples  */
-    val audioGain: Int = 10,
+    var audioGain: Int = 10,
     /** Number of warm up runs to do after loading the TFLite model.  */
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
@@ -102,6 +102,13 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       options.overlapFactor = value.also {
         recognitionPeriod = (5000L * (1 - value)).toLong()
       }
+    }
+
+  /** Overlap factor of recognition period */
+  var audioGain: Float
+    get() = options.audioGain.toFloat()
+    set(value) {
+      options.audioGain = value.toInt()
     }
 
   /** Probability value above which a class is labeled as active (i.e., detected) the display.  */
@@ -385,7 +392,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       // Copy new data into the circular buffer
       for (i in 0 until sampleCounts) {
         var sample =
-          (recordingBuffer[i].toDouble() * options.audioGain).toInt() // Apply the gain
+          (recordingBuffer[i].toDouble() * audioGain).toInt() // Apply the gain
         if (sample > 32767){
           sample = 32767
           cliping = true

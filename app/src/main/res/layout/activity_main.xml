@@ -5,6 +5,11 @@
     android:background="@color/dark_blue_gray700"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -12,5 +17,23 @@
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:src="@drawable/ic_launcher_foreground" />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/orange500"
+        android:textSize="24dp"
+        android:text="@string/gain"
+        />
+    <com.google.android.material.slider.Slider
+        android:id="@+id/gain_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:stepSize="1"
+        android:valueFrom="1"
+        android:valueTo="100" />
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
