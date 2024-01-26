@@ -44,6 +44,10 @@ class MainActivity : AppCompatActivity() {
     requestMicrophonePermission()
   }
 
+  override fun onResume() {
+    super.onResume()
+    keepScreenOn(true)
+  }
   override fun onTopResumedActivityChanged(isTopResumedActivity: Boolean) {
     // Handles "top" resumed event on multi-window environment
     if (isTopResumedActivity) {

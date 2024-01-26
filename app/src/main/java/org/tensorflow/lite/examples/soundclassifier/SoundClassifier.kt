@@ -400,7 +400,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       }
       if (cliping) {
         Handler(Looper.getMainLooper()).post {
-          Toast.makeText(mcontext, "too loud", Toast.LENGTH_SHORT).show()
+          Toast.makeText(mcontext, mcontext.getString(R.string.error_too_lound), Toast.LENGTH_SHORT).show()
         }
       }
 
