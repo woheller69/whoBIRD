@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     val binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-    soundClassifier = SoundClassifier(this, SoundClassifier.Options()).also {
+    soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options()).also {
       it.lifecycleOwner = this
     }
 
@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
     permissions: Array<out String>,
     grantResults: IntArray
   ) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     if (requestCode == REQUEST_RECORD_AUDIO) {
       if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
         Log.i(TAG, "Audio permission granted :)")

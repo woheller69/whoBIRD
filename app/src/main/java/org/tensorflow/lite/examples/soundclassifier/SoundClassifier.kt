@@ -26,7 +26,6 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
-import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -40,6 +39,7 @@ import java.util.TimerTask
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.math.sin
 import org.tensorflow.lite.Interpreter
+import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import org.tensorflow.lite.support.common.FileUtil
 
 /**
@@ -49,11 +49,17 @@ import org.tensorflow.lite.support.common.FileUtil
  * The output of the recognition is emitted as LiveData of Map.
  *
  */
-class SoundClassifier(context: Context, private val options: Options = Options()) :
+class SoundClassifier(
+  context: Context,
+  binding: ActivityMainBinding,
+  private val options: Options = Options()
+) :
   DefaultLifecycleObserver {
-  internal var mcontext: Context
+  internal var mContext: Context
+  internal var mBinding: ActivityMainBinding
   init {
-    this.mcontext = context.applicationContext
+    this.mContext = context.applicationContext
+    this.mBinding = binding
   }
   class Options constructor(
     /** Path of the converted model label file, relative to the assets/ directory.  */
@@ -63,7 +69,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
     /** Multiplier for audio samples  */
-    var audioGain: Int = 10,
+    var audioGain: Int = 1,
     /** Number of warm up runs to do after loading the TFLite model.  */
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
@@ -95,16 +101,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
       }
     }
 
-  /** Overlap factor of recognition period */
-  var overlapFactor: Float
-    get() = options.overlapFactor
-    set(value) {
-      options.overlapFactor = value.also {
-        recognitionPeriod = (5000L * (1 - value)).toLong()
-      }
-    }
-
-  /** Overlap factor of recognition period */
+  /** Multipler for audio samples */
   var audioGain: Float
     get() = options.audioGain.toFloat()
     set(value) {
@@ -130,7 +127,7 @@ class SoundClassifier(context: Context, private val options: Options = Options()
     private set
 
   /** How many milliseconds between consecutive model inference calls.  */
-  private var recognitionPeriod = (5000L * (1 - overlapFactor)).toLong()
+  private var inferenceInterval = 1500L
 
   /** The TFLite interpreter instance.  */
   private lateinit var interpreter: Interpreter
@@ -377,8 +374,8 @@ class SoundClassifier(context: Context, private val options: Options = Options()
 
     var j = 0 // Indices for the circular buffer next write
 
-    Log.w(TAG, "recognitionPeriod:"+recognitionPeriod)
-    recognitionTask = Timer().scheduleAtFixedRate(recognitionPeriod, recognitionPeriod) task@{
+    Log.w(TAG, "recognitionPeriod:"+inferenceInterval)
+    recognitionTask = Timer().scheduleAtFixedRate(inferenceInterval, inferenceInterval) task@{
       val outputBuffer = FloatBuffer.allocate(modelNumClasses)
       val recordingBuffer = ShortArray(modelInputLength)
 
@@ -405,9 +402,14 @@ class SoundClassifier(context: Context, private val options: Options = Options()
         circularBuffer[j] = sample.toShort()
         j = (j + 1) % circularBuffer.size
       }
-      if (cliping) {
-        Handler(Looper.getMainLooper()).post {
-          Toast.makeText(mcontext, mcontext.getString(R.string.error_too_lound), Toast.LENGTH_SHORT).show()
+
+      Handler(Looper.getMainLooper()).post {
+        if (cliping) {
+          mBinding.errorText.setText(mContext.getString(R.string.error_too_lound))
+          mBinding.errorText.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
+        } else {
+          mBinding.errorText.setText("")
+          mBinding.errorText.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
         }
       }
 
@@ -432,6 +434,11 @@ class SoundClassifier(context: Context, private val options: Options = Options()
         Log.w(TAG, "No audio input: All audio samples are zero!")
         return@task
       }
+
+      if (audioGain == 1f) {  //auto scale if audioGain = 1
+        autoScaleInputBuffer()
+      }
+
       val t0 = SystemClock.elapsedRealtimeNanos()
       inputBuffer.rewind()
       outputBuffer.rewind()
@@ -450,16 +457,61 @@ class SoundClassifier(context: Context, private val options: Options = Options()
         //Log.i(TAG, "inference result:" +probList.maxOrNull())
         if (max.value > 0) {
           Handler(Looper.getMainLooper()).post {
-            Toast.makeText(mcontext, labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) / 100.0 + " #" + max.index, Toast.LENGTH_SHORT).show()
+            mBinding.text1.setText(labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) / 100.0 + " #" + max.index)
+            if (max.value<0.6) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
+            else if (max.value < 1.5) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_dark))
+            else mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_green_dark))
+            if (audioGain==1f) {
+              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
+            } else {
+              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+audioGain)
+            }
+          }
+        } else {
+          Handler(Looper.getMainLooper()).post {
+            mBinding.text1.setText("")
+            mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
+            if (audioGain==1f) {
+              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
+            } else {
+              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+audioGain)
+            }
           }
         }
       }
-
 
       latestPredictionLatencyMs =
         ((SystemClock.elapsedRealtimeNanos() - t0) / 1e6).toFloat()
     }
   }
+
+  private fun autoScaleInputBuffer() {
+    // Find the maximum absolute value in the buffer
+    var maxAbsInputValue = Float.MIN_VALUE
+    for (i in 0 until inputBuffer.capacity()) {
+      val value = Math.abs(inputBuffer.get(i))
+      if (value > maxAbsInputValue) {
+        maxAbsInputValue = value
+      }
+    }
+
+    // Calculate the scaling factor
+    val scaleFactor = if (maxAbsInputValue != 0.0f) {
+      Short.MAX_VALUE.toFloat() / maxAbsInputValue
+    } else {
+      1.0f // Handle the case where all values are already 0
+    }
+
+    // Scale each element in the buffer
+    for (i in 0 until inputBuffer.capacity()) {
+      val scaledValue = inputBuffer.get(i) * scaleFactor
+      inputBuffer.put(i, scaledValue)
+    }
+
+    // Reset position to 0 before using the buffer
+    inputBuffer.rewind()
+  }
+
 
   companion object {
     private const val TAG = "SoundClassifier"

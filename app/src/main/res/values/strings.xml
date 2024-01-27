@@ -2,5 +2,6 @@
     <string name="app_name" translatable="false">BirdNet-lite</string>
     <string name="error_too_lound">Too loud!</string>
     <string name="gain">Gain</string>
+    <string name="auto">auto</string>
 
 </resources>
