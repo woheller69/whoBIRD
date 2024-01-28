@@ -127,7 +127,7 @@ class SoundClassifier(
     private set
 
   /** How many milliseconds between consecutive model inference calls.  */
-  private var inferenceInterval = 1500L
+  private var inferenceInterval = 500L
 
   /** The TFLite interpreter instance.  */
   private lateinit var interpreter: Interpreter
@@ -385,32 +385,11 @@ class SoundClassifier(
         return@task
       }
 
-      var cliping = false
+
       // Copy new data into the circular buffer
       for (i in 0 until sampleCounts) {
-        var sample =
-          (recordingBuffer[i].toDouble() * audioGain).toInt() // Apply the gain
-        if (sample > 32767){
-          sample = 32767
-          cliping = true
-        }
-        else if (sample < -32767) {
-          sample = -32767
-          cliping = true
-        }
-
-        circularBuffer[j] = sample.toShort()
+        circularBuffer[j] = recordingBuffer[i]
         j = (j + 1) % circularBuffer.size
-      }
-
-      Handler(Looper.getMainLooper()).post {
-        if (cliping) {
-          mBinding.errorText.setText(mContext.getString(R.string.error_too_lound))
-          mBinding.errorText.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
-        } else {
-          mBinding.errorText.setText("")
-          mBinding.errorText.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-        }
       }
 
       // Feed data to the input buffer.
@@ -435,9 +414,7 @@ class SoundClassifier(
         return@task
       }
 
-      if (audioGain == 1f) {  //auto scale if audioGain = 1
-        autoScaleInputBuffer()
-      }
+      scaleInputBuffer()
 
       val t0 = SystemClock.elapsedRealtimeNanos()
       inputBuffer.rewind()
@@ -461,7 +438,7 @@ class SoundClassifier(
             if (max.value<0.6) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
             else if (max.value < 1.5) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_dark))
             else mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_green_dark))
-            if (audioGain==1f) {
+            if (audioGain==0f) {
               mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
             } else {
               mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+audioGain)
@@ -471,7 +448,7 @@ class SoundClassifier(
           Handler(Looper.getMainLooper()).post {
             mBinding.text1.setText("")
             mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-            if (audioGain==1f) {
+            if (audioGain==0f) {
               mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
             } else {
               mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+audioGain)
@@ -485,31 +462,57 @@ class SoundClassifier(
     }
   }
 
-  private fun autoScaleInputBuffer() {
-    // Find the maximum absolute value in the buffer
-    var maxAbsInputValue = Float.MIN_VALUE
-    for (i in 0 until inputBuffer.capacity()) {
-      val value = Math.abs(inputBuffer.get(i))
-      if (value > maxAbsInputValue) {
-        maxAbsInputValue = value
+  // Multiply with audioGain or auto scale
+  private fun scaleInputBuffer() {
+    var cliping = false
+    var scaleFactor = audioGain
+
+    if (audioGain == 0f) {  // auto scale if gain is 0
+      // Find the maximum absolute value in the buffer
+      var maxAbsInputValue = Float.MIN_VALUE
+      for (i in 0 until inputBuffer.capacity()) {
+        val value = Math.abs(inputBuffer.get(i))
+        if (value > maxAbsInputValue) {
+          maxAbsInputValue = value
+        }
+      }
+
+      // Calculate the scaling factor
+      scaleFactor = if (maxAbsInputValue != 0.0f) {
+        (Short.MAX_VALUE-1).toFloat() / maxAbsInputValue
+      } else {
+        1.0f // Handle the case where all values are already 0
       }
     }
-
-    // Calculate the scaling factor
-    val scaleFactor = if (maxAbsInputValue != 0.0f) {
-      Short.MAX_VALUE.toFloat() / maxAbsInputValue
-    } else {
-      1.0f // Handle the case where all values are already 0
-    }
-
     // Scale each element in the buffer
     for (i in 0 until inputBuffer.capacity()) {
-      val scaledValue = inputBuffer.get(i) * scaleFactor
+      var scaledValue = inputBuffer.get(i) * scaleFactor
+
+      if (scaledValue > 32767){
+        scaledValue = 32767f
+        cliping = true
+      }
+      else if (scaledValue < -32767) {
+        scaledValue = -32767f
+        cliping = true
+      }
+
       inputBuffer.put(i, scaledValue)
     }
 
     // Reset position to 0 before using the buffer
     inputBuffer.rewind()
+
+    Handler(Looper.getMainLooper()).post {
+      mBinding.text2.setText("Gain: "+scaleFactor.toInt().toString())
+      if (cliping) {
+        mBinding.errorText.setText(mContext.getString(R.string.error_too_lound))
+        mBinding.errorText.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
+      } else {
+        mBinding.errorText.setText("")
+        mBinding.errorText.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
+      }
+    }
   }
 
 
