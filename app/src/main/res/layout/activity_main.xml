@@ -20,6 +20,7 @@
         android:src="@drawable/ic_launcher_foreground" />
     <TextView
         android:id="@+id/gain_textview"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -30,6 +31,7 @@
         />
     <com.google.android.material.slider.Slider
         android:id="@+id/gain_slider"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -41,28 +43,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:textColor="@android:color/black"
-        android:textSize="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/orange500"
+        android:textSize="22dp"
         android:id="@+id/text1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:textColor="@android:color/black"
-        android:textSize="24dp"
+        android:textSize="22dp"
         android:id="@+id/text2"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:textColor="@android:color/black"
-        android:textSize="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/orange500"
+        android:textSize="22dp"
         android:id="@+id/error_text"/>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
