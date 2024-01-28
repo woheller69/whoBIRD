@@ -69,7 +69,7 @@ class SoundClassifier(
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
     /** Multiplier for audio samples  */
-    var audioGain: Int = 1,
+    var audioGain: Int = 0,
     /** Number of warm up runs to do after loading the TFLite model.  */
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
@@ -77,7 +77,7 @@ class SoundClassifier(
     /** Overlap factor of recognition period */
     var overlapFactor: Float = 0.5f,
     /** Probability value above which a class is labeled as active (i.e., detected) the display. (default 0.3) */
-    var probabilityThreshold: Float = 0.1f,
+    var probabilityThreshold: Float = 0.3f,  //min must be > 0
   )
 
   var isRecording: Boolean = false
@@ -127,7 +127,7 @@ class SoundClassifier(
     private set
 
   /** How many milliseconds between consecutive model inference calls.  */
-  private var inferenceInterval = 500L
+  private var inferenceInterval = 800L
 
   /** The TFLite interpreter instance.  */
   private lateinit var interpreter: Interpreter
@@ -423,8 +423,9 @@ class SoundClassifier(
       outputBuffer.rewind()
       outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
 
-      val probList = predictionProbs.map {
-        if (it > probabilityThreshold) it else 0f
+      val probList = mutableListOf<Float>()
+      for (value in predictionProbs) {
+        probList.add( 1 / (1+kotlin.math.exp(-value)) )  //apply sigmoid
       }
 
       probList.withIndex().also {
@@ -432,12 +433,13 @@ class SoundClassifier(
         val labelAtMaxIndex = labelList[max!!.index].split("_").last()  //show in locale language
         //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
         //Log.i(TAG, "inference result:" +probList.maxOrNull())
-        if (max.value > 0) {
+        if (max.value > probabilityThreshold) {
           Handler(Looper.getMainLooper()).post {
-            mBinding.text1.setText(labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) / 100.0 + " #" + max.index)
-            if (max.value<0.6) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
-            else if (max.value < 1.5) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_dark))
-            else mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_green_dark))
+            mBinding.text1.setText(labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) + "% #" + max.index)
+            if (max.value < 0.5) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
+            else if (max.value < 0.65) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_dark))
+            else if (max.value < 0.8) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_light))
+            else mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_green_light))
             if (audioGain==0f) {
               mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
             } else {
