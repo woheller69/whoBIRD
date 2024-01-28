@@ -414,7 +414,7 @@ class SoundClassifier(
         return@task
       }
 
-      scaleInputBuffer()
+      //scaleInputBuffer()
 
       val t0 = SystemClock.elapsedRealtimeNanos()
       inputBuffer.rewind()
@@ -436,10 +436,10 @@ class SoundClassifier(
         if (max.value > probabilityThreshold) {
           Handler(Looper.getMainLooper()).post {
             mBinding.text1.setText(labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) + "% #" + max.index)
-            if (max.value < 0.5) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
-            else if (max.value < 0.65) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_dark))
-            else if (max.value < 0.8) mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_orange_light))
-            else mBinding.text1.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_green_light))
+            if (max.value < 0.5) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_red_dark)
+            else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
+            else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)
+            else mBinding.text1.setBackgroundResource(R.drawable.oval_holo_green_light)
             if (audioGain==0f) {
               mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
             } else {
@@ -506,7 +506,6 @@ class SoundClassifier(
     inputBuffer.rewind()
 
     Handler(Looper.getMainLooper()).post {
-      mBinding.text2.setText("Gain: "+scaleFactor.toInt().toString())
       if (cliping) {
         mBinding.errorText.setText(mContext.getString(R.string.error_too_lound))
         mBinding.errorText.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
