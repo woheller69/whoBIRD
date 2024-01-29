@@ -1,0 +1,2 @@
+whoBIRD recognizes birds by their sound.
+The app is based on the BirdNET project and is trained for over 6,000 species worldwide.

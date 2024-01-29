@@ -435,7 +435,7 @@ class SoundClassifier(
         //Log.i(TAG, "inference result:" +probList.maxOrNull())
         if (max.value > probabilityThreshold) {
           Handler(Looper.getMainLooper()).post {
-            mBinding.text1.setText(labelAtMaxIndex+ "\n" + Math.round(max.value * 100.0) + "% #" + max.index)
+            mBinding.text1.setText(labelAtMaxIndex+ "  " + Math.round(max.value * 100.0) + "%")
             if (max.value < 0.5) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_red_dark)
             else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
             else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)

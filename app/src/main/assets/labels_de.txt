@@ -2816,9 +2816,9 @@ Horornis fortipes_Bergseidensänger
 Horornis ruficapilla_Fidschiseidensänger
 Horornis seebohmi_Luzonseidensänger
 Horornis vulcanius_Sunda Bush Warbler
-Human non-vocal_Menschlicher Klang
-Human vocal_Menschliche Stimme
-Human whistle_Menschliches Lippenpfeifen
+Human non-vocal_Mensch Geräusch
+Human vocal_Mensch Stimme
+Human whistle_Mensch Pfeifen
 Hydrobates castro_Madeirawellenläufer
 Hydrobates leucorhous_Wellenläufer
 Hydrobates monorhis_Swinhoewellenläufer

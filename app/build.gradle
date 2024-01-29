@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "org.woheller69.birdnetlite"
+        applicationId "org.woheller69.whobird"
         minSdk 30
         targetSdk 33
         versionCode 12

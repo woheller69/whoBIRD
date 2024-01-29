@@ -1,0 +1,2 @@
+whoBird erkennt Vögel über ihren Gesang. 
+Die App basiert auf dem BirdNET Projekt und ist auf über 6000 Arten weltweit trainiert.
