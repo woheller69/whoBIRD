@@ -1,2 +1,6 @@
-whoBIRD recognizes birds by their sound.
-The app is based on the BirdNET project and is trained for over 6,000 species worldwide.
+whoBIRD is the ultimate birding companion that can recognize birds by their sounds, anywhere in the world!
+Powered by the cutting-edge BirdNET project, whoBIRD boasts an extensive database of over 6,000 bird species worldwide.
+Using advanced machine learning algorithms, the app can accurately identify birds based on their unique vocalizations.
+
+What's more, whoBIRD performs its magic entirely on your device, without requiring an internet connection.
+This means you can use it anytime, anywhere – whether you're deep in the forest or at the edge of a remote lake.
