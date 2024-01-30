@@ -10,8 +10,11 @@ android {
         applicationId "org.woheller69.whobird"
         minSdk 30
         targetSdk 33
-        versionCode 12
-        versionName "1.2"
+        versionCode 13
+        versionName "1.3"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
     }
 
     aaptOptions {
@@ -28,7 +31,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
