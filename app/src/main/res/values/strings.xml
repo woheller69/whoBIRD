@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name" translatable="false">whoBIRD</string>
-    <string name="error_too_lound">Too loud!</string>
-    <string name="gain">Gain</string>
-    <string name="auto">auto</string>
+    <string name="samples_zero">No audio input: All audio samples are zero!</string>
+    <string name="ignore_gps_date">Ignore location and date</string>
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lon</string>
 
 </resources>

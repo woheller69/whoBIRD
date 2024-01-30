@@ -16,6 +16,7 @@ This work is licensed under a
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg">
 
 - This app is built on the [BirdNET framework](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst), published under CC BY NC SA 4.0 license
-- It uses the TFLite library from [BirdNET-Analyzer](https://github.com/kahst/BirdNET-Analyzer/tree/main/checkpoints), published under CC BY NC SA 4.0 license
+- At first start it downloads the BirdNet TFLite library, which is published under CC BY NC SA 4.0 license, from a different location
+- Label files from BirdNET are used under GPL 3.0 with permission from the author
 - It uses code from [Tensorflow](https://www.tensorflow.org/lite/examples) examples, published under [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html)
 

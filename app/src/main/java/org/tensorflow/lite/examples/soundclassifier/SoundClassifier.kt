@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.soundclassifier
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.location.Location
 import android.media.AudioFormat
 import android.media.AudioRecord
 import android.media.MediaRecorder
@@ -26,6 +27,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
+import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -41,6 +43,10 @@ import kotlin.math.sin
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import org.tensorflow.lite.support.common.FileUtil
+import java.time.LocalDate
+import kotlin.math.ceil
+import kotlin.math.cos
+import kotlin.math.round
 
 /**
  * Performs classification on sound.
@@ -66,18 +72,18 @@ class SoundClassifier(
     val labelsBase: String = "labels",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
     val modelPath: String = "BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite",
+    /** Path of the meta model .tflite file, relative to the assets/ directory.  */
+    val modelMetaPath: String = "BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite",
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
     /** Multiplier for audio samples  */
-    var audioGain: Int = 0,
-    /** Number of warm up runs to do after loading the TFLite model.  */
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
     val pointsInAverage: Int = 1,
-    /** Overlap factor of recognition period */
-    var overlapFactor: Float = 0.5f,
     /** Probability value above which a class is labeled as active (i.e., detected) the display. (default 0.3) */
     var probabilityThreshold: Float = 0.3f,  //min must be > 0
+    /** Probability value above which a class in the meta model is labeled as active (i.e., detected) the display. (default 0.01) */
+    var metaProbabilityThreshold: Float = 0.01f,  //min must be > 0
   )
 
   var isRecording: Boolean = false
@@ -99,13 +105,6 @@ class SoundClassifier(
       field = value?.also {
         it.lifecycle.addObserver(this)
       }
-    }
-
-  /** Multipler for audio samples */
-  var audioGain: Float
-    get() = options.audioGain.toFloat()
-    set(value) {
-      options.audioGain = value.toInt()
     }
 
   /** Probability value above which a class is labeled as active (i.e., detected) the display.  */
@@ -131,15 +130,22 @@ class SoundClassifier(
 
   /** The TFLite interpreter instance.  */
   private lateinit var interpreter: Interpreter
+  private lateinit var meta_interpreter: Interpreter
 
   /** Audio length (in # of PCM samples) required by the TFLite model.  */
   private var modelInputLength = 0
 
+  /** input Length of the meta model  */
+  private var metaModelInputLength = 0
+
   /** Number of output classes of the TFLite model.  */
   private var modelNumClasses = 0
+  private var metaModelNumClasses = 0
+
 
   /** Used to hold the real-time probabilities predicted by the model for the output classes.  */
   private lateinit var predictionProbs: FloatArray
+  private lateinit var metaPredictionProbs: FloatArray
 
   /** Latest prediction latency in milliseconds.  */
   private var latestPredictionLatencyMs = 0f
@@ -151,10 +157,12 @@ class SoundClassifier(
 
   /** Buffer that holds audio PCM sample that are fed to the TFLite model for inference.  */
   private lateinit var inputBuffer: FloatBuffer
+  private lateinit var metaInputBuffer: FloatBuffer
 
   init {
     loadLabels(context)
     setupInterpreter(context)
+    setupMetaInterpreter(context)
     warmUpModel()
   }
 
@@ -196,24 +204,24 @@ class SoundClassifier(
 
   /** Retrieve labels from "labels.txt" file */
   private fun loadLabels(context: Context) {
-      val localeList = context.resources.configuration.locales
-      val language = localeList.get(0).language
-      var filename = options.labelsBase+"_${language}.txt"
+    val localeList = context.resources.configuration.locales
+    val language = localeList.get(0).language
+    var filename = options.labelsBase+"_${language}.txt"
 
-      //Check if file exists
-      val assetManager = context.assets // Replace 'assets' with actual AssetManager instance
-      try {
-        val mapList = assetManager.list("")?.toMutableList()
+    //Check if file exists
+    val assetManager = context.assets // Replace 'assets' with actual AssetManager instance
+    try {
+      val mapList = assetManager.list("")?.toMutableList()
 
-        if (mapList != null) {
-          if (!mapList.contains(filename)) {
-            filename = options.labelsBase+"_en.txt"
-            }
+      if (mapList != null) {
+        if (!mapList.contains(filename)) {
+          filename = options.labelsBase+"_en.txt"
         }
-      } catch (ex: IOException) {
-        ex.printStackTrace()
-        filename = options.labelsBase+"_en.txt"
       }
+    } catch (ex: IOException) {
+      ex.printStackTrace()
+      filename = options.labelsBase+"_en.txt"
+    }
 
     Log.i(TAG,filename)
     try {
@@ -227,7 +235,7 @@ class SoundClassifier(
       }
       labelList = wordList.map { it.toTitleCase() }
     } catch (e: IOException) {
-      Log.e(TAG, "Failed to read model ${filename}: ${e.message}")
+      Log.e(TAG, "Failed to read labels ${filename}: ${e.message}")
     }
   }
 
@@ -252,13 +260,77 @@ class SoundClassifier(
       Log.e(
         TAG,
         "Mismatch between metadata number of classes (${labelList.size})" +
-          " and model output length ($modelNumClasses)"
+                " and model output length ($modelNumClasses)"
       )
     }
     // Fill the array with NaNs initially.
     predictionProbs = FloatArray(modelNumClasses) { Float.NaN }
 
     inputBuffer = FloatBuffer.allocate(modelInputLength)
+
+  }
+
+  private fun setupMetaInterpreter(context: Context) {
+
+    meta_interpreter = try {
+      val tfliteMetaBuffer = FileUtil.loadMappedFile(context, options.modelMetaPath)
+      Log.i(TAG, "Done creating TFLite buffer from ${options.modelMetaPath}")
+      Interpreter(tfliteMetaBuffer, Interpreter.Options())
+    } catch (e: IOException) {
+      Log.e(TAG, "Failed to load TFLite meta model - ${e.message}")
+      return
+    }
+    // Inspect input and output specs.
+    val metaInputShape = meta_interpreter.getInputTensor(0).shape()
+    Log.i(TAG, "TFLite meta model input shape: ${metaInputShape.contentToString()}")
+    metaModelInputLength = metaInputShape[1]
+
+    val metaOutputShape = meta_interpreter.getOutputTensor(0).shape()
+    Log.i(TAG, "TFLite meta model output shape: ${metaOutputShape.contentToString()}")
+    metaModelNumClasses = metaOutputShape[1]
+    if (metaModelNumClasses != labelList.size) {
+      Log.e(
+        TAG,
+        "Mismatch between metadata number of classes (${labelList.size})" +
+                " and meta model output length ($metaModelNumClasses)"
+      )
+    }
+    // Fill the array with 1 initially.
+    metaPredictionProbs = FloatArray(metaModelNumClasses) { 1f }
+    metaInputBuffer = FloatBuffer.allocate(metaModelInputLength)
+
+  }
+
+  fun runMetaInterpreter(location: Location) {
+    val dayOfYear = LocalDate.now().dayOfYear
+    val week = ceil( dayOfYear*48.0/366.0) //model year has 48 weeks
+    val lat = location.latitude.toFloat()
+    val lon = location.longitude.toFloat()
+
+    Handler(Looper.getMainLooper()).post {
+      mBinding.gps.setText(mContext.getString(R.string.latitude)+": " + (round(lat*100.0)/100.0).toString() + " / " + mContext.getString(R.string.longitude) + ": " + (round(lon*100.0)/100).toString() + " W: "+week.toInt().toString())
+    }
+
+    val weekMeta = cos(Math.toRadians(week * 7.5)) + 1.0
+
+    metaInputBuffer.put(0, lat)
+    metaInputBuffer.put(1, lon)
+    metaInputBuffer.put(2, weekMeta.toFloat())
+    metaInputBuffer.rewind() // Reset position to beginning of buffer
+    val metaOutputBuffer = FloatBuffer.allocate(metaModelNumClasses)
+    metaOutputBuffer.rewind()
+    meta_interpreter.run(metaInputBuffer, metaOutputBuffer)
+    metaOutputBuffer.rewind()
+    metaOutputBuffer.get(metaPredictionProbs) // Copy data to metaPredictionProbs.
+
+
+    for (i in metaPredictionProbs.indices) {
+      metaPredictionProbs[i] = if (metaPredictionProbs[i] >= options.metaProbabilityThreshold) {
+        1f
+      } else {
+        0f
+      }
+    }
   }
 
   private fun warmUpModel() {
@@ -410,11 +482,13 @@ class SoundClassifier(
       }
 
       if (samplesAreAllZero) {
-        Log.w(TAG, "No audio input: All audio samples are zero!")
+        Log.w(TAG, mContext.resources.getString(R.string.samples_zero))
+        Handler(Looper.getMainLooper()).post {
+          Toast.makeText(mContext,mContext.resources.getString(R.string.samples_zero),Toast.LENGTH_SHORT).show()
+        }
+
         return@task
       }
-
-      //scaleInputBuffer()
 
       val t0 = SystemClock.elapsedRealtimeNanos()
       inputBuffer.rewind()
@@ -424,8 +498,14 @@ class SoundClassifier(
       outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
 
       val probList = mutableListOf<Float>()
-      for (value in predictionProbs) {
-        probList.add( 1 / (1+kotlin.math.exp(-value)) )  //apply sigmoid
+      if (mBinding.checkIgnoreMeta.isChecked){
+        for (value in predictionProbs) {
+          probList.add(1 / (1 + kotlin.math.exp(-value)))  //apply sigmoid
+        }
+      } else {
+        for (i in predictionProbs.indices) {
+          probList.add( metaPredictionProbs[i] / (1+kotlin.math.exp(-predictionProbs[i])) )  //apply sigmoid
+        }
       }
 
       probList.withIndex().also {
@@ -440,79 +520,17 @@ class SoundClassifier(
             else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
             else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)
             else mBinding.text1.setBackgroundResource(R.drawable.oval_holo_green_light)
-            if (audioGain==0f) {
-              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
-            } else {
-              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+audioGain)
-            }
           }
         } else {
           Handler(Looper.getMainLooper()).post {
             mBinding.text1.setText("")
             mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-            if (audioGain==0f) {
-              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+mContext.resources.getString(R.string.auto))
-            } else {
-              mBinding.gainTextview.setText(mContext.resources.getString(R.string.gain)+": "+audioGain)
-            }
           }
         }
       }
 
       latestPredictionLatencyMs =
         ((SystemClock.elapsedRealtimeNanos() - t0) / 1e6).toFloat()
-    }
-  }
-
-  // Multiply with audioGain or auto scale
-  private fun scaleInputBuffer() {
-    var cliping = false
-    var scaleFactor = audioGain
-
-    if (audioGain == 0f) {  // auto scale if gain is 0
-      // Find the maximum absolute value in the buffer
-      var maxAbsInputValue = Float.MIN_VALUE
-      for (i in 0 until inputBuffer.capacity()) {
-        val value = Math.abs(inputBuffer.get(i))
-        if (value > maxAbsInputValue) {
-          maxAbsInputValue = value
-        }
-      }
-
-      // Calculate the scaling factor
-      scaleFactor = if (maxAbsInputValue != 0.0f) {
-        (Short.MAX_VALUE-1).toFloat() / maxAbsInputValue
-      } else {
-        1.0f // Handle the case where all values are already 0
-      }
-    }
-    // Scale each element in the buffer
-    for (i in 0 until inputBuffer.capacity()) {
-      var scaledValue = inputBuffer.get(i) * scaleFactor
-
-      if (scaledValue > 32767){
-        scaledValue = 32767f
-        cliping = true
-      }
-      else if (scaledValue < -32767) {
-        scaledValue = -32767f
-        cliping = true
-      }
-
-      inputBuffer.put(i, scaledValue)
-    }
-
-    // Reset position to 0 before using the buffer
-    inputBuffer.rewind()
-
-    Handler(Looper.getMainLooper()).post {
-      if (cliping) {
-        mBinding.errorText.setText(mContext.getString(R.string.error_too_lound))
-        mBinding.errorText.setBackgroundColor(mContext.resources.getColor(android.R.color.holo_red_dark))
-      } else {
-        mBinding.errorText.setText("")
-        mBinding.errorText.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-      }
     }
   }
 

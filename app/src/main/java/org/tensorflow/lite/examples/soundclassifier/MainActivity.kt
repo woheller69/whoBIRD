@@ -20,7 +20,6 @@ package org.tensorflow.lite.examples.soundclassifier
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -38,74 +37,56 @@ class MainActivity : AppCompatActivity() {
     soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options()).also {
       it.lifecycleOwner = this
     }
+    binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
 
-    with(binding) {
-      gainSlider.value = soundClassifier.audioGain
-      gainSlider.addOnChangeListener { _, value, _ ->
-        soundClassifier.audioGain = value
-      }
-    }
-
-    requestMicrophonePermission()
+    requestPermissions()
   }
 
   override fun onResume() {
     super.onResume()
+    Location.requestLocation(this, soundClassifier)
     if (checkMicrophonePermission()){
       soundClassifier.start()
     } else {
       Toast.makeText(this, "Audio permission not granted :(", Toast.LENGTH_LONG).show()
     }
+    if (!checkLocationPermission()){
+      Toast.makeText(this, "Location permission not granted :(", Toast.LENGTH_LONG).show()
+    }
     keepScreenOn(true)
   }
 
-  override fun onTopResumedActivityChanged(isTopResumedActivity: Boolean) {
-    // Handles "top" resumed event on multi-window environment
-    if (checkMicrophonePermission()) {
-      if (isTopResumedActivity) {
-        soundClassifier.start()
-      } else {
-        soundClassifier.stop()
-      }
-    }
-  }
-
-  override fun onRequestPermissionsResult(
-    requestCode: Int,
-    permissions: Array<out String>,
-    grantResults: IntArray
-  ) {
-    super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    if (requestCode == REQUEST_RECORD_AUDIO) {
-      if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-        Log.i(TAG, "Audio permission granted :)")
-        soundClassifier.start()
-      } else {
-        Log.e(TAG, "Audio permission not granted :(")
-      }
-    }
+  override fun onPause() {
+    super.onPause()
+    Location.stopLocation(this)
+    if (soundClassifier.isRecording) soundClassifier.stop()
   }
 
   private fun checkMicrophonePermission(): Boolean {
-    if (ContextCompat.checkSelfPermission(
-        this,
-        Manifest.permission.RECORD_AUDIO
-      ) == PackageManager.PERMISSION_GRANTED
-    ) {
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO ) == PackageManager.PERMISSION_GRANTED) {
       return true
     } else {
       return false
     }
   }
 
-  private fun requestMicrophonePermission() {
-    if (ContextCompat.checkSelfPermission(
-        this,
-        Manifest.permission.RECORD_AUDIO
-      ) != PackageManager.PERMISSION_GRANTED
-    ) {
-      requestPermissions(arrayOf(Manifest.permission.RECORD_AUDIO), REQUEST_RECORD_AUDIO)
+  private fun checkLocationPermission(): Boolean {
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+      return true
+    } else {
+      return false
     }
+  }
+
+  private fun requestPermissions() {
+    val perms = mutableListOf<String>()
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+      perms.add(Manifest.permission.RECORD_AUDIO)
+    }
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+      perms.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+    }
+    if (!perms.isEmpty()) requestPermissions(perms.toTypedArray(), REQUEST_PERMISSIONS)
   }
 
   private fun keepScreenOn(enable: Boolean) =
@@ -116,7 +97,6 @@ class MainActivity : AppCompatActivity() {
     }
 
   companion object {
-    const val REQUEST_RECORD_AUDIO = 1337
-    private const val TAG = "BirdNET-lite"
+    const val REQUEST_PERMISSIONS = 1337
   }
 }
