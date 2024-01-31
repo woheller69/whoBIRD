@@ -942,8 +942,8 @@ Campylorhynchus turdinus_Drosselzaunkönig
 Campylorhynchus yucatanicus_Yucatánzaunkönig
 Campylorhynchus zonatus_Tigerzaunkönig
 Canachites canadensis_Tannenhuhn
-Canis latrans_Coyote
-Canis lupus_Gray Wolf
+Canis latrans_Kojote
+Canis lupus_Wolf
 Cantorchilus elutus_Panamazaunkönig
 Cantorchilus guarayanus_Guarayoszaunkönig
 Cantorchilus leucopogon_Streifenkehl-Zaunkönig
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_Zwergara
 Diuca diuca_Diucaammertangare
 Dives dives_Trauerstärling
 Dives warczewiczi_Buschstärling
-Dog_Dog
+Dog_Hund
 Dolichonyx oryzivorus_Reisstärling
 Donacobius atricapilla_Rohrspötter
 Donacospiza albifrons_Riedammertangare
@@ -2323,7 +2323,7 @@ Ficedula superciliaris_Weißbrauenschnäpper
 Ficedula tricolor_Dreifarbenschnäpper
 Ficedula westermanni_Elsterschnäpper
 Ficedula zanthopygia_Goldschnäpper
-Fireworks_Fireworks
+Fireworks_Feuerwerk
 Florisuga fusca_Schwarzkolibri
 Florisuga mellivora_Weißnackenkolibri
 Fluvicola albiventer_Schwarzrücken-Wassertyrann

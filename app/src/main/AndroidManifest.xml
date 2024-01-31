@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.tensorflow.lite.examples.soundclassifier">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -15,11 +16,18 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".DownloadActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

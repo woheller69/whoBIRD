@@ -1,0 +1,95 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue_gray700"
+    tools:context=".DownloadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:foregroundGravity="top"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:src="@drawable/icon_large" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/oval_holo_orange_light_thin"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/orange500"
+                    android:textSize="22dp"
+                    android:text="Download Model" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/orange500"
+                    android:gravity="center"
+                    android:textSize="18dp"
+                    android:text="whoBIRD needs to download the BirdNET machine learning model. (approx. 30MB) \n No commercial use allowed \n(CC-BY-NC-SA 4.0 license)" />
+
+                <ImageButton
+                    android:id="@+id/download_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/orange500"
+                    android:src="@drawable/ic_download_48dp"
+                    android:onClick="download"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/download_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:visibility="gone"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:progressBackgroundTint="@color/gray400"
+                    android:progressTint="@color/orange500"
+                    tools:progress="0" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="START"
+                android:textColor="@color/dark_blue_gray700"
+                android:visibility="gone"
+                android:onClick="startMain"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

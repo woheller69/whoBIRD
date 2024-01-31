@@ -31,22 +31,25 @@ import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import org.tensorflow.lite.Interpreter
+import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import java.io.BufferedReader
+import java.io.File
 import java.io.IOException
 import java.io.InputStreamReader
+import java.nio.ByteBuffer
 import java.nio.FloatBuffer
+import java.nio.channels.FileChannel
+import java.nio.file.StandardOpenOption
+import java.time.LocalDate
 import java.util.Locale
 import java.util.Timer
 import java.util.TimerTask
 import kotlin.concurrent.scheduleAtFixedRate
-import kotlin.math.sin
-import org.tensorflow.lite.Interpreter
-import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
-import org.tensorflow.lite.support.common.FileUtil
-import java.time.LocalDate
 import kotlin.math.ceil
 import kotlin.math.cos
 import kotlin.math.round
+import kotlin.math.sin
 
 /**
  * Performs classification on sound.
@@ -71,9 +74,9 @@ class SoundClassifier(
     /** Path of the converted model label file, relative to the assets/ directory.  */
     val labelsBase: String = "labels",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
-    val modelPath: String = "BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite",
+    val modelPath: String = "model.tflite",
     /** Path of the meta model .tflite file, relative to the assets/ directory.  */
-    val modelMetaPath: String = "BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite",
+    val metaModelPath: String = "metaModel.tflite",
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
     /** Multiplier for audio samples  */
@@ -240,10 +243,16 @@ class SoundClassifier(
   }
 
   private fun setupInterpreter(context: Context) {
-    interpreter = try {
-      val tfliteBuffer = FileUtil.loadMappedFile(context, options.modelPath)
-      Log.i(TAG, "Done creating TFLite buffer from ${options.modelPath}")
-      Interpreter(tfliteBuffer, Interpreter.Options())
+    try {
+      val modelFilePath = context.getDir("filesdir", Context.MODE_PRIVATE).absolutePath + "/"+ options.modelPath
+      Log.i(TAG, "Trying to create TFLite buffer from $modelFilePath")
+      val modelFile = File(modelFilePath)
+      val tfliteBuffer: ByteBuffer = FileChannel.open(modelFile.toPath(), StandardOpenOption.READ).use { channel ->
+        channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size())
+      }
+      Log.i(TAG, "Done creating TFLite buffer from $modelFilePath")
+
+      interpreter = Interpreter(tfliteBuffer, Interpreter.Options())
     } catch (e: IOException) {
       Log.e(TAG, "Failed to load TFLite model - ${e.message}")
       return
@@ -272,12 +281,18 @@ class SoundClassifier(
 
   private fun setupMetaInterpreter(context: Context) {
 
-    meta_interpreter = try {
-      val tfliteMetaBuffer = FileUtil.loadMappedFile(context, options.modelMetaPath)
-      Log.i(TAG, "Done creating TFLite buffer from ${options.modelMetaPath}")
-      Interpreter(tfliteMetaBuffer, Interpreter.Options())
+    try {
+      val metaModelFilePath = context.getDir("filesdir", Context.MODE_PRIVATE).absolutePath + "/"+ options.metaModelPath
+      Log.i(TAG, "Trying to create TFLite buffer from $metaModelFilePath")
+      val metaModelFile = File(metaModelFilePath)
+      val tfliteBuffer: ByteBuffer = FileChannel.open(metaModelFile.toPath(), StandardOpenOption.READ).use { channel ->
+        channel.map(FileChannel.MapMode.READ_ONLY, 0, channel.size())
+      }
+      Log.i(TAG, "Done creating TFLite buffer from $metaModelFilePath")
+
+      meta_interpreter = Interpreter(tfliteBuffer, Interpreter.Options())
     } catch (e: IOException) {
-      Log.e(TAG, "Failed to load TFLite meta model - ${e.message}")
+      Log.e(TAG, "Failed to load TFLite model - ${e.message}")
       return
     }
     // Inspect input and output specs.
@@ -308,7 +323,7 @@ class SoundClassifier(
     val lon = location.longitude.toFloat()
 
     Handler(Looper.getMainLooper()).post {
-      mBinding.gps.setText(mContext.getString(R.string.latitude)+": " + (round(lat*100.0)/100.0).toString() + " / " + mContext.getString(R.string.longitude) + ": " + (round(lon*100.0)/100).toString() + " W: "+week.toInt().toString())
+      mBinding.gps.setText(mContext.getString(R.string.latitude)+": " + (round(lat*100.0)/100.0).toString() + " / " + mContext.getString(R.string.longitude) + ": " + (round(lon*100.0)/100).toString())
     }
 
     val weekMeta = cos(Math.toRadians(week * 7.5)) + 1.0
