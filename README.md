@@ -17,8 +17,8 @@ This means you can use it anytime, anywhere – whether you're deep in the fores
 This work is licensed under GPLv3
 
 - This app is built on the [BirdNET framework](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst), published under CC BY NC SA 4.0 license
-- At first start it downloads the BirdNet TFLite library from [whoBird-TFlite](https://github.com/woheller69/whoBIRD-TFlite), which is published under CC BY NC SA 4.0 license, from a different location
-- Label files from BirdNET are used under GPL 3.0 with permission from the author
+- At first start it downloads the BirdNet TFLite library from [whoBird-TFlite](https://github.com/woheller69/whoBIRD-TFlite), which is published under CC BY NC SA 4.0 license
+- Label files from BirdNET are used under GPL 3.0 with [permission from the author](https://github.com/woheller69/whoBIRD/issues/1)
 - It uses code from [Tensorflow](https://www.tensorflow.org/lite/examples) examples, published under [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 # OTHER APPS
