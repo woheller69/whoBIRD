@@ -13,25 +13,55 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class Downloader {
     static String modelFILE = "model.tflite";
     static String metaModelFILE = "metaModel.tflite";
+    static String modelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
+    static String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
+    static String modelMD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
+    static String metaModelMD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
 
-    public static boolean checkModels(final Context context) {
-        File modelFile = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);
-        File metaModelFile = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/" + metaModelFILE);
-        return modelFile.exists() && metaModelFile.exists();
+    public static boolean checkModels(final Activity activity) {
+        File modelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);
+        File metaModelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + metaModelFILE);
+        String calcModelMD5 = "";
+        String calcMetaModelMD5 = "";
+        if (modelFile.exists()) {
+            try {
+                byte[] data = Files.readAllBytes(Paths.get(modelFile.getPath()));
+                byte[] hash = MessageDigest.getInstance("MD5").digest(data);
+                calcModelMD5 = new BigInteger(1, hash).toString(16);
+            } catch (IOException | NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        if (metaModelFile.exists()) {
+            try {
+                byte[] data = Files.readAllBytes(Paths.get(metaModelFile.getPath()));
+                byte[] hash = MessageDigest.getInstance("MD5").digest(data);
+                calcMetaModelMD5 = new BigInteger(1, hash).toString(16);
+            } catch (IOException | NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        if (modelFile.exists() && !calcModelMD5.equals(modelMD5)) modelFile.delete();
+        if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)) metaModelFile.delete();
+
+        return calcModelMD5.equals(modelMD5) && calcMetaModelMD5.equals(metaModelMD5);
     }
 
     public static void downloadModels(final Activity activity, ActivityDownloadBinding binding) {
-
-        String modelURL = "https://raw.githubusercontent.com/woheller69/BirdNet-lite-Android/master/app/src/main/assets/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
-        String metaModelURL = "https://raw.githubusercontent.com/woheller69/BirdNet-lite-Android/master/app/src/main/assets/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
         File modelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);
         if (!modelFile.exists()) {
             Log.d("whoBIRD", "model file does not exist");
@@ -72,6 +102,11 @@ public class Downloader {
                 }
             });
             thread.start();
+        } else {
+            activity.runOnUiThread(() -> {
+                binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
+                if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+            });
         }
 
         File metaModelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + metaModelFILE);
@@ -114,6 +149,11 @@ public class Downloader {
                 }
             });
             thread.start();
+        } else {
+            activity.runOnUiThread(() -> {
+                binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
+                if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+            });
         }
 
     }
