@@ -45,13 +45,13 @@ class MainActivity : AppCompatActivity() {
   override fun onResume() {
     super.onResume()
     Location.requestLocation(this, soundClassifier)
+    if (!checkLocationPermission()){
+      Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_SHORT).show()
+    }
     if (checkMicrophonePermission()){
       soundClassifier.start()
     } else {
       Toast.makeText(this, this.resources.getString(R.string.error_audio_permission), Toast.LENGTH_SHORT).show()
-    }
-    if (!checkLocationPermission()){
-      Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_SHORT).show()
     }
     keepScreenOn(true)
   }
