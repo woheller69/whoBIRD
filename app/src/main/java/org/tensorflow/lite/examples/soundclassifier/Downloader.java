@@ -89,10 +89,29 @@ public class Downloader {
                     outStream.flush();
                     outStream.close();
                     inStream.close();
-                    activity.runOnUiThread(() -> {
-                        binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
-                        if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
-                    });
+
+                    String calcModelMD5="";
+                    if (modelFile.exists()) {
+                        try {
+                            byte[] data = Files.readAllBytes(Paths.get(modelFile.getPath()));
+                            byte[] hash = MessageDigest.getInstance("MD5").digest(data);
+                            calcModelMD5 = new BigInteger(1, hash).toString(16);
+                        } catch (IOException | NoSuchAlgorithmException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+
+                    if (modelFile.exists() && !calcModelMD5.equals(modelMD5)){
+                        modelFile.delete();
+                        activity.runOnUiThread(() -> {
+                            Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
+                        });
+                    } else {
+                        activity.runOnUiThread(() -> {
+                            binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
+                            if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+                        });
+                    }
                 } catch (IOException i) {
                     activity.runOnUiThread(() -> {
                         Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
@@ -136,10 +155,29 @@ public class Downloader {
                     outStream.flush();
                     outStream.close();
                     inStream.close();
-                    activity.runOnUiThread(() -> {
-                        binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
-                        if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
-                    });
+
+                    String calcMetaModelMD5="";
+                    if (metaModelFile.exists()) {
+                        try {
+                            byte[] data = Files.readAllBytes(Paths.get(metaModelFile.getPath()));
+                            byte[] hash = MessageDigest.getInstance("MD5").digest(data);
+                            calcMetaModelMD5 = new BigInteger(1, hash).toString(16);
+                        } catch (IOException | NoSuchAlgorithmException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+
+                    if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)){
+                        metaModelFile.delete();
+                        activity.runOnUiThread(() -> {
+                            Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
+                        });
+                    } else {
+                        activity.runOnUiThread(() -> {
+                            binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
+                            if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+                        });
+                    }
                 } catch (IOException i) {
                     activity.runOnUiThread(() -> {
                         Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();

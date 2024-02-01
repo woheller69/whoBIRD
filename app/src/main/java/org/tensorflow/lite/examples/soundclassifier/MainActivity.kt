@@ -48,10 +48,10 @@ class MainActivity : AppCompatActivity() {
     if (checkMicrophonePermission()){
       soundClassifier.start()
     } else {
-      Toast.makeText(this, this.resources.getString(R.string.error_audio_permission), Toast.LENGTH_LONG).show()
+      Toast.makeText(this, this.resources.getString(R.string.error_audio_permission), Toast.LENGTH_SHORT).show()
     }
     if (!checkLocationPermission()){
-      Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_LONG).show()
+      Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_SHORT).show()
     }
     keepScreenOn(true)
   }
