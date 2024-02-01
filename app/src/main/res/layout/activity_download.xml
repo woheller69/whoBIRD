@@ -40,7 +40,7 @@
                     android:gravity="center"
                     android:textColor="@color/orange500"
                     android:textSize="22dp"
-                    android:text="Download Model" />
+                    android:text="@string/download_model" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
                     android:textColor="@color/orange500"
                     android:gravity="center"
                     android:textSize="18dp"
-                    android:text="whoBIRD needs to download the BirdNET machine learning model. (approx. 30MB) \n No commercial use allowed \n(CC-BY-NC-SA 4.0 license)" />
+                    android:text="@string/download_model_text" />
 
                 <ImageButton
                     android:id="@+id/download_button"
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:text="START"
+                android:text="@string/start"
                 android:textColor="@color/dark_blue_gray700"
                 android:visibility="gone"
                 android:onClick="startMain"/>

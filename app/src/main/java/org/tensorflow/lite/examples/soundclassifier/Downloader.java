@@ -95,10 +95,10 @@ public class Downloader {
                     });
                 } catch (IOException i) {
                     activity.runOnUiThread(() -> {
-                        Toast.makeText(activity, "Error Downloading model file", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
                     });
                     modelFile.delete();
-                    Log.w("whoBIRD", "Error Downloading model file", i);
+                    Log.w("whoBIRD", activity.getResources().getString(R.string.error_download), i);
                 }
             });
             thread.start();
@@ -142,10 +142,10 @@ public class Downloader {
                     });
                 } catch (IOException i) {
                     activity.runOnUiThread(() -> {
-                        Toast.makeText(activity, "Error Downloading model file", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
                     });
                     metaModelFile.delete();
-                    Log.w("whoBIRD", "Error Downloading meta model file", i);
+                    Log.w("whoBIRD", activity.getResources().getString(R.string.error_download), i);
                 }
             });
             thread.start();

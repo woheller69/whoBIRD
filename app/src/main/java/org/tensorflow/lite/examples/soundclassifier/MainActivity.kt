@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
       it.lifecycleOwner = this
     }
     binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
-
+    if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
     requestPermissions()
   }
 
@@ -48,10 +48,10 @@ class MainActivity : AppCompatActivity() {
     if (checkMicrophonePermission()){
       soundClassifier.start()
     } else {
-      Toast.makeText(this, "Audio permission not granted :(", Toast.LENGTH_LONG).show()
+      Toast.makeText(this, this.resources.getString(R.string.error_audio_permission), Toast.LENGTH_LONG).show()
     }
     if (!checkLocationPermission()){
-      Toast.makeText(this, "Location permission not granted :(", Toast.LENGTH_LONG).show()
+      Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_LONG).show()
     }
     keepScreenOn(true)
   }
