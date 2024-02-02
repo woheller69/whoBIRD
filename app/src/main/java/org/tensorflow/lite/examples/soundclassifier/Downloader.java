@@ -92,16 +92,14 @@ public class Downloader {
 
                     String calcModelMD5="";
                     if (modelFile.exists()) {
-                        try {
-                            byte[] data = Files.readAllBytes(Paths.get(modelFile.getPath()));
-                            byte[] hash = MessageDigest.getInstance("MD5").digest(data);
-                            calcModelMD5 = new BigInteger(1, hash).toString(16);
-                        } catch (IOException | NoSuchAlgorithmException e) {
-                            throw new RuntimeException(e);
-                        }
+                        byte[] data = Files.readAllBytes(Paths.get(modelFile.getPath()));
+                        byte[] hash = MessageDigest.getInstance("MD5").digest(data);
+                        calcModelMD5 = new BigInteger(1, hash).toString(16);
+                    } else {
+                        throw new IOException();  //throw exception if there is no modelFile at this point
                     }
 
-                    if (modelFile.exists() && !calcModelMD5.equals(modelMD5)){
+                    if (!calcModelMD5.equals(modelMD5)){
                         modelFile.delete();
                         activity.runOnUiThread(() -> {
                             Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
@@ -112,10 +110,8 @@ public class Downloader {
                             if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
                         });
                     }
-                } catch (IOException i) {
-                    activity.runOnUiThread(() -> {
-                        Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
-                    });
+                } catch (NoSuchAlgorithmException | IOException i) {
+                    activity.runOnUiThread(() -> Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show());
                     modelFile.delete();
                     Log.w("whoBIRD", activity.getResources().getString(R.string.error_download), i);
                 }
@@ -158,16 +154,14 @@ public class Downloader {
 
                     String calcMetaModelMD5="";
                     if (metaModelFile.exists()) {
-                        try {
-                            byte[] data = Files.readAllBytes(Paths.get(metaModelFile.getPath()));
-                            byte[] hash = MessageDigest.getInstance("MD5").digest(data);
-                            calcMetaModelMD5 = new BigInteger(1, hash).toString(16);
-                        } catch (IOException | NoSuchAlgorithmException e) {
-                            throw new RuntimeException(e);
-                        }
+                        byte[] data = Files.readAllBytes(Paths.get(metaModelFile.getPath()));
+                        byte[] hash = MessageDigest.getInstance("MD5").digest(data);
+                        calcMetaModelMD5 = new BigInteger(1, hash).toString(16);
+                    } else {
+                        throw new IOException();  //throw exception if there is no modelFile at this point
                     }
 
-                    if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)){
+                    if (!calcMetaModelMD5.equals(metaModelMD5)){
                         metaModelFile.delete();
                         activity.runOnUiThread(() -> {
                             Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
@@ -178,10 +172,8 @@ public class Downloader {
                             if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
                         });
                     }
-                } catch (IOException i) {
-                    activity.runOnUiThread(() -> {
-                        Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
-                    });
+                } catch (NoSuchAlgorithmException | IOException i) {
+                    activity.runOnUiThread(() -> Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show());
                     metaModelFile.delete();
                     Log.w("whoBIRD", activity.getResources().getString(R.string.error_download), i);
                 }
