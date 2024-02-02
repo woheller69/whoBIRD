@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:textColor="@color/orange500"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:id="@+id/check_ignore_meta_text"
                     android:text="@string/ignore_gps_date" />
             </LinearLayout>
