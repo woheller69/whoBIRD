@@ -352,7 +352,7 @@ plbpip1
 strpip1
 yelpip2
 ocbpip1
-auspip1
+auspip3
 yelpip3
 rocpip1
 meapip1
@@ -469,7 +469,7 @@ greegr
 graher1
 cocher1
 grbher3
-integr
+integr1
 blhher1
 purher1
 grbher2
@@ -621,7 +621,7 @@ brfgle1
 btfgle1
 parfog1
 ccfgle2
-strwoo1
+strwoo4
 jerbaz1
 blabaz1
 pacbaz1
@@ -1234,7 +1234,7 @@ blnchl1
 goreup1
 eleeup1
 yecchl1
-anteup1
+anteup2
 blcchl1
 chbchl1
 carwoo1
@@ -1594,7 +1594,7 @@ eurjac
 cubcro1
 torcro2
 fiscro
-palcro2
+palcro1
 fatrav1
 brnrav1
 sincro1
@@ -1771,7 +1771,7 @@ crcbab1
 blcbab2
 rucbab1
 rufbab2
-bluvan1
+bluvan3
 burpar
 ultgro1
 bubgro1
@@ -1902,7 +1902,7 @@ plaflo1
 scbflo1
 pabflo1
 mistle1
-fibflo2
+fibflo1
 plaflo2
 pygflo1
 orbflo1
@@ -2300,7 +2300,7 @@ eurhob
 eurkes
 reffal1
 sibvan1
-crstit1
+cresht1
 zapwre1
 taifly1
 colfly1
@@ -2384,7 +2384,7 @@ speful1
 whbful1
 crehor1
 wibhor1
-palhor2
+palhor3
 leshor1
 rufhor2
 whejac1
@@ -2568,7 +2568,7 @@ brbant1
 chnant1
 rufant10
 rutant5
-tawant1
+tawant3
 jocant1
 chcant2
 bicant3
@@ -2692,7 +2692,7 @@ negeag1
 colsun2
 nivsun2
 pygsun2
-amtsun1
+amtsun3
 tousun1
 putsun1
 slbkit1
@@ -3057,7 +3057,7 @@ trobou1
 papgon1
 mosbou1
 zanbou1
-shlcot1
+shlcot3
 btstan1
 fustan1
 wtstan1
@@ -3312,7 +3312,7 @@ dotbar1
 blbbar3
 blcbar1
 viebar1
-parcro1
+paradi2
 jacsni
 grenig1
 malnig1
@@ -3533,7 +3533,7 @@ rtbeat1
 stbeat1
 chbeat1
 ccbeat1
-grbeat1
+grnbee3
 rabeat1
 bcbeat1
 btbeat1
@@ -3752,7 +3752,7 @@ gobfly1
 subfly
 strfly1
 whtrob2
-graela2
+gryela3
 yecela1
 forela1
 fooela1
@@ -3773,7 +3773,7 @@ smbtyr1
 stbtyr1
 samwar1
 twbwar1
-gobwar2
+gobwar3
 gytwar1
 whlwar1
 rucwar1
@@ -3911,7 +3911,7 @@ brubru1
 larnil1
 smanil1
 rubnil1
-vivnil1
+vivnil3
 souboo8
 barowl1
 cinhao1
@@ -3987,7 +3987,7 @@ rocear1
 crachi1
 batear1
 stbear2
-sbctyr1
+slbcht2
 yebcht1
 crocht1
 bbctyr1
@@ -3997,7 +3997,7 @@ dorcht1
 gobcht1
 rbctyr1
 drwtyr1
-bortai1
+boorat1
 inghor2
 ceghor1
 maghor2
@@ -4289,7 +4289,7 @@ amwpel
 brnpel
 sptbab1
 ferbab1
-blcbab1
+bkcbab2
 sulbab1
 bncbab1
 shtbab1
@@ -4693,7 +4693,7 @@ ivbpit1
 manpit1
 blwpit1
 faipit1
-hoopit2
+wehpit1
 azbpit1
 noipit1
 blcant1
@@ -4837,7 +4837,7 @@ grtgol1
 cbsbab2
 insbab1
 srlscb1
-cbsbab1
+chbscb1
 taiscb1
 rbsbab1
 sbsbab3
@@ -5080,7 +5080,7 @@ ruslau1
 runlau1
 whblau1
 chhlau1
-blyshb1
+blyshb2
 clishb1
 besbab1
 himshb1
@@ -5094,7 +5094,7 @@ pafdov1
 ccfdov1
 rcfdov1
 whbfrd1
-ybfdov1
+yebfrd2
 sufdov1
 cbfdov1
 ltsfly1
@@ -5287,11 +5287,11 @@ wbtfan1
 bltfan1
 phipif1
 spofan1
-ruffan1
+ruffan13
 norfan1
 rubfan2
 sotfan1
-strfan1
+strfan5
 rottan2
 ropbus1
 crbfin1
@@ -5736,7 +5736,7 @@ mastan1
 blbtan1
 chbtan1
 scrtan1
-forrob1
+obfrob1
 souemu1
 dobfin1
 whghon1
@@ -6201,7 +6201,7 @@ bkttro2
 moutro1
 mastro1
 viotro3
-blttro2
+bkttro6
 surtro1
 viotro2
 gnbtro1
