@@ -13,5 +13,6 @@
     <string name="error_download">Fehler beim Herunterladen</string>
     <string name="error_audio_permission">Berechtigung für Mikrofon fehlt</string>
     <string name="error_location_permission">Berechtigung für Standort fehlt</string>
+    <string name="show_images">Bilder anzeigen</string>
 
 </resources>

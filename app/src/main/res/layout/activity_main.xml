@@ -13,12 +13,15 @@
         <ImageView
             android:id="@+id/icon"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:foregroundGravity="top"
-            android:focusableInTouchMode="true"
-            android:focusable="true"
+            android:layout_height="20dp"
             android:src="@drawable/icon_large" />
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:scrollbars="none" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -40,22 +43,48 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/oval_holo_orange_light_thin"
+                android:orientation="vertical"
                 android:gravity="center_horizontal">
-
-                <CheckBox
-                    android:id="@+id/check_ignore_meta"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/orange500" />
+                    android:gravity="start">
+                    <CheckBox
+                        android:id="@+id/check_ignore_meta"
+                        android:layout_marginStart="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange500" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/orange500"
+                        android:textSize="20dp"
+                        android:id="@+id/check_ignore_meta_text"
+                        android:text="@string/ignore_gps_date" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/orange500"
-                    android:textSize="20dp"
-                    android:id="@+id/check_ignore_meta_text"
-                    android:text="@string/ignore_gps_date" />
+                    android:gravity="start">
+                    <CheckBox
+                        android:id="@+id/check_show_images"
+                        android:layout_marginStart="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/orange500" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/orange500"
+                        android:textSize="20dp"
+                        android:id="@+id/check_show_images_text"
+                        android:text="@string/show_images" />
+                </LinearLayout>
             </LinearLayout>
 
             <Space
@@ -71,25 +100,29 @@
                 android:textColor="@color/orange500"
                 android:textSize="22dp"
                 android:id="@+id/text1"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textColor="@android:color/black"
-                android:textSize="22dp"
-                android:id="@+id/text2"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textColor="@color/orange500"
-                android:textSize="22dp"
-                android:id="@+id/error_text"/>
         </LinearLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/webview_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginEnd="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="9dp" />
+        <TextView
+            android:id="@+id/webview_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginEnd="20dp"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="14dp" />
+    </LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

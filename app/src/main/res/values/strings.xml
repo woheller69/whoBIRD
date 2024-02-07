@@ -14,5 +14,6 @@
     <string name="error_download">Download error</string>
     <string name="error_audio_permission">Microphone permission not granted</string>
     <string name="error_location_permission">Location permission not granted</string>
+    <string name="show_images">Show images</string>
 
 </resources>

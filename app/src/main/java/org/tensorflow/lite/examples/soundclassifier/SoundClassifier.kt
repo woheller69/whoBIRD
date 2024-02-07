@@ -27,6 +27,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
@@ -74,6 +75,8 @@ class SoundClassifier(
     /** Path of the converted model label file, relative to the assets/ directory.  */
     val labelsBase: String = "labels",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
+    val assetFile: String = "assets.txt",
+    /** Path of the converted .tflite file, relative to the assets/ directory.  */
     val modelPath: String = "model.tflite",
     /** Path of the meta model .tflite file, relative to the assets/ directory.  */
     val metaModelPath: String = "metaModel.tflite",
@@ -83,10 +86,12 @@ class SoundClassifier(
     val warmupRuns: Int = 3,
     /** Number of points in average to reduce noise. (default 10)*/
     val pointsInAverage: Int = 1,
-    /** Probability value above which a class is labeled as active (i.e., detected) the display. (default 0.3) */
+    /** Probability value above which a class is labeled as active (i.e., detected) (default 0.3) */
     var probabilityThreshold: Float = 0.3f,  //min must be > 0
     /** Probability value above which a class in the meta model is labeled as active (i.e., detected) the display. (default 0.01) */
     var metaProbabilityThreshold: Float = 0.01f,  //min must be > 0
+    /** Probability value above which a class is shown as image. (default 0.5) */
+    var displayImageThreshold: Float = 0.65f,  //min must be > 0
   )
 
   var isRecording: Boolean = false
@@ -110,12 +115,6 @@ class SoundClassifier(
       }
     }
 
-  /** Probability value above which a class is labeled as active (i.e., detected) the display.  */
-  var probabilityThreshold: Float
-    get() = options.probabilityThreshold
-    set(value) {
-      options.probabilityThreshold = value
-    }
 
   /** Paused by user */
   var isPaused: Boolean = false
@@ -126,7 +125,9 @@ class SoundClassifier(
 
   /** Names of the model's output classes.  */
   lateinit var labelList: List<String>
-    private set
+
+  /** Names of the model's output classes.  */
+  lateinit var assetList: List<String>
 
   /** How many milliseconds between consecutive model inference calls.  */
   private var inferenceInterval = 800L
@@ -164,6 +165,7 @@ class SoundClassifier(
 
   init {
     loadLabels(context)
+    loadAssetList(context)
     setupInterpreter(context)
     setupMetaInterpreter(context)
     warmUpModel()
@@ -205,6 +207,25 @@ class SoundClassifier(
     isClosed = true
   }
 
+
+  /** Retrieve asset list from "asset_list" file */
+  private fun loadAssetList(context: Context) {
+
+    try {
+      val reader =
+        BufferedReader(InputStreamReader(context.assets.open(options.assetFile)))
+      val wordList = mutableListOf<String>()
+      reader.useLines { lines ->
+        lines.forEach {
+          wordList.add(it.trim())
+        }
+      }
+      assetList = wordList.map { it }
+    } catch (e: IOException) {
+      Log.e(TAG, "Failed to read labels ${options.assetFile}: ${e.message}")
+    }
+  }
+  
   /** Retrieve labels from "labels.txt" file */
   private fun loadLabels(context: Context) {
     val localeList = context.resources.configuration.locales
@@ -528,7 +549,7 @@ class SoundClassifier(
         val labelAtMaxIndex = labelList[max!!.index].split("_").last()  //show in locale language
         //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
         //Log.i(TAG, "inference result:" +probList.maxOrNull())
-        if (max.value > probabilityThreshold) {
+        if (max.value > options.probabilityThreshold) {
           Handler(Looper.getMainLooper()).post {
             mBinding.text1.setText(labelAtMaxIndex+ "  " + Math.round(max.value * 100.0) + "%")
             if (max.value < 0.5) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_red_dark)
@@ -542,6 +563,39 @@ class SoundClassifier(
             mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
           }
         }
+
+        if (mBinding.checkShowImages.isChecked){
+          Handler(Looper.getMainLooper()).post {
+            var url = mBinding.webview.url
+            if (max.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
+              url = "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+            }
+
+            if (url == null || url == "about:blank"){
+              mBinding.webview.setVisibility(View.GONE)
+              mBinding.icon.setVisibility(View.VISIBLE)
+              mBinding.webviewUrl.setText("")
+              mBinding.webviewName.setText("")
+            } else {
+              if (mBinding.webview.url != url) {
+                mBinding.webview.setVisibility(View.INVISIBLE)
+                mBinding.webview.loadUrl(url)
+                mBinding.webviewUrl.setText(url)
+                mBinding.webviewName.setText(labelAtMaxIndex)
+                mBinding.icon.setVisibility(View.GONE)
+              }
+            }
+          }
+        } else {
+          Handler(Looper.getMainLooper()).post {
+            mBinding.webview.setVisibility(View.GONE)
+            mBinding.icon.setVisibility(View.VISIBLE)
+            mBinding.webview.loadUrl("about:blank")
+            mBinding.webviewUrl.setText("")
+            mBinding.webviewName.setText("")
+          }
+        }
+
       }
 
       latestPredictionLatencyMs =

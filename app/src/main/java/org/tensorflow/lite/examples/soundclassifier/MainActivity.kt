@@ -20,7 +20,9 @@ package org.tensorflow.lite.examples.soundclassifier
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.ViewGroup
 import android.view.WindowManager
+import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -29,17 +31,34 @@ import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBind
 class MainActivity : AppCompatActivity() {
 
   private lateinit var soundClassifier: SoundClassifier
+  private lateinit var binding: ActivityMainBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    val binding = ActivityMainBinding.inflate(layoutInflater)
+    binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+    //Set aspect ratio for webview and icon
+    val windowMetrics = windowManager.currentWindowMetrics
+    val width = windowMetrics.bounds.width()
+    val paramsWebview: ViewGroup.LayoutParams = binding.webview.getLayoutParams() as ViewGroup.LayoutParams
+    paramsWebview.height = (width / 1.8f).toInt()
+    val paramsIcon: ViewGroup.LayoutParams = binding.icon.getLayoutParams() as ViewGroup.LayoutParams
+    paramsIcon.height = (width / 1.8f).toInt()
+
     soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options()).also {
       it.lifecycleOwner = this
     }
     binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
+    binding.webview.setWebViewClient(object : MyWebViewClient(this) {})
+    binding.webview.settings.setDomStorageEnabled(true)
+    binding.webview.settings.setJavaScriptEnabled(true)
+    binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+
     if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
+
     requestPermissions()
+
   }
 
   override fun onResume() {
