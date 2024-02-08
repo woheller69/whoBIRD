@@ -258,6 +258,7 @@ class SoundClassifier(
         }
       }
       labelList = wordList.map { it.toTitleCase() }
+      Log.i(TAG, "Label list entries: ${labelList.size}")
     } catch (e: IOException) {
       Log.e(TAG, "Failed to read labels ${filename}: ${e.message}")
     }
