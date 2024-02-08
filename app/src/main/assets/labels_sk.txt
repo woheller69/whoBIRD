@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_medárik maskový
 Lichenostomus melanops_medárik škraboškový
 Lichmera incana_medárik sivosluchý
 Lichmera indistincta_medárik hnedý
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_medárik hnedý
 Lichmera squamata_medárik šupinatý
 Limnoctites rectirostris_košikárik priamozobý
 Limnoctites sulphuriferus_košikárik močiarny

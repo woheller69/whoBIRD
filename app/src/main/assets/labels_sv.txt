@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_Malleehonungsfågel
 Lichenostomus melanops_Gultofsad honungsfågel
 Lichmera incana_Mörkbrun honungsfågel
 Lichmera indistincta_Brun honungsfågel
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_Brun honungsfågel
 Lichmera squamata_Fjällbröstad honungsfågel
 Limnoctites rectirostris_Raknäbbad sumpjägare
 Limnoctites sulphuriferus_Svavelstrupig taggstjärt

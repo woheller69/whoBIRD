@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_Méliphage grimé
 Lichenostomus melanops_Méliphage cornu
 Lichmera incana_Méliphage à oreillons gris
 Lichmera indistincta_Méliphage brunâtre
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_Méliphage brunâtre
 Lichmera squamata_Méliphage à plumet blanc
 Limnoctites rectirostris_Synallaxe à bec droit
 Limnoctites sulphuriferus_Synallaxe soufré

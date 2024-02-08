@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_フジビタイコバシミツスイ
 Lichenostomus melanops_キムネミツスイ
 Lichmera incana_ギンミミミツスイ
 Lichmera indistincta_サメイロミツスイ
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_サメイロミツスイ
 Lichmera squamata_ウロコオリーブミツスイ
 Limnoctites rectirostris_ヌマカマドドリ
 Limnoctites sulphuriferus_ニッケイカマドドリ

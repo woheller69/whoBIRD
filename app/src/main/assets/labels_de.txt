@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_Purpurzügel-Honigfresser
 Lichenostomus melanops_Gelbstirn-Honigfresser
 Lichmera incana_Grauohr-Honigfresser
 Lichmera indistincta_Braunhonigfresser
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_Braunhonigfresser
 Lichmera squamata_Schuppenbrust-Honigfresser
 Limnoctites rectirostris_Grauscheitel-Riedschlüpfer
 Limnoctites sulphuriferus_Flügelspiegel-Riedschlüpfer

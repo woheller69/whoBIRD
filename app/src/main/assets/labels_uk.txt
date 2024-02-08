@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_Медник масковий
 Lichenostomus melanops_Медник жовточубий
 Lichmera incana_Медовець блідий
 Lichmera indistincta_Медовець бурий
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_Медовець бурий
 Lichmera squamata_Медовець плямистоволий
 Limnoctites rectirostris_Очеретник прямодзьобий
 Limnoctites sulphuriferus_Курутія жовтогорла

@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_Erguvan Bıyıklı Balkuşu
 Lichenostomus melanops_Sarı Kulaklı Balkuşu
 Lichmera incana_Gri Yanaklı Balkuşu
 Lichmera indistincta_Kahverengi Balkuşu
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_Kahverengi Balkuşu
 Lichmera squamata_Pul Göğüslü Balkuşu
 Limnoctites rectirostris_Düz Gagalı Sazlıkavcısı
 Limnoctites sulphuriferus_Sarı Sakallı Sazlıkavcısı

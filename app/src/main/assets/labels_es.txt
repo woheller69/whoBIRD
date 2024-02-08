@@ -3211,7 +3211,7 @@ Lichenostomus cratitius_Mielero de Boqueras
 Lichenostomus melanops_Mielero Orejigualdo
 Lichmera incana_Mielero Orejigrís
 Lichmera indistincta_Mielero Pardo
-Lichmera limbata_Indonesian Honeyeater
+Lichmera indistincta_Mielero Pardo
 Lichmera squamata_Mielero Escamoso
 Limnoctites rectirostris_Pajonalera Piquirrecta
 Limnoctites sulphuriferus_Curutié Ocráceo
