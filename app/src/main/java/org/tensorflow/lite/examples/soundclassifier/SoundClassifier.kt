@@ -545,58 +545,66 @@ class SoundClassifier(
         }
       }
 
-      probList.withIndex().also {
-        val max = it.maxByOrNull { entry -> entry.value }
-        val labelAtMaxIndex = labelList[max!!.index].split("_").last()  //show in locale language
-        //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
-        //Log.i(TAG, "inference result:" +probList.maxOrNull())
-        if (max.value > options.probabilityThreshold) {
-          Handler(Looper.getMainLooper()).post {
-            mBinding.text1.setText(labelAtMaxIndex+ "  " + Math.round(max.value * 100.0) + "%")
-            if (max.value < 0.5) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_red_dark)
-            else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
-            else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)
-            else mBinding.text1.setBackgroundResource(R.drawable.oval_holo_green_light)
-          }
-        } else {
-          Handler(Looper.getMainLooper()).post {
-            mBinding.text1.setText("")
-            mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-          }
-        }
-
-        if (mBinding.checkShowImages.isChecked){
-          Handler(Looper.getMainLooper()).post {
-            var url = mBinding.webview.url
-            if (max.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
-              url = "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+      if (mBinding.progressHorizontal.isIndeterminate){
+        probList.withIndex().also {
+          val max = it.maxByOrNull { entry -> entry.value }
+          val labelAtMaxIndex = labelList[max!!.index].split("_").last()  //show in locale language
+          //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
+          //Log.i(TAG, "inference result:" +probList.maxOrNull())
+          if (max.value > options.probabilityThreshold) {
+            Handler(Looper.getMainLooper()).post {
+              mBinding.text1.setText(labelAtMaxIndex+ "  " + Math.round(max.value * 100.0) + "%")
+              if (max.value < 0.5) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_red_dark)
+              else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
+              else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)
+              else mBinding.text1.setBackgroundResource(R.drawable.oval_holo_green_light)
             }
+          } else {
+            Handler(Looper.getMainLooper()).post {
+              mBinding.text1.setText("")
+              mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
+            }
+          }
 
-            if (url == null || url == "about:blank"){
-              mBinding.webview.setVisibility(View.GONE)
-              mBinding.icon.setVisibility(View.VISIBLE)
-              mBinding.webviewUrl.setText("")
-              mBinding.webviewName.setText("")
-            } else {
-              if (mBinding.webview.url != url) {
-                mBinding.webview.setVisibility(View.INVISIBLE)
-                mBinding.webview.loadUrl(url)
-                mBinding.webviewUrl.setText(url)
-                mBinding.webviewName.setText(labelAtMaxIndex)
-                mBinding.icon.setVisibility(View.GONE)
+          if (mBinding.checkShowImages.isChecked){
+            Handler(Looper.getMainLooper()).post {
+              var url = mBinding.webview.url
+              if (max.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
+                //url = "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+              }
+
+              if (url == null || url == "about:blank"){
+                mBinding.webview.setVisibility(View.GONE)
+                mBinding.icon.setVisibility(View.VISIBLE)
+                mBinding.webviewUrl.setText("")
+                mBinding.webviewUrl.setVisibility(View.GONE)
+                mBinding.webviewName.setText("")
+                mBinding.webviewName.setVisibility(View.GONE)
+              } else {
+                if (mBinding.webview.url != url) {
+                  mBinding.webview.setVisibility(View.INVISIBLE)
+                  mBinding.webview.loadUrl(url)
+                  mBinding.webviewUrl.setText(url)
+                  mBinding.webviewUrl.setVisibility(View.VISIBLE)
+                  mBinding.webviewName.setText(labelAtMaxIndex)
+                  mBinding.webviewName.setVisibility(View.VISIBLE)
+                  mBinding.icon.setVisibility(View.GONE)
+                }
               }
             }
+          } else {
+            Handler(Looper.getMainLooper()).post {
+              mBinding.webview.setVisibility(View.GONE)
+              mBinding.icon.setVisibility(View.VISIBLE)
+              mBinding.webview.loadUrl("about:blank")
+              mBinding.webviewUrl.setText("")
+              mBinding.webviewUrl.setVisibility(View.GONE)
+              mBinding.webviewName.setText("")
+              mBinding.webviewName.setVisibility(View.GONE)
+            }
           }
-        } else {
-          Handler(Looper.getMainLooper()).post {
-            mBinding.webview.setVisibility(View.GONE)
-            mBinding.icon.setVisibility(View.VISIBLE)
-            mBinding.webview.loadUrl("about:blank")
-            mBinding.webviewUrl.setText("")
-            mBinding.webviewName.setText("")
-          }
-        }
 
+        }
       }
 
       latestPredictionLatencyMs =

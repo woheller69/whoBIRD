@@ -50,10 +50,15 @@ class MainActivity : AppCompatActivity() {
       it.lifecycleOwner = this
     }
     binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
-    binding.webview.setWebViewClient(object : MyWebViewClient(this) {})
+    binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
     binding.webview.settings.setDomStorageEnabled(true)
     binding.webview.settings.setJavaScriptEnabled(true)
     binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+
+    binding.fab.setOnClickListener {
+      if (binding.progressHorizontal.isIndeterminate) binding.progressHorizontal.setIndeterminate(false)
+      else binding.progressHorizontal.setIndeterminate(true)
+    }
 
     if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
 

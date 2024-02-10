@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/dark_blue_gray700"
     tools:context=".MainActivity">
 
@@ -15,18 +16,48 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:src="@drawable/icon_large" />
-        <WebView
-            android:id="@+id/webview"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:visibility="gone"
-            android:layout_gravity="center_horizontal"
-            android:scrollbars="none" />
+            android:layout_height="wrap_content"
+            tools:ignore="WebViewLayout">
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:scrollbars="none" />
+            <TextView
+                android:id="@+id/webview_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="end"
+                android:layout_marginEnd="20dp"
+                android:textColor="@android:color/white"
+                android:textSize="9dp" />
+            <TextView
+                android:id="@+id/webview_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/webview_url"
+                android:gravity="end"
+                android:layout_marginEnd="20dp"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="14dp" />
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="3">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progress_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:indeterminate="true"
+                style="?android:attr/progressBarStyleHorizontal"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -104,26 +135,36 @@
         </LinearLayout>
 
     </LinearLayout>
-    <LinearLayout
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/webview_url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:layout_marginEnd="20dp"
-            android:textColor="@android:color/white"
-            android:textSize="9dp" />
-        <TextView
-            android:id="@+id/webview_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:layout_marginEnd="20dp"
-            android:textColor="@android:color/holo_orange_light"
-            android:textSize="14dp" />
-    </LinearLayout>
+        android:layout_gravity="bottom"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="5dp"
+        app:fabAlignmentMode="center">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            app:itemIconTint="@color/orange500"
+            app:itemTextColor="@color/orange500"
+            app:labelVisibilityMode="unlabeled"
+            android:background="@drawable/background_transparent" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_play_pause"
+        app:tint="@color/dark_blue_gray700"
+        app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

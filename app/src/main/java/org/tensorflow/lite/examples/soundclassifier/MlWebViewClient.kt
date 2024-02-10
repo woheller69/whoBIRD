@@ -13,15 +13,17 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import okhttp3.Cache
+import okhttp3.CacheControl
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import java.io.ByteArrayInputStream
 import java.io.File
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
-
-open class MyWebViewClient(activity: MainActivity) : WebViewClient() {
+//Webview Client to load images from Macaulay Library
+open class MlWebViewClient(activity: MainActivity) : WebViewClient() {
     var mError = false
     var mActivity = activity
     var okHttp = OkHttpClient.Builder()
@@ -64,7 +66,7 @@ open class MyWebViewClient(activity: MainActivity) : WebViewClient() {
         request: WebResourceRequest?,
         error: WebResourceError
     ) {
-        Toast.makeText(mActivity, "Download Error", Toast.LENGTH_SHORT).show()
+        Toast.makeText(mActivity, mActivity.resources.getString(R.string.error_download), Toast.LENGTH_SHORT).show()
         mError = true
     }
 
@@ -88,17 +90,26 @@ open class MyWebViewClient(activity: MainActivity) : WebViewClient() {
             Log.d("whoBird", "Target:" + targetWidth)
             Log.d("whoBird", "Load smaller image:" + modifiedUrl)
             val okHttpRequest: Request =
-                Request.Builder().url(java.lang.String.valueOf(modifiedUrl)).build()
+                Request.Builder()
+                    .cacheControl(CacheControl.Builder().maxStale(Int.MAX_VALUE, TimeUnit.DAYS).build())
+                    .url(java.lang.String.valueOf(modifiedUrl))
+                    .build()
             try {
                 val response: Response = okHttp.newCall(okHttpRequest).execute()
                 return WebResourceResponse("", "", response.body!!.byteStream())
             } catch (e: IOException) {
                 e.printStackTrace()
             }
-            return null
+
+            //this should never be reached
+            return WebResourceResponse(
+                "text/plain",
+                "UTF-8",
+                ByteArrayInputStream("".toByteArray())
+            )
 
         } else if (request.url.toString()
-                .contains("www.googletagmanager.com") || request.url.toString().endsWith(".js")
+                .contains("www.googletagmanager.com") || request.url.toString().endsWith(".js") || request.url.toString().contains("favicon")
         ) {
             Log.d("whoBird", "Blocked:" + request.url.toString())
             return WebResourceResponse(
@@ -107,6 +118,7 @@ open class MyWebViewClient(activity: MainActivity) : WebViewClient() {
                 ByteArrayInputStream("".toByteArray())
             )
         } else {
+            Log.d("whoBird", "Allowed:" + request.url.toString())
             return null
         }
 
