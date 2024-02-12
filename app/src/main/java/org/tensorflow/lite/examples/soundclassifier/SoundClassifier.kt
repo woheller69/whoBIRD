@@ -67,9 +67,11 @@ class SoundClassifier(
   DefaultLifecycleObserver {
   internal var mContext: Context
   internal var mBinding: ActivityMainBinding
+  private var database: BirdDBHelper? = null
   init {
     this.mContext = context.applicationContext
     this.mBinding = binding
+    this.database = BirdDBHelper.getInstance(mContext)
   }
   class Options constructor(
     /** Path of the converted model label file, relative to the assets/ directory.  */
@@ -341,8 +343,8 @@ class SoundClassifier(
   fun runMetaInterpreter(location: Location) {
     val dayOfYear = LocalDate.now().dayOfYear
     val week = ceil( dayOfYear*48.0/366.0) //model year has 48 weeks
-    val lat = location.latitude.toFloat()
-    val lon = location.longitude.toFloat()
+    lat = location.latitude.toFloat()
+    lon = location.longitude.toFloat()
 
     Handler(Looper.getMainLooper()).post {
       mBinding.gps.setText(mContext.getString(R.string.latitude)+": " + (round(lat*100.0)/100.0).toString() + " / " + mContext.getString(R.string.longitude) + ": " + (round(lon*100.0)/100).toString())
@@ -558,6 +560,7 @@ class SoundClassifier(
               else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
               else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)
               else mBinding.text1.setBackgroundResource(R.drawable.oval_holo_green_light)
+              database?.addEntry(labelAtMaxIndex, lat, lon, max.index, max.value)
             }
           } else {
             Handler(Looper.getMainLooper()).post {
@@ -615,7 +618,8 @@ class SoundClassifier(
 
   companion object {
     private const val TAG = "SoundClassifier"
-
+    var lat: Float = 0.0f
+    var lon: Float = 0.0f
     /** Number of nanoseconds in a millisecond  */
     private const val NANOS_IN_MILLIS = 1_000_000.toDouble()
   }

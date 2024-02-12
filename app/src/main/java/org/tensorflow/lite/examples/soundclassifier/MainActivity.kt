@@ -18,6 +18,7 @@
 package org.tensorflow.lite.examples.soundclassifier
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.ViewGroup
@@ -58,6 +59,24 @@ class MainActivity : AppCompatActivity() {
     binding.fab.setOnClickListener {
       if (binding.progressHorizontal.isIndeterminate) binding.progressHorizontal.setIndeterminate(false)
       else binding.progressHorizontal.setIndeterminate(true)
+    }
+    binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+      when (item.itemId) {
+        R.id.action_share -> {
+          val database = BirdDBHelper.getInstance(this)
+          val intent = Intent(Intent.ACTION_SEND)
+          val shareBody = database.exportAllEntriesAsCSV().joinToString("\n")
+          intent.setType("text/plain")
+          intent.putExtra(Intent.EXTRA_TEXT, shareBody)
+          startActivity(Intent.createChooser(intent, ""))
+        }
+        R.id.action_delete -> {
+          val database = BirdDBHelper.getInstance(this)
+          database.clearAllEntries()
+          Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
+        }
+      }
+      true
     }
 
     if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")

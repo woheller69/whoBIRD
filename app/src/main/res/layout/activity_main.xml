@@ -155,6 +155,7 @@
             app:itemIconTint="@color/orange500"
             app:itemTextColor="@color/orange500"
             app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_bar"
             android:background="@drawable/background_transparent" />
 
     </com.google.android.material.bottomappbar.BottomAppBar>
