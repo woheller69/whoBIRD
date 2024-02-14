@@ -47,7 +47,7 @@ public class BirdDBHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
     
-    public void addEntry(String name, float latitude, float longitude, int speciesId, float probability) {
+    public synchronized void addEntry(String name, float latitude, float longitude, int speciesId, float probability) {
         // Insert a new row into the table with all columns and their values from parameters.
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -61,14 +61,14 @@ public class BirdDBHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv); // Insert the row into the table with all columns and their values from parameters.
     }
     
-    public void clearAllEntries() {
+    public synchronized void clearAllEntries() {
         SQLiteDatabase db = getWritableDatabase();
         String CLEAR_TABLE = "DELETE FROM "+ TABLE_NAME;
         
         db.execSQL(CLEAR_TABLE); // Delete all rows in the table, effectively clearing it out.
     }
     
-    public List<String> exportAllEntriesAsCSV() {
+    public synchronized List<String> exportAllEntriesAsCSV() {
         SQLiteDatabase db = getReadableDatabase();
         String SELECT_ALL = "SELECT * FROM "+ TABLE_NAME;
         
