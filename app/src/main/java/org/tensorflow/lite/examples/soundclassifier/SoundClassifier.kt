@@ -571,9 +571,11 @@ class SoundClassifier(
 
           if (mBinding.checkShowImages.isChecked){
             Handler(Looper.getMainLooper()).post {
-              var url = mBinding.webview.url
-              if (max.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
-                //url = "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+
+              val url = if (max.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
+                "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+              } else {
+                "about:blank"
               }
 
               if (url == null || url == "about:blank"){

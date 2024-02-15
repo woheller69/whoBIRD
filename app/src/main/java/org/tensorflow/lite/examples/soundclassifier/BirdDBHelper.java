@@ -93,6 +93,31 @@ public class BirdDBHelper extends SQLiteOpenHelper {
         }
         return csvDataList;
     }
+
+    public synchronized List<BirdObservation> getAllBirdObservations() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String SELECT_ALL = "SELECT * FROM "+ TABLE_NAME;
+        Cursor cursor = db.rawQuery(SELECT_ALL, null); // Execute the query to select all rows from the table and store them in a cursor object for further processing.
+
+        List<BirdObservation> birdObservations = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                BirdObservation birdObservation = new BirdObservation();
+                birdObservation.setId(cursor.getInt(0));
+                birdObservation.setMillis(cursor.getLong(1));
+                birdObservation.setLatitude(cursor.getFloat(2));
+                birdObservation.setLongitude(cursor.getFloat(3));
+                birdObservation.setName(cursor.getString(4));
+                birdObservation.setSpeciesId(cursor.getInt(5));
+                birdObservation.setProbability(cursor.getFloat(6));
+                birdObservations.add(birdObservation);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return birdObservations;
+    }
+
     public static BirdDBHelper getInstance(Context context) {
         if (instance == null && context != null) {
             instance = new BirdDBHelper(context.getApplicationContext());

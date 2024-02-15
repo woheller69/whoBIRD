@@ -12,6 +12,7 @@ import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.OkHttpClient
@@ -23,7 +24,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 //Webview Client to load images from Macaulay Library
-open class MlWebViewClient(activity: MainActivity) : WebViewClient() {
+open class MlWebViewClient(activity: AppCompatActivity) : WebViewClient() {
     var mError = false
     var mActivity = activity
     var okHttp = OkHttpClient.Builder()

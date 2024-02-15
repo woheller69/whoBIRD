@@ -62,6 +62,10 @@ class MainActivity : AppCompatActivity() {
     }
     binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
       when (item.itemId) {
+        R.id.action_view -> {
+          intent = Intent(this, ViewActivity::class.java)
+          startActivity(intent)
+        }
         R.id.action_share -> {
           val database = BirdDBHelper.getInstance(this)
           val intent = Intent(Intent.ACTION_SEND)

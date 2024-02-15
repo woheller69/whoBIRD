@@ -14,7 +14,13 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".ViewActivity"
+            android:screenOrientation="portrait"
+            android:exported="false">
         </activity>
 
         <activity

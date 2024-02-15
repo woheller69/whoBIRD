@@ -1,7 +1,11 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item tools:ignore="MenuTitle" />
-    <item tools:ignore="MenuTitle" />
+    <item android:id="@+id/action_mic"
+        android:icon="@drawable/ic_mic_24dp"
+        tools:ignore="MenuTitle" />
+    <item android:id="@+id/action_view"
+        android:icon="@drawable/ic_view_24dp"
+        tools:ignore="MenuTitle" />
     <item tools:ignore="MenuTitle" />
     <item android:id="@+id/action_share"
         android:icon="@drawable/ic_share_24dp"
