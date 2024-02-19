@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
         android:orientation="vertical">
 
         <ImageView
@@ -29,21 +30,26 @@
                 android:scrollbars="none" />
             <TextView
                 android:id="@+id/webview_url"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:gravity="end"
+                android:layout_alignParentEnd="true"
+                android:background="@color/dark_blue_gray700"
+                android:paddingHorizontal="3dp"
                 android:layout_marginEnd="20dp"
                 android:textColor="@android:color/white"
                 android:textSize="9dp" />
             <TextView
                 android:id="@+id/webview_name"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:layout_below="@id/webview_url"
-                android:gravity="end"
+                android:layout_alignParentEnd="true"
+                android:background="@color/dark_blue_gray700"
+                android:paddingHorizontal="3dp"
                 android:layout_marginEnd="20dp"
+                android:textStyle="bold"
                 android:textColor="@android:color/holo_orange_light"
                 android:textSize="14dp" />
         </RelativeLayout>

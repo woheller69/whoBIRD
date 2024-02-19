@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -21,12 +20,9 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
     private Context context;
     private final List<BirdObservation> birdObservations;
 
-    BirdDBHelper database;
-
     public RecyclerOverviewListAdapter(Context context, List<BirdObservation> birdObservations) {
         this.context = context;
         this.birdObservations = birdObservations;
-        this.database = new BirdDBHelper(context);
     }
 
     @Override
@@ -55,7 +51,6 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         }
         String datetimeString = sdf.format(date);
         holder.date.setText(datetimeString);
-
 
     }
 

@@ -11,7 +11,6 @@ import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import okhttp3.internal.notify
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBinding
 import java.io.BufferedReader
 import java.io.IOException
@@ -24,7 +23,7 @@ class ViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityViewBinding
     private lateinit var database: BirdDBHelper
     private lateinit var adapter: RecyclerOverviewListAdapter
-    private lateinit var birdObservations: List<BirdObservation>
+    private lateinit var birdObservations: ArrayList<BirdObservation>
     lateinit var assetList: List<String>
     lateinit var labelList: List<String>
 
@@ -68,7 +67,8 @@ class ViewActivity : AppCompatActivity() {
                     val database = BirdDBHelper.getInstance(this)
                     database.clearAllEntries()
                     Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
-                    finish()
+                    birdObservations.clear()
+                    adapter.notifyDataSetChanged()
                 }
             }
             true
@@ -79,8 +79,8 @@ class ViewActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        keepScreenOn(true)
-        birdObservations = database.allBirdObservations.sortedByDescending { it.millis }
+
+        birdObservations = ArrayList(database.allBirdObservations.sortedByDescending { it.millis } )  //Conversion between Java ArrayList and Kotlin ArrayList
 
         adapter = RecyclerOverviewListAdapter(applicationContext, birdObservations)
         binding.recyclerObservations.setAdapter(adapter)
@@ -90,12 +90,13 @@ class ViewActivity : AppCompatActivity() {
                 override fun onItemClick(view: View?, position: Int) {
 
                     val url = if ( assetList[adapter.getSpeciesID(position)] != "NO_ASSET") {
-                        "about:blank"//"https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
+                        "https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
                     } else {
                         "about:blank"
                     }
                     if (url == "about:blank"){
                         binding.webview.setVisibility(View.GONE)
+                        binding.webview.loadUrl(url)
                         binding.icon.setVisibility(View.VISIBLE)
                         binding.webviewUrl.setText("")
                         binding.webviewUrl.setVisibility(View.GONE)
@@ -119,13 +120,6 @@ class ViewActivity : AppCompatActivity() {
         )
     }
 
-
-    private fun keepScreenOn(enable: Boolean) =
-        if (enable) {
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        } else {
-            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        }
 
     /** Retrieve asset list from "asset_list" file */
     private fun loadAssetList(context: Context) {
