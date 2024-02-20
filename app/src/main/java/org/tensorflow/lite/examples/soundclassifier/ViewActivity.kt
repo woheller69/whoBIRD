@@ -69,6 +69,13 @@ class ViewActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
                     birdObservations.clear()
                     adapter.notifyDataSetChanged()
+                    binding.webview.setVisibility(View.GONE)
+                    binding.webview.loadUrl("about:blank")
+                    binding.icon.setVisibility(View.VISIBLE)
+                    binding.webviewUrl.setText("")
+                    binding.webviewUrl.setVisibility(View.GONE)
+                    binding.webviewName.setText("")
+                    binding.webviewName.setVisibility(View.GONE)
                 }
             }
             true
