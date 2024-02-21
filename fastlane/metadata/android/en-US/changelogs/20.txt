@@ -1,0 +1,2 @@
+New viewer activity
+Option to show bird images in built-in browser window
