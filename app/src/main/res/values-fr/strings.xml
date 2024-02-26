@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name" translatable="false">whoBIRD</string>
+    <string name="samples_zero">Pas d\'entrée audio : Tous les échantillons sonores sont vides !</string>
+    <string name="ignore_gps_date">Ne tenir compte ni de la localisation, ni de la date</string>
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lon</string>
+    <string name="dialog_OK_button">OK</string>
+    <string name="dialog_NO_button">Non</string>
+    <string name="dialog_Later_button">Peut-être plus tard</string>
+    <string name="dialog_StarOnGitHub">Appréciez-vous cette appli? N\'hésitez pas à mettre une étoile sur GitHub, ou offrez un café au développeur via PayPal.</string>
+    <string name="download_model">Télécharger le modèle</string>
+    <string name="download_model_text">whoBIRD a besoin de télécharger le modèle BirdNET (~ 30MB). \n Usage commercial non autorisé \n(licence CC-BY-NC-SA 4.0)</string>
+    <string name="start">C\'EST PARTI</string>
+    <string name="error_download">Erreur pendant le téléchargement</string>
+    <string name="error_audio_permission">L\'accès au micro n\'est pas autorisé</string>
+    <string name="error_location_permission">L\'accès à la position n\'est pas autorisé</string>
+    <string name="show_images">Montrer les images</string>
+    <string name="clear_db">Les observations ont été supprimées</string>
+</resources>
