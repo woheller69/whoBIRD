@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name" translatable="false">whoBIRD</string>
     <string name="samples_zero">Pas d\'entrée audio : Tous les échantillons sonores sont vides !</string>
-    <string name="ignore_gps_date">Ne tenir compte ni de la localisation, ni de la date</string>
+    <string name="ignore_gps_date">Ignorer le lieu et la date</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_OK_button">OK</string>
