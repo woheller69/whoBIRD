@@ -27,6 +27,14 @@
                 android:visibility="gone"
                 android:layout_gravity="center_horizontal"
                 android:scrollbars="none" />
+            <ImageButton
+                android:id="@+id/webview_reload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_reload_24dp"
+                android:onClick="reload"/>
             <TextView
                 android:id="@+id/webview_url"
                 android:layout_width="wrap_content"
@@ -76,8 +84,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/oval_holo_orange_light_thin"
                 android:orientation="vertical"
                 android:gravity="center_horizontal">

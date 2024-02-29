@@ -94,13 +94,14 @@ public class BirdDBHelper extends SQLiteOpenHelper {
         return csvDataList;
     }
 
-    public synchronized List<BirdObservation> getAllBirdObservations() {
+    public synchronized List<BirdObservation> getAllBirdObservations(boolean detailed) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String SELECT_ALL = "SELECT * FROM "+ TABLE_NAME;
         Cursor cursor = db.rawQuery(SELECT_ALL, null); // Execute the query to select all rows from the table and store them in a cursor object for further processing.
 
         List<BirdObservation> birdObservations = new ArrayList<>();
+        BirdObservation previousEntry = null;
         if (cursor.moveToFirst()) {
             do {
                 BirdObservation birdObservation = new BirdObservation();
@@ -111,7 +112,25 @@ public class BirdDBHelper extends SQLiteOpenHelper {
                 birdObservation.setName(cursor.getString(4));
                 birdObservation.setSpeciesId(cursor.getInt(5));
                 birdObservation.setProbability(cursor.getFloat(6));
-                birdObservations.add(birdObservation);
+
+                if (!detailed) {
+                    // Check if the current entry has the same species id as previousEntry and a higher probability value
+                    if ((previousEntry != null && previousEntry.getSpeciesId() == birdObservation.getSpeciesId()) && birdObservation.getProbability() > previousEntry.getProbability()) {
+                        // Replace the previous entry in List<BirdObservation> birdObservations with this new entry
+                        birdObservations.remove(previousEntry);
+                        previousEntry = birdObservation;
+                        birdObservations.add(birdObservation);
+                    } else if (previousEntry != null && previousEntry.getSpeciesId() == birdObservation.getSpeciesId() && birdObservation.getProbability() <= previousEntry.getProbability()) {
+                        // Skip this entry as it has a lower probability value than the previous one with the same species id
+                    } else {
+                        // Add the current entry to the list if it doesn't match the conditions above or if there is no previous entry
+                        birdObservations.add(birdObservation);
+                        previousEntry = birdObservation;
+                    }
+                } else {
+                    // If condensed is false, simply add all entries to the list without any modifications
+                    birdObservations.add(birdObservation);
+                }
             } while (cursor.moveToNext());
         }
         cursor.close();

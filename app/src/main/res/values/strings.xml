@@ -16,5 +16,6 @@
     <string name="error_location_permission">Location permission not granted</string>
     <string name="show_images">Show images</string>
     <string name="clear_db">Observations deleted</string>
+    <string name="detailed_list">Detailed list</string>
 
 </resources>

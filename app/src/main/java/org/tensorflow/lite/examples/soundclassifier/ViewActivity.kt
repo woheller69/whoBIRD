@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.webkit.WebSettings
+import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,11 +44,20 @@ class ViewActivity : AppCompatActivity() {
         binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
         binding.webview.settings.setDomStorageEnabled(true)
         binding.webview.settings.setJavaScriptEnabled(true)
-        binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
 
         val linearLayoutManager = LinearLayoutManager(this)
         binding.recyclerObservations.setLayoutManager(linearLayoutManager)
 
+        binding.checkDetailed.setOnClickListener { view ->
+            if ((view as CompoundButton).isChecked) {
+                birdObservations.clear()
+                birdObservations.addAll(database.getAllBirdObservations(true).sortedByDescending { it.millis })
+            } else {
+                birdObservations.clear()
+                birdObservations.addAll(database.getAllBirdObservations(false).sortedByDescending { it.millis })
+            }
+            adapter.notifyDataSetChanged()
+        }
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -76,6 +85,7 @@ class ViewActivity : AppCompatActivity() {
                     binding.webviewUrl.setVisibility(View.GONE)
                     binding.webviewName.setText("")
                     binding.webviewName.setVisibility(View.GONE)
+                    binding.webviewReload.setVisibility(View.GONE)
                 }
             }
             true
@@ -87,7 +97,7 @@ class ViewActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        birdObservations = ArrayList(database.allBirdObservations.sortedByDescending { it.millis } )  //Conversion between Java ArrayList and Kotlin ArrayList
+        birdObservations = ArrayList(database.getAllBirdObservations(false).sortedByDescending { it.millis } )  //Conversion between Java ArrayList and Kotlin ArrayList
 
         adapter = RecyclerOverviewListAdapter(applicationContext, birdObservations)
         binding.recyclerObservations.setAdapter(adapter)
@@ -109,14 +119,17 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewUrl.setVisibility(View.GONE)
                         binding.webviewName.setText("")
                         binding.webviewName.setVisibility(View.GONE)
+                        binding.webviewReload.setVisibility(View.GONE)
                     } else {
                         if (binding.webview.url != url) {
                             binding.webview.setVisibility(View.INVISIBLE)
+                            binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
                             binding.webview.loadUrl(url)
                             binding.webviewUrl.setText(url)
                             binding.webviewUrl.setVisibility(View.VISIBLE)
                             binding.webviewName.setText(labelList[adapter.getSpeciesID(position)].split("_").last())
                             binding.webviewName.setVisibility(View.VISIBLE)
+                            binding.webviewReload.setVisibility(View.VISIBLE)
                             binding.icon.setVisibility(View.GONE)
                         }
                     }
@@ -191,5 +204,10 @@ class ViewActivity : AppCompatActivity() {
 
     companion object {
 
+    }
+
+    fun reload(view: View) {
+        binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
+        binding.webview.reload()
     }
 }

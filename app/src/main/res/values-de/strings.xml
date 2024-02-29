@@ -15,5 +15,6 @@
     <string name="error_location_permission">Berechtigung für Standort fehlt</string>
     <string name="show_images">Bilder anzeigen</string>
     <string name="clear_db">Beobachtungen gelöscht</string>
+    <string name="detailed_list">Detaillierte Liste</string>
 
 </resources>

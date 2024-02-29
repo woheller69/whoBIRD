@@ -16,4 +16,5 @@
     <string name="error_location_permission">Nie udzielono dostępu do lokalizacji</string>
     <string name="show_images">Pokaż obrazy</string>
     <string name="clear_db">Obserwacje usunięte</string>
+    <string name="detailed_list">Szczegółowa lista</string>
 </resources>

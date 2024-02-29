@@ -28,6 +28,7 @@ import android.os.Looper
 import android.os.SystemClock
 import android.util.Log
 import android.view.View
+import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.lifecycle.DefaultLifecycleObserver
@@ -585,14 +586,17 @@ class SoundClassifier(
                 mBinding.webviewUrl.setVisibility(View.GONE)
                 mBinding.webviewName.setText("")
                 mBinding.webviewName.setVisibility(View.GONE)
+                mBinding.webviewReload.setVisibility(View.GONE)
               } else {
                 if (mBinding.webview.url != url) {
                   mBinding.webview.setVisibility(View.INVISIBLE)
+                  mBinding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
                   mBinding.webview.loadUrl(url)
                   mBinding.webviewUrl.setText(url)
                   mBinding.webviewUrl.setVisibility(View.VISIBLE)
                   mBinding.webviewName.setText(labelAtMaxIndex)
                   mBinding.webviewName.setVisibility(View.VISIBLE)
+                  mBinding.webviewReload.setVisibility(View.VISIBLE)
                   mBinding.icon.setVisibility(View.GONE)
                 }
               }
@@ -606,6 +610,7 @@ class SoundClassifier(
               mBinding.webviewUrl.setVisibility(View.GONE)
               mBinding.webviewName.setText("")
               mBinding.webviewName.setVisibility(View.GONE)
+              mBinding.webviewReload.setVisibility(View.GONE)
             }
           }
 

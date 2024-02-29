@@ -21,6 +21,7 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
@@ -54,7 +55,6 @@ class MainActivity : AppCompatActivity() {
     binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
     binding.webview.settings.setDomStorageEnabled(true)
     binding.webview.settings.setJavaScriptEnabled(true)
-    binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
 
     binding.fab.setOnClickListener {
       if (binding.progressHorizontal.isIndeterminate) binding.progressHorizontal.setIndeterminate(false)
@@ -145,5 +145,10 @@ class MainActivity : AppCompatActivity() {
 
   companion object {
     const val REQUEST_PERMISSIONS = 1337
+  }
+
+  fun reload(view: View) {
+    binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
+    binding.webview.reload()
   }
 }
