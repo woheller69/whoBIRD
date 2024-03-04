@@ -14,7 +14,7 @@ What's more, whoBIRD performs its magic entirely on your device, without requiri
 This means you can use it anytime, anywhere – whether you're deep in the forest or at the edge of a remote lake.
 
 <a href="https://f-droid.org/packages/org.woheller69.whobird/" target="_blank">
-<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
+<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
 
 # License
 This work is licensed under GPLv3
