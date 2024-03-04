@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name" translatable="false">whoBIRD</string>
+    <string name="samples_zero">Žádný zvukový vstup: Všechny zvukové vzorky jsou tiché!</string>
+    <string name="ignore_gps_date">Ignorovat polohu a datum</string>
+    <string name="latitude">zem. š.</string>
+    <string name="longitude">zem. d.</string>
+    <string name="dialog_OK_button">Ano</string>
+    <string name="dialog_NO_button">Ne</string>
+    <string name="dialog_Later_button">Možná později</string>
+    <string name="dialog_StarOnGitHub">Líbí se vám tato aplikace? Dejte prosím hvězdičku na GitHubu nebo kupte vývojáři kávu přes PayPal.</string>
+    <string name="download_model">Stáhnout model</string>
+    <string name="download_model_text">whoBIRD potřebuje stáhnout model BirdNET (~ 30 MB). \n Komerční použití není povoleno \n(licence CC-BY-NC-SA 4.0)</string>
+    <string name="start">SPUSTIT</string>
+    <string name="error_download">Chybné stahování</string>
+    <string name="error_audio_permission">Oprávnění k mikrofonu nebylo uděleno</string>
+    <string name="error_location_permission">Oprávnění k umístění nebylo uděleno</string>
+    <string name="show_images">Zobrazit obrázky</string>
+    <string name="clear_db">Pozorování smazána</string>
+    <string name="detailed_list">Podrobný seznam</string>
+</resources>
