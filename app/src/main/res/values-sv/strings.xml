@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name" translatable="false">whoBIRD</string>
+    <string name="samples_zero">Ingen ljudingång hittades: Upptagning är ljud är ej möjligt!</string>
+    <string name="ignore_gps_date">Ignorera plats och tidpunkt</string>
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lon</string>
+    <string name="dialog_OK_button">Okej</string>
+    <string name="dialog_NO_button">Nej</string>
+    <string name="dialog_Later_button">Kanske senare</string>
+    <string name="dialog_StarOnGitHub">Gillar du den här appen? Stjärnmarkera gärna projektet på GitHub, eller kanske bjud utvecklaren på en kaffe via PayPal.</string>
+    <string name="download_model">Hämta modell</string>
+    <string name="download_model_text">whoBIRD behöver hämta hem BirdNET-modellen (≈30 MB). \n Ickekommersiell användning tillåten \n(Licensierad under CC-BY-NC-SA 4.0)</string>
+    <string name="start">Kör</string>
+    <string name="error_download">Hämtningen misslyckades</string>
+    <string name="error_audio_permission">Behörighet till mikrofon inte beviljad</string>
+    <string name="error_location_permission">Behörighet till platsdata inte beviljad</string>
+    <string name="show_images">Visa bilder</string>
+    <string name="clear_db">Observationer borttagna</string>
+    <string name="detailed_list">Detaljerad lista</string>
+
+</resources>
