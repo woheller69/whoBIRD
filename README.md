@@ -1,6 +1,8 @@
 Enjoying this app? Help us grow by sharing #whobird with your friends and followers on Instagram! Together, let's build a vibrant community!
 
-[![Instagram](https://img.shields.io/badge/Instagram-Profile-blue?style=social&logo=instagram)](https://www.instagram.com/docwolle69/)
+<a href="https://www.instagram.com/docwolle69" target="_blank">
+<img src="https://img.shields.io/badge/Instagram-Profile-blue?style=social&logo=instagram" alt="Instagram" height="40"/></a>
+
 
 <pre>Send a coffee to 
 woheller69@t-online.de 
