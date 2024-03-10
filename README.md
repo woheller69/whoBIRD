@@ -1,3 +1,9 @@
+Enjoying this app? Help us grow by sharing #whobird with your friends and followers on Instagram! Together, let's build a vibrant community!
+
+<a href="https://www.instagram.com/docwolle69" target="_blank">
+<img src="https://img.shields.io/badge/Instagram-Profile-blue?style=social&logo=instagram" alt="Instagram" height="40"/></a>
+
+
 <pre>Send a coffee to 
 woheller69@t-online.de 
 <a href= "https://www.paypal.com/signin"><img  align="left" src="https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-150px.png"></a></pre>
@@ -14,7 +20,7 @@ What's more, whoBIRD performs its magic entirely on your device, without requiri
 This means you can use it anytime, anywhere – whether you're deep in the forest or at the edge of a remote lake.
 
 <a href="https://f-droid.org/packages/org.woheller69.whobird/" target="_blank">
-<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
+<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
 
 # License
 This work is licensed under GPLv3
