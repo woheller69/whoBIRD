@@ -121,9 +121,10 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewName.setVisibility(View.GONE)
                         binding.webviewReload.setVisibility(View.GONE)
                     } else {
-                        if (binding.webview.url != url) {
+                        if (binding.webviewUrl.toString() != url) {
                             binding.webview.setVisibility(View.INVISIBLE)
                             binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+                            binding.webview.loadUrl("javascript:document.open();document.close();")
                             binding.webview.loadUrl(url)
                             binding.webviewUrl.setText(url)
                             binding.webviewUrl.setVisibility(View.VISIBLE)
@@ -208,6 +209,6 @@ class ViewActivity : AppCompatActivity() {
 
     fun reload(view: View) {
         binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
-        binding.webview.reload()
+        binding.webview.loadUrl(binding.webviewUrl.text.toString())
     }
 }

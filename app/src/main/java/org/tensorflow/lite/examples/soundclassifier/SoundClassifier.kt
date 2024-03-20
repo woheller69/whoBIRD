@@ -591,6 +591,7 @@ class SoundClassifier(
                 if (mBinding.webview.url != url) {
                   mBinding.webview.setVisibility(View.INVISIBLE)
                   mBinding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+                  mBinding.webview.loadUrl("javascript:document.open();document.close();")
                   mBinding.webview.loadUrl(url)
                   mBinding.webviewUrl.setText(url)
                   mBinding.webviewUrl.setVisibility(View.VISIBLE)

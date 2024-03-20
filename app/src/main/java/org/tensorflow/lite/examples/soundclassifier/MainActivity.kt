@@ -149,6 +149,6 @@ class MainActivity : AppCompatActivity() {
 
   fun reload(view: View) {
     binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
-    binding.webview.reload()
+    binding.webview.loadUrl(binding.webviewUrl.text.toString())
   }
 }
