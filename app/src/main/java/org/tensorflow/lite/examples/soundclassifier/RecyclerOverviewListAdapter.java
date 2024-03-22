@@ -63,6 +63,10 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         return birdObservations.get(position).getSpeciesId();
     }
 
+    public long getMillis(int position) {
+        return birdObservations.get(position).getMillis();
+    }
+
     public static class ScriptViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;

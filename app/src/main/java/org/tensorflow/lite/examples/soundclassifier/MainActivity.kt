@@ -20,7 +20,10 @@ package org.tensorflow.lite.examples.soundclassifier
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
@@ -150,5 +153,21 @@ class MainActivity : AppCompatActivity() {
   fun reload(view: View) {
     binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
     binding.webview.loadUrl(binding.webviewUrl.text.toString())
+  }
+
+  override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    val inflater = menuInflater
+    inflater.inflate(R.menu.main, menu)
+    return true
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      R.id.action_about -> {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")))
+        return true
+      }
+      else -> return super.onOptionsItemSelected(item)
+    }
   }
 }

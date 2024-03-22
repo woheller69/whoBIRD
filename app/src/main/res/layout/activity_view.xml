@@ -60,6 +60,19 @@
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_orange_light"
                 android:textSize="14dp" />
+            <TextView
+                android:id="@+id/webview_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/webview_name"
+                android:layout_alignParentEnd="true"
+                android:background="@color/dark_blue_gray700"
+                android:paddingHorizontal="3dp"
+                android:layout_marginEnd="20dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="10dp" />
         </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"

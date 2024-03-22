@@ -591,7 +591,7 @@ class SoundClassifier(
                 if (mBinding.webview.url != url) {
                   mBinding.webview.setVisibility(View.INVISIBLE)
                   mBinding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
-                  mBinding.webview.loadUrl("javascript:document.open();document.close();")
+                  mBinding.webview.loadUrl("javascript:document.open();document.close();")  //clear view
                   mBinding.webview.loadUrl(url)
                   mBinding.webviewUrl.setText(url)
                   mBinding.webviewUrl.setVisibility(View.VISIBLE)
@@ -614,7 +614,24 @@ class SoundClassifier(
               mBinding.webviewReload.setVisibility(View.GONE)
             }
           }
-
+          //after finding the maximum probability and its corresponding label (max), we filter out that entry from the list of entries before finding the second highest probability (secondMax)
+          val secondMax = it.filterNot { entry -> entry == max }.maxByOrNull { entry -> entry.value }
+          if (secondMax != null && secondMax.value > options.probabilityThreshold) {
+            val labelAtSecondMaxIndex = labelList[secondMax.index].split("_").last()  //show in locale language
+            Handler(Looper.getMainLooper()).post {
+              mBinding.text2.setText(labelAtSecondMaxIndex + "  " + Math.round(secondMax.value * 100.0) + "%")
+              if (secondMax.value < 0.5) mBinding.text2.setBackgroundResource(R.drawable.oval_holo_red_dark)
+              else if (secondMax.value < 0.65) mBinding.text2.setBackgroundResource(R.drawable.oval_holo_orange_dark)
+              else if (secondMax.value < 0.8) mBinding.text2.setBackgroundResource(R.drawable.oval_holo_orange_light)
+              else mBinding.text2.setBackgroundResource(R.drawable.oval_holo_green_light)
+              database?.addEntry(labelAtSecondMaxIndex, lat, lon, secondMax.index, secondMax.value)
+            }
+          } else {
+            Handler(Looper.getMainLooper()).post {
+              mBinding.text2.setText("")
+              mBinding.text2.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
+            }
+          }
         }
       }
 

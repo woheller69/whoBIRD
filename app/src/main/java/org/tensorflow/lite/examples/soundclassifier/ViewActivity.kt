@@ -15,7 +15,11 @@ import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBind
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 
 class ViewActivity : AppCompatActivity() {
@@ -119,17 +123,30 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewUrl.setVisibility(View.GONE)
                         binding.webviewName.setText("")
                         binding.webviewName.setVisibility(View.GONE)
+                        binding.webviewDate.setVisibility(View.GONE)
                         binding.webviewReload.setVisibility(View.GONE)
                     } else {
                         if (binding.webviewUrl.toString() != url) {
                             binding.webview.setVisibility(View.INVISIBLE)
                             binding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
-                            binding.webview.loadUrl("javascript:document.open();document.close();")
+                            binding.webview.loadUrl("javascript:document.open();document.close();") //clear view
                             binding.webview.loadUrl(url)
                             binding.webviewUrl.setText(url)
                             binding.webviewUrl.setVisibility(View.VISIBLE)
                             binding.webviewName.setText(labelList[adapter.getSpeciesID(position)].split("_").last())
                             binding.webviewName.setVisibility(View.VISIBLE)
+
+                            val date = DateFormat.getDateInstance(DateFormat.SHORT)
+                            date.timeZone = TimeZone.getTimeZone("GMT")
+
+                            val time = if (android.text.format.DateFormat.is24HourFormat(baseContext)) {
+                                SimpleDateFormat("HH:mm", Locale.getDefault())
+                            } else {
+                                SimpleDateFormat("hh:mm aa", Locale.getDefault())
+                            }
+
+                            binding.webviewDate.setText(date.format(adapter.getMillis(position))+" "+time.format(Date(adapter.getMillis(position))))
+                            binding.webviewDate.setVisibility(View.VISIBLE)
                             binding.webviewReload.setVisibility(View.VISIBLE)
                             binding.icon.setVisibility(View.GONE)
                         }
