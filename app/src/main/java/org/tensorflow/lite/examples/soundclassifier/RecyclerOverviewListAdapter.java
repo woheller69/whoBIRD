@@ -5,17 +5,19 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
-public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOverviewListAdapter.ScriptViewHolder> {
+public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOverviewListAdapter.ObservationViewHolder> {
 
     private Context context;
     private final List<BirdObservation> birdObservations;
@@ -26,13 +28,13 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
     }
 
     @Override
-    public ScriptViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ObservationViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_bird_observation, parent, false);
-        return new ScriptViewHolder(view);
+        return new ObservationViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ScriptViewHolder holder, int position) {
+    public void onBindViewHolder(ObservationViewHolder holder, int position) {
 
         holder.name.setText(birdObservations.get(position).getName());
         holder.probability.setText((int) Math.round(birdObservations.get(position).getProbability()*100.0)+ " %");
@@ -49,9 +51,24 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         } else {
             sdf = new SimpleDateFormat("hh:mm aa", Locale.getDefault());
         }
-        String datetimeString = sdf.format(date);
-        holder.date.setText(datetimeString);
+        String timeString = sdf.format(date);
+        holder.time.setText(timeString);
 
+        java.text.DateFormat df = java.text.DateFormat.getDateInstance(DateFormat.SHORT);
+        df.setTimeZone(TimeZone.getTimeZone("GMT"));
+        String dateString = df.format(birdObservations.get(position).getMillis());
+        holder.date.setText(dateString);
+
+        if (position == 0) {
+            holder.date.setVisibility(View.VISIBLE);
+        } else {
+            String previousDateString = df.format(birdObservations.get(position-1).getMillis());
+            if (!dateString.equals(previousDateString)) {
+                holder.date.setVisibility(View.VISIBLE);
+            } else {
+                holder.date.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override
@@ -67,18 +84,20 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         return birdObservations.get(position).getMillis();
     }
 
-    public static class ScriptViewHolder extends RecyclerView.ViewHolder {
+    public static class ObservationViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private TextView probability;
-        private CardView holder;
+        private LinearLayout holder;
+        private TextView time;
         private TextView date;
 
-        public ScriptViewHolder(View itemView) {
+        public ObservationViewHolder(View itemView) {
             super(itemView);
             this.name = (TextView) itemView.findViewById(R.id.name);
             this.probability = (TextView) itemView.findViewById(R.id.probability);
-            this.holder = (CardView) itemView.findViewById(R.id.holder);
+            this.holder = (LinearLayout) itemView.findViewById(R.id.holder);
+            this.time = (TextView) itemView.findViewById(R.id.time);
             this.date = (TextView) itemView.findViewById(R.id.date);
 
         }
