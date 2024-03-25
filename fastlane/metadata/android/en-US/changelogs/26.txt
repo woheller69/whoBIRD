@@ -1,0 +1,4 @@
+Add link to GitHub
+Also show bird with 2nd highest probability
+Show date in ViewActivity
+Show scientific name in ViewActivity
