@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name" translatable="false">whoBIRD</string>
     <string name="samples_zero">Pas d\'entrée audio : Tous les échantillons sonores sont vides !</string>
     <string name="ignore_gps_date">Ignorer le lieu et la date</string>
     <string name="latitude">Lat</string>
@@ -18,4 +17,5 @@
     <string name="show_images">Montrer les images</string>
     <string name="clear_db">Les observations ont été supprimées</string>
     <string name="detailed_list">Liste détaillée</string>
+    <string name="delete">Supprimer?</string>
 </resources>

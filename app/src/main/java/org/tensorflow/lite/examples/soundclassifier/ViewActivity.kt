@@ -11,6 +11,7 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBinding
 import java.io.BufferedReader
 import java.io.IOException
@@ -73,19 +74,27 @@ class ViewActivity : AppCompatActivity() {
                     startActivity(Intent.createChooser(intent, ""))
                 }
                 R.id.action_delete -> {
-                    val database = BirdDBHelper.getInstance(this)
-                    database.clearAllEntries()
-                    Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
-                    birdObservations.clear()
-                    adapter.notifyDataSetChanged()
-                    binding.webview.setVisibility(View.GONE)
-                    binding.webview.loadUrl("about:blank")
-                    binding.icon.setVisibility(View.VISIBLE)
-                    binding.webviewUrl.setText("")
-                    binding.webviewUrl.setVisibility(View.GONE)
-                    binding.webviewName.setText("")
-                    binding.webviewName.setVisibility(View.GONE)
-                    binding.webviewReload.setVisibility(View.GONE)
+
+                    Snackbar.make(
+                        binding.bottomNavigationView,
+                        this.getString(R.string.delete),
+                        Snackbar.LENGTH_LONG
+                    ).setAction(this.getString(android.R.string.ok),
+                        {
+                            val database = BirdDBHelper.getInstance(this)
+                            database.clearAllEntries()
+                            Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
+                            birdObservations.clear()
+                            adapter.notifyDataSetChanged()
+                            binding.webview.setVisibility(View.GONE)
+                            binding.webview.loadUrl("about:blank")
+                            binding.icon.setVisibility(View.VISIBLE)
+                            binding.webviewUrl.setText("")
+                            binding.webviewUrl.setVisibility(View.GONE)
+                            binding.webviewName.setText("")
+                            binding.webviewName.setVisibility(View.GONE)
+                            binding.webviewReload.setVisibility(View.GONE)
+                        }).setTextColor(this.getColor(R.color.orange500)).show()
                 }
             }
             true
@@ -202,7 +211,7 @@ class ViewActivity : AppCompatActivity() {
 
     private fun String.toTitleCase() =
         splitToSequence("_")
-            .map { it.capitalize(Locale.ROOT) }
+            .map { it.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() } }
             .joinToString("_")
             .trim()
 

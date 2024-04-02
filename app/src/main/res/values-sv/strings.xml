@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name" translatable="false">whoBIRD</string>
     <string name="samples_zero">Ingen ljudingång hittades: Upptagning är ljud är ej möjligt!</string>
     <string name="ignore_gps_date">Ignorera plats och tidpunkt</string>
     <string name="latitude">Lat</string>
@@ -18,5 +17,6 @@
     <string name="show_images">Visa bilder</string>
     <string name="clear_db">Observationer borttagna</string>
     <string name="detailed_list">Detaljerad lista</string>
+    <string name="delete">Radera?</string>
 
 </resources>

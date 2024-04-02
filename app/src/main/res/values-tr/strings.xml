@@ -16,5 +16,6 @@
     <string name="show_images">Resimleri göster</string>
     <string name="clear_db">Gözlemler silindi</string>
     <string name="detailed_list">Ayrıntılı liste</string>
+    <string name="delete">Silmek?</string>
 
 </resources>

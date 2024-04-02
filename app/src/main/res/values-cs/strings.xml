@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">whoBIRD</string>
     <string name="samples_zero">Žádný zvukový vstup: Všechny zvukové vzorky jsou tiché!</string>
     <string name="ignore_gps_date">Ignorovat polohu a datum</string>
     <string name="latitude">zem. š.</string>
@@ -17,4 +16,5 @@
     <string name="show_images">Zobrazit obrázky</string>
     <string name="clear_db">Pozorování smazána</string>
     <string name="detailed_list">Podrobný seznam</string>
+    <string name="delete">Vymazat?</string>
 </resources>

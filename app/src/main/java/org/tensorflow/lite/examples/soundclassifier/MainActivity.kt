@@ -31,6 +31,7 @@ import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.snackbar.Snackbar
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -51,9 +52,7 @@ class MainActivity : AppCompatActivity() {
     val paramsIcon: ViewGroup.LayoutParams = binding.icon.getLayoutParams() as ViewGroup.LayoutParams
     paramsIcon.height = (width / 1.8f).toInt()
 
-    soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options()).also {
-      it.lifecycleOwner = this
-    }
+    soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options())
     binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
     binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
     binding.webview.settings.setDomStorageEnabled(true)
@@ -78,9 +77,16 @@ class MainActivity : AppCompatActivity() {
           startActivity(Intent.createChooser(intent, ""))
         }
         R.id.action_delete -> {
-          val database = BirdDBHelper.getInstance(this)
-          database.clearAllEntries()
-          Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
+          Snackbar.make(
+            binding.bottomNavigationView,
+            this.getString(R.string.delete),
+            Snackbar.LENGTH_LONG
+          ).setAction(this.getString(android.R.string.ok),
+            {
+              val database = BirdDBHelper.getInstance(this)
+              database.clearAllEntries()
+              Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
+            }).setTextColor(this.getColor(R.color.orange500)).show()
         }
       }
       true

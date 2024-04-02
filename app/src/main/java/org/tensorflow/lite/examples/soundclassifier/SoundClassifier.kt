@@ -29,10 +29,9 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.webkit.WebSettings
+import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.MainThread
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
+import androidx.core.content.ContextCompat
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import java.io.BufferedReader
@@ -64,8 +63,7 @@ class SoundClassifier(
   context: Context,
   binding: ActivityMainBinding,
   private val options: Options = Options()
-) :
-  DefaultLifecycleObserver {
+) {
   internal var mContext: Context
   internal var mBinding: ActivityMainBinding
   private var database: BirdDBHelper? = null
@@ -74,7 +72,7 @@ class SoundClassifier(
     this.mBinding = binding
     this.database = BirdDBHelper.getInstance(mContext)
   }
-  class Options constructor(
+  class Options(
     /** Path of the converted model label file, relative to the assets/ directory.  */
     val labelsBase: String = "labels",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
@@ -102,21 +100,6 @@ class SoundClassifier(
 
   var isClosed: Boolean = true
     private set
-
-  /**
-   * LifecycleOwner instance to deal with RESUME, PAUSE and DESTROY events automatically.
-   * You can also handle those events by calling `start()`, `stop()` and `close()` methods
-   * manually.
-   */
-  var lifecycleOwner: LifecycleOwner? = null
-    @MainThread
-    set(value) {
-      if (field === value) return
-      field?.lifecycle?.removeObserver(this)
-      field = value?.also {
-        it.lifecycle.addObserver(this)
-      }
-    }
 
 
   /** Paused by user */
@@ -174,10 +157,6 @@ class SoundClassifier(
     warmUpModel()
   }
 
-//  override fun onResume(owner: LifecycleOwner) = start()
-
-//  override fun onPause(owner: LifecycleOwner) = stop()
-
   /**
    * Starts sound classification, which triggers running of
    * `recordingThread` and `recognitionThread`.
@@ -199,15 +178,6 @@ class SoundClassifier(
     audioRecord.stop()
     isRecording = false
 
-  }
-
-  fun close() {
-    stop()
-
-    if (isClosed) return
-    interpreter.close()
-
-    isClosed = true
   }
 
 
@@ -548,90 +518,14 @@ class SoundClassifier(
         }
       }
 
-      if (mBinding.progressHorizontal.isIndeterminate){
+      if (mBinding.progressHorizontal.isIndeterminate){  //if start/stop button set to "running"
         probList.withIndex().also {
           val max = it.maxByOrNull { entry -> entry.value }
-          val labelAtMaxIndex = labelList[max!!.index].split("_").last()  //show in locale language
-          //Log.i(TAG, "inference result: label=$labelAtMaxIndex, max=${max?.value}, index=${max?.index}")
-          //Log.i(TAG, "inference result:" +probList.maxOrNull())
-          if (max.value > options.probabilityThreshold) {
-            Handler(Looper.getMainLooper()).post {
-              mBinding.text1.setText(labelAtMaxIndex+ "  " + Math.round(max.value * 100.0) + "%")
-              if (max.value < 0.5) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_red_dark)
-              else if (max.value < 0.65) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_dark)
-              else if (max.value < 0.8) mBinding.text1.setBackgroundResource(R.drawable.oval_holo_orange_light)
-              else mBinding.text1.setBackgroundResource(R.drawable.oval_holo_green_light)
-              database?.addEntry(labelAtMaxIndex, lat, lon, max.index, max.value)
-            }
-          } else {
-            Handler(Looper.getMainLooper()).post {
-              mBinding.text1.setText("")
-              mBinding.text1.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-            }
-          }
-
-          if (mBinding.checkShowImages.isChecked){
-            Handler(Looper.getMainLooper()).post {
-
-              val url = if (max.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
-                "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
-              } else {
-                mBinding.webview.url
-              }
-
-              if (url == null || url == "about:blank"){
-                mBinding.webview.setVisibility(View.GONE)
-                mBinding.icon.setVisibility(View.VISIBLE)
-                mBinding.webviewUrl.setText("")
-                mBinding.webviewUrl.setVisibility(View.GONE)
-                mBinding.webviewName.setText("")
-                mBinding.webviewName.setVisibility(View.GONE)
-                mBinding.webviewReload.setVisibility(View.GONE)
-              } else {
-                if (mBinding.webview.url != url) {
-                  mBinding.webview.setVisibility(View.INVISIBLE)
-                  mBinding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
-                  mBinding.webview.loadUrl("javascript:document.open();document.close();")  //clear view
-                  mBinding.webview.loadUrl(url)
-                  mBinding.webviewUrl.setText(url)
-                  mBinding.webviewUrl.setVisibility(View.VISIBLE)
-                  mBinding.webviewName.setText(labelAtMaxIndex)
-                  mBinding.webviewName.setVisibility(View.VISIBLE)
-                  mBinding.webviewReload.setVisibility(View.VISIBLE)
-                  mBinding.icon.setVisibility(View.GONE)
-                }
-              }
-            }
-          } else {
-            Handler(Looper.getMainLooper()).post {
-              mBinding.webview.setVisibility(View.GONE)
-              mBinding.icon.setVisibility(View.VISIBLE)
-              mBinding.webview.loadUrl("about:blank")
-              mBinding.webviewUrl.setText("")
-              mBinding.webviewUrl.setVisibility(View.GONE)
-              mBinding.webviewName.setText("")
-              mBinding.webviewName.setVisibility(View.GONE)
-              mBinding.webviewReload.setVisibility(View.GONE)
-            }
-          }
+          updateTextView(max, mBinding.text1)
+          updateImage(max)
           //after finding the maximum probability and its corresponding label (max), we filter out that entry from the list of entries before finding the second highest probability (secondMax)
           val secondMax = it.filterNot { entry -> entry == max }.maxByOrNull { entry -> entry.value }
-          if (secondMax != null && secondMax.value > options.probabilityThreshold) {
-            val labelAtSecondMaxIndex = labelList[secondMax.index].split("_").last()  //show in locale language
-            Handler(Looper.getMainLooper()).post {
-              mBinding.text2.setText(labelAtSecondMaxIndex + "  " + Math.round(secondMax.value * 100.0) + "%")
-              if (secondMax.value < 0.5) mBinding.text2.setBackgroundResource(R.drawable.oval_holo_red_dark)
-              else if (secondMax.value < 0.65) mBinding.text2.setBackgroundResource(R.drawable.oval_holo_orange_dark)
-              else if (secondMax.value < 0.8) mBinding.text2.setBackgroundResource(R.drawable.oval_holo_orange_light)
-              else mBinding.text2.setBackgroundResource(R.drawable.oval_holo_green_light)
-              database?.addEntry(labelAtSecondMaxIndex, lat, lon, secondMax.index, secondMax.value)
-            }
-          } else {
-            Handler(Looper.getMainLooper()).post {
-              mBinding.text2.setText("")
-              mBinding.text2.setBackgroundColor(mContext.resources.getColor(R.color.dark_blue_gray700))
-            }
-          }
+          updateTextView(secondMax,mBinding.text2)
         }
       }
 
@@ -640,6 +534,81 @@ class SoundClassifier(
     }
   }
 
+  private fun updateImage(max: IndexedValue<Float>?) {
+    if (mBinding.checkShowImages.isChecked) {
+      Handler(Looper.getMainLooper()).post {
+
+        val url =
+          if (max!!.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
+            "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+          } else {
+            mBinding.webview.url
+          }
+
+        if (url == null || url == "about:blank") {
+          mBinding.webview.setVisibility(View.GONE)
+          mBinding.icon.setVisibility(View.VISIBLE)
+          mBinding.webviewUrl.setText("")
+          mBinding.webviewUrl.setVisibility(View.GONE)
+          mBinding.webviewName.setText("")
+          mBinding.webviewName.setVisibility(View.GONE)
+          mBinding.webviewReload.setVisibility(View.GONE)
+        } else {
+          if (mBinding.webview.url != url) {
+            mBinding.webview.setVisibility(View.INVISIBLE)
+            mBinding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+            mBinding.webview.loadUrl("javascript:document.open();document.close();")  //clear view
+            mBinding.webview.loadUrl(url)
+            mBinding.webviewUrl.setText(url)
+            mBinding.webviewUrl.setVisibility(View.VISIBLE)
+            val labelAtMaxIndex =
+              labelList[max.index].split("_").last()  //show in locale language
+            mBinding.webviewName.setText(labelAtMaxIndex)
+            mBinding.webviewName.setVisibility(View.VISIBLE)
+            mBinding.webviewReload.setVisibility(View.VISIBLE)
+            mBinding.icon.setVisibility(View.GONE)
+          }
+        }
+      }
+    } else {
+      Handler(Looper.getMainLooper()).post {
+        mBinding.webview.setVisibility(View.GONE)
+        mBinding.icon.setVisibility(View.VISIBLE)
+        mBinding.webview.loadUrl("about:blank")
+        mBinding.webviewUrl.setText("")
+        mBinding.webviewUrl.setVisibility(View.GONE)
+        mBinding.webviewName.setText("")
+        mBinding.webviewName.setVisibility(View.GONE)
+        mBinding.webviewReload.setVisibility(View.GONE)
+      }
+    }
+  }
+
+  private fun updateTextView(element: IndexedValue<Float>?, tv: TextView) {
+    if (element != null && element.value > options.probabilityThreshold) {
+      val label =
+        labelList[element.index].split("_").last()  //show in locale language
+      Handler(Looper.getMainLooper()).post {
+        tv.setText(label + "  " + Math.round(element.value * 100.0) + "%")
+        if (element.value < 0.5) tv.setBackgroundResource(R.drawable.oval_holo_red_dark)
+        else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_holo_orange_dark)
+        else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_holo_orange_light)
+        else tv.setBackgroundResource(R.drawable.oval_holo_green_light)
+        database?.addEntry(label, lat, lon, element.index, element.value)
+      }
+    } else {
+      Handler(Looper.getMainLooper()).post {
+        tv.setText("")
+        tv.setBackgroundColor(ContextCompat.getColor(mContext, R.color.dark_blue_gray700))
+      }
+    }
+  }
+
+  private fun String.toTitleCase() =
+    splitToSequence("_")
+      .map { it.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() } }
+      .joinToString("_")
+      .trim()
 
   companion object {
     private const val TAG = "SoundClassifier"
@@ -650,8 +619,5 @@ class SoundClassifier(
   }
 }
 
-private fun String.toTitleCase() =
-  splitToSequence("_")
-    .map { it.capitalize(Locale.ROOT) }
-    .joinToString("_")
-    .trim()
+
+

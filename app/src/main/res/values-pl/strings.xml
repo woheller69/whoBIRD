@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">whoBIRD</string>
     <string name="samples_zero">Brak wejścia audio: Wyzerowano próbki dźwięku!</string>
     <string name="ignore_gps_date">Ignoruj lokalizację i datę</string>
     <string name="latitude">Szer.</string>
@@ -17,4 +16,5 @@
     <string name="show_images">Pokaż obrazy</string>
     <string name="clear_db">Obserwacje usunięte</string>
     <string name="detailed_list">Szczegółowa lista</string>
+    <string name="delete">Usuwać?</string>
 </resources>
