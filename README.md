@@ -10,6 +10,8 @@ woheller69@t-online.de
 
 # whoBIRD
 
+https://github.com/woheller69/whoBIRD/assets/68678880/04d06380-1f8d-4307-9cb9-f6cf6c4d5df1
+
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01.png" width="150"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.png" width="150"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03.png" width="150"/>
 
 Introducing whoBIRD, the ultimate birding companion that can recognize birds by their sounds, anywhere in the world!
