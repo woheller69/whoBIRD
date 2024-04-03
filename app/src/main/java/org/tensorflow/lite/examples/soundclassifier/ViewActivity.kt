@@ -93,6 +93,8 @@ class ViewActivity : AppCompatActivity() {
                             binding.webviewUrl.setVisibility(View.GONE)
                             binding.webviewName.setText("")
                             binding.webviewName.setVisibility(View.GONE)
+                            binding.webviewLatinname.setText("")
+                            binding.webviewLatinname.setVisibility(View.GONE)
                             binding.webviewReload.setVisibility(View.GONE)
                         }).setTextColor(this.getColor(R.color.orange500)).show()
                 }
@@ -128,6 +130,7 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewUrl.setVisibility(View.GONE)
                         binding.webviewName.setText("")
                         binding.webviewName.setVisibility(View.GONE)
+                        binding.webviewLatinname.setText("")
                         binding.webviewLatinname.setVisibility(View.GONE)
                         binding.webviewReload.setVisibility(View.GONE)
                     } else {

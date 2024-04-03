@@ -552,6 +552,8 @@ class SoundClassifier(
           mBinding.webviewUrl.setVisibility(View.GONE)
           mBinding.webviewName.setText("")
           mBinding.webviewName.setVisibility(View.GONE)
+          mBinding.webviewLatinname.setText("")
+          mBinding.webviewLatinname.setVisibility(View.GONE)
           mBinding.webviewReload.setVisibility(View.GONE)
         } else {
           if (mBinding.webview.url != url) {
@@ -561,9 +563,9 @@ class SoundClassifier(
             mBinding.webview.loadUrl(url)
             mBinding.webviewUrl.setText(url)
             mBinding.webviewUrl.setVisibility(View.VISIBLE)
-            val labelAtMaxIndex =
-              labelList[max.index].split("_").last()  //show in locale language
-            mBinding.webviewName.setText(labelAtMaxIndex)
+            mBinding.webviewName.setText(labelList[max.index].split("_").last())
+            mBinding.webviewLatinname.setText(labelList[max.index].split("_").first())
+            mBinding.webviewLatinname.setVisibility(View.VISIBLE)
             mBinding.webviewName.setVisibility(View.VISIBLE)
             mBinding.webviewReload.setVisibility(View.VISIBLE)
             mBinding.icon.setVisibility(View.GONE)
@@ -579,6 +581,8 @@ class SoundClassifier(
         mBinding.webviewUrl.setVisibility(View.GONE)
         mBinding.webviewName.setText("")
         mBinding.webviewName.setVisibility(View.GONE)
+        mBinding.webviewLatinname.setText("")
+        mBinding.webviewLatinname.setVisibility(View.GONE)
         mBinding.webviewReload.setVisibility(View.GONE)
       }
     }
