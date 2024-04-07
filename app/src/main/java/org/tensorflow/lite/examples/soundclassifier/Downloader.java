@@ -27,8 +27,10 @@ public class Downloader {
     static String modelFILE = "model.tflite";
     static String metaModelFILE = "metaModel.tflite";
     static String modelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
+    static String model32URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite";
     static String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
     static String modelMD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
+    static String model32MD5 = "6c7c42106e56550fc8563adb31bc120e";
     static String metaModelMD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
 
     public static boolean checkModels(final Activity activity) {
@@ -55,10 +57,10 @@ public class Downloader {
             }
         }
 
-        if (modelFile.exists() && !calcModelMD5.equals(modelMD5)) modelFile.delete();
+        if (modelFile.exists() && !(calcModelMD5.equals(modelMD5) || calcModelMD5.equals(model32MD5))) modelFile.delete();
         if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)) metaModelFile.delete();
 
-        return calcModelMD5.equals(modelMD5) && calcMetaModelMD5.equals(metaModelMD5);
+        return (calcModelMD5.equals(modelMD5) || calcModelMD5.equals(model32MD5)) && calcMetaModelMD5.equals(metaModelMD5);
     }
 
     public static void downloadModels(final Activity activity, ActivityDownloadBinding binding) {
@@ -67,7 +69,10 @@ public class Downloader {
             Log.d("whoBIRD", "model file does not exist");
             Thread thread = new Thread(() -> {
                 try {
-                    URL url = new URL(modelURL);
+                    URL url;
+                    if (binding.option32bit.isChecked()) url = new URL(model32URL);
+                    else url = new URL(modelURL);
+
                     Log.d("whoBIRD", "Download model");
 
                     URLConnection ucon = url.openConnection();
@@ -99,7 +104,7 @@ public class Downloader {
                         throw new IOException();  //throw exception if there is no modelFile at this point
                     }
 
-                    if (!calcModelMD5.equals(modelMD5)){
+                    if (!(calcModelMD5.equals(modelMD5) || calcModelMD5.equals(model32MD5) )){
                         modelFile.delete();
                         activity.runOnUiThread(() -> {
                             Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();

@@ -51,6 +51,12 @@
                     android:gravity="center"
                     android:textSize="18dp"
                     android:text="@string/download_model_text" />
+                <CheckBox
+                    android:id="@+id/option32bit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="32bit (~55MB)"
+                    android:textColor="@color/orange500"/>
 
                 <ImageButton
                     android:id="@+id/download_button"
