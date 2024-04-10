@@ -7,4 +7,8 @@
         android:icon="@drawable/ic_info_24dp"
         app:showAsAction="always"
         tools:ignore="MenuTitle" />
+
+    <item
+        android:id="@+id/action_backup"
+        android:title="@string/backup_database" />
 </menu>

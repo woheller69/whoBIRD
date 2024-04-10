@@ -7,5 +7,6 @@
         <item name="colorOnSurface">@color/gray700</item>
         <item name="colorSecondary">@color/gray400</item>
         <item name="colorSurface">@color/gray800</item>
+        <item name="popupMenuBackground">@color/gray400</item>
     </style>
 </resources>

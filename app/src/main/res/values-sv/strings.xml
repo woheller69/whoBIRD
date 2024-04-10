@@ -18,5 +18,6 @@
     <string name="clear_db">Observationer borttagna</string>
     <string name="detailed_list">Detaljerad lista</string>
     <string name="delete">Radera?</string>
-
+    <string name="backup_database">Backup</string>
+    <string name="toast_delete">Please delete file and try again</string>
 </resources>

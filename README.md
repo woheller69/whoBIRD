@@ -29,6 +29,7 @@ This work is licensed under GPLv3
 - At first start it downloads the BirdNet TFLite library from [whoBird-TFlite](https://github.com/woheller69/whoBIRD-TFlite), which is published under CC BY NC SA 4.0 license
 - Label files from BirdNET are used under GPL 3.0 with [permission from the author](https://github.com/woheller69/whoBIRD/issues/1)
 - It uses code from [Tensorflow](https://www.tensorflow.org/lite/examples) examples, published under [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html)
+- It uses Zip4j (https://github.com/srikanth-lingala/zip4j) which is licensed under Apache License Version 2.0
 
 # OTHER APPS
 

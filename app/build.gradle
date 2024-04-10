@@ -10,8 +10,8 @@ android {
         applicationId "org.woheller69.whobird"
         minSdk 30
         targetSdk 33
-        versionCode 28
-        versionName "2.8"
+        versionCode 29
+        versionName "2.9"
     }
 
     aaptOptions {
@@ -52,4 +52,5 @@ dependencies {
     implementation "org.tensorflow:tensorflow-lite:2.6.0"
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'net.lingala.zip4j:zip4j:2.9.1'
 }

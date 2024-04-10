@@ -17,4 +17,6 @@
     <string name="clear_db">Obserwacje usunięte</string>
     <string name="detailed_list">Szczegółowa lista</string>
     <string name="delete">Usuwać?</string>
+    <string name="backup_database">Backup</string>
+    <string name="toast_delete">Please delete file and try again</string>
 </resources>

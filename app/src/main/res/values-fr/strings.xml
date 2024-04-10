@@ -18,4 +18,6 @@
     <string name="clear_db">Les observations ont été supprimées</string>
     <string name="detailed_list">Liste détaillée</string>
     <string name="delete">Supprimer?</string>
+    <string name="backup_database">Backup</string>
+    <string name="toast_delete">Please delete file and try again</string>
 </resources>

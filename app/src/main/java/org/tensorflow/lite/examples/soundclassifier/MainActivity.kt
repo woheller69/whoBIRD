@@ -22,6 +22,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -29,10 +31,15 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
+import net.lingala.zip4j.ZipFile
+import net.lingala.zip4j.exception.ZipException
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
+import java.io.File
+import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
 
@@ -173,7 +180,41 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")))
         return true
       }
+      R.id.action_backup -> {
+        performBackup()
+        return true
+      }
       else -> return super.onOptionsItemSelected(item)
     }
+  }
+
+  fun performBackup() {
+    val extStorage: File
+    val intData: File
+    intData = File(
+      Environment.getDataDirectory().toString() + "//data//" + this.packageName + "//databases//"
+    )
+    extStorage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+    val filesBackup = resources.getString(R.string.app_name) + ".zip"
+    val dbBackup = File(extStorage, filesBackup)
+    val builder = AlertDialog.Builder(this)
+    builder.setMessage(resources.getString(R.string.backup_database) + " -> " + dbBackup.toString())
+    builder.setPositiveButton(R.string.dialog_OK_button) { dialog, whichButton ->
+        if (dbBackup.exists()) {
+          if (!dbBackup.delete()) {
+            Toast.makeText(this, resources.getString(R.string.toast_delete), Toast.LENGTH_LONG)
+              .show()
+          }
+        }
+        try {
+          ZipFile(dbBackup).addFolder(intData)
+        } catch (e: ZipException) {
+          Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+        }
+    }
+    builder.setNegativeButton(R.string.dialog_NO_button) { dialog, whichButton -> dialog.cancel() }
+    val dialog = builder.create()
+    dialog.show()
+    Objects.requireNonNull(dialog.window)?.setGravity(Gravity.BOTTOM)
   }
 }

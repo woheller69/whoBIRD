@@ -18,5 +18,6 @@
     <string name="clear_db">Observaciones borradas</string>
     <string name="detailed_list">Lista detallada</string>
     <string name="delete">¿Borrar?</string>
-
+    <string name="backup_database">Backup</string>
+    <string name="toast_delete">Please delete file and try again</string>
 </resources>

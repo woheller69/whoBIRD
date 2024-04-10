@@ -17,4 +17,6 @@
     <string name="clear_db">Pozorování smazána</string>
     <string name="detailed_list">Podrobný seznam</string>
     <string name="delete">Vymazat?</string>
+    <string name="backup_database">Backup</string>
+    <string name="toast_delete">Please delete file and try again</string>
 </resources>
