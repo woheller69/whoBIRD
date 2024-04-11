@@ -55,7 +55,6 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         holder.time.setText(timeString);
 
         java.text.DateFormat df = java.text.DateFormat.getDateInstance(DateFormat.SHORT);
-        df.setTimeZone(TimeZone.getTimeZone("GMT"));
         String dateString = df.format(birdObservations.get(position).getMillis());
         holder.date.setText(dateString);
 
