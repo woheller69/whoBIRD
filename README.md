@@ -23,7 +23,7 @@ This means you can use it anytime, anywhere – whether you're deep in the fores
 <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
 
 # License
-This work is licensed under GPLv3
+This work is licensed under GPLv3, © woheller69
 
 - This app is built on the [BirdNET framework](https://github.com/kahst/BirdNET-Lite) by [**@kahst**](https://github.com/kahst), published under CC BY NC SA 4.0 license
 - At first start it downloads the BirdNet TFLite library from [whoBird-TFlite](https://github.com/woheller69/whoBIRD-TFlite), which is published under CC BY NC SA 4.0 license
