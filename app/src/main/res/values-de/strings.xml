@@ -19,4 +19,9 @@
     <string name="delete">Löschen?</string>
     <string name="backup_database">Sichern</string>
     <string name="toast_delete">Bitte die Datei zuerst löschen und erneut versuchen</string>
+    <string name="tooltip_microphone">Töne aufzeichnen</string>
+    <string name="tooltip_detailed_list">Liste der Beobachtungen anzeigen</string>
+    <string name="tooltip_share">Detaillierte Liste der Beobachtungen teilen</string>
+    <string name="tooltip_delete">Liste der Beobachtungen löschen</string>
+    <string name="tooltip_fab">Aufzeichnung starten/pausieren</string>
 </resources>

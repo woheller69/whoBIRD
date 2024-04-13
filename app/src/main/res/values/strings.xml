@@ -20,4 +20,9 @@
     <string name="delete">Delete?</string>
     <string name="backup_database">Backup</string>
     <string name="toast_delete">Please delete file and try again</string>
+    <string name="tooltip_microphone">Record audio</string>
+    <string name="tooltip_detailed_list">Show list of observations</string>
+    <string name="tooltip_share">Share detailed list of observations</string>
+    <string name="tooltip_delete">Delete list of observations</string>
+    <string name="tooltip_fab">Start/pause recording</string>
 </resources>
