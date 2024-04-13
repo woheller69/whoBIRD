@@ -66,8 +66,14 @@ class MainActivity : AppCompatActivity() {
     binding.webview.settings.setJavaScriptEnabled(true)
 
     binding.fab.setOnClickListener {
-      if (binding.progressHorizontal.isIndeterminate) binding.progressHorizontal.setIndeterminate(false)
-      else binding.progressHorizontal.setIndeterminate(true)
+      if (binding.progressHorizontal.isIndeterminate) {
+        binding.progressHorizontal.setIndeterminate(false)
+        binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_record))
+      }
+      else {
+        binding.progressHorizontal.setIndeterminate(true)
+        binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_pause))
+      }
     }
     binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
       when (item.itemId) {
