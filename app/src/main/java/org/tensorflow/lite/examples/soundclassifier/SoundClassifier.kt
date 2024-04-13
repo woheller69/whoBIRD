@@ -603,7 +603,7 @@ class SoundClassifier(
     } else {
       Handler(Looper.getMainLooper()).post {
         tv.setText("")
-        tv.setBackgroundColor(ContextCompat.getColor(mContext, R.color.dark_blue_gray700))
+        tv.setBackgroundResource(0)
       }
     }
   }
