@@ -200,7 +200,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_play_pause"
+        android:src="@drawable/ic_pause_24dp"
         app:tint="@color/dark_blue_gray700"
         app:layout_anchor="@id/bottomAppBar" />
 

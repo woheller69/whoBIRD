@@ -31,7 +31,6 @@ import android.view.View
 import android.webkit.WebSettings
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import java.io.BufferedReader

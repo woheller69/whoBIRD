@@ -66,8 +66,14 @@ class MainActivity : AppCompatActivity() {
     binding.webview.settings.setJavaScriptEnabled(true)
 
     binding.fab.setOnClickListener {
-      if (binding.progressHorizontal.isIndeterminate) binding.progressHorizontal.setIndeterminate(false)
-      else binding.progressHorizontal.setIndeterminate(true)
+      if (binding.progressHorizontal.isIndeterminate) {
+        binding.progressHorizontal.setIndeterminate(false)
+        binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_play_24dp))
+      }
+      else {
+        binding.progressHorizontal.setIndeterminate(true)
+        binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_pause_24dp))
+      }
     }
     binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
       when (item.itemId) {
@@ -200,17 +206,17 @@ class MainActivity : AppCompatActivity() {
     val builder = AlertDialog.Builder(this)
     builder.setMessage(resources.getString(R.string.backup_database) + " -> " + dbBackup.toString())
     builder.setPositiveButton(R.string.dialog_OK_button) { dialog, whichButton ->
-        if (dbBackup.exists()) {
-          if (!dbBackup.delete()) {
-            Toast.makeText(this, resources.getString(R.string.toast_delete), Toast.LENGTH_LONG)
-              .show()
-          }
+      if (dbBackup.exists()) {
+        if (!dbBackup.delete()) {
+          Toast.makeText(this, resources.getString(R.string.toast_delete), Toast.LENGTH_LONG)
+            .show()
         }
-        try {
-          ZipFile(dbBackup).addFolder(intData)
-        } catch (e: ZipException) {
-          Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
-        }
+      }
+      try {
+        ZipFile(dbBackup).addFolder(intData)
+      } catch (e: ZipException) {
+        Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+      }
     }
     builder.setNegativeButton(R.string.dialog_NO_button) { dialog, whichButton -> dialog.cancel() }
     val dialog = builder.create()
