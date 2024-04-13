@@ -15,7 +15,7 @@
             android:id="@+id/icon"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:src="@drawable/icon_large" />
+            android:src="@drawable/icon_large_new" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
