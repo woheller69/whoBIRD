@@ -82,6 +82,8 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         return birdObservations.get(position).getMillis();
     }
 
+    public String getLocation(int position) { return birdObservations.get(position).getLatitude() + ", " + birdObservations.get(position).getLongitude();}
+
     public static class ObservationViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;

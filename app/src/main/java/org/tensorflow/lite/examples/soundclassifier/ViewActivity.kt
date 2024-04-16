@@ -3,6 +3,7 @@ package org.tensorflow.lite.examples.soundclassifier
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,8 @@ import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBind
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 
@@ -25,8 +28,8 @@ class ViewActivity : AppCompatActivity() {
     private lateinit var database: BirdDBHelper
     private lateinit var adapter: RecyclerOverviewListAdapter
     private lateinit var birdObservations: ArrayList<BirdObservation>
-    lateinit var assetList: List<String>
-    lateinit var labelList: List<String>
+    private lateinit var assetList: List<String>
+    private lateinit var labelList: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,6 +99,7 @@ class ViewActivity : AppCompatActivity() {
                             binding.webviewLatinname.setText("")
                             binding.webviewLatinname.setVisibility(View.GONE)
                             binding.webviewReload.setVisibility(View.GONE)
+                            binding.webviewShare.setVisibility(View.GONE)
                         }).setTextColor(this.getColor(R.color.orange500)).show()
                 }
             }
@@ -133,6 +137,7 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewLatinname.setText("")
                         binding.webviewLatinname.setVisibility(View.GONE)
                         binding.webviewReload.setVisibility(View.GONE)
+                        binding.webviewShare.setVisibility(View.GONE)
                     } else {
                         if (binding.webviewUrl.toString() != url) {
                             binding.webview.setVisibility(View.INVISIBLE)
@@ -146,6 +151,8 @@ class ViewActivity : AppCompatActivity() {
                             binding.webviewLatinname.setText(labelList[adapter.getSpeciesID(position)].split("_").first())
                             binding.webviewLatinname.setVisibility(View.VISIBLE)
                             binding.webviewReload.setVisibility(View.VISIBLE)
+                            binding.webviewShare.setVisibility(View.VISIBLE)
+                            binding.webviewShare.setTag(position)
                             binding.icon.setVisibility(View.GONE)
                         }
                     }
@@ -225,5 +232,32 @@ class ViewActivity : AppCompatActivity() {
     fun reload(view: View) {
         binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
         binding.webview.loadUrl(binding.webviewUrl.text.toString())
+    }
+
+    fun share(view: View) {
+        val position = binding.webviewShare.tag as Int
+
+        val id = adapter.getSpeciesID(position)
+
+        val sdf: SimpleDateFormat
+        val date = Date(adapter.getMillis(position))
+        sdf = if (DateFormat.is24HourFormat(this)) {
+            SimpleDateFormat("HH:mm", Locale.getDefault())
+        } else {
+            SimpleDateFormat("hh:mm aa", Locale.getDefault())
+        }
+        val timeString = sdf.format(date)
+
+        val df = java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT)
+        val dateString = df.format(adapter.getMillis(position))
+
+        val locationString = adapter.getLocation(position)
+
+        val shareString = dateString + ", " + timeString + ", " + labelList[id].replace("_",", ") + ", " + locationString +"\n\nGet whoBIRD on F-Droid"
+
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.type = "text/plain"
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareString)
+        startActivity(Intent.createChooser(shareIntent, ""))
     }
 }

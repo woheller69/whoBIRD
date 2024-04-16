@@ -36,6 +36,14 @@
                 android:layout_alignParentStart="true"
                 android:src="@drawable/ic_reload_24dp"
                 android:onClick="reload"/>
+            <ImageButton
+                android:id="@+id/webview_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_toEndOf="@id/webview_reload"
+                android:src="@drawable/ic_share_24dp"
+                android:onClick="share"/>
             <TextView
                 android:id="@+id/webview_url"
                 android:layout_width="wrap_content"

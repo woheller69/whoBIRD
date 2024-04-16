@@ -154,6 +154,7 @@ class MainActivity : AppCompatActivity() {
     }
     if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
       perms.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+      perms.add(Manifest.permission.ACCESS_FINE_LOCATION)
     }
     if (!perms.isEmpty()) requestPermissions(perms.toTypedArray(), REQUEST_PERMISSIONS)
   }

@@ -89,7 +89,7 @@ class SoundClassifier(
     /** Probability value above which a class is labeled as active (i.e., detected) (default 0.3) */
     var probabilityThreshold: Float = 0.3f,  //min must be > 0
     /** Probability value above which a class in the meta model is labeled as active (i.e., detected) the display. (default 0.01) */
-    var metaProbabilityThreshold: Float = 0.01f,  //min must be > 0
+    var metaProbabilityThreshold: Float = 0.008f,  //min must be > 0
     /** Probability value above which a class is shown as image. (default 0.5) */
     var displayImageThreshold: Float = 0.65f,  //min must be > 0
   )
