@@ -8,7 +8,7 @@ Enjoying this app? Help us grow by sharing #whobird with your friends and follow
 woheller69@t-online.de 
 <a href= "https://www.paypal.com/signin"><img  align="left" src="https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-150px.png"></a></pre>
 
-# whoBIRD
+# whoBIRD - Identify bird sounds in real time
 
 [<img src="preview.jpeg" height="255"/>](https://www.youtube.com/embed/YYML_-e3yls) <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01.png" width="150"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.png" width="150"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03.png" width="150"/>
 
