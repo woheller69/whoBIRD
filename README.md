@@ -1,4 +1,4 @@
-Enjoying this app? Help us grow by sharing #whobird with your friends and followers on Instagram! Together, let's build a vibrant community!
+Enjoying this app? Help us grow user base by sharing my Instagram highlight video with your friends and followers!
 
 <a href="https://www.instagram.com/docwolle69" target="_blank">
 <img src="https://img.shields.io/badge/Instagram-Profile-blue?style=social&logo=instagram" alt="Instagram" height="40"/></a>
@@ -14,9 +14,9 @@ woheller69@t-online.de
 
 Introducing whoBIRD, the ultimate birding companion that can recognize birds by their sounds, anywhere in the world!
 Powered by the cutting-edge BirdNET project, whoBIRD boasts an extensive database of over 6,000 bird species worldwide.
-Using advanced machine learning algorithms, the app can accurately identify birds based on their unique vocalizations.
+Using advanced machine learning algorithms, this Android app can accurately identify birds based on their unique vocalizations.
 
-What's more, whoBIRD performs its magic entirely on your device, without requiring an internet connection.
+What's more, whoBIRD performs its magic in real time entirely on your device, without requiring an internet connection.
 This means you can use it anytime, anywhere – whether you're deep in the forest or at the edge of a remote lake.
 
 <a href="https://f-droid.org/packages/org.woheller69.whobird/" target="_blank">
