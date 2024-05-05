@@ -44,6 +44,14 @@
                 android:layout_toEndOf="@id/webview_reload"
                 android:src="@drawable/ic_share_24dp"
                 android:onClick="share"/>
+            <ImageButton
+                android:id="@+id/webview_ebird"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/webview_reload"
+                android:src="@drawable/ic_info_24dp"
+                android:onClick="ebird"/>
             <TextView
                 android:id="@+id/webview_url"
                 android:layout_width="wrap_content"

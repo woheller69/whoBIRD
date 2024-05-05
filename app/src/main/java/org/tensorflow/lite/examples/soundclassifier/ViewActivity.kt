@@ -2,6 +2,7 @@ package org.tensorflow.lite.examples.soundclassifier
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.util.Log
@@ -30,6 +31,7 @@ class ViewActivity : AppCompatActivity() {
     private lateinit var birdObservations: ArrayList<BirdObservation>
     private lateinit var assetList: List<String>
     private lateinit var labelList: List<String>
+    private lateinit var eBirdList: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,6 +101,7 @@ class ViewActivity : AppCompatActivity() {
                             binding.webviewLatinname.setText("")
                             binding.webviewLatinname.setVisibility(View.GONE)
                             binding.webviewReload.setVisibility(View.GONE)
+                            binding.webviewEbird.setVisibility(View.GONE)
                             binding.webviewShare.setVisibility(View.GONE)
                         }).setTextColor(this.getColor(R.color.orange500)).show()
                 }
@@ -107,6 +110,7 @@ class ViewActivity : AppCompatActivity() {
         }
         loadLabels(this)
         loadAssetList(this)
+        loadEbirdList(this)
     }
 
     override fun onResume() {
@@ -137,6 +141,7 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewLatinname.setText("")
                         binding.webviewLatinname.setVisibility(View.GONE)
                         binding.webviewReload.setVisibility(View.GONE)
+                        binding.webviewEbird.setVisibility(View.GONE)
                         binding.webviewShare.setVisibility(View.GONE)
                     } else {
                         if (binding.webviewUrl.toString() != url) {
@@ -151,6 +156,8 @@ class ViewActivity : AppCompatActivity() {
                             binding.webviewLatinname.setText(labelList[adapter.getSpeciesID(position)].split("_").first())
                             binding.webviewLatinname.setVisibility(View.VISIBLE)
                             binding.webviewReload.setVisibility(View.VISIBLE)
+                            binding.webviewEbird.setVisibility(View.VISIBLE)
+                            binding.webviewEbird.setTag(position)
                             binding.webviewShare.setVisibility(View.VISIBLE)
                             binding.webviewShare.setTag(position)
                             binding.icon.setVisibility(View.GONE)
@@ -164,7 +171,7 @@ class ViewActivity : AppCompatActivity() {
     }
 
 
-    /** Retrieve asset list from "asset_list" file */
+    /** Retrieve asset list from "assets" file */
     private fun loadAssetList(context: Context) {
 
         try {
@@ -179,6 +186,24 @@ class ViewActivity : AppCompatActivity() {
             assetList = wordList.map { it }
         } catch (e: IOException) {
             Log.e("ViewActivity", "Failed to read labels ${"assets.txt"}: ${e.message}")
+        }
+    }
+
+    /** Retrieve eBird taxonomy list from "taxo_code" file */
+    private fun loadEbirdList(context: Context) {
+
+        try {
+            val reader =
+                BufferedReader(InputStreamReader(context.assets.open("taxo_code.txt")))
+            val wordList = mutableListOf<String>()
+            reader.useLines { lines ->
+                lines.forEach {
+                    wordList.add(it.trim())
+                }
+            }
+            eBirdList = wordList.map { it }
+        } catch (e: IOException) {
+            Log.e("ViewActivity", "Failed to read labels ${"taxo_code.txt"}: ${e.message}")
         }
     }
 
@@ -259,5 +284,11 @@ class ViewActivity : AppCompatActivity() {
         shareIntent.type = "text/plain"
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareString)
         startActivity(Intent.createChooser(shareIntent, ""))
+    }
+
+    fun ebird(view: View) {
+        val position = binding.webviewShare.tag as Int
+        val id = adapter.getSpeciesID(position)
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://ebird.org/species/"+eBirdList[id])))
     }
 }

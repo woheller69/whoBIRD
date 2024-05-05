@@ -64,6 +64,7 @@ public class Downloader {
     }
 
     public static void downloadModels(final Activity activity, ActivityDownloadBinding binding) {
+        binding.downloadProgress.setProgress(0);
         File modelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);
         if (!modelFile.exists()) {
             Log.d("whoBIRD", "model file does not exist");
