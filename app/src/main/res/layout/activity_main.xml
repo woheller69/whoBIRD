@@ -111,6 +111,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/orange500"
                         android:textColor="@color/orange500" />
 
                     <TextView
@@ -132,6 +133,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/orange500"
                         android:textColor="@color/orange500" />
 
                     <TextView
