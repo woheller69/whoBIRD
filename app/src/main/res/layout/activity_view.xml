@@ -74,7 +74,8 @@
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/holo_orange_light"
+                android:textIsSelectable="true"
+                android:textColor="@color/orange500"
                 android:textSize="14dp" />
             <TextView
                 android:id="@+id/webview_latinname"
@@ -87,7 +88,8 @@
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="italic"
-                android:textColor="@android:color/holo_orange_light"
+                android:textIsSelectable="true"
+                android:textColor="@color/orange500"
                 android:textSize="10dp" />
         </RelativeLayout>
         <LinearLayout

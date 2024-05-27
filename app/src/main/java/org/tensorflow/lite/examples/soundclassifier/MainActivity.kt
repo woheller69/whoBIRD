@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_pause_24dp))
       }
     }
-    binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+    binding.bottomNavigationView.setOnItemSelectedListener { item ->
       when (item.itemId) {
         R.id.action_view -> {
           intent = Intent(this, ViewActivity::class.java)

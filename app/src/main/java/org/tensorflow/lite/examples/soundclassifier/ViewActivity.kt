@@ -50,6 +50,8 @@ class ViewActivity : AppCompatActivity() {
         binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
         binding.webview.settings.setDomStorageEnabled(true)
         binding.webview.settings.setJavaScriptEnabled(true)
+        binding.webview.settings.setBuiltInZoomControls(true);
+        binding.webview.settings.setDisplayZoomControls(false);
 
         val linearLayoutManager = LinearLayoutManager(this)
         binding.recyclerObservations.setLayoutManager(linearLayoutManager)
@@ -65,7 +67,7 @@ class ViewActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         }
 
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_mic -> {
                     finish()
