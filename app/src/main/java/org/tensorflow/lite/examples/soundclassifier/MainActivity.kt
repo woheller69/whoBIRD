@@ -21,9 +21,10 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.view.Gravity
+import android.util.DisplayMetrics
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -31,15 +32,13 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import net.lingala.zip4j.ZipFile
-import net.lingala.zip4j.exception.ZipException
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import java.io.File
-import java.util.Objects
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,8 +51,14 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     //Set aspect ratio for webview and icon
-    val windowMetrics = windowManager.currentWindowMetrics
-    val width = windowMetrics.bounds.width()
+    val width = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      val windowMetrics = windowManager.currentWindowMetrics
+      windowMetrics.bounds.width()
+    } else {
+      val displayMetrics = DisplayMetrics()
+      windowManager.defaultDisplay.getMetrics(displayMetrics)
+      displayMetrics.widthPixels
+    }
     val paramsWebview: ViewGroup.LayoutParams = binding.webview.getLayoutParams() as ViewGroup.LayoutParams
     paramsWebview.height = (width / 1.8f).toInt()
     val paramsIcon: ViewGroup.LayoutParams = binding.icon.getLayoutParams() as ViewGroup.LayoutParams
@@ -168,6 +173,7 @@ class MainActivity : AppCompatActivity() {
 
   companion object {
     const val REQUEST_PERMISSIONS = 1337
+    const val REQUEST_BACKUP_FILE = 1338
   }
 
   fun reload(view: View) {
@@ -188,40 +194,49 @@ class MainActivity : AppCompatActivity() {
         return true
       }
       R.id.action_backup -> {
-        performBackup()
+        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        intent.setType("application/zip")
+        intent.putExtra(Intent.EXTRA_TITLE, resources.getString(R.string.app_name))
+        startActivityForResult(intent, REQUEST_BACKUP_FILE)
         return true
       }
       else -> return super.onOptionsItemSelected(item)
     }
   }
 
-  fun performBackup() {
-    val extStorage: File
-    val intData: File
-    intData = File(
-      Environment.getDataDirectory().toString() + "//data//" + this.packageName + "//databases//"
-    )
-    extStorage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
-    val filesBackup = resources.getString(R.string.app_name) + ".zip"
-    val dbBackup = File(extStorage, filesBackup)
-    val builder = AlertDialog.Builder(this)
-    builder.setMessage(resources.getString(R.string.backup_database) + " -> " + dbBackup.toString())
-    builder.setPositiveButton(R.string.dialog_OK_button) { dialog, whichButton ->
-      if (dbBackup.exists()) {
-        if (!dbBackup.delete()) {
-          Toast.makeText(this, resources.getString(R.string.toast_delete), Toast.LENGTH_LONG)
-            .show()
-        }
-      }
-      try {
-        ZipFile(dbBackup).addFolder(intData)
-      } catch (e: ZipException) {
-        Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+  override fun onActivityResult(requestCode: Int, resultCode: Int, dataIntent: Intent?) {
+    super.onActivityResult(requestCode, resultCode, dataIntent)
+    if (requestCode == REQUEST_BACKUP_FILE && resultCode == RESULT_OK && dataIntent != null) {
+      dataIntent.data?.let {
+        performBackup(it)
       }
     }
-    builder.setNegativeButton(R.string.dialog_NO_button) { dialog, whichButton -> dialog.cancel() }
-    val dialog = builder.create()
-    dialog.show()
-    Objects.requireNonNull(dialog.window)?.setGravity(Gravity.BOTTOM)
+  }
+
+  private fun performBackup(uri: Uri) {
+    val intData: File = File(
+      Environment.getDataDirectory().toString() + "//data//" + this.packageName + "//databases//"
+    )
+    try {
+      val tmpFile = File(cacheDir, "backup.zip")
+      if (tmpFile.exists()) {
+        tmpFile.delete()
+      }
+      ZipFile(tmpFile).addFolder(intData)
+      var srcStream = tmpFile.inputStream()
+      var dstStream = contentResolver.openOutputStream(uri)!!
+      val buffer = ByteArray(1024)
+      var read: Int
+      while ((srcStream.read(buffer).also { read = it }) != -1) {
+        dstStream.write(buffer, 0, read)
+      }
+      srcStream.close()
+      dstStream.close()
+      tmpFile.delete()
+    } catch (e: Exception) {
+      Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+      e.printStackTrace()
+    }
   }
 }
