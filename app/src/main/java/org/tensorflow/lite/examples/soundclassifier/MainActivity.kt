@@ -21,7 +21,9 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -44,8 +46,14 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     //Set aspect ratio for webview and icon
-    val windowMetrics = windowManager.currentWindowMetrics
-    val width = windowMetrics.bounds.width()
+    val width = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      val windowMetrics = windowManager.currentWindowMetrics
+      windowMetrics.bounds.width()
+    } else {
+      val displayMetrics = DisplayMetrics()
+      windowManager.defaultDisplay.getMetrics(displayMetrics)
+      displayMetrics.widthPixels
+    }
     val paramsWebview: ViewGroup.LayoutParams = binding.webview.getLayoutParams() as ViewGroup.LayoutParams
     paramsWebview.height = (width / 1.8f).toInt()
     val paramsIcon: ViewGroup.LayoutParams = binding.icon.getLayoutParams() as ViewGroup.LayoutParams
