@@ -4,23 +4,32 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.text.format.DateFormat
 import android.util.Log
+import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebSettings
 import android.widget.CompoundButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import net.lingala.zip4j.ZipFile
+import net.lingala.zip4j.exception.ZipException
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBinding
 import java.io.BufferedReader
+import java.io.File
 import java.io.IOException
 import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.Objects
 
 
 class ViewActivity : AppCompatActivity() {
@@ -70,42 +79,15 @@ class ViewActivity : AppCompatActivity() {
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_mic -> {
-                    finish()
+                    intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
                 }
-                R.id.action_share -> {
-                    val database = BirdDBHelper.getInstance(this)
-                    val intent = Intent(Intent.ACTION_SEND)
-                    val shareBody = database.exportAllEntriesAsCSV().joinToString("\n")
-                    intent.setType("text/plain")
-                    intent.putExtra(Intent.EXTRA_TEXT, shareBody)
-                    startActivity(Intent.createChooser(intent, ""))
+                R.id.action_about -> {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")))
                 }
-                R.id.action_delete -> {
-
-                    Snackbar.make(
-                        binding.bottomNavigationView,
-                        this.getString(R.string.delete),
-                        Snackbar.LENGTH_LONG
-                    ).setAction(this.getString(android.R.string.ok),
-                        {
-                            val database = BirdDBHelper.getInstance(this)
-                            database.clearAllEntries()
-                            Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
-                            birdObservations.clear()
-                            adapter.notifyDataSetChanged()
-                            binding.webview.setVisibility(View.GONE)
-                            binding.webview.loadUrl("about:blank")
-                            binding.icon.setVisibility(View.VISIBLE)
-                            binding.webviewUrl.setText("")
-                            binding.webviewUrl.setVisibility(View.GONE)
-                            binding.webviewName.setText("")
-                            binding.webviewName.setVisibility(View.GONE)
-                            binding.webviewLatinname.setText("")
-                            binding.webviewLatinname.setVisibility(View.GONE)
-                            binding.webviewReload.setVisibility(View.GONE)
-                            binding.webviewEbird.setVisibility(View.GONE)
-                            binding.webviewShare.setVisibility(View.GONE)
-                        }).setTextColor(this.getColor(R.color.orange500)).show()
+                R.id.action_settings -> {
+                    intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
                 }
             }
             true
@@ -292,5 +274,86 @@ class ViewActivity : AppCompatActivity() {
         val position = binding.webviewShare.tag as Int
         val id = adapter.getSpeciesID(position)
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://ebird.org/species/"+eBirdList[id])))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.view, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_share_db -> {
+                val database = BirdDBHelper.getInstance(this)
+                val intent = Intent(Intent.ACTION_SEND)
+                val shareBody = database.exportAllEntriesAsCSV().joinToString("\n")
+                intent.setType("text/plain")
+                intent.putExtra(Intent.EXTRA_TEXT, shareBody)
+                startActivity(Intent.createChooser(intent, ""))
+                return true
+            }
+            R.id.action_delete_db -> {
+                Snackbar.make(
+                    binding.bottomNavigationView,
+                    this.getString(R.string.delete).uppercase(),
+                    Snackbar.LENGTH_LONG
+                ).setAction(this.getString(android.R.string.ok),
+                    {
+                        val database = BirdDBHelper.getInstance(this)
+                        database.clearAllEntries()
+                        Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
+                        birdObservations.clear()
+                        adapter.notifyDataSetChanged()
+                        binding.webview.setVisibility(View.GONE)
+                        binding.webview.loadUrl("about:blank")
+                        binding.icon.setVisibility(View.VISIBLE)
+                        binding.webviewUrl.setText("")
+                        binding.webviewUrl.setVisibility(View.GONE)
+                        binding.webviewName.setText("")
+                        binding.webviewName.setVisibility(View.GONE)
+                        binding.webviewLatinname.setText("")
+                        binding.webviewLatinname.setVisibility(View.GONE)
+                        binding.webviewReload.setVisibility(View.GONE)
+                        binding.webviewEbird.setVisibility(View.GONE)
+                        binding.webviewShare.setVisibility(View.GONE)
+                    }).setTextColor(this.getColor(R.color.orange500)).show()
+                return true
+            }
+            R.id.action_save_db -> {
+                performBackup()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+    fun performBackup() {
+        val extStorage: File
+        val intData: File
+        intData = File(
+            Environment.getDataDirectory().toString() + "//data//" + this.packageName + "//databases//"
+        )
+        extStorage = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+        val filesBackup = resources.getString(R.string.app_name) + ".zip"
+        val dbBackup = File(extStorage, filesBackup)
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage(resources.getString(R.string.backup_database) + " -> " + dbBackup.toString())
+        builder.setPositiveButton(R.string.dialog_OK_button) { dialog, whichButton ->
+            if (dbBackup.exists()) {
+                if (!dbBackup.delete()) {
+                    Toast.makeText(this, resources.getString(R.string.toast_delete), Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+            try {
+                ZipFile(dbBackup).addFolder(intData)
+            } catch (e: ZipException) {
+                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
+            }
+        }
+        builder.setNegativeButton(R.string.dialog_NO_button) { dialog, whichButton -> dialog.cancel() }
+        val dialog = builder.create()
+        dialog.show()
+        Objects.requireNonNull(dialog.window)?.setGravity(Gravity.BOTTOM)
     }
 }

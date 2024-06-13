@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<Preference
+    android:key="reset"
+    android:layout="@layout/reset_button"/>
+
+<ListPreference
+    app:defaultValue="9"
+    app:entries="@array/audio_source_entries"
+    app:entryValues="@array/audio_source_values"
+    app:key="audio_source"
+    app:title="@string/settings_audiosource"
+    app:useSimpleSummaryProvider="true" />
+
+<SeekBarPreference
+    android:title="@string/settings_highpass"
+    android:key="high_pass"
+    android:max="1000"
+    android:defaultValue="0"
+    app:showSeekBarValue="true"
+    />
+
+<SeekBarPreference
+    android:title="@string/settings_threshold"
+    android:key="model_threshold"
+    android:max="100"
+    android:defaultValue="30"
+    app:showSeekBarValue="true"
+    />
+
+</PreferenceScreen>

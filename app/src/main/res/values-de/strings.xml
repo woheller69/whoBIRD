@@ -19,4 +19,11 @@
     <string name="delete">Löschen?</string>
     <string name="backup_database">Sichern</string>
     <string name="toast_delete">Bitte die Datei zuerst löschen und erneut versuchen</string>
+    <string name="share_app">App teilen</string>
+    <string name="settings_threshold">Schwellwert [%]</string>
+    <string name="settings_highpass">Hochpassfilter [Hz]</string>
+    <string name="source_unprocessed">Unbearbeitet</string>
+    <string name="source_microphone">Mikrofon</string>
+    <string name="source_voicerecognition">Spracherkennung</string>
+    <string name="settings_audiosource">Audioquelle</string>
 </resources>

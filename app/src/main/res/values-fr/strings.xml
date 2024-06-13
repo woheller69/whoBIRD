@@ -20,4 +20,11 @@
     <string name="delete">Supprimer?</string>
     <string name="backup_database">Backup</string>
     <string name="toast_delete">Please delete file and try again</string>
+    <string name="share_app">Share app</string>
+    <string name="settings_threshold">Threshold [%]</string>
+    <string name="settings_highpass">High-Pass Filter [Hz]</string>
+    <string name="source_unprocessed">Unprocessed</string>
+    <string name="source_microphone">Microphone</string>
+    <string name="source_voicerecognition">Voice Recognition</string>
+    <string name="settings_audiosource">Audio Source</string>
 </resources>

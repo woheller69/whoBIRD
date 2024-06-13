@@ -31,8 +31,10 @@ import android.view.View
 import android.webkit.WebSettings
 import android.widget.TextView
 import android.widget.Toast
+import androidx.preference.PreferenceManager
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
+import uk.me.berndporr.iirj.Butterworth
 import java.io.BufferedReader
 import java.io.File
 import java.io.IOException
@@ -84,12 +86,10 @@ class SoundClassifier(
     val sampleRate: Int = 48000,
     /** Multiplier for audio samples  */
     val warmupRuns: Int = 3,
-    /** Number of points in average to reduce noise. (default 10)*/
-    val pointsInAverage: Int = 1,
-    /** Probability value above which a class is labeled as active (i.e., detected) (default 0.3) */
-    var probabilityThreshold: Float = 0.3f,  //min must be > 0
     /** Probability value above which a class in the meta model is labeled as active (i.e., detected) the display. (default 0.01) */
-    var metaProbabilityThreshold: Float = 0.008f,  //min must be > 0
+    var metaProbabilityThreshold1: Float = 0.01f,  //min must be > 0
+    var metaProbabilityThreshold2: Float = 0.008f,  //min must be > 0
+    var metaProbabilityThreshold3: Float = 0.001f,  //min must be > 0
     /** Probability value above which a class is shown as image. (default 0.5) */
     var displayImageThreshold: Float = 0.65f,  //min must be > 0
   )
@@ -334,8 +334,13 @@ class SoundClassifier(
 
 
     for (i in metaPredictionProbs.indices) {
-      metaPredictionProbs[i] = if (metaPredictionProbs[i] >= options.metaProbabilityThreshold) {
+      metaPredictionProbs[i] =
+        if (metaPredictionProbs[i] >= options.metaProbabilityThreshold1) {
         1f
+      } else if (metaPredictionProbs[i] >= options.metaProbabilityThreshold2) {
+        0.8f
+      } else if (metaPredictionProbs[i] >= options.metaProbabilityThreshold3) {
+        0.5f
       } else {
         0f
       }
@@ -345,7 +350,6 @@ class SoundClassifier(
   private fun warmUpModel() {
     generateDummyAudioInput(inputBuffer)
     for (n in 0 until options.warmupRuns) {
-      val t0 = SystemClock.elapsedRealtimeNanos()
 
       // Create input and output buffers.
       val outputBuffer = FloatBuffer.allocate(modelNumClasses)
@@ -353,13 +357,6 @@ class SoundClassifier(
       outputBuffer.rewind()
       interpreter.run(inputBuffer, outputBuffer)
 
-      Log.i(
-        TAG,
-        "Switches: Done calling interpreter.run(): %s (%.6f ms)".format(
-          outputBuffer.array().contentToString(),
-          (SystemClock.elapsedRealtimeNanos() - t0) / NANOS_IN_MILLIS
-        )
-      )
     }
   }
 
@@ -398,9 +395,10 @@ class SoundClassifier(
       bufferSize = modelRequiredBufferSize
     }
     Log.i(TAG, "bufferSize = $bufferSize")
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
     audioRecord = AudioRecord(
       // including MIC, UNPROCESSED, and CAMCORDER.
-      MediaRecorder.AudioSource.UNPROCESSED,
+      Integer.parseInt(sharedPref.getString("audio_source", MediaRecorder.AudioSource.UNPROCESSED.toString())),
       options.sampleRate,
       AudioFormat.CHANNEL_IN_MONO,
       AudioFormat.ENCODING_PCM_16BIT,
@@ -450,6 +448,10 @@ class SoundClassifier(
       Log.e(TAG, "Switches: Cannot start recognition because model is unavailable.")
       return
     }
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
+    val highPass = sharedPref.getInt("high_pass",0)
+    val butterworth = Butterworth()
+    butterworth.highPass(6, 48000.0, highPass.toDouble())
 
     val circularBuffer = ShortArray(modelInputLength)
 
@@ -476,18 +478,12 @@ class SoundClassifier(
       // Feed data to the input buffer.
       var samplesAreAllZero = true
       for (i in 0 until modelInputLength) {
-        val s = if (i > options.pointsInAverage) {
-          ((i - options.pointsInAverage + 1)..i).map {
-            circularBuffer[(j + it) % modelInputLength]
-          }
-            .average()
-        } else {
-          circularBuffer[(i + j) % modelInputLength]
-        }
+          val s = circularBuffer[(i + j) % modelInputLength]
         if (samplesAreAllZero && s.toInt() != 0) {
           samplesAreAllZero = false
         }
-        inputBuffer.put(i, s.toFloat())
+        if (highPass==0)  inputBuffer.put(i, s.toFloat())
+        else inputBuffer.put(i, butterworth.filter(s.toDouble()).toFloat())
       }
 
       if (samplesAreAllZero) {
@@ -588,12 +584,14 @@ class SoundClassifier(
   }
 
   private fun updateTextView(element: IndexedValue<Float>?, tv: TextView) {
-    if (element != null && element.value > options.probabilityThreshold) {
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
+    if (element != null && element.value > sharedPref.getInt("model_threshold", 30)/100.0) {
       val label =
         labelList[element.index].split("_").last()  //show in locale language
       Handler(Looper.getMainLooper()).post {
         tv.setText(label + "  " + Math.round(element.value * 100.0) + "%")
-        if (element.value < 0.5) tv.setBackgroundResource(R.drawable.oval_holo_red_dark)
+        if (element.value < 0.3) tv.setBackgroundResource(R.drawable.oval_holo_red_dark_dotted)
+        else if (element.value < 0.5) tv.setBackgroundResource(R.drawable.oval_holo_red_dark)
         else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_holo_orange_dark)
         else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_holo_orange_light)
         else tv.setBackgroundResource(R.drawable.oval_holo_green_light)

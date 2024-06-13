@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="audio_source_entries">
+        <item>@string/source_unprocessed</item>
+        <item>@string/source_microphone</item>
+        <item>@string/source_voicerecognition</item>
+     </string-array>
+
+    <string-array name="audio_source_values">
+        <item>9</item>
+        <item>1</item>
+        <item>6</item>
+    </string-array>
+</resources>

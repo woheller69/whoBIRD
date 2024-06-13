@@ -1,0 +1,5 @@
+<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:src="@drawable/ic_reset_24dp"
+    android:paddingVertical="15dp" />
