@@ -1,0 +1,8 @@
+Dutch translation
+Add support for Android 9 and 10
+Optional high-pass filter
+New settings activity
+- select input source
+- adjust high-pass filter
+- adjust detection threshold
+UI changes
