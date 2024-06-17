@@ -24,14 +24,14 @@ import java.security.NoSuchAlgorithmException;
 
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class Downloader {
-    static String modelFILE = "model.tflite";
-    static String metaModelFILE = "metaModel.tflite";
-    static String modelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
-    static String model32URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite";
-    static String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
-    static String modelMD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
-    static String model32MD5 = "6c7c42106e56550fc8563adb31bc120e";
-    static String metaModelMD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
+    static final String modelFILE = "model.tflite";
+    static final String metaModelFILE = "metaModel.tflite";
+    static final String modelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
+    static final String model32URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite";
+    static final String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
+    static final String modelMD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
+    static final String model32MD5 = "6c7c42106e56550fc8563adb31bc120e";
+    static final String metaModelMD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
 
     public static boolean checkModels(final Activity activity) {
         File modelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);

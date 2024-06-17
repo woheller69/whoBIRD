@@ -18,7 +18,7 @@ import java.util.Locale;
 
 public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOverviewListAdapter.ObservationViewHolder> {
 
-    private Context context;
+    private final Context context;
     private final List<BirdObservation> birdObservations;
 
     public RecyclerOverviewListAdapter(Context context, List<BirdObservation> birdObservations) {
@@ -39,7 +39,7 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
         holder.probability.setText((int) Math.round(birdObservations.get(position).getProbability()*100.0)+ " %");
 
         if (birdObservations.get(position).getProbability() < 0.3 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_red_dark_thin_dotted);
-        else if (birdObservations.get(position).getProbability() < 0.5 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_dark_thin);
+        else if (birdObservations.get(position).getProbability() < 0.5 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_red_dark_thin);
         else if (birdObservations.get(position).getProbability() < 0.65 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_dark_thin);
         else if (birdObservations.get(position).getProbability() < 0.8 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_light_thin);
         else holder.holder.setBackgroundResource(R.drawable.oval_holo_green_light_thin);
@@ -87,11 +87,11 @@ public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOv
 
     public static class ObservationViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView name;
-        private TextView probability;
-        private LinearLayout holder;
-        private TextView time;
-        private TextView date;
+        private final TextView name;
+        private final TextView probability;
+        private final LinearLayout holder;
+        private final TextView time;
+        private final TextView date;
 
         public ObservationViewHolder(View itemView) {
             super(itemView);
