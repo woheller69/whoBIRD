@@ -5,4 +5,4 @@ Uygulama, gelişmiş makine öğrenimi algoritmalarını kullanarak kuşları be
 Dahası, whoBIRD işini internet bağlantısı gerektirmeden tamamen aygıtınızda gerçekleştirir.
 Bu, ister ormanın derinliklerinde ister uzak bir gölün kenarında olun, istediğiniz zaman, istediğiniz yerde kullanabileceğiniz anlamına gelir.
 
-Uygulama Android 11+ gerektirir
+Uygulama Android 9+ gerektirir

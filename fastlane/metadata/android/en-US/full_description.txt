@@ -5,4 +5,4 @@ Using advanced machine learning algorithms, the app can accurately identify bird
 What's more, whoBIRD performs its magic entirely on your device, without requiring an internet connection.
 This means you can use it anytime, anywhere – whether you're deep in the forest or at the edge of a remote lake.
 
-The app requires Android 11+
+The app requires Android 9+

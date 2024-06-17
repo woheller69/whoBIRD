@@ -5,4 +5,4 @@ Mithilfe fortschrittlicher maschineller Lernalgorithmen kann die App Vögel prä
 Und das Beste daran: whoBIRD entfaltet seine Fähigkeiten komplett auf Ihrem Gerät, ohne eine Internetverbindung zu benötigen.
 Das bedeutet, Sie können es jederzeit und überall nutzen – sei es tief im Wald oder am Ufer eines abgelegenen Sees.
 
-Die App benötigt Android 11+
+Die App benötigt Android 9+
