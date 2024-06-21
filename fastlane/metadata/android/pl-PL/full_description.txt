@@ -1,0 +1,8 @@
+whoBIRD to najlepszy towarzysz przy rozpoznawaniu ptaków, który rozpoznaje ptaki po ich dźwiękach, w dowolnym miejscu na świecie!
+Zasilany przez najnowocześniejszy projekt BirdNET, whoBIRD może pochwalić się obszerną bazą danych ponad 6000 gatunków ptaków na całym świecie.
+Korzystając z zaawansowanych algorytmów uczenia maszynowego, aplikacja może dokładnie identyfikować ptaki na podstawie ich unikalnych wokalizacji.
+
+Co więcej, whoBIRD wykonuje swoją magię całkowicie na twoim urządzeniu, bez konieczności połączenia z Internetem.
+Oznacza to, że możesz z niej korzystać w dowolnym miejscu i czasie - niezależnie od tego, czy jesteś głęboko w lesie, czy na skraju odległego jeziora.
+
+Aplikacja wymaga systemu Android 9+
