@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "org.woheller69.whobird"
-        minSdk 28
+        minSdk 26
         targetSdk 34
         versionCode 34
         versionName "3.4"

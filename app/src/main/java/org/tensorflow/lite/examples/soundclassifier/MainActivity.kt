@@ -18,8 +18,10 @@
 package org.tensorflow.lite.examples.soundclassifier
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -32,13 +34,16 @@ import android.view.WindowManager
 import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
   private lateinit var soundClassifier: SoundClassifier
   private lateinit var binding: ActivityMainBinding
+  private lateinit var audioManager: AudioManager
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -100,6 +105,18 @@ class MainActivity : AppCompatActivity() {
 
   override fun onResume() {
     super.onResume()
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+    audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    if (sharedPref.getBoolean("bluetooth",false)){
+      if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+          requestPermissions(arrayOf(Manifest.permission.BLUETOOTH_CONNECT), REQUEST_PERMISSIONS)
+        }
+      }
+      audioManager.startBluetoothSco()
+    }
+    else audioManager.stopBluetoothSco()
+
     Location.requestLocation(this, soundClassifier)
     if (!checkLocationPermission()){
       Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_SHORT).show()
@@ -116,6 +133,7 @@ class MainActivity : AppCompatActivity() {
     super.onPause()
     Location.stopLocation(this)
     if (soundClassifier.isRecording) soundClassifier.stop()
+    audioManager.stopBluetoothSco()
   }
 
   private fun checkMicrophonePermission(): Boolean {

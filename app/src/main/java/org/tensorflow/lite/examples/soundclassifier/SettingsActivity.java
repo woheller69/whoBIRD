@@ -68,6 +68,7 @@ Context mContext;
                 sharedPreferences.edit().remove("audio_source").apply();
                 sharedPreferences.edit().remove("high_pass").apply();
                 sharedPreferences.edit().remove("model_threshold").apply();
+                sharedPreferences.edit().remove("bluetooth").apply();
 
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;

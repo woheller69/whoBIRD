@@ -26,4 +26,5 @@
     <string name="source_microphone">Mikrofon</string>
     <string name="source_voicerecognition">Spracherkennung</string>
     <string name="settings_audiosource">Audioquelle</string>
+    <string name="bluetooth_connection">Bluetooth verwenden</string>
 </resources>
