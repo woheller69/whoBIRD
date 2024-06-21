@@ -17,9 +17,9 @@ import android.webkit.WebSettings
 import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
 import net.lingala.zip4j.ZipFile
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBinding
 import java.io.BufferedReader
@@ -299,12 +299,9 @@ class ViewActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_delete_db -> {
-                Snackbar.make(
-                    binding.bottomNavigationView,
-                    this.getString(R.string.delete).uppercase(),
-                    Snackbar.LENGTH_LONG
-                ).setAction(this.getString(android.R.string.ok),
-                    {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(getString(R.string.delete))
+                    .setPositiveButton(this.getString(android.R.string.ok), { _, _ ->
                         val database = BirdDBHelper.getInstance(this)
                         database.clearAllEntries()
                         Toast.makeText(this, getString(R.string.clear_db),Toast.LENGTH_SHORT).show()
@@ -322,7 +319,9 @@ class ViewActivity : AppCompatActivity() {
                         binding.webviewReload.setVisibility(View.GONE)
                         binding.webviewEbird.setVisibility(View.GONE)
                         binding.webviewShare.setVisibility(View.GONE)
-                    }).setTextColor(this.getColor(R.color.orange500)).show()
+                    })
+                    .setNegativeButton(this.getString(android.R.string.cancel), { _, _ -> })
+                    .create().show()
                 return true
             }
             R.id.action_save_db -> {
