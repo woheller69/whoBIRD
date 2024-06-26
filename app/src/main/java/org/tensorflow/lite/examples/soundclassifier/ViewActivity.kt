@@ -19,6 +19,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import net.lingala.zip4j.ZipFile
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityViewBinding
@@ -70,13 +71,21 @@ class ViewActivity : AppCompatActivity() {
         val linearLayoutManager = LinearLayoutManager(this)
         binding.recyclerObservations.setLayoutManager(linearLayoutManager)
 
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        val isDetailedFilterActive = sharedPref.getBoolean("view_detailed", false)
+        binding.checkDetailed.isChecked = isDetailedFilterActive
         binding.checkDetailed.setOnClickListener { view ->
+            val editor=sharedPref.edit()
             if ((view as CompoundButton).isChecked) {
                 birdObservations.clear()
                 birdObservations.addAll(database.getAllBirdObservations(true).sortedByDescending { it.millis })
+                editor.putBoolean("view_detailed", true)
+                editor.apply()
             } else {
                 birdObservations.clear()
                 birdObservations.addAll(database.getAllBirdObservations(false).sortedByDescending { it.millis })
+                editor.putBoolean("view_detailed", false)
+                editor.apply()
             }
             adapter.notifyDataSetChanged()
         }

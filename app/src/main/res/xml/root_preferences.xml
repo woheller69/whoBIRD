@@ -13,7 +13,7 @@
     app:title="@string/settings_audiosource"
     app:useSimpleSummaryProvider="true" />
 
-<SeekBarPreference
+<org.tensorflow.lite.examples.soundclassifier.EditTextSeekBarPreference
     android:title="@string/settings_highpass"
     android:key="high_pass"
     android:max="1000"
@@ -21,7 +21,7 @@
     app:showSeekBarValue="true"
     />
 
-<SeekBarPreference
+<org.tensorflow.lite.examples.soundclassifier.EditTextSeekBarPreference
     android:title="@string/settings_threshold"
     android:key="model_threshold"
     android:max="100"

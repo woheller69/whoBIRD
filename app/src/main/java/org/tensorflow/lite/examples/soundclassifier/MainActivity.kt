@@ -30,9 +30,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
+import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -90,6 +92,33 @@ class MainActivity : AppCompatActivity() {
         }
       }
       true
+    }
+
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+    val isShowImagesActive = sharedPref.getBoolean("main_show_images", false)
+    binding.checkShowImages.isChecked = isShowImagesActive
+    binding.checkShowImages.setOnClickListener { view ->
+      val editor=sharedPref.edit()
+      if ((view as CompoundButton).isChecked) {
+        editor.putBoolean("main_show_images", true)
+        editor.apply()
+      } else {
+        editor.putBoolean("main_show_images", false)
+        editor.apply()
+      }
+    }
+
+    val isIgnoreLocationDateActive = sharedPref.getBoolean("main_ignore_meta", false)
+    binding.checkIgnoreMeta.isChecked = isIgnoreLocationDateActive
+    binding.checkIgnoreMeta.setOnClickListener { view ->
+      val editor=sharedPref.edit()
+      if ((view as CompoundButton).isChecked) {
+        editor.putBoolean("main_ignore_meta", true)
+        editor.apply()
+      } else {
+        editor.putBoolean("main_ignore_meta", false)
+        editor.apply()
+      }
     }
 
     if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
