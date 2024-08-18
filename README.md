@@ -35,9 +35,13 @@ If a bird is detected, its name will be briefly displayed. For a detailed list o
 ## Customization Options
 
 **Ignore Date and Place**: Disable the meta model that checks if a bird can be present at your location at the current time. Useful when analyzing recordings from other locations.
+
 **Show Images**: When enabled, an image of the detected bird will be downloaded if the detection probability is high.
+
 **Audio Source**: Select the audio input that works best for your device. Typically, "Unprocessed" is the recommended choice. If using a USB microphone, select "Microphone".
+
 **High Pass Filter**: Filter out low frequencies to reduce background noise, such as traffic sounds. For example, a 200Hz filter can help minimize low-frequency noise.
+
 **Threshold**: Set the minimum probability required for a detection to be displayed. Be cautious when lowering the threshold, as it may lead to an increase in false detections.
 
 # License
