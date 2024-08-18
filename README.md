@@ -22,6 +22,24 @@ This means you can use it anytime, anywhere – whether you're deep in the fores
 <a href="https://f-droid.org/packages/org.woheller69.whobird/" target="_blank">
 <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
 
+# Instructions
+## Getting Started
+
+At first start the app will download the required BirdNET model files.
+Once the app is installed simply open it and it will begin listening and analyzing.
+
+## Detection Notifications
+
+If a bird is detected, its name will be briefly displayed. For a detailed list of all detections, navigate to the View tab.
+
+## Customization Options
+
+**Ignore Date and Place**: Disable the meta model that checks if a bird can be present at your location at the current time. Useful when analyzing recordings from other locations.
+**Show Images**: When enabled, an image of the detected bird will be downloaded if the detection probability is high.
+**Audio Source**: Select the audio input that works best for your device. Typically, "Unprocessed" is the recommended choice. If using a USB microphone, select "Microphone".
+**High Pass Filter**: Filter out low frequencies to reduce background noise, such as traffic sounds. For example, a 200Hz filter can help minimize low-frequency noise.
+**Threshold**: Set the minimum probability required for a detection to be displayed. Be cautious when lowering the threshold, as it may lead to an increase in false detections.
+
 # License
 This work is licensed under GPLv3, © woheller69
 
