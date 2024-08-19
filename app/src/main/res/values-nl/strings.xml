@@ -17,7 +17,7 @@
     <string name="show_images">Afbeeldingen tonen</string>
     <string name="clear_db">Waarnemingen verwijderd</string>
     <string name="detailed_list">Gedetailleerde lijst</string>
-    <string name="delete">Verwijderen?</string>
+    <string name="delete">Alle observaties verwijderen?</string>
     <string name="backup_database">Backup</string>
     <string name="toast_delete">Verwijder aub het bestand en probeer opnieuw</string>
     <string name="share_app">Share app</string>

@@ -31,6 +31,7 @@ Once the app is installed simply open it and it will begin listening and analyzi
 ## Detection Notifications
 
 If a bird is detected, its name will be briefly displayed. For a detailed list of all detections, navigate to the View tab.
+There you can also backup, share, or delete the database containing your observations.
 
 ## Customization Options
 

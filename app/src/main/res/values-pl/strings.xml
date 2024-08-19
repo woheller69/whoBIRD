@@ -16,7 +16,7 @@
     <string name="show_images">Pokaż obrazy</string>
     <string name="clear_db">Obserwacje usunięte</string>
     <string name="detailed_list">Szczegółowa lista</string>
-    <string name="delete">Usuwać?</string>
+    <string name="delete">Usunąć wszystkie obserwacje?</string>
     <string name="backup_database">Kopia zapasowa</string>
     <string name="toast_delete">Usuń plik i spróbuj ponownie</string>
     <string name="share_app">Udostępnij aplikację</string>

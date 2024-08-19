@@ -16,7 +16,7 @@
     <string name="show_images">Resimleri göster</string>
     <string name="clear_db">Gözlemler silindi</string>
     <string name="detailed_list">Ayrıntılı liste</string>
-    <string name="delete">Silinsin mi?</string>
+    <string name="delete">Tüm gözlemler silinsin mi?</string>
     <string name="backup_database">Yedekle</string>
     <string name="toast_delete">Lütfen dosyayı silin ve tekrar deneyin</string>
     <string name="share_app">Uygulamayı paylaş</string>

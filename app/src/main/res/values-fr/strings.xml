@@ -17,7 +17,7 @@
     <string name="show_images">Montrer les images</string>
     <string name="clear_db">Les observations ont été supprimées</string>
     <string name="detailed_list">Liste détaillée</string>
-    <string name="delete">Supprimer?</string>
+    <string name="delete">Supprimer toutes les observations ?</string>
     <string name="backup_database">Backup</string>
     <string name="toast_delete">Please delete file and try again</string>
     <string name="share_app">Share app</string>

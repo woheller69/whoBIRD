@@ -16,7 +16,7 @@
     <string name="show_images">Bilder anzeigen</string>
     <string name="clear_db">Beobachtungen gelöscht</string>
     <string name="detailed_list">Detaillierte Liste</string>
-    <string name="delete">Löschen?</string>
+    <string name="delete">Alle Beobachtungen löschen?</string>
     <string name="backup_database">Sichern</string>
     <string name="toast_delete">Bitte die Datei zuerst löschen und erneut versuchen</string>
     <string name="share_app">App teilen</string>

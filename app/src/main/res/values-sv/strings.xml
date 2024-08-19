@@ -17,7 +17,7 @@
     <string name="show_images">Visa bilder</string>
     <string name="clear_db">Observationer borttagna</string>
     <string name="detailed_list">Detaljerad lista</string>
-    <string name="delete">Ta bort?</string>
+    <string name="delete">Ta bort alla observationer?</string>
     <string name="backup_database">Säkerhetskopiera</string>
     <string name="toast_delete">Var god ta bort filen och försök igen</string>
     <string name="share_app">Dela appen</string>

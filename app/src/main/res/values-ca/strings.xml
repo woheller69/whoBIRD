@@ -17,7 +17,7 @@
     <string name="show_images">Mostrar imatges</string>
     <string name="clear_db">Observacions eliminades</string>
     <string name="detailed_list">Llista detallada</string>
-    <string name="delete">Eliminar?</string>
+    <string name="delete">Suprimeix totes les observacions?</string>
     <string name="backup_database">Backup</string>
     <string name="toast_delete">Si us plau, elimini el fitxer i torni a provar.</string>
     <string name="share_app">Share app</string>
