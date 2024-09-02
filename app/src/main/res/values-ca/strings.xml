@@ -4,8 +4,6 @@
     <string name="ignore_gps_date">Ignorar la posició i la data</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
-    <string name="dialog_OK_button">Ok</string>
-    <string name="dialog_NO_button">No</string>
     <string name="dialog_Later_button">Potser més endavant</string>
     <string name="dialog_StarOnGitHub">T\'agrada aquesta aplicació? Per favor, dona-li una estrella al Github o invita als desenvolupadors a un cafè via PayPal.</string>
     <string name="download_model">Descarregar el model</string>
@@ -18,8 +16,6 @@
     <string name="clear_db">Observacions eliminades</string>
     <string name="detailed_list">Llista detallada</string>
     <string name="delete">Suprimeix totes les observacions?</string>
-    <string name="backup_database">Backup</string>
-    <string name="toast_delete">Si us plau, elimini el fitxer i torni a provar.</string>
     <string name="share_app">Share app</string>
     <string name="settings_threshold">Threshold [%]</string>
     <string name="settings_highpass">High-Pass Filter [Hz]</string>

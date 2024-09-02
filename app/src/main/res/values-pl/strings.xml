@@ -3,8 +3,6 @@
     <string name="ignore_gps_date">Ignoruj lokalizację i datę</string>
     <string name="latitude">Szer.</string>
     <string name="longitude">Dł.</string>
-    <string name="dialog_OK_button">OK</string>
-    <string name="dialog_NO_button">Nie</string>
     <string name="dialog_Later_button">Może później</string>
     <string name="dialog_StarOnGitHub">Lubisz tę aplikację? Oznacz projekt gwiazdką na GitHub lub kup programistom kawę przez PayPal.</string>
     <string name="download_model">Pobierz model</string>
@@ -17,8 +15,6 @@
     <string name="clear_db">Obserwacje usunięte</string>
     <string name="detailed_list">Szczegółowa lista</string>
     <string name="delete">Usunąć wszystkie obserwacje?</string>
-    <string name="backup_database">Kopia zapasowa</string>
-    <string name="toast_delete">Usuń plik i spróbuj ponownie</string>
     <string name="share_app">Udostępnij aplikację</string>
     <string name="settings_threshold">Wartość progowa [%]</string>
     <string name="settings_highpass">Filtr górnoprzepustowy [Hz]</string>

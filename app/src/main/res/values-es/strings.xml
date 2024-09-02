@@ -4,8 +4,6 @@
     <string name="ignore_gps_date">Ignorar ubicación y fecha</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
-    <string name="dialog_OK_button">OK</string>
-    <string name="dialog_NO_button">No</string>
     <string name="dialog_Later_button">Quizá más tarde</string>
     <string name="dialog_StarOnGitHub">¿Te gusta esta aplicación? Por favor, dale una estrella en GitHub o invita al desarrollador a un café via PayPal.</string>
     <string name="download_model">Descargar modelo</string>
@@ -18,8 +16,6 @@
     <string name="clear_db">Observaciones borradas</string>
     <string name="detailed_list">Lista detallada</string>
     <string name="delete">¿Borrar todas las observaciones?</string>
-    <string name="backup_database">Backup</string>
-    <string name="toast_delete">Please delete file and try again</string>
     <string name="share_app">Share app</string>
     <string name="settings_threshold">Threshold [%]</string>
     <string name="settings_highpass">High-Pass Filter [Hz]</string>

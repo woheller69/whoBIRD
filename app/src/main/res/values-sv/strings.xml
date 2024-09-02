@@ -4,8 +4,6 @@
     <string name="ignore_gps_date">Ignorera plats och tidpunkt</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
-    <string name="dialog_OK_button">Okej</string>
-    <string name="dialog_NO_button">Nej</string>
     <string name="dialog_Later_button">Kanske senare</string>
     <string name="dialog_StarOnGitHub">Gillar du den här appen? Stjärnmarkera gärna projektet på GitHub, eller kanske bjud utvecklaren på en kaffe via PayPal.</string>
     <string name="download_model">Hämta modell</string>
@@ -18,8 +16,6 @@
     <string name="clear_db">Observationer borttagna</string>
     <string name="detailed_list">Detaljerad lista</string>
     <string name="delete">Ta bort alla observationer?</string>
-    <string name="backup_database">Säkerhetskopiera</string>
-    <string name="toast_delete">Var god ta bort filen och försök igen</string>
     <string name="share_app">Dela appen</string>
     <string name="settings_threshold">Tröskel [%]</string>
     <string name="settings_highpass">Högpassfilter [Hz]</string>

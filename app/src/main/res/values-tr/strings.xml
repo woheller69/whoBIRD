@@ -3,8 +3,6 @@
     <string name="ignore_gps_date">Konum ve tarihi göz ardı et</string>
     <string name="latitude">Enlem</string>
     <string name="longitude">Boylam</string>
-    <string name="dialog_OK_button">Tamam</string>
-    <string name="dialog_NO_button">Hayır</string>
     <string name="dialog_Later_button">Belki daha sonra</string>
     <string name="dialog_StarOnGitHub">Bu uygulamayı beğendiniz mi? Lütfen GitHub\'da yıldız verin veya geliştiriciye PayPal aracılığıyla bir kahve ısmarlayın.</string>
     <string name="download_model">Model İndir</string>
@@ -17,8 +15,6 @@
     <string name="clear_db">Gözlemler silindi</string>
     <string name="detailed_list">Ayrıntılı liste</string>
     <string name="delete">Tüm gözlemler silinsin mi?</string>
-    <string name="backup_database">Yedekle</string>
-    <string name="toast_delete">Lütfen dosyayı silin ve tekrar deneyin</string>
     <string name="share_app">Uygulamayı paylaş</string>
     <string name="settings_threshold">Eşik [%]</string>
     <string name="settings_highpass">Yüksek Geçiş Filtresi [Hz]</string>
