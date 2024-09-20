@@ -2816,9 +2816,9 @@ Horornis fortipes_Rossinyol Bord Muntanyenc
 Horornis ruficapilla_Rossinyol Bord de les Fiji
 Horornis seebohmi_Rossinyol Bord de Luzon
 Horornis vulcanius_Sunda Bush Warbler
-Human non-vocal_Human non-vocal
-Human vocal_Human vocal
-Human whistle_Human whistle
+Human non-vocal_Humà (no vocal)
+Human vocal_Veu humana
+Human whistle_Xiulet Humà
 Hydrobates castro_Ocell de Tempesta de Madeira
 Hydrobates leucorhous_Ocell de Tempesta de Leach
 Hydrobates monorhis_Ocell de Tempesta de Swinhoe
