@@ -17,7 +17,7 @@
     <string name="detailed_list">Llista detallada</string>
     <string name="delete">Suprimeix totes les observacions?</string>
     <string name="share_app">Compartir aplicació</string>
-    <string name="settings_threshold">Threshold [%]</string>
+    <string name="settings_threshold">Llindar [%]</string>
     <string name="settings_highpass">Filtre passaalt [Hz]</string>
     <string name="source_unprocessed">No processat</string>
     <string name="source_microphone">Micròfon</string>
