@@ -1,0 +1,2 @@
+Support for Android 8
+Additional / updated languages
