@@ -201,7 +201,15 @@ class SoundClassifier(
   /** Retrieve labels from "labels.txt" file */
   private fun loadLabels(context: Context) {
     val localeList = context.resources.configuration.locales
-    val language = localeList.get(0).language
+    var language = localeList.get(0).language
+
+    if (language == "en") {
+      val country = localeList.get(0).country
+      when (country) {
+        "GB" -> language = "en_uk"
+      }
+    }
+
     var filename = options.labelsBase+"_${language}.txt"
 
     //Check if file exists
