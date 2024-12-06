@@ -205,8 +205,15 @@ class SoundClassifier(
 
     if (language == "en") {
       val country = localeList.get(0).country
-      when (country) {
-        "GB" -> language = "en_uk"
+      language = when (country) {
+          "GB" -> "en_uk"
+          else -> "en"
+      }
+    } else if (language == "pt") {
+      val country = localeList.get(0).country
+      language = when (country) {
+          "BR" -> "pt_BR"
+          else -> "pt_PT"
       }
     }
 
