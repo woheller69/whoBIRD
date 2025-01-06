@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="samples_zero">Nessun ingresso audio: Tutti i campioni audio sono vuoti!</string>
+    <string name="ignore_gps_date">Ignora posizione e data</string>
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lon</string>
+    <string name="dialog_Later_button">Forse più tardi</string>
+    <string name="dialog_StarOnGitHub">Ti piace quest’app? Per favore lascia una stella su GitHub oppure offri un caffè allo sviluppatore tramite PayPal.</string>
+    <string name="download_model">Scarica modello</string>
+    <string name="download_model_text">whoBIRD ha bisogno di scaricare il modello BirdNET (~ 30MB). \n Uso commerciale non consentito \n(licenza CC-BY-NC-SA 4.0)</string>
+    <string name="start">SI PARTE</string>
+    <string name="error_download">Errore durante il download</string>
+    <string name="error_audio_permission">Accesso al microfono non autorizzato</string>
+    <string name="error_location_permission">Accesso alla posizione non autorizzato</string>
+    <string name="show_images">Mostra immagini</string>
+    <string name="clear_db">Osservazioni eliminate</string>
+    <string name="detailed_list">Elenco dettagliato</string>
+    <string name="delete">Eliminare tutte le osservazioni?</string>
+    <string name="share_app">Condividi app</string>
+    <string name="settings_threshold">Soglia [%]</string>
+    <string name="settings_highpass">Filtro passa-alto [Hz]</string>
+    <string name="source_unprocessed">Non elaborato</string>
+    <string name="source_microphone">Microfono</string>
+    <string name="source_voicerecognition">Riconoscimento vocale</string>
+    <string name="settings_audiosource">Sorgente audio</string>
+</resources>
