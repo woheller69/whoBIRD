@@ -5,7 +5,7 @@
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Forse più tardi</string>
-    <string name="dialog_StarOnGitHub">Ti piace quest’app? Per favore lascia una stella su GitHub oppure offri un caffè allo sviluppatore tramite PayPal.</string>
+    <string name="dialog_StarOnGitHub">Ti piace questa app? Per favore lascia una stella su GitHub oppure offri un caffè allo sviluppatore tramite PayPal.</string>
     <string name="download_model">Scarica modello</string>
     <string name="download_model_text">whoBIRD ha bisogno di scaricare il modello BirdNET (~ 30MB). \n Uso commerciale non consentito \n(licenza CC-BY-NC-SA 4.0)</string>
     <string name="start">SI PARTE</string>
