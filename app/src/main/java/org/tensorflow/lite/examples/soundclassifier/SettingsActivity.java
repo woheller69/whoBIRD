@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
+import androidx.preference.PreferenceScreen;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -60,6 +62,9 @@ Context mContext;
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
+            PreferenceScreen preferenceScreen = getPreferenceScreen();
+            Preference writeWav = getPreferenceManager().findPreference("write_wav");
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) preferenceScreen.removePreference(writeWav);
             Preference reset = getPreferenceManager().findPreference("reset");
 
             if (reset != null) reset.setOnPreferenceClickListener(preference -> {
@@ -68,6 +73,8 @@ Context mContext;
                 sharedPreferences.edit().remove("audio_source").apply();
                 sharedPreferences.edit().remove("high_pass").apply();
                 sharedPreferences.edit().remove("model_threshold").apply();
+                sharedPreferences.edit().remove("play_sound").apply();
+                sharedPreferences.edit().remove("write_wav").apply();
 
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;

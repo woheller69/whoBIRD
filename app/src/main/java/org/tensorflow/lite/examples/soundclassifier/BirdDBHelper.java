@@ -47,12 +47,12 @@ public class BirdDBHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
     
-    public synchronized void addEntry(String name, float latitude, float longitude, int speciesId, float probability) {
+    public synchronized void addEntry(String name, float latitude, float longitude, int speciesId, float probability, long timeInMillis) {
         // Insert a new row into the table with all columns and their values from parameters.
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_NAME, name);
-        cv.put(COLUMN_MILLIS, System.currentTimeMillis()); // time in milliseconds
+        cv.put(COLUMN_MILLIS, timeInMillis);
         cv.put(COLUMN_LATITUDE, latitude);
         cv.put(COLUMN_LONGITUDE, longitude);
         cv.put(COLUMN_SPECIES_ID, speciesId);

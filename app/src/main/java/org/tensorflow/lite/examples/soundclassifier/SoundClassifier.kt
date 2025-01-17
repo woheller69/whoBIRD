@@ -146,6 +146,7 @@ class SoundClassifier(
 
   /** Buffer that holds audio PCM sample that are fed to the TFLite model for inference.  */
   private lateinit var inputBuffer: FloatBuffer
+  private lateinit var wavWriterBuffer: FloatBuffer
   private lateinit var metaInputBuffer: FloatBuffer
 
   init {
@@ -513,6 +514,7 @@ class SoundClassifier(
       val t0 = SystemClock.elapsedRealtimeNanos()
       inputBuffer.rewind()
       outputBuffer.rewind()
+      wavWriterBuffer = inputBuffer
       interpreter.run(inputBuffer, outputBuffer)
       outputBuffer.rewind()
       outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
@@ -531,11 +533,12 @@ class SoundClassifier(
       if (mBinding.progressHorizontal.isIndeterminate){  //if start/stop button set to "running"
         probList.withIndex().also {
           val max = it.maxByOrNull { entry -> entry.value }
-          updateTextView(max, mBinding.text1)
+          val timeInMillis = System.currentTimeMillis()
+          updateTextView(max, mBinding.text1, timeInMillis)
           updateImage(max)
           //after finding the maximum probability and its corresponding label (max), we filter out that entry from the list of entries before finding the second highest probability (secondMax)
           val secondMax = it.filterNot { entry -> entry == max }.maxByOrNull { entry -> entry.value }
-          updateTextView(secondMax,mBinding.text2)
+          updateTextView(secondMax,mBinding.text2,timeInMillis)
         }
       }
 
@@ -598,7 +601,7 @@ class SoundClassifier(
     }
   }
 
-  private fun updateTextView(element: IndexedValue<Float>?, tv: TextView) {
+  private fun updateTextView(element: IndexedValue<Float>?, tv: TextView, timeInMillis: Long) {
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
     if (element != null && element.value > sharedPref.getInt("model_threshold", 30)/100.0) {
       val label =
@@ -610,7 +613,9 @@ class SoundClassifier(
         else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_holo_orange_dark)
         else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_holo_orange_light)
         else tv.setBackgroundResource(R.drawable.oval_holo_green_light)
-        database?.addEntry(label, lat, lon, element.index, element.value)
+        database?.addEntry(label, lat, lon, element.index, element.value, timeInMillis)
+        if (sharedPref.getBoolean("write_wav",false)) WavWriter.createWaveFile(timeInMillis, wavWriterBuffer, options.sampleRate,1,2)
+        if (sharedPref.getBoolean("play_sound",false)) PlayNotification.playSound(mContext);
       }
     } else {
       Handler(Looper.getMainLooper()).post {

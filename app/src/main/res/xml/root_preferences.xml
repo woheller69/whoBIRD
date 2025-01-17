@@ -29,4 +29,17 @@
     app:showSeekBarValue="true"
     />
 
+<SwitchPreferenceCompat
+    android:title="Play notification sound"
+    android:key="play_sound"
+    android:defaultValue="false"
+    />
+
+<SwitchPreferenceCompat
+    android:title="Save detections as .wav"
+    android:summary="Saves a .wav file for each detection in Music directory. Requires Android 12+"
+    android:key="write_wav"
+    android:defaultValue="false"
+    />
+
 </PreferenceScreen>
