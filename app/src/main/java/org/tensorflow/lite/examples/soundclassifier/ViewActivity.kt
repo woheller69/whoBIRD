@@ -41,11 +41,13 @@ class ViewActivity : AppCompatActivity() {
     private lateinit var assetList: List<String>
     private lateinit var labelList: List<String>
     private lateinit var eBirdList: List<String>
+    private lateinit var mContext: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityViewBinding.inflate(layoutInflater)
         database = BirdDBHelper.getInstance(this)
+        mContext = this
         setContentView(binding.root)
 
         //Set aspect ratio for webview and icon
@@ -122,7 +124,7 @@ class ViewActivity : AppCompatActivity() {
         binding.recyclerObservations.addOnItemTouchListener(
             RecyclerItemClickListener(baseContext, binding.recyclerObservations, object : RecyclerItemClickListener.OnItemClickListener {
                 override fun onItemClick(view: View?, position: Int) {
-
+                    WavUtils.playWaveFile(mContext, adapter.getMillis(position))
                     val url = if ( assetList[adapter.getSpeciesID(position)] != "NO_ASSET") {
                         "https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
                     } else {

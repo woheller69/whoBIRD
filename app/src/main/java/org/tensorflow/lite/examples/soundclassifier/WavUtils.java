@@ -1,6 +1,10 @@
 package org.tensorflow.lite.examples.soundclassifier;
 
 import static android.os.Environment.DIRECTORY_MUSIC;
+
+import android.content.Context;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
@@ -12,8 +16,23 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.charset.StandardCharsets;
 
-public class WavWriter {
-    public static final String TAG = "WaveUtil";
+public class WavUtils {
+    public static final String TAG = "WavUtils";
+
+    public static void playWaveFile(Context context, long timestamp) {
+        File path = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_MUSIC).getPath()+"/whoBIRD/" + timestamp +".wav");
+        Log.d(TAG,"Play "+path.getAbsolutePath());
+        if (path.exists()){
+            Log.d(TAG,"Play "+path.getAbsolutePath());
+            MediaPlayer mediaPlayer = MediaPlayer.create(context, Uri.parse(path.getAbsolutePath()));
+            mediaPlayer.setVolume(1, 1);
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(mp -> {
+                mp.reset();
+                mp.release();
+            });
+        }
+    }
 
     public static void createWaveFile(long timestamp, FloatBuffer samplesBuffer, int sampleRate, int numChannels, int bytesPerSample) {
         try {
@@ -30,7 +49,7 @@ public class WavWriter {
                 Log.e(TAG, "Failed to make directory: " + path);
                 return;
             }
-            String filePath = path.getAbsolutePath()+"/"+timestamp+".wav";
+            String filePath = path.getAbsolutePath()+"/" + timestamp+".wav";
             Log.d(TAG, filePath);
             File outFile = new File(filePath);
             if (outFile.exists()) {
@@ -92,11 +111,10 @@ public class WavWriter {
     }
 
     public static byte[] convertFloatBufferToWavBytes(FloatBuffer floatBuffer) {
-        int bufferLength = floatBuffer.limit();
-        short[] shortArray = new short[bufferLength];
-
         // Ensure the FloatBuffer is in the correct position
         floatBuffer.rewind();
+        int bufferLength = floatBuffer.remaining();
+        short[] shortArray = new short[bufferLength];
 
         // Step 1: Extract float values
         for (int i = 0; i < bufferLength; i++) {
