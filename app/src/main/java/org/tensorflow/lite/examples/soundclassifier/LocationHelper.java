@@ -3,6 +3,7 @@ package org.tensorflow.lite.examples.soundclassifier;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -10,8 +11,8 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
-public class Location {
-
+public class LocationHelper {
+    private static Location oldLocation;
     private static LocationListener locationListenerGPS;
 
     static void stopLocation(Context context){
@@ -21,12 +22,22 @@ public class Location {
     }
 
     static void requestLocation(Context context, SoundClassifier soundClassifier) {
+        oldLocation = null;
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED && checkLocationProvider(context)) {
             LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
             if (locationListenerGPS==null) locationListenerGPS = new LocationListener() {
                 @Override
-                public void onLocationChanged(android.location.Location location) {
-                    soundClassifier.runMetaInterpreter(location);
+                public void onLocationChanged(Location location) {
+                    Location roundLoc = new Location(location);
+                    roundLoc.setLatitude(Math.round(location.getLatitude() * 100.0) / 100.0);
+                    roundLoc.setLongitude(Math.round(location.getLongitude() * 100.0) / 100.0);
+                    if (oldLocation == null ||
+                            (roundLoc.getLatitude() != oldLocation.getLatitude()) ||
+                            (roundLoc.getLongitude() != oldLocation.getLongitude())){
+
+                        oldLocation = roundLoc;
+                        soundClassifier.runMetaInterpreter(roundLoc);
+                    }
                 }
 
                 @Deprecated
@@ -42,7 +53,7 @@ public class Location {
                 public void onProviderDisabled(String provider) {
                 }
             };
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 0, locationListenerGPS);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, locationListenerGPS);
         }
     }
 

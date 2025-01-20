@@ -23,4 +23,7 @@
     <string name="source_microphone">Micròfon</string>
     <string name="source_voicerecognition">Reconeixament de vey</string>
     <string name="settings_audiosource">Font d\'audio</string>
+    <string name="settings_notification_sound">Notification sound</string>
+    <string name="save_wav">Save .wav files</string>
+    <string name="summary_save_wav">Saves a .wav file for each detection in Music directory. Requires Android 12+</string>
 </resources>

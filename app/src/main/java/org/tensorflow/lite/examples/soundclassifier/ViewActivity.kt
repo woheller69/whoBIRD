@@ -115,8 +115,9 @@ class ViewActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
-        birdObservations = ArrayList(database.getAllBirdObservations(false).sortedByDescending { it.millis } )  //Conversion between Java ArrayList and Kotlin ArrayList
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        val isDetailedFilterActive = sharedPref.getBoolean("view_detailed", false)
+        birdObservations = ArrayList(database.getAllBirdObservations(isDetailedFilterActive).sortedByDescending { it.millis } )  //Conversion between Java ArrayList and Kotlin ArrayList
 
         adapter = RecyclerOverviewListAdapter(applicationContext, birdObservations)
         binding.recyclerObservations.setAdapter(adapter)

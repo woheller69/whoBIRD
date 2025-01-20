@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
 
   override fun onResume() {
     super.onResume()
-    Location.requestLocation(this, soundClassifier)
+    LocationHelper.requestLocation(this, soundClassifier)
     if (!checkLocationPermission()){
       Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_SHORT).show()
     }
@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 
   override fun onPause() {
     super.onPause()
-    Location.stopLocation(this)
+    LocationHelper.stopLocation(this)
     if (soundClassifier.isRecording) soundClassifier.stop()
   }
 

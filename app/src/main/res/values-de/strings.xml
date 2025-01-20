@@ -22,4 +22,7 @@
     <string name="source_microphone">Mikrofon</string>
     <string name="source_voicerecognition">Spracherkennung</string>
     <string name="settings_audiosource">Audioquelle</string>
+    <string name="settings_notification_sound">Benachrichtigungston</string>
+    <string name="save_wav">Speichern als .wav</string>
+    <string name="summary_save_wav">Speichert eine .wav Datei für jede Beobachtung im Music Verzeichnis. Erfordert Android 12+</string>
 </resources>
