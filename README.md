@@ -44,6 +44,10 @@ There you can also backup, share, or delete the database containing your observa
 
 **Threshold**: Set the minimum probability required for a detection to be displayed. Be cautious when lowering the threshold, as it may lead to an increase in false detections.
 
+**Save .wav files**: Save a .wav file for each detection in Music directory. Recordings in this directory are not deleted by the app. Make sure to clean up on your own. Requires Android 12+.
+
+WARNING: This option may consume a lot of space in storage.
+
 # License
 This work is licensed under GPLv3, © woheller69
 
