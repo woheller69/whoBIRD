@@ -1,0 +1,3 @@
+Italian translation
+Option: Record detections as .wav
+Option: Play notification sound
