@@ -517,7 +517,7 @@ class SoundClassifier(
       interpreter.run(inputBuffer, outputBuffer)
       outputBuffer.rewind()
       outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
-      wavWriterBuffer = inputBuffer
+      wavWriterBuffer = inputBuffer.duplicate();
 
       val probList = mutableListOf<Float>()
       if (mBinding.checkIgnoreMeta.isChecked){
