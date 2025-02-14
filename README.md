@@ -48,6 +48,10 @@ There you can also backup, share, or delete the database containing your observa
 
 WARNING: This option may consume a lot of space in storage.
 
+## Contribute
+
+For translations use https://toolate.othing.xyz/projects/whobird/
+
 # License
 This work is licensed under GPLv3, © woheller69
 
