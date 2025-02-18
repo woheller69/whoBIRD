@@ -1,0 +1,8 @@
+whoBIRD je dokonalý společník pro pozorování ptáků, který dokáže rozpoznat ptáky podle jejich zvuků kdekoli na světě!
+Díky špičkovému projektu BirdNET se whoBIRD může pochlubit rozsáhlou databází více než 6 000 druhů ptáků z celého světa.
+Pomocí pokročilých algoritmů strojového učení dokáže aplikace přesně identifikovat ptáky na základě jejich jedinečných hlasových projevů.
+
+A co víc, whoBIRD provádí své výpočty výhradně ve vašem zařízení, aniž by vyžadoval připojení k internetu.
+To znamená, že ji můžete používat kdykoli a kdekoli - ať už jste hluboko v lese, nebo na břehu vzdáleného jezera.
+
+Aplikace vyžaduje systém Android 9+

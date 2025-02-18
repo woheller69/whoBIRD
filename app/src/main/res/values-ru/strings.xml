@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samples_zero">Нет звукового входа: все образцы звука равны нулю!</string>
+    <string name="download_model_text">whoBIRD необходимо загрузить модель BirdNET (~ 30MB).\nКоммерческое использование запрещено.\n(CC-BY-NC-SA 4.0 license)</string>
+    <string name="ignore_gps_date">Игнорировать местоположение и дату</string>
+    <string name="latitude">Шир</string>
+    <string name="longitude">Дол</string>
+    <string name="dialog_Later_button">Может быть попозже</string>
+    <string name="download_model">Скачать модель</string>
+    <string name="start">НАЧАТЬ</string>
+    <string name="error_download">Ошибка при скачивании</string>
+    <string name="error_audio_permission">Разрешение на микрофон не предоставлено</string>
+    <string name="error_location_permission">Разрешение на определение местоположения не предоставлено</string>
+    <string name="show_images">Показать изображения</string>
+    <string name="clear_db">Замечания удалены</string>
+    <string name="detailed_list">Подробный список</string>
+    <string name="delete">Удалить все наблюдения?</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="settings_threshold">Порог [%]</string>
+    <string name="source_unprocessed">Необработано</string>
+    <string name="source_microphone">Микрофон</string>
+    <string name="source_voicerecognition">Распознавание голоса</string>
+    <string name="settings_audiosource">Источник звука</string>
+    <string name="settings_notification_sound">Звук уведомления</string>
+    <string name="save_wav">Сохранить.wav файлы</string>
+    <string name="summary_save_wav">Сохраняет файл .wav для каждого определения в музыкальном каталоге. Требуется Android 12+</string>
+    <string name="dialog_StarOnGitHub">Вам нравится это приложение? Пожалуйста, поставьте звёздочку на GitHub или купите разработчику кофе через PayPal.</string>
+    <string name="settings_highpass">Высокочастотный фильтр [Гц]</string>
+</resources>
