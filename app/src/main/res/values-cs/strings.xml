@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Žádný zvukový vstup: Všechny zvukové vzorky jsou tiché!</string>
     <string name="ignore_gps_date">Ignorovat polohu a datum</string>
@@ -15,14 +16,14 @@
     <string name="clear_db">Pozorování smazána</string>
     <string name="detailed_list">Podrobný seznam</string>
     <string name="delete">Smazat všechna pozorování?</string>
-    <string name="share_app">Share app</string>
-    <string name="settings_threshold">Threshold [%]</string>
+    <string name="share_app">Sdílet aplikaci</string>
+    <string name="settings_threshold">Hranice [%]</string>
     <string name="settings_highpass">High-Pass Filter [Hz]</string>
-    <string name="source_unprocessed">Unprocessed</string>
-    <string name="source_microphone">Microphone</string>
-    <string name="source_voicerecognition">Voice Recognition</string>
+    <string name="source_unprocessed">Nezpracováno</string>
+    <string name="source_microphone">Mikrofon</string>
+    <string name="source_voicerecognition">Rozpoznávání hlasu</string>
     <string name="settings_audiosource">Audio Source</string>
     <string name="settings_notification_sound">Notification sound</string>
-    <string name="save_wav">Save .wav files</string>
-    <string name="summary_save_wav">Saves a .wav file for each detection in Music directory. Requires Android 12+</string>
+    <string name="save_wav">Ukládat soubory .wav</string>
+    <string name="summary_save_wav">Pro každé rozpoznání uloží do adresáře Music soubor .wav. Vyžaduje Android 12+</string>
 </resources>
