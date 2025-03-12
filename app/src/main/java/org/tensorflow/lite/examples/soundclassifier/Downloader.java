@@ -26,12 +26,20 @@ import java.security.NoSuchAlgorithmException;
 public class Downloader {
     static final String modelFILE = "model.tflite";
     static final String metaModelFILE = "metaModel.tflite";
-    static final String modelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
+    static final String model16URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
     static final String model32URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite";
     static final String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
-    static final String modelMD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
+    static final String model16MD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
     static final String model32MD5 = "6c7c42106e56550fc8563adb31bc120e";
     static final String metaModelMD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
+    static long model16Size = 25932528;
+    static final long model32Size = 51726412;
+    static final long metaModelSize = 7071440;
+    static long downloadModelSize = 0;
+    static long downloadMetaModelSize = 0;
+    static boolean downloadModelFinished = false;
+    static boolean downloadMetaModelFinished = false;
+    static long modelSize;
 
     public static boolean checkModels(final Activity activity) {
         File modelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);
@@ -57,22 +65,29 @@ public class Downloader {
             }
         }
 
-        if (modelFile.exists() && !(calcModelMD5.equals(modelMD5) || calcModelMD5.equals(model32MD5))) modelFile.delete();
-        if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)) metaModelFile.delete();
+        if (modelFile.exists() && !(calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5))){modelFile.delete(); downloadModelFinished = false;}
+        if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)) {metaModelFile.delete();downloadMetaModelFinished = false;}
 
-        return (calcModelMD5.equals(modelMD5) || calcModelMD5.equals(model32MD5)) && calcMetaModelMD5.equals(metaModelMD5);
+        return (calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5)) && calcMetaModelMD5.equals(metaModelMD5);
     }
 
     public static void downloadModels(final Activity activity, ActivityDownloadBinding binding) {
+        checkModels(activity);
+
+        modelSize = binding.option32bit.isChecked() ? model32Size : model16Size;
+
         binding.downloadProgress.setProgress(0);
+        binding.downloadButton.setEnabled(false);
+
         File modelFile = new File(activity.getDir("filesdir", Context.MODE_PRIVATE) + "/" + modelFILE);
-        if (!modelFile.exists()) {
-            Log.d("whoBIRD", "model file does not exist");
+        if (!modelFile.exists() || modelFile.length() != modelSize) {
+            if (modelFile.exists()) {modelFile.delete(); downloadModelFinished = false;}
+            Log.d("whoBIRD", "model file does not exist or wrong model");
             Thread thread = new Thread(() -> {
                 try {
                     URL url;
                     if (binding.option32bit.isChecked()) url = new URL(model32URL);
-                    else url = new URL(modelURL);
+                    else url = new URL(model16URL);
 
                     Log.d("whoBIRD", "Download model");
 
@@ -91,6 +106,10 @@ public class Downloader {
                     int len;
                     while ((len = inStream.read(buff)) != -1) {
                         outStream.write(buff, 0, len);
+                        if (modelFile.exists()) downloadModelSize = modelFile.length();
+                        activity.runOnUiThread(() -> {
+                            binding.downloadProgress.setProgress((int) (((double)(downloadModelSize + downloadMetaModelSize) / (modelSize + metaModelSize)) * 100));
+                        });
                     }
                     outStream.flush();
                     outStream.close();
@@ -105,28 +124,31 @@ public class Downloader {
                         throw new IOException();  //throw exception if there is no modelFile at this point
                     }
 
-                    if (!(calcModelMD5.equals(modelMD5) || calcModelMD5.equals(model32MD5) )){
+                    if (!(calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5) )){
                         modelFile.delete();
+                        downloadModelFinished = false;
                         activity.runOnUiThread(() -> {
                             Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
                         });
                     } else {
+                        downloadModelFinished = true;
                         activity.runOnUiThread(() -> {
-                            binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
-                            if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+                            if (downloadModelFinished && downloadMetaModelFinished) binding.buttonStart.setVisibility(View.VISIBLE);
                         });
                     }
                 } catch (NoSuchAlgorithmException | IOException i) {
                     activity.runOnUiThread(() -> Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show());
                     modelFile.delete();
+                    downloadModelFinished = false;
                     Log.w("whoBIRD", activity.getResources().getString(R.string.error_download), i);
                 }
             });
             thread.start();
         } else {
+            downloadModelSize = modelSize;
+            downloadModelFinished = true;
             activity.runOnUiThread(() -> {
-                binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
-                if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+                if (downloadModelFinished && downloadMetaModelFinished) binding.buttonStart.setVisibility(View.VISIBLE);
             });
         }
 
@@ -153,6 +175,10 @@ public class Downloader {
                     int len;
                     while ((len = inStream.read(buff)) != -1) {
                         outStream.write(buff, 0, len);
+                        if (metaModelFile.exists()) downloadMetaModelSize = metaModelFile.length();
+                        activity.runOnUiThread(() -> {
+                            binding.downloadProgress.setProgress((int) (((double)(downloadModelSize + downloadMetaModelSize) / (modelSize + metaModelSize)) * 100));
+                        });
                     }
                     outStream.flush();
                     outStream.close();
@@ -169,26 +195,29 @@ public class Downloader {
 
                     if (!calcMetaModelMD5.equals(metaModelMD5)){
                         metaModelFile.delete();
+                        downloadMetaModelFinished = false;
                         activity.runOnUiThread(() -> {
                             Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show();
                         });
                     } else {
+                        downloadMetaModelFinished = true;
                         activity.runOnUiThread(() -> {
-                            binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
-                            if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+                            if (downloadModelFinished && downloadMetaModelFinished) binding.buttonStart.setVisibility(View.VISIBLE);
                         });
                     }
                 } catch (NoSuchAlgorithmException | IOException i) {
                     activity.runOnUiThread(() -> Toast.makeText(activity, activity.getResources().getString(R.string.error_download), Toast.LENGTH_SHORT).show());
                     metaModelFile.delete();
+                    downloadMetaModelFinished = false;
                     Log.w("whoBIRD", activity.getResources().getString(R.string.error_download), i);
                 }
             });
             thread.start();
         } else {
+            downloadMetaModelSize = metaModelSize;
+            downloadMetaModelFinished = true;
             activity.runOnUiThread(() -> {
-                binding.downloadProgress.setProgress(binding.downloadProgress.getProgress()+50);
-                if (binding.downloadProgress.getProgress()==100) binding.buttonStart.setVisibility(View.VISIBLE);
+                if (downloadModelFinished && downloadMetaModelFinished) binding.buttonStart.setVisibility(View.VISIBLE);
             });
         }
 
