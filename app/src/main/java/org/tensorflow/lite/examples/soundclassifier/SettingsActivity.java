@@ -3,7 +3,6 @@ package org.tensorflow.lite.examples.soundclassifier;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -36,8 +35,9 @@ Context mContext;
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId()==R.id.action_about){
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")));
+                if (item.getItemId()==R.id.action_bird_info){
+                    Intent intent = new Intent(mContext, BirdInfoActivity.class);
+                    startActivity(intent);
                 } else if (item.getItemId()==R.id.action_mic){
                     Intent intent = new Intent(mContext, MainActivity.class);
                     startActivity(intent);

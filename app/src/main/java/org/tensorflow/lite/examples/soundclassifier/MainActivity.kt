@@ -83,8 +83,9 @@ class MainActivity : AppCompatActivity() {
           intent = Intent(this, ViewActivity::class.java)
           startActivity(intent)
         }
-        R.id.action_about -> {
-          startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")))
+        R.id.action_bird_info -> {
+          intent = Intent(this, BirdInfoActivity::class.java)
+          startActivity(intent)
         }
         R.id.action_settings -> {
           intent = Intent(this, SettingsActivity::class.java)
@@ -205,6 +206,10 @@ class MainActivity : AppCompatActivity() {
         intent.setType("text/plain")
         intent.putExtra(Intent.EXTRA_TEXT, shareBody)
         startActivity(Intent.createChooser(intent, ""))
+        return true
+      }
+      R.id.action_info -> {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")))
         return true
       }
       else -> return super.onOptionsItemSelected(item)
