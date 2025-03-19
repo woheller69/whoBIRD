@@ -16,12 +16,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class RecyclerOverviewListAdapter extends RecyclerView.Adapter<RecyclerOverviewListAdapter.ObservationViewHolder> {
+public class RecyclerOverviewListAdapterObservations extends RecyclerView.Adapter<RecyclerOverviewListAdapterObservations.ObservationViewHolder> {
 
     private final Context context;
     private final List<BirdObservation> birdObservations;
 
-    public RecyclerOverviewListAdapter(Context context, List<BirdObservation> birdObservations) {
+    public RecyclerOverviewListAdapterObservations(Context context, List<BirdObservation> birdObservations) {
         this.context = context;
         this.birdObservations = birdObservations;
     }
