@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     binding.fab.setOnClickListener {
       if (binding.progressHorizontal.isIndeterminate) {
         binding.progressHorizontal.setIndeterminate(false)
-        binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_play_24dp))
+        binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_record_24dp))
       }
       else {
         binding.progressHorizontal.setIndeterminate(true)
