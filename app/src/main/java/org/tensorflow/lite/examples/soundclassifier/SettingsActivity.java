@@ -75,6 +75,7 @@ Context mContext;
                 sharedPreferences.edit().remove("model_threshold").apply();
                 sharedPreferences.edit().remove("play_sound").apply();
                 sharedPreferences.edit().remove("write_wav").apply();
+                sharedPreferences.edit().remove("language").apply();
 
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;

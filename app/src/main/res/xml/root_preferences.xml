@@ -42,4 +42,13 @@
     android:defaultValue="false"
     />
 
+<ListPreference
+    android:title="@string/language"
+    android:summary="@string/summary_language"
+    android:key="language"
+    android:defaultValue="en"
+    android:entries="@array/languages"
+    android:entryValues="@array/languageCodes"
+    />
+
 </PreferenceScreen>

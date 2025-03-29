@@ -11,4 +11,15 @@
         <item>1</item>
         <item>6</item>
     </string-array>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Deutsch</item>
+    </string-array>
+
+    <string-array name="languageCodes">
+        <item>en</item>
+        <item>de</item>
+    </string-array>
+
 </resources>

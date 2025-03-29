@@ -25,4 +25,6 @@
     <string name="settings_notification_sound">Benachrichtigungston</string>
     <string name="save_wav">Speichern als .wav</string>
     <string name="summary_save_wav">Speichert eine .wav Datei für jede Beobachtung im Music Verzeichnis. Erfordert Android 12+</string>
+    <string name="language">Sprache</string>
+    <string name="summary_language">Wähle Sprache der Anwendung.</string>
 </resources>

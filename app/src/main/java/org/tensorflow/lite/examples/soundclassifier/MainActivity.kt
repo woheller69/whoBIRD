@@ -33,7 +33,9 @@ import android.webkit.WebSettings
 import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.core.os.LocaleListCompat
 import androidx.preference.PreferenceManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
@@ -44,6 +46,15 @@ class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
+    // Changes TZ: Allow to override OS language setting
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+    var language = sharedPref.getString("language", "").toString()
+    if (language.length == 2) { // If nothing is set, do nothing and use the OS native language
+      val appLocale = LocaleListCompat.forLanguageTags(language)
+      AppCompatDelegate.setApplicationLocales(appLocale)
+    }
+
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
@@ -95,7 +106,6 @@ class MainActivity : AppCompatActivity() {
       true
     }
 
-    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
     val isShowImagesActive = sharedPref.getBoolean("main_show_images", false)
     binding.checkShowImages.isChecked = isShowImagesActive
     binding.checkShowImages.setOnClickListener { view ->
