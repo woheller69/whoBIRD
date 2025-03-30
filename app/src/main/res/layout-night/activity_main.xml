@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/md_theme_light_surface"
+    android:background="@color/md_theme_dark_surface"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -54,12 +54,12 @@
                 android:visibility="gone"
                 android:layout_below="@id/webview_url"
                 android:layout_alignParentEnd="true"
-                android:background="@color/md_theme_light_surface"
+                android:background="@color/md_theme_dark_surface"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="bold"
                 android:textIsSelectable="true"
-                android:textColor="@color/md_theme_light_primary"
+                android:textColor="@color/md_theme_dark_primary"
                 android:textSize="14dp" />
             <TextView
                 android:id="@+id/webview_latinname"
@@ -68,12 +68,12 @@
                 android:visibility="gone"
                 android:layout_below="@id/webview_name"
                 android:layout_alignParentEnd="true"
-                android:background="@color/md_theme_light_surface"
+                android:background="@color/md_theme_dark_surface"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="italic"
                 android:textIsSelectable="true"
-                android:textColor="@color/md_theme_light_primary"
+                android:textColor="@color/md_theme_dark_primary"
                 android:textSize="10dp" />
         </RelativeLayout>
         <LinearLayout
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginStart="16dp"
-                android:textColor="@color/md_theme_light_primary"
+                android:textColor="@color/md_theme_dark_primary"
                 android:textSize="18dp"
                 android:singleLine="true"
                 android:id="@+id/gps"/>
@@ -114,14 +114,14 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/md_theme_light_primary"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:buttonTint="@color/md_theme_dark_primary"
+                        android:textColor="@color/md_theme_dark_primary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:textColor="@color/md_theme_light_primary"
+                        android:textColor="@color/md_theme_dark_primary"
                         android:textSize="20dp"
                         android:id="@+id/check_ignore_meta_text"
                         android:text="@string/ignore_gps_date" />
@@ -136,14 +136,14 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/md_theme_light_primary"
-                        android:textColor="@color/md_theme_light_primary" />
+                        android:buttonTint="@color/md_theme_dark_primary"
+                        android:textColor="@color/md_theme_dark_primary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:textColor="@color/md_theme_light_primary"
+                        android:textColor="@color/md_theme_dark_primary"
                         android:textSize="20dp"
                         android:id="@+id/check_show_images_text"
                         android:text="@string/show_images" />
@@ -160,7 +160,7 @@
                 android:gravity="center_horizontal"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:textColor="@color/md_theme_light_primary"
+                android:textColor="@color/md_theme_dark_primary"
                 android:textSize="22dp"
                 android:id="@+id/text1"/>
             <TextView
@@ -170,7 +170,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:textColor="@color/md_theme_light_primary"
+                android:textColor="@color/md_theme_dark_primary"
                 android:textSize="22dp"
                 android:id="@+id/text2"/>
         </LinearLayout>
@@ -192,8 +192,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
-            app:itemIconTint="@color/md_theme_light_primary"
-            app:itemTextColor="@color/md_theme_light_primary"
+            app:itemIconTint="@color/md_theme_dark_primary"
+            app:itemTextColor="@color/md_theme_dark_primary"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_bar"
             android:background="@drawable/background_transparent" />
@@ -206,7 +206,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_pause_24dp"
-        app:tint="@color/md_theme_light_primary"
+        app:tint="@color/md_theme_dark_primary"
         app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -28,4 +28,5 @@
     <string name="summary_save_wav">Saves a .wav file for each detection in Music directory. Requires Android 12+</string>
     <string name="language">Language</string>
     <string name="summary_language">Select application language.</string>
+    <string name="change_theme">Change Theme</string>
 </resources>

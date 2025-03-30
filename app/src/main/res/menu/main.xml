@@ -3,10 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        app:showAsAction="always"
+        android:id="@+id/action_change_theme"
+        android:icon="@drawable/baseline_invert_colors_24"
+        android:tint="?attr/colorOnSurface"
+        android:title="@string/change_theme" />
+    <item
+        app:showAsAction="never"
         android:id="@+id/action_share_app"
         android:title="@string/share_app" />
     <item
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:id="@+id/action_info"
         android:icon="@drawable/ic_info_24dp"
         tools:ignore="MenuTitle" />

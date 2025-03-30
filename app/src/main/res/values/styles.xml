@@ -1,13 +1,13 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/orange500</item>
-        <item name="colorPrimaryDark">@color/gray500</item>
-        <item name="colorAccent">@color/orange500</item>
-        <item name="colorOnSurface">@color/gray700</item>
-        <item name="colorSecondary">@color/gray400</item>
-        <item name="colorSurface">@color/gray800</item>
-        <item name="popupMenuBackground">@color/gray800</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorPrimaryDark">@color/md_theme_dark_secondary</item>
+        <item name="colorAccent">@color/md_theme_light_secondary</item>
+        <item name="colorOnSurface">@color/md_theme_light_primaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="popupMenuBackground">@color/md_theme_light_surface</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
     </style>
 </resources>

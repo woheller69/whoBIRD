@@ -20,11 +20,11 @@ package org.tensorflow.lite.examples.soundclassifier
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
@@ -35,9 +35,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.LocaleListCompat
 import androidx.preference.PreferenceManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
 
@@ -205,11 +207,25 @@ class MainActivity : AppCompatActivity() {
   override fun onCreateOptionsMenu(menu: Menu): Boolean {
     val inflater = menuInflater
     inflater.inflate(R.menu.main, menu)
+
+    val themeMenuItem = menu.findItem(R.id.action_change_theme)
+
+    // Tint the icons
+    tintMenuIcon(themeMenuItem)
+
     return true
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
+      R.id.action_change_theme -> {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+          AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  // Light theme
+        else
+          AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // Dark theme
+
+        return true
+      }
       R.id.action_share_app -> {
         val intent = Intent(Intent.ACTION_SEND)
         val shareBody = "https://f-droid.org/packages/org.woheller69.whobird/"
@@ -219,10 +235,25 @@ class MainActivity : AppCompatActivity() {
         return true
       }
       R.id.action_info -> {
-        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/woheller69/whobird")))
+        startActivity(Intent(Intent.ACTION_VIEW, "https://github.com/woheller69/whobird".toUri()))
         return true
       }
       else -> return super.onOptionsItemSelected(item)
+    }
+  }
+
+
+  private fun tintMenuIcon(menuItem: MenuItem) {
+    val icon = menuItem.icon
+    val color = if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+      ContextCompat.getColor(this, R.color.md_theme_light_onSurface)  // Light theme
+    else
+      ContextCompat.getColor(this, R.color.md_theme_dark_onSurface) // Dark theme
+
+    if (icon != null) {
+      val wrappedIcon = DrawableCompat.wrap(icon)
+      DrawableCompat.setTint(wrappedIcon, color)
+      menuItem.setIcon(wrappedIcon)
     }
   }
 
