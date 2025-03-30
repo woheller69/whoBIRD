@@ -242,19 +242,17 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
+    private fun tintMenuIcon(menuItem: MenuItem) {
+      val icon = menuItem.icon
+      val color = if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+        ContextCompat.getColor(this, R.color.md_theme_light_onSurface)  // Light theme
+      else
+        ContextCompat.getColor(this, R.color.md_theme_dark_onSurface) // Dark theme
 
-  private fun tintMenuIcon(menuItem: MenuItem) {
-    val icon = menuItem.icon
-    val color = if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
-      ContextCompat.getColor(this, R.color.md_theme_light_onSurface)  // Light theme
-    else
-      ContextCompat.getColor(this, R.color.md_theme_dark_onSurface) // Dark theme
-
-    if (icon != null) {
-      val wrappedIcon = DrawableCompat.wrap(icon)
-      DrawableCompat.setTint(wrappedIcon, color)
-      menuItem.setIcon(wrappedIcon)
+      if (icon != null) {
+        val wrappedIcon = DrawableCompat.wrap(icon)
+        DrawableCompat.setTint(wrappedIcon, color)
+        menuItem.setIcon(wrappedIcon)
+      }
     }
-  }
-
 }

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/dark_blue_gray700"
+    android:background="@color/md_theme_light_surface"
     tools:context=".ViewActivity">
 
     <LinearLayout
@@ -61,10 +61,10 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:background="@color/md_theme_light_surface"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/md_theme_light_primary"
                 android:textSize="9dp" />
             <TextView
                 android:id="@+id/webview_name"
@@ -73,12 +73,12 @@
                 android:visibility="gone"
                 android:layout_below="@id/webview_url"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:background="@color/md_theme_dark_surface"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="bold"
                 android:textIsSelectable="true"
-                android:textColor="@color/orange500"
+                android:textColor="@color/md_theme_light_primary"
                 android:textSize="14dp" />
             <TextView
                 android:id="@+id/webview_latinname"
@@ -92,7 +92,7 @@
                 android:layout_marginEnd="10dp"
                 android:textStyle="italic"
                 android:textIsSelectable="true"
-                android:textColor="@color/orange500"
+                android:textColor="@color/md_theme_light_primary"
                 android:textSize="10dp" />
         </RelativeLayout>
         <LinearLayout
@@ -122,14 +122,14 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/orange500"
-                        android:textColor="@color/orange500" />
+                        android:buttonTint="@color/md_theme_light_primary"
+                        android:textColor="@color/md_theme_light_primary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:textColor="@color/orange500"
+                        android:textColor="@color/md_theme_light_primary"
                         android:textSize="20dp"
                         android:id="@+id/check_detailed_text"
                         android:text="@string/detailed_list" />
@@ -160,8 +160,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
-            app:itemIconTint="@color/orange500"
-            app:itemTextColor="@color/orange500"
+            app:itemIconTint="@color/md_theme_light_primary"
+            app:itemTextColor="@color/md_theme_light_primary"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_bar"
             android:background="@drawable/background_transparent" />

@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        app:showAsAction="always"
+        android:id="@+id/action_change_theme"
+        android:icon="@drawable/baseline_invert_colors_24"
+        android:tint="?attr/colorOnSurface"
+        android:title="@string/change_theme" />
+    <item
         android:id="@+id/action_share_db"
         app:showAsAction="always"
         android:icon="@drawable/ic_share_menu_24dp"
