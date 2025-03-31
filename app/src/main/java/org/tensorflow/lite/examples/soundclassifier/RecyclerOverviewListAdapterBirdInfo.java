@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -20,6 +21,7 @@ import kotlin.Pair;
 
 public class RecyclerOverviewListAdapterBirdInfo extends RecyclerView.Adapter<RecyclerOverviewListAdapterBirdInfo.ObservationViewHolder> {
     private ArrayList<kotlin.Pair<Integer, String>> birdList;
+    private Integer textColor = MainActivity.Companion.getTextColor();
 
     public RecyclerOverviewListAdapterBirdInfo(Context context, ArrayList<kotlin.Pair<Integer, String>> birdList) {
         this.birdList = birdList;
@@ -35,7 +37,10 @@ public class RecyclerOverviewListAdapterBirdInfo extends RecyclerView.Adapter<Re
     public void onBindViewHolder(ObservationViewHolder holder, int position) {
         List<String> parts = Arrays.asList(birdList.get(position).getSecond().split("_"));
         holder.name.setText(parts.get(parts.size() - 1));
+
+        holder.name.setTextColor(textColor);
         holder.latinName.setText(parts.get(0));
+        holder.latinName.setTextColor(textColor);
         holder.holder.setBackgroundResource(R.drawable.oval_holo_green_light_thin);
     }
 

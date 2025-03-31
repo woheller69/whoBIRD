@@ -8,12 +8,18 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.webkit.WebSettings
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.net.toUri
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityBirdInfoBinding
@@ -246,4 +252,39 @@ class BirdInfoActivity : AppCompatActivity() {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://ebird.org/species/"+eBirdList[id])))
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main, menu)
+
+        val themeMenuItem = menu.findItem(R.id.action_change_theme)
+
+        // Tint the icons
+        tintMenuIcon(themeMenuItem)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_change_theme -> {
+                MainActivity.setTheme(this, !MainActivity.darkMode)
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun tintMenuIcon(menuItem: MenuItem) {
+        val icon = menuItem.icon
+        val color = if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+            ContextCompat.getColor(this, R.color.md_theme_light_onSurface)  // Light theme
+        else
+            ContextCompat.getColor(this, R.color.md_theme_dark_onSurface) // Dark theme
+
+        if (icon != null) {
+            val wrappedIcon = DrawableCompat.wrap(icon)
+            DrawableCompat.setTint(wrappedIcon, color)
+            menuItem.setIcon(wrappedIcon)
+        }
+    }
 }

@@ -18,8 +18,11 @@
 package org.tensorflow.lite.examples.soundclassifier
 
 import android.Manifest
+import android.R.attr.resource
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -34,6 +37,7 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.LocaleListCompat
@@ -56,7 +60,10 @@ class MainActivity : AppCompatActivity() {
       val appLocale = LocaleListCompat.forLanguageTags(language)
       AppCompatDelegate.setApplicationLocales(appLocale)
     }
+      darkMode = sharedPref.getBoolean("darkMode", false)
+    setTheme(this, darkMode)
 
+    //darkMode =
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
@@ -197,23 +204,28 @@ class MainActivity : AppCompatActivity() {
 
   companion object {
     const val REQUEST_PERMISSIONS = 1337
+    var darkMode = false
+    var textColor = 0
+
+    fun setTheme(context: Context, mode: Boolean = false) {
+      if (mode == false) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  // Light theme
+        darkMode = false
+        textColor = context.getColor(R.color.md_theme_light_primary)
+      } else {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // Dark theme
+        darkMode = true
+        textColor = context.getColor(R.color.md_theme_dark_primary)
+      }
+      val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+      val editor=sharedPref.edit()
+      editor.putBoolean("darkMode", darkMode).apply()
+      }
   }
 
   fun reload(view: View) {
     binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
     binding.webview.loadUrl(binding.webviewUrl.text.toString())
-  }
-
-  override fun onCreateOptionsMenu(menu: Menu): Boolean {
-    val inflater = menuInflater
-    inflater.inflate(R.menu.main, menu)
-
-    val themeMenuItem = menu.findItem(R.id.action_change_theme)
-
-    // Tint the icons
-    tintMenuIcon(themeMenuItem)
-
-    return true
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
