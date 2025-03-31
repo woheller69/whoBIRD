@@ -48,6 +48,8 @@ There you can also backup, share, or delete the database containing your observa
 
 WARNING: This option may consume a lot of space in storage.
 
+**Language** On Android 13+ you can set the app language in Android app settings.
+
 ## Contribute
 
 For translations use https://toolate.othing.xyz/projects/whobird/
