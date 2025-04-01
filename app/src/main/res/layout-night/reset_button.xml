@@ -2,6 +2,6 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:tint="@color/md_theme_light_primary"
+    app:tint="@color/md_theme_dark_primary"
     android:src="@drawable/ic_reset_24dp"
     android:paddingVertical="15dp" />
