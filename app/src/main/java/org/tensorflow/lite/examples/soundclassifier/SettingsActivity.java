@@ -59,6 +59,8 @@ Context mContext;
 
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
+        SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
@@ -67,8 +69,8 @@ Context mContext;
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) preferenceScreen.removePreference(writeWav);
             Preference reset = getPreferenceManager().findPreference("reset");
 
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
             if (reset != null) reset.setOnPreferenceClickListener(preference -> {
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
 
                 sharedPreferences.edit().remove("audio_source").apply();
                 sharedPreferences.edit().remove("high_pass").apply();
@@ -81,6 +83,32 @@ Context mContext;
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;
             });
+
+            // Initialize the listener
+            preferenceChangeListener = (sharedPreferences1, key) -> {
+                if ("language".equals(key)) {
+                    // Handle the change for the specific preference
+                    String newValue = sharedPreferences1.getString(key, "");
+                    //Restart activity
+                    MainActivity.Companion.setLanguage(newValue);
+                    requireActivity().recreate();
+                    //Log.d("SettingsFragment", "Preference " + key + " changed to " + newValue);
+                }
+            };
+
+            // Register the listener
+            sharedPreferences.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
         }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+
+            // Unregister the listener to prevent memory leaks
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+            sharedPreferences.unregisterOnSharedPreferenceChangeListener(preferenceChangeListener);
+        }
+
+
     }
 }

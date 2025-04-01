@@ -15,11 +15,31 @@
     <string-array name="languages">
         <item>English</item>
         <item>Deutsch</item>
+        <item>Catalan</item>
+        <item>Česky</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Italiano</item>
+        <item>Nederlands</item>
+        <item>Polski</item>
+        <item>Русский</item>
+        <item>Svenska</item>
+        <item>Türkçe</item>
     </string-array>
 
     <string-array name="languageCodes">
         <item>en</item>
         <item>de</item>
+        <item>ca</item>
+        <item>cs</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>it</item>
+        <item>nl</item>
+        <item>pl</item>
+        <item>ru</item>
+        <item>sv</item>
+        <item>tr</item>
     </string-array>
 
 </resources>

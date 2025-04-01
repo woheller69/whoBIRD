@@ -49,14 +49,14 @@ class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
-    // Changes TZ: Allow to override OS language setting
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
     var language = sharedPref.getString("language", "").toString()
-    if (language.length == 2) { // If nothing is set, do nothing and use the OS native language
+    setLanguage(language)
+/*    if (language.length == 2) { // If nothing is set, do nothing and use the OS native language
       val appLocale = LocaleListCompat.forLanguageTags(language)
       AppCompatDelegate.setApplicationLocales(appLocale)
-    }
-      darkMode = sharedPref.getBoolean("darkMode", false)
+    }*/
+    darkMode = sharedPref.getBoolean("darkMode", false)
     setTheme(this, darkMode)
 
     //darkMode =
@@ -272,6 +272,12 @@ class MainActivity : AppCompatActivity() {
       }
     }
 
+    fun setLanguage(language: String)  {
+      if (language.length == 2) { // If nothing is set, do nothing and use the OS native language
+        val appLocale = LocaleListCompat.forLanguageTags(language)
+        AppCompatDelegate.setApplicationLocales(appLocale)
+      }
+    }
   }
 
 }

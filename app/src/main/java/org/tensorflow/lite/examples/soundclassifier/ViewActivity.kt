@@ -1,5 +1,6 @@
 package org.tensorflow.lite.examples.soundclassifier
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -310,6 +311,7 @@ class ViewActivity : AppCompatActivity() {
         return true
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_change_theme -> {
@@ -355,7 +357,10 @@ class ViewActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
                 intent.addCategory(Intent.CATEGORY_OPENABLE)
                 intent.setType("application/zip")
-                intent.putExtra(Intent.EXTRA_TITLE, resources.getString(R.string.app_name))
+                val timestamp = Date()
+                val formatter = SimpleDateFormat("yyyy-MM-dd") // Define the desired format
+                val formattedDate = formatter.format(timestamp) // Format the Date object
+                intent.putExtra(Intent.EXTRA_TITLE, "$formattedDate " + resources.getString(R.string.app_name))
                 resultLauncher.launch(intent)
                 return true
             }
