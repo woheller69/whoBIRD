@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:backgroundTint="@color/md_theme_dark_secondaryContainer"
-                android:tint="@color/md_theme_dark_primary"
+                app:tint="@color/md_theme_dark_primary"
                 android:layout_alignParentStart="true"
                 android:src="@drawable/ic_reload_24dp"
                 android:onClick="reload"/>
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:tint="@color/md_theme_dark_primary"
+                app:tint="@color/md_theme_dark_primary"
                 android:backgroundTint="@color/md_theme_dark_secondaryContainer"
                 android:layout_below="@id/webview_reload"
                 android:src="@drawable/ic_info_24dp"
@@ -115,12 +115,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="3dp"
                         android:layout_marginHorizontal="10dp"
+                        app:tint="@color/md_theme_dark_primary"
                         android:src="@drawable/ic_search_24dp"/>
                     <EditText
                         android:id="@+id/search_edit"
                         android:background="@null"
                         android:singleLine="true"
                         android:imeOptions="actionDone"
+                        android:textColor="@color/md_theme_dark_primary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>

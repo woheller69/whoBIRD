@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:background="@color/md_theme_light_surface"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@android:color/white"

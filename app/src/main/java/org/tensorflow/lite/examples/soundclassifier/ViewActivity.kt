@@ -19,9 +19,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import net.lingala.zip4j.ZipFile
@@ -302,13 +299,13 @@ class ViewActivity : AppCompatActivity() {
         inflater.inflate(R.menu.view, menu)
 
         var themeMenuItem = menu.findItem(R.id.action_change_theme)
-        tintMenuIcon(themeMenuItem)
+        MainActivity.tintMenuIcon(this, themeMenuItem)
         themeMenuItem = menu.findItem(R.id.action_share_db)
-        tintMenuIcon(themeMenuItem)
+        MainActivity.tintMenuIcon(this, themeMenuItem)
         themeMenuItem = menu.findItem(R.id.action_delete_db)
-        tintMenuIcon(themeMenuItem)
+        MainActivity.tintMenuIcon(this, themeMenuItem)
         themeMenuItem = menu.findItem(R.id.action_save_db)
-        tintMenuIcon(themeMenuItem)
+        MainActivity.tintMenuIcon(this, themeMenuItem)
 
         return true
     }
@@ -316,11 +313,7 @@ class ViewActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_change_theme -> {
-                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  // Light theme
-                else
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // Dark theme
-
+                MainActivity.setTheme(this, !MainActivity.darkMode)
                 return true
             }
             R.id.action_share_db -> {
@@ -401,20 +394,6 @@ class ViewActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show()
             e.printStackTrace()
-        }
-    }
-
-    private fun tintMenuIcon(menuItem: MenuItem) {
-        val icon = menuItem.icon
-        val color = if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
-            ContextCompat.getColor(this, R.color.md_theme_light_onSurface)  // Light theme
-        else
-            ContextCompat.getColor(this, R.color.md_theme_dark_onSurface) // Dark theme
-
-        if (icon != null) {
-            val wrappedIcon = DrawableCompat.wrap(icon)
-            DrawableCompat.setTint(wrappedIcon, color)
-            menuItem.setIcon(wrappedIcon)
         }
     }
 }

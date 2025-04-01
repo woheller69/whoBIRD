@@ -7,19 +7,15 @@ import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
-import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
 import android.webkit.WebSettings
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.net.toUri
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityBirdInfoBinding
@@ -235,10 +231,6 @@ class BirdInfoActivity : AppCompatActivity() {
             .map { it.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() } }
             .joinToString("_")
             .trim()
-
-    companion object {
-
-    }
 
     fun reload(view: View) {
         binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)

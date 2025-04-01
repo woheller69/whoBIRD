@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:backgroundTint="?attr/colorSecondary"
+                android:backgroundTint="@color/md_theme_light_secondaryContainer"
                 android:layout_alignParentStart="true"
                 android:src="@drawable/ic_reload_24dp"
                 android:onClick="reload"/>
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:backgroundTint="?attr/colorSecondary"
+                android:backgroundTint="@color/md_theme_light_secondaryContainer"
                 android:layout_toEndOf="@id/webview_reload"
                 android:src="@drawable/ic_share_24dp"
                 android:onClick="share"/>
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:backgroundTint="?attr/colorSecondary"
+                android:backgroundTint="@color/md_theme_light_secondaryContainer"
                 android:layout_below="@id/webview_reload"
                 android:src="@drawable/ic_info_24dp"
                 android:onClick="ebird"/>
@@ -87,7 +87,7 @@
                 android:visibility="gone"
                 android:layout_below="@id/webview_name"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:backgroundTint="@color/md_theme_light_secondaryContainer"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="italic"

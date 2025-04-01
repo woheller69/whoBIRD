@@ -20,6 +20,8 @@ public class RecyclerOverviewListAdapterObservations extends RecyclerView.Adapte
 
     private final Context context;
     private final List<BirdObservation> birdObservations;
+    private Integer textColor = MainActivity.Companion.getTextColor();
+
 
     public RecyclerOverviewListAdapterObservations(Context context, List<BirdObservation> birdObservations) {
         this.context = context;
@@ -34,8 +36,9 @@ public class RecyclerOverviewListAdapterObservations extends RecyclerView.Adapte
 
     @Override
     public void onBindViewHolder(ObservationViewHolder holder, int position) {
-
+        holder.name.setTextColor(textColor);
         holder.name.setText(birdObservations.get(position).getName());
+        holder.probability.setTextColor(textColor);
         holder.probability.setText((int) Math.round(birdObservations.get(position).getProbability()*100.0)+ " %");
 
         if (birdObservations.get(position).getProbability() < 0.3 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_red_dark_thin_dotted);
@@ -52,10 +55,12 @@ public class RecyclerOverviewListAdapterObservations extends RecyclerView.Adapte
             sdf = new SimpleDateFormat("hh:mm aa", Locale.getDefault());
         }
         String timeString = sdf.format(date);
+        holder.time.setTextColor(textColor);
         holder.time.setText(timeString);
 
         java.text.DateFormat df = java.text.DateFormat.getDateInstance(DateFormat.SHORT);
         String dateString = df.format(birdObservations.get(position).getMillis());
+        holder.date.setTextColor(textColor);
         holder.date.setText(dateString);
 
         if (position == 0) {

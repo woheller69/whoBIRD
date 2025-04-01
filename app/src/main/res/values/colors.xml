@@ -60,14 +60,5 @@
     <color name="md_theme_dark_surfaceTint">#FF4FD8EB</color>
     <color name="md_theme_dark_outlineVariant">#FF3F484A</color>
     <color name="md_theme_dark_scrim">#FF000000</color>
-    <color name="md_theme_dark_error">#FF0000</color>
-
-
-    <color name="gray400">#BDBDBD</color>
-    <color name="gray500">#9E9E9E</color>
-    <color name="gray700">#616161</color>
-    <color name="gray800">#424242</color>
-
-    <color name="dark_blue_gray700">#344955</color>
-    <color name="orange500">#F9AA33</color>
+    <color name="md_theme_dark_error">#FF0000</color>LI
 </resources>

@@ -18,16 +18,13 @@
 package org.tensorflow.lite.examples.soundclassifier
 
 import android.Manifest
-import android.R.attr.resource
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +34,6 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.os.LocaleListCompat
@@ -202,40 +198,27 @@ class MainActivity : AppCompatActivity() {
       window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
-  companion object {
-    const val REQUEST_PERMISSIONS = 1337
-    var darkMode = false
-    var textColor = 0
-
-    fun setTheme(context: Context, mode: Boolean = false) {
-      if (mode == false) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  // Light theme
-        darkMode = false
-        textColor = context.getColor(R.color.md_theme_light_primary)
-      } else {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // Dark theme
-        darkMode = true
-        textColor = context.getColor(R.color.md_theme_dark_primary)
-      }
-      val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
-      val editor=sharedPref.edit()
-      editor.putBoolean("darkMode", darkMode).apply()
-      }
-  }
-
   fun reload(view: View) {
     binding.webview.settings.setCacheMode(WebSettings.LOAD_DEFAULT)
     binding.webview.loadUrl(binding.webviewUrl.text.toString())
   }
 
+  override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    val inflater = menuInflater
+    inflater.inflate(R.menu.main, menu)
+
+    val themeMenuItem = menu.findItem(R.id.action_change_theme)
+
+    // Tint the icons
+    tintMenuIcon(this, themeMenuItem)
+
+    return true
+  }
+
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
       R.id.action_change_theme -> {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
-          AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  // Light theme
-        else
-          AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // Dark theme
-
+        setTheme(this, !darkMode)
         return true
       }
       R.id.action_share_app -> {
@@ -254,12 +237,33 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
-    private fun tintMenuIcon(menuItem: MenuItem) {
+
+  companion object {
+    const val REQUEST_PERMISSIONS = 1337
+    var darkMode = false
+    var textColor = 0
+
+    fun setTheme(context: Context, mode: Boolean = false) {
+      if (mode == false) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)  // Light theme
+        darkMode = false
+        textColor = context.getColor(R.color.md_theme_light_primary)
+      } else {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // Dark theme
+        darkMode = true
+        textColor = context.getColor(R.color.md_theme_dark_primary)
+      }
+      val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+      val editor=sharedPref.edit()
+      editor.putBoolean("darkMode", darkMode).apply()
+    }
+
+    fun tintMenuIcon(context: Context, menuItem: MenuItem) {
       val icon = menuItem.icon
       val color = if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
-        ContextCompat.getColor(this, R.color.md_theme_light_onSurface)  // Light theme
+        ContextCompat.getColor(context, R.color.md_theme_light_onSurface)  // Light theme
       else
-        ContextCompat.getColor(this, R.color.md_theme_dark_onSurface) // Dark theme
+        ContextCompat.getColor(context, R.color.md_theme_dark_onSurface) // Dark theme
 
       if (icon != null) {
         val wrappedIcon = DrawableCompat.wrap(icon)
@@ -267,4 +271,7 @@ class MainActivity : AppCompatActivity() {
         menuItem.setIcon(wrappedIcon)
       }
     }
+
+  }
+
 }
