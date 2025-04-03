@@ -7,7 +7,7 @@
     <string name="dialog_Later_button">Kanske senare</string>
     <string name="dialog_StarOnGitHub">Gillar du den här appen? Stjärnmarkera gärna projektet på GitHub, eller kanske bjud utvecklaren på en kaffe via PayPal.</string>
     <string name="download_model">Hämta modell</string>
-    <string name="download_model_text">whoBIRD behöver hämta hem BirdNET-modellen (≈30 MB). \n Ickekommersiell användning tillåten \n(Licensierad under CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">BirdLog behöver hämta hem BirdNET-modellen (≈30 MB). \n Ickekommersiell användning tillåten \n(Licensierad under CC-BY-NC-SA 4.0)</string>
     <string name="start">Kör</string>
     <string name="error_download">Hämtningen misslyckades</string>
     <string name="error_audio_permission">Behörighet till mikrofon inte beviljad</string>

@@ -88,8 +88,8 @@ open class MlWebViewClient(activity: AppCompatActivity) : WebViewClient() {
         if (request.url.toString().startsWith("https://cdn.download.ams.birds.cornell.edu/api")) {
             val modifiedUrl = modifyUrl(request.url)
             targetWidth = Integer.parseInt(request.url.toString().split("/").last())
-            Log.d("whoBird", "Target:" + targetWidth)
-            Log.d("whoBird", "Load smaller image:" + modifiedUrl)
+            Log.d("BirdLog", "Target:" + targetWidth)
+            Log.d("BirdLog", "Load smaller image:" + modifiedUrl)
             val okHttpRequest: Request =
                 Request.Builder()
                     .cacheControl(CacheControl.Builder().maxStale(Int.MAX_VALUE, TimeUnit.DAYS).build())
@@ -112,14 +112,14 @@ open class MlWebViewClient(activity: AppCompatActivity) : WebViewClient() {
         } else if (request.url.toString()
                 .contains("www.googletagmanager.com") || request.url.toString().endsWith(".js") || request.url.toString().contains("favicon")
         ) {
-            Log.d("whoBird", "Blocked:" + request.url.toString())
+            Log.d("BirdLog", "Blocked:" + request.url.toString())
             return WebResourceResponse(
                 "text/plain",
                 "UTF-8",
                 ByteArrayInputStream("".toByteArray())
             )
         } else {
-            Log.d("whoBird", "Allowed:" + request.url.toString())
+            Log.d("BirdLog", "Allowed:" + request.url.toString())
             return null
         }
 

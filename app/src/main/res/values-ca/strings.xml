@@ -7,7 +7,7 @@
     <string name="dialog_Later_button">Potser més endavant</string>
     <string name="dialog_StarOnGitHub">T\'agrada aquesta aplicació? Per favor, dona-li una estrella al Github o invita als desenvolupadors a un cafè via PayPal.</string>
     <string name="download_model">Descarregar el model</string>
-    <string name="download_model_text">whoBIRD necesita descargar el model de BirdNET (~ 30MB). \n No es permet l\'ús comercial \n(llicència CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">BirdLog necesita descargar el model de BirdNET (~ 30MB). \n No es permet l\'ús comercial \n(llicència CC-BY-NC-SA 4.0)</string>
     <string name="start">Comença</string>
     <string name="error_download">Error de descàrrega</string>
     <string name="error_audio_permission">Permís al micròfon no concedit</string>

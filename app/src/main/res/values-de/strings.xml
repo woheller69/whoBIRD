@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Vielleicht später</string>
     <string name="dialog_StarOnGitHub">Mögen Sie diese App? Bitte vergeben Sie einen Stern auf GitHub oder spendieren Sie dem Entwickler einen Kaffee über PayPal.</string>
     <string name="download_model">Modell herunterladen</string>
-    <string name="download_model_text">whoBIRD muss das BirdNET-Modell herunterladen (~ 30MB). \n Keine kommerzielle Nutzung erlaubt \n(CC-BY-NC-SA 4.0 Lizenz)</string>
+    <string name="download_model_text">BirdLog muss das BirdNET-Modell herunterladen (~ 30MB). \n Keine kommerzielle Nutzung erlaubt \n(CC-BY-NC-SA 4.0 Lizenz)</string>
     <string name="start">LOS GEHT\'S</string>
     <string name="error_download">Fehler beim Herunterladen</string>
     <string name="error_audio_permission">Berechtigung für Mikrofon fehlt</string>

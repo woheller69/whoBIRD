@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="56dp"
+        android:fitsSystemWindows="true"
         android:orientation="vertical">
 
         <ImageView
@@ -33,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                android:backgroundTint="@color/md_theme_light_surface"
                 android:layout_alignParentStart="true"
                 android:src="@drawable/ic_reload_24dp"
                 android:onClick="reload"/>
@@ -42,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:backgroundTint="@color/md_theme_light_secondaryContainer"
+                android:backgroundTint="@color/md_theme_light_surface"
                 android:layout_below="@id/webview_reload"
                 android:src="@drawable/ic_info_24dp"
                 android:onClick="ebird"/>

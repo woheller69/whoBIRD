@@ -548,7 +548,9 @@ class SoundClassifier(
   }
 
   private fun updateImage(max: IndexedValue<Float>?) {
-    if (mBinding.checkShowImages.isChecked) {
+    // Todo: MOve to settings screen
+    //if (mBinding.checkShowImages.isChecked) {
+    if (true) {
       Handler(Looper.getMainLooper()).post {
 
         val url =

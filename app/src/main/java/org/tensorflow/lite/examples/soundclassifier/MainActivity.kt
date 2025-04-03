@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Modifications by woheller69
 
 package org.tensorflow.lite.examples.soundclassifier
 
@@ -40,6 +39,7 @@ import androidx.core.os.LocaleListCompat
 import androidx.preference.PreferenceManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 import androidx.core.net.toUri
+import androidx.core.content.edit
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,14 +52,9 @@ class MainActivity : AppCompatActivity() {
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
     var language = sharedPref.getString("language", "").toString()
     setLanguage(language)
-/*    if (language.length == 2) { // If nothing is set, do nothing and use the OS native language
-      val appLocale = LocaleListCompat.forLanguageTags(language)
-      AppCompatDelegate.setApplicationLocales(appLocale)
-    }*/
     darkMode = sharedPref.getBoolean("darkMode", false)
     setTheme(this, darkMode)
 
-    //darkMode =
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
@@ -78,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     paramsIcon.height = (width / 1.8f).toInt()
 
     soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options())
-    binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
+    //binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
     binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
     binding.webview.settings.setDomStorageEnabled(true)
     binding.webview.settings.setJavaScriptEnabled(true)
@@ -111,8 +106,9 @@ class MainActivity : AppCompatActivity() {
       true
     }
 
+    //
     val isShowImagesActive = sharedPref.getBoolean("main_show_images", false)
-    binding.checkShowImages.isChecked = isShowImagesActive
+    /*binding.checkShowImages.isChecked = isShowImagesActive
     binding.checkShowImages.setOnClickListener { view ->
       val editor=sharedPref.edit()
       if ((view as CompoundButton).isChecked) {
@@ -122,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         editor.putBoolean("main_show_images", false)
         editor.apply()
       }
-    }
+    }*/
 
     val isIgnoreLocationDateActive = sharedPref.getBoolean("main_ignore_meta", false)
     binding.checkIgnoreMeta.isChecked = isIgnoreLocationDateActive
@@ -137,7 +133,7 @@ class MainActivity : AppCompatActivity() {
       }
     }
 
-    if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
+    //if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
 
     requestPermissions()
 
@@ -221,18 +217,6 @@ class MainActivity : AppCompatActivity() {
         setTheme(this, !darkMode)
         return true
       }
-      R.id.action_share_app -> {
-        val intent = Intent(Intent.ACTION_SEND)
-        val shareBody = "https://f-droid.org/packages/org.woheller69.whobird/"
-        intent.setType("text/plain")
-        intent.putExtra(Intent.EXTRA_TEXT, shareBody)
-        startActivity(Intent.createChooser(intent, ""))
-        return true
-      }
-      R.id.action_info -> {
-        startActivity(Intent(Intent.ACTION_VIEW, "https://github.com/woheller69/whobird".toUri()))
-        return true
-      }
       else -> return super.onOptionsItemSelected(item)
     }
   }
@@ -254,8 +238,9 @@ class MainActivity : AppCompatActivity() {
         textColor = context.getColor(R.color.md_theme_dark_primary)
       }
       val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
-      val editor=sharedPref.edit()
-      editor.putBoolean("darkMode", darkMode).apply()
+        sharedPref.edit() {
+            putBoolean("darkMode", darkMode)
+        }
     }
 
     fun tintMenuIcon(context: Context, menuItem: MenuItem) {

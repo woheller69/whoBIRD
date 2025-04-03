@@ -8,13 +8,4 @@
         android:icon="@drawable/baseline_invert_colors_24"
         android:tint="?attr/colorOnSurface"
         android:title="@string/change_theme" />
-    <item
-        app:showAsAction="never"
-        android:id="@+id/action_share_app"
-        android:title="@string/share_app" />
-    <item
-        app:showAsAction="never"
-        android:id="@+id/action_info"
-        android:icon="@drawable/ic_info_24dp"
-        tools:ignore="MenuTitle" />
 </menu>
