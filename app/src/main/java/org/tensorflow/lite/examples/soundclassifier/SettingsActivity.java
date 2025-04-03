@@ -3,6 +3,7 @@ package org.tensorflow.lite.examples.soundclassifier;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -65,6 +66,7 @@ Context mContext;
             PreferenceScreen preferenceScreen = getPreferenceScreen();
             Preference writeWav = getPreferenceManager().findPreference("write_wav");
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) preferenceScreen.removePreference(writeWav);
+
             Preference reset = getPreferenceManager().findPreference("reset");
 
             if (reset != null) reset.setOnPreferenceClickListener(preference -> {
@@ -79,6 +81,21 @@ Context mContext;
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;
             });
+
+            Preference language = getPreferenceManager().findPreference("language");
+            if (language != null) language.setOnPreferenceClickListener(preference -> {
+                // Create an intent to open the app's settings
+                Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
+                intent.setData(Uri.parse("package:" + getActivity().getPackageName()));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                startActivity(intent);
+                return true; // Return true to indicate that the click event has been handled
+
+            });
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) preferenceScreen.removePreference(language);
         }
     }
 }

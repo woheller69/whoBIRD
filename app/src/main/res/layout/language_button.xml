@@ -1,0 +1,5 @@
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:text="@string/language"
+    android:paddingVertical="15dp" />
