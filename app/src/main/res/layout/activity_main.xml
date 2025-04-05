@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/dark_blue_gray700"
+    android:background="?colorSurfaceVariant"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:background="?colorSurfaceVariant"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@android:color/white"
@@ -54,12 +54,12 @@
                 android:visibility="gone"
                 android:layout_below="@id/webview_url"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:background="?colorSurfaceVariant"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="bold"
                 android:textIsSelectable="true"
-                android:textColor="@color/orange500"
+                android:textColor="?colorPrimary"
                 android:textSize="14dp" />
             <TextView
                 android:id="@+id/webview_latinname"
@@ -68,12 +68,12 @@
                 android:visibility="gone"
                 android:layout_below="@id/webview_name"
                 android:layout_alignParentEnd="true"
-                android:background="@color/dark_blue_gray700"
+                android:background="?colorSurfaceVariant"
                 android:paddingHorizontal="3dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="italic"
                 android:textIsSelectable="true"
-                android:textColor="@color/orange500"
+                android:textColor="?colorPrimary"
                 android:textSize="10dp" />
         </RelativeLayout>
         <LinearLayout
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginStart="16dp"
-                android:textColor="@color/orange500"
+                android:textColor="?colorPrimary"
                 android:textSize="18dp"
                 android:singleLine="true"
                 android:id="@+id/gps"/>
@@ -114,14 +114,14 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/orange500"
-                        android:textColor="@color/orange500" />
+                        android:buttonTint="?colorPrimary"
+                        android:textColor="?colorPrimary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:textColor="@color/orange500"
+                        android:textColor="?colorPrimary"
                         android:textSize="20dp"
                         android:id="@+id/check_ignore_meta_text"
                         android:text="@string/ignore_gps_date" />
@@ -136,14 +136,14 @@
                         android:layout_marginStart="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="@color/orange500"
-                        android:textColor="@color/orange500" />
+                        android:buttonTint="?colorPrimary"
+                        android:textColor="?colorPrimary" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:textColor="@color/orange500"
+                        android:textColor="?colorPrimary"
                         android:textSize="20dp"
                         android:id="@+id/check_show_images_text"
                         android:text="@string/show_images" />
@@ -160,7 +160,7 @@
                 android:gravity="center_horizontal"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:textColor="@color/orange500"
+                android:textColor="?colorPrimary"
                 android:textSize="22dp"
                 android:id="@+id/text1"/>
             <TextView
@@ -170,7 +170,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:textColor="@color/orange500"
+                android:textColor="?colorPrimary"
                 android:textSize="22dp"
                 android:id="@+id/text2"/>
         </LinearLayout>
@@ -192,8 +192,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
-            app:itemIconTint="@color/orange500"
-            app:itemTextColor="@color/orange500"
+            app:itemIconTint="?colorPrimary"
+            app:itemTextColor="?colorPrimary"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_bar"
             android:background="@drawable/background_transparent" />
@@ -206,7 +206,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_pause_24dp"
-        app:tint="@color/dark_blue_gray700"
+        app:tint="?colorSurfaceVariant"
         app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

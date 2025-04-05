@@ -8,6 +8,7 @@
         <item name="colorSecondary">@color/gray400</item>
         <item name="colorSurface">@color/gray800</item>
         <item name="popupMenuBackground">@color/gray800</item>
+        <item name="colorSurfaceVariant">@color/dark_blue_gray700</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
     </style>
 </resources>
