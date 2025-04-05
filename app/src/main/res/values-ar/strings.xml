@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samples_zero">لا يوجد إدخال صوتي: جميع عينات الصوت تساوي صفرًا!</string>
+    <string name="ignore_gps_date">تجاهل الموقع والتاريخ</string>
+    <string name="latitude">خط العرض</string>
+    <string name="longitude">خط الطول</string>
+    <string name="dialog_Later_button">ربما لاحقًا</string>
+    <string name="download_model">تنزيل النموذج</string>
+    <string name="start">لنبدأ</string>
+    <string name="error_download">خطأ في التنزيل</string>
+    <string name="error_audio_permission">لم يتم منح إذن الميكروفون</string>
+    <string name="error_location_permission">لم يتم منح إذن الموقع</string>
+    <string name="show_images">عرض الصور</string>
+    <string name="clear_db">تم حذف الملاحظات</string>
+    <string name="detailed_list">قائمة مفصلة</string>
+    <string name="delete">حذف جميع الملاحظات؟</string>
+    <string name="share_app">مشاركة التطبيق</string>
+    <string name="settings_threshold">الحد الأدنى [%]</string>
+    <string name="settings_highpass">مرشح التمرير العالي [Hz]</string>
+    <string name="source_unprocessed">غير معالج</string>
+    <string name="source_microphone">الميكروفون</string>
+    <string name="source_voicerecognition">التعرف على الصوت</string>
+    <string name="settings_audiosource">مصدر الصوت</string>
+    <string name="settings_notification_sound">صوت الإشعارات</string>
+    <string name="dialog_StarOnGitHub">هل أعجبك هذا التطبيق؟ الرجاء وضع نجمة على جيثب أو شراء فنجان قهوة للمطور عبر PayPal.</string>
+    <string name="download_model_text">يحتاج \"whoBIRD\"من هذا الطائر إلى تنزيل نموذج BirdNET (~30 ميجابايت).\nلا يُسمح بالاستخدام التجاري\n(ترخيص CC-BY-NC-SA 4.0)</string>
+    <string name="save_wav">حفظ ملفات wav.</string>
+    <string name="summary_save_wav">يتم حفظ ملف wav. لكل عملية كشف في دليل الموسيقى. يتطلب Android 12+</string>
+</resources>
