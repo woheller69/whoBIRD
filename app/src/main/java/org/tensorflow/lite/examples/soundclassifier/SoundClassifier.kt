@@ -414,7 +414,7 @@ class SoundClassifier(
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
     audioRecord = AudioRecord(
       // including MIC, UNPROCESSED, and CAMCORDER.
-      Integer.parseInt(sharedPref.getString("audio_source", MediaRecorder.AudioSource.UNPROCESSED.toString())),
+      Integer.parseInt(sharedPref.getString("audio_source", MediaRecorder.AudioSource.UNPROCESSED.toString())!!),
       options.sampleRate,
       AudioFormat.CHANNEL_IN_MONO,
       AudioFormat.ENCODING_PCM_16BIT,
