@@ -26,4 +26,5 @@
     <string name="settings_notification_sound">Notification sound</string>
     <string name="save_wav">Ukládat soubory .wav</string>
     <string name="summary_save_wav">Pro každé rozpoznání uloží do adresáře Music soubor .wav. Vyžaduje Android 12+</string>
+    <string name="language">Jazyk</string>
 </resources>
