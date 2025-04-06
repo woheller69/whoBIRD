@@ -32,7 +32,7 @@ import java.util.Date
 import java.util.Locale
 
 
-class ViewActivity : AppCompatActivity() {
+class ViewActivity : BaseActivity() {
 
     private lateinit var binding: ActivityViewBinding
     private lateinit var database: BirdDBHelper

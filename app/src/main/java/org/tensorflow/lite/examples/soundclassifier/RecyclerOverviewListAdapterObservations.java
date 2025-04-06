@@ -38,11 +38,11 @@ public class RecyclerOverviewListAdapterObservations extends RecyclerView.Adapte
         holder.name.setText(birdObservations.get(position).getName());
         holder.probability.setText((int) Math.round(birdObservations.get(position).getProbability()*100.0)+ " %");
 
-        if (birdObservations.get(position).getProbability() < 0.3 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_red_dark_thin_dotted);
-        else if (birdObservations.get(position).getProbability() < 0.5 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_red_dark_thin);
-        else if (birdObservations.get(position).getProbability() < 0.65 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_dark_thin);
-        else if (birdObservations.get(position).getProbability() < 0.8 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_light_thin);
-        else holder.holder.setBackgroundResource(R.drawable.oval_holo_green_light_thin);
+        if (birdObservations.get(position).getProbability() < 0.3 )  holder.holder.setBackgroundResource(R.drawable.oval_red_thin_dotted);
+        else if (birdObservations.get(position).getProbability() < 0.5 )  holder.holder.setBackgroundResource(R.drawable.oval_red_thin);
+        else if (birdObservations.get(position).getProbability() < 0.65 )  holder.holder.setBackgroundResource(R.drawable.oval_orange_thin);
+        else if (birdObservations.get(position).getProbability() < 0.8 )  holder.holder.setBackgroundResource(R.drawable.oval_yellow_thin);
+        else holder.holder.setBackgroundResource(R.drawable.oval_green_thin);
 
         SimpleDateFormat sdf;
         Date date = new Date(birdObservations.get(position).getMillis());

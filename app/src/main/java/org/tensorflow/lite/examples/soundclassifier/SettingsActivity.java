@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
@@ -18,7 +17,7 @@ import androidx.preference.PreferenceScreen;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends BaseActivity {
 Context mContext;
 
     @Override
@@ -77,11 +76,20 @@ Context mContext;
                 sharedPreferences.edit().remove("model_threshold").apply();
                 sharedPreferences.edit().remove("play_sound").apply();
                 sharedPreferences.edit().remove("write_wav").apply();
+                sharedPreferences.edit().remove("theme").apply();
 
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;
             });
 
+            Preference theme = findPreference("theme");
+            theme.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
+                    requireActivity().recreate();
+                    return true;
+                }
+            });
             Preference language = getPreferenceManager().findPreference("language");
             if (language != null) language.setOnPreferenceClickListener(preference -> {
                 // Create an intent to open the app's settings

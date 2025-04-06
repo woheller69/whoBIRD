@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityDownloadBinding
 
-class DownloadActivity  : AppCompatActivity() {
+class DownloadActivity  : BaseActivity() {
     private var binding: ActivityDownloadBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
