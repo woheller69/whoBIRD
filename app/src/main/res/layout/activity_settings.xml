@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/dark_blue_gray700"
+    android:background="?colorSurfaceVariant"
     tools:context=".SettingsActivity">
 
 <LinearLayout
@@ -31,8 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
-            app:itemIconTint="@color/orange500"
-            app:itemTextColor="@color/orange500"
+            app:itemIconTint="?colorPrimary"
+            app:itemTextColor="?colorPrimary"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_bar"
             android:background="@drawable/background_transparent" />

@@ -1,0 +1,2 @@
+Simplified change of app language for Android 13+
+Translations
