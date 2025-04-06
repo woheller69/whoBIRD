@@ -5,6 +5,12 @@
         android:key="reset"
         android:layout="@layout/reset_button"/>
 
+    <SwitchPreferenceCompat
+        android:title="@string/high_contrast_theme"
+        android:key="theme"
+        android:defaultValue="false"
+        />
+
     <ListPreference
         app:defaultValue="9"
         app:entries="@array/audio_source_entries"

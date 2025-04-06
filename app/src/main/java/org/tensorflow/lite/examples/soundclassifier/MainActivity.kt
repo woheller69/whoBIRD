@@ -37,7 +37,7 @@ import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
   private lateinit var soundClassifier: SoundClassifier
   private lateinit var binding: ActivityMainBinding

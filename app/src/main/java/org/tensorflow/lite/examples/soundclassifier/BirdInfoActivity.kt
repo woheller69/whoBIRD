@@ -23,7 +23,7 @@ import java.io.InputStreamReader
 import java.util.Locale
 
 
-class BirdInfoActivity : AppCompatActivity() {
+class BirdInfoActivity : BaseActivity() {
 
     private lateinit var binding: ActivityBirdInfoBinding
     private lateinit var database: BirdDBHelper

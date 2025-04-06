@@ -4,8 +4,8 @@
     <color name="gray500">#9E9E9E</color>
     <color name="gray700">#616161</color>
     <color name="gray800">#424242</color>
-
     <color name="dark_blue_gray700">#344955</color>
+    <color name="black">#000000</color>
     <color name="orange500">#F9AA33</color>
-
+    <color name="green">#00FF00</color>
 </resources>

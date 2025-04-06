@@ -612,7 +612,7 @@ class SoundClassifier(
         else if (element.value < 0.5) tv.setBackgroundResource(R.drawable.oval_holo_red_dark)
         else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_holo_orange_dark)
         else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_holo_orange_light)
-        else tv.setBackgroundResource(R.drawable.oval_holo_green_light)
+        else tv.setBackgroundResource(R.drawable.oval_holo_green_dark)
         database?.addEntry(label, lat, lon, element.index, element.value, timeInMillis)
         if (sharedPref.getBoolean("write_wav",false)) WavUtils.createWaveFile(timeInMillis, wavWriterBuffer, options.sampleRate,1,2)
         if (sharedPref.getBoolean("play_sound",false)) PlayNotification.playSound(mContext);

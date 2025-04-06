@@ -42,7 +42,7 @@ public class RecyclerOverviewListAdapterObservations extends RecyclerView.Adapte
         else if (birdObservations.get(position).getProbability() < 0.5 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_red_dark_thin);
         else if (birdObservations.get(position).getProbability() < 0.65 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_dark_thin);
         else if (birdObservations.get(position).getProbability() < 0.8 )  holder.holder.setBackgroundResource(R.drawable.oval_holo_orange_light_thin);
-        else holder.holder.setBackgroundResource(R.drawable.oval_holo_green_light_thin);
+        else holder.holder.setBackgroundResource(R.drawable.oval_holo_green_dark_thin);
 
         SimpleDateFormat sdf;
         Date date = new Date(birdObservations.get(position).getMillis());
