@@ -36,7 +36,7 @@ public class RecyclerOverviewListAdapterBirdInfo extends RecyclerView.Adapter<Re
         List<String> parts = Arrays.asList(birdList.get(position).getSecond().split("_"));
         holder.name.setText(parts.get(parts.size() - 1));
         holder.latinName.setText(parts.get(0));
-        holder.holder.setBackgroundResource(R.drawable.oval_holo_green_dark_thin);
+        holder.holder.setBackgroundResource(R.drawable.oval_green_thin);
     }
 
     @Override

@@ -608,11 +608,11 @@ class SoundClassifier(
         labelList[element.index].split("_").last()  //show in locale language
       Handler(Looper.getMainLooper()).post {
         tv.setText(label + "  " + Math.round(element.value * 100.0) + "%")
-        if (element.value < 0.3) tv.setBackgroundResource(R.drawable.oval_holo_red_dark_dotted)
-        else if (element.value < 0.5) tv.setBackgroundResource(R.drawable.oval_holo_red_dark)
-        else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_holo_orange_dark)
-        else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_holo_orange_light)
-        else tv.setBackgroundResource(R.drawable.oval_holo_green_dark)
+        if (element.value < 0.3) tv.setBackgroundResource(R.drawable.oval_red_dotted)
+        else if (element.value < 0.5) tv.setBackgroundResource(R.drawable.oval_red)
+        else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_orange)
+        else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_yellow)
+        else tv.setBackgroundResource(R.drawable.oval_green)
         database?.addEntry(label, lat, lon, element.index, element.value, timeInMillis)
         if (sharedPref.getBoolean("write_wav",false)) WavUtils.createWaveFile(timeInMillis, wavWriterBuffer, options.sampleRate,1,2)
         if (sharedPref.getBoolean("play_sound",false)) PlayNotification.playSound(mContext);

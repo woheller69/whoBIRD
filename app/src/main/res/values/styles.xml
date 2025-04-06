@@ -1,9 +1,9 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/orange500</item>
+        <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryDark">@color/gray500</item>
-        <item name="colorAccent">@color/orange500</item>
+        <item name="colorAccent">@color/orange</item>
         <item name="colorOnSurface">@color/gray700</item>
         <item name="colorSecondary">@color/gray400</item>
         <item name="colorSurface">@color/gray800</item>
@@ -13,9 +13,9 @@
     </style>
 
     <style name="AppThemeHighContrast" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimary">@color/green_max</item>
         <item name="colorPrimaryDark">@color/gray500</item>
-        <item name="colorAccent">@color/green</item>
+        <item name="colorAccent">@color/green_max</item>
         <item name="colorOnSurface">@color/gray700</item>
         <item name="colorSecondary">@color/gray400</item>
         <item name="colorSurface">@color/gray800</item>
