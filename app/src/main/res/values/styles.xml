@@ -13,9 +13,9 @@
     </style>
 
     <style name="AppThemeHighContrast" parent="Theme.MaterialComponents">
-        <item name="colorPrimary">@color/green_max</item>
+        <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryDark">@color/gray500</item>
-        <item name="colorAccent">@color/green_max</item>
+        <item name="colorAccent">@color/green</item>
         <item name="colorOnSurface">@color/gray700</item>
         <item name="colorSecondary">@color/gray400</item>
         <item name="colorSurface">@color/gray800</item>

@@ -7,8 +7,7 @@
     <color name="dark_blue_gray700">#344955</color>
     <color name="black">#000000</color>
     <color name="orange">#F9AA33</color>
-    <color name="green">#00DD00</color>
-    <color name="green_max">#00FF00</color>
+    <color name="green">#00FF00</color>
     <color name="red">#DD0000</color>
     <color name="yellow">#FFFF00</color>
 </resources>
