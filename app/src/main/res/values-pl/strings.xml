@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Brak wejścia audio: Wyzerowano próbki dźwięku!</string>
     <string name="ignore_gps_date">Ignoruj lokalizację i datę</string>
