@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Keine Audiodaten: Alle Werte sind Null!</string>
     <string name="ignore_gps_date">Ort und Datum ignorieren</string>

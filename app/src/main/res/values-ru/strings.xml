@@ -26,4 +26,6 @@
     <string name="summary_save_wav">Сохраняет файл .wav для каждого определения в музыкальном каталоге. Требуется Android 12+</string>
     <string name="dialog_StarOnGitHub">Вам нравится это приложение? Пожалуйста, поставьте звёздочку на GitHub или купите разработчику кофе через PayPal.</string>
     <string name="settings_highpass">Высокочастотный фильтр [Гц]</string>
+    <string name="high_contrast_theme">Высокий контраст</string>
+    <string name="language">Язык</string>
 </resources>

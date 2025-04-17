@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Pas d\'entrée audio : Tous les échantillons sonores sont vides !</string>
     <string name="ignore_gps_date">Ignorer le lieu et la date</string>
