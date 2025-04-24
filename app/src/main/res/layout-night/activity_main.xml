@@ -127,28 +127,6 @@
                         android:id="@+id/check_ignore_meta_text"
                         android:text="@string/ignore_gps_date" />
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start">
-                    <CheckBox
-                        android:id="@+id/check_show_images"
-                        android:checked="false"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="@color/md_theme_dark_primary"
-                        android:textColor="@color/md_theme_dark_primary" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/md_theme_dark_primary"
-                        android:textSize="20dp"
-                        android:id="@+id/check_show_images_text"
-                        android:text="@string/show_images" />
-                </LinearLayout>
             </LinearLayout>
 
             <Space

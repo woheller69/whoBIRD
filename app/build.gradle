@@ -1,26 +1,31 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.compose.compiler)
 }
 
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of("17"))
+    }
+}
 android {
     compileSdk 36
 
     defaultConfig {
-        applicationId "org.zell_mbc.birdlog"
+        applicationId "com.zell_mbc.birdlog"
         minSdk 26
         targetSdk 36
-        versionCode 40
-        versionName "4.0.1"
+        versionCode 1
+        versionName "1.0.0"
     }
 
 
     buildFeatures {
         viewBinding true
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 
     buildTypes {
@@ -29,11 +34,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
     }
-    namespace 'org.tensorflow.lite.examples.soundclassifier'
+
+    namespace 'com.zell_mbc.birdlog'
     androidResources {
         generateLocaleConfig true
         noCompress 'tflite'
@@ -41,18 +48,88 @@ android {
     lint {
         disable 'MissingTranslation'
     }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "androidx.core:core-ktx:1.15.0"
-    implementation "androidx.appcompat:appcompat:1.7.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.8.7"
-    implementation "androidx.constraintlayout:constraintlayout:2.2.1"
-    implementation "com.google.android.material:material:1.12.0"
-    implementation "org.tensorflow:tensorflow-lite:2.6.0"
-    implementation "androidx.preference:preference-ktx:1.2.1"
-    implementation "com.squareup.okhttp3:okhttp:4.12.0"
-    implementation "net.lingala.zip4j:zip4j:2.11.5"
-    implementation 'uk.me.berndporr:iirj:1.7'
+    implementation platform(libs.androidx.compose.bom)
+
+    // Import Material Design 3 library
+    implementation libs.androidx.material3
+    implementation libs.androidx.compiler
+
+    implementation libs.androidx.foundation
+    implementation libs.androidx.runtime
+    implementation libs.androidx.runtime.livedata
+    implementation libs.androidx.ui
+    implementation libs.androidx.material
+    implementation libs.androidx.animation
+    implementation libs.material
+    implementation libs.androidx.ui.tooling
+    implementation libs.androidx.material.icons.extended
+
+    implementation libs.androidx.activity.compose
+    implementation libs.androidx.databinding.runtime
+    implementation libs.androidx.preference.ktx
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.constraintlayout
+    implementation libs.google.material
+    implementation libs.androidx.legacy.support.v4
+
+    implementation libs.androidx.annotation
+    implementation libs.androidx.fragment.ktx
+    implementation libs.androidx.core.ktx
+
+    implementation libs.kotlin.stdlib.jdk8
+    implementation libs.androidx.navigation.compose
+
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.viewmodel.savedstate
+    implementation libs.androidx.lifecycle.common.java8
+
+
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.room.ktx
+    implementation libs.androidx.material3.android
+
+    // Compose
+
+    // 3rd party
+    implementation libs.acra.mail
+    implementation libs.acra.dialog
+    implementation libs.acra.notification
+    implementation libs.acra.toast
+
+    implementation libs.zip4j
+    implementation libs.lifecycle.viewmodel.ktx
+
+    // Integration tests
+    // Core library
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation libs.androidx.rules
+    testImplementation(libs.androidx.runner)
+    testImplementation(libs.androidx.junit.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation libs.androidx.espresso.intents
+
+    // Unit tests
+    testImplementation(libs.truth)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.kotlinx.coroutines.test)
+
+    // other test dependencies like:
+    testImplementation(libs.junit)
+    testImplementation(libs.androidx.room.testing)
+
+    testImplementation(libs.truth)
+    testImplementation(libs.kotlinx.coroutines.test)
+    implementation libs.tensorflow.lite
+    implementation libs.okhttp
+    implementation libs.iirj
 }

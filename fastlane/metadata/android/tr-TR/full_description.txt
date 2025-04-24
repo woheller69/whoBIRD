@@ -1,8 +1,8 @@
-whoBIRD, dünyanın her yerinde kuşları seslerinden tanıyabilen mükemmel bir kuşçuluk arkadaşıdır!
-Son teknoloji ürünü BirdNET projesi tarafından desteklenen whoBIRD, dünya çapında 6.000'den fazla kuş türünü içeren kapsamlı bir veri tabanına sahiptir.
+BirdLog, dünyanın her yerinde kuşları seslerinden tanıyabilen mükemmel bir kuşçuluk arkadaşıdır!
+Son teknoloji ürünü BirdNET projesi tarafından desteklenen BirdLog, dünya çapında 6.000'den fazla kuş türünü içeren kapsamlı bir veri tabanına sahiptir.
 Uygulama, gelişmiş makine öğrenimi algoritmalarını kullanarak kuşları benzersiz seslerine göre doğru bir şekilde tanımlayabilir.
 
-Dahası, whoBIRD işini internet bağlantısı gerektirmeden tamamen aygıtınızda gerçekleştirir.
+Dahası, BirdLog işini internet bağlantısı gerektirmeden tamamen aygıtınızda gerçekleştirir.
 Bu, ister ormanın derinliklerinde ister uzak bir gölün kenarında olun, istediğiniz zaman, istediğiniz yerde kullanabileceğiniz anlamına gelir.
 
 Uygulama Android 9+ gerektirir

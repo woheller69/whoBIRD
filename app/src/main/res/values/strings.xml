@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">BirdLog</string>
+    <string name="thirtyTwoBit" translatable="false">32bit (~55MB)</string>
+
     <string name="samples_zero">No audio input: All audio samples are zero!</string>
     <string name="ignore_gps_date">Ignore location and date</string>
     <string name="latitude">Lat</string>
@@ -29,4 +31,13 @@
     <string name="language">Language</string>
     <string name="summary_language">Change application language.</string>
     <string name="change_theme">Change Theme</string>
+    <string name="crashLogs">Email crash logs</string>
+    <string name="crashLogsSummary">Allow crash logs to be emailed to the developers. Each email will require explicit user confirmation.</string>
+    <string name="crashMessageDialog">Unfortunately BirdLog crashed due to a severe error. If you want the developers to know and be able to troubleshoot, please consider to email a crash report now.</string>
+    <string name="crashMessageEmail">Unfortunately BirdLog crashed! This email contains the crash log as attachment.\nCheck it out please.</string>
+    <string name="crashContext">What did you do when this crash happened?</string>
+    <string name="crashTitle">"BirdLog crashed</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="search">Search</string>
 </resources>

@@ -15,21 +15,30 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".LoadModels"
+            android:screenOrientation="portrait"
             android:exported="false">
         </activity>
 
         <activity
             android:name=".ViewActivity"
+            android:screenOrientation="portrait"
             android:exported="false">
         </activity>
 
         <activity
             android:name=".BirdInfoActivity"
+            android:screenOrientation="portrait"
             android:exported="false">
         </activity>
 
         <activity
             android:name=".DownloadActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +48,12 @@
 
         <activity
             android:name=".SettingsActivity"
+            android:screenOrientation="portrait"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".AllBirdsActivity"
+            android:screenOrientation="portrait"
             android:exported="false">
         </activity>
 

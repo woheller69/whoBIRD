@@ -1,8 +1,8 @@
-whoBIRD és el millor company d'observació d'ocells que pot reconèixer els ocells pels seus sons, a qualsevol part del món!
-Impulsat pel projecte d'avantguarda BirdNET, whoBIRD compta amb una àmplia base de dades de més de 6.000 espècies d'ocells a tot el món.
+BirdLog és el millor company d'observació d'ocells que pot reconèixer els ocells pels seus sons, a qualsevol part del món!
+Impulsat pel projecte d'avantguarda BirdNET, BirdLog compta amb una àmplia base de dades de més de 6.000 espècies d'ocells a tot el món.
 Utilitzant algorismes avançats d'aprenentatge automàtic, l'aplicació pot identificar amb precisió els ocells en funció de les seves vocalitzacions úniques.
 
-A més, whoBIRD realitza la seva màgia completament al vostre dispositiu, sense necessitat de connexió a Internet.
+A més, BirdLog realitza la seva màgia completament al vostre dispositiu, sense necessitat de connexió a Internet.
 Això vol dir que podeu utilitzar-lo en qualsevol moment i en qualsevol lloc, tant si us trobeu al bosc com a la vora d'un llac remot.
 
 L'aplicació requereix Android 9+
