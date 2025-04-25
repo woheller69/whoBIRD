@@ -18,7 +18,6 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import net.lingala.zip4j.ZipFile
@@ -28,6 +27,8 @@ import java.io.File
 import java.io.IOException
 import java.io.InputStreamReader
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.Locale
 
@@ -338,10 +339,22 @@ class ViewActivity : BaseActivity() {
                 return true
             }
             R.id.action_save_db -> {
+
+                val currentDateTime = LocalDateTime.now()
+                val dateFormat = DateTimeFormatter.ofLocalizedDate(java.time.format.FormatStyle.SHORT).withLocale(Locale.getDefault())
+                val timeFormat = if (DateFormat.is24HourFormat(this)) {
+                    DateTimeFormatter.ofPattern("HH:mm", Locale.getDefault())
+                } else {
+                    DateTimeFormatter.ofPattern("hh:mm a", Locale.getDefault())
+                }
+
+                val formattedDate = currentDateTime.format(dateFormat)
+                val formattedTime = currentDateTime.format(timeFormat)
+
                 val intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
                 intent.addCategory(Intent.CATEGORY_OPENABLE)
                 intent.setType("application/zip")
-                intent.putExtra(Intent.EXTRA_TITLE, resources.getString(R.string.app_name))
+                intent.putExtra(Intent.EXTRA_TITLE, resources.getString(R.string.app_name) + "_" + formattedDate + "_" + formattedTime)
                 resultLauncher.launch(intent)
                 return true
             }
