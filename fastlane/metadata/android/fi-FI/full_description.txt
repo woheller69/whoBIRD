@@ -1,0 +1,8 @@
+whoBIRD on lintujen tarkkailijan apuväline, joka tunnistaa linnut äänien perusteella missä päin maailmaa tahansa!
+Perustuu huippuluokan BirdNET-projektiin, whoBIRDillä on mittava tietokanta, jossa on yli 6000 lintulajia ympäri maailmaa.
+Kehittyneiden koneoppimisalgoritmien avulla sovellus pystyy tunnistamaan linnut tarkasti niiden ainutlaatuisen ääntelyn perusteella.
+
+Lisäksi whoBIRD tekee taikojaan yksinomaan laitteellasi, eikä se vaadi internetyhteyttä.
+
+Tämä tarkoittaa, että voit käyttää sitä missä ja milloin tahansa - olitpa sitten syvällä metsässä tai syrjäisen järven rannalla.
+Sovellus vaatii Android 9+ -käyttöjärjestelmän
