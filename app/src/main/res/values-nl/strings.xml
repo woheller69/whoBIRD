@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Geen audio-ingang: Alle audiosamples zijn leeg!</string>
-    <string name="ignore_gps_date">Locatie en datum negeren</string>
+    <string name="ignore_gps_date">Negeer locatie en datum</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Misschien later</string>
@@ -9,21 +9,23 @@
     <string name="download_model">Download model</string>
     <string name="download_model_text">whoBIRD moet het BirdNET model downloaden (~ 30MB). \n Commercieel gebruik niet toegestaan \n(CC-BY-NC-SA 4.0 licentie)</string>
     <string name="start">Daar gaan we</string>
-    <string name="error_download">Download error</string>
-    <string name="error_audio_permission">Toestemming microfoon niet verleend</string>
-    <string name="error_location_permission">Toestemming locatie niet verleend</string>
-    <string name="show_images">Afbeeldingen tonen</string>
+    <string name="error_download">Download fout</string>
+    <string name="error_audio_permission">Microfoon toegang niet verleend</string>
+    <string name="error_location_permission">Locatie toegang niet verleend</string>
+    <string name="show_images">Toon afbeeldingen</string>
     <string name="clear_db">Waarnemingen verwijderd</string>
     <string name="detailed_list">Gedetailleerde lijst</string>
     <string name="delete">Alle observaties verwijderen?</string>
-    <string name="share_app">Share app</string>
-    <string name="settings_threshold">Threshold [%]</string>
+    <string name="share_app">Deel app</string>
+    <string name="settings_threshold">Drempel [%]</string>
     <string name="settings_highpass">High-Pass Filter [Hz]</string>
-    <string name="source_unprocessed">Unprocessed</string>
-    <string name="source_microphone">Microphone</string>
-    <string name="source_voicerecognition">Voice Recognition</string>
-    <string name="settings_audiosource">Audio Source</string>
-    <string name="settings_notification_sound">Notification sound</string>
-    <string name="save_wav">Save .wav files</string>
-    <string name="summary_save_wav">Saves a .wav file for each detection in Music directory. Requires Android 12+</string>
+    <string name="source_unprocessed">Onbewerkt</string>
+    <string name="source_microphone">Microfoon</string>
+    <string name="source_voicerecognition">Spraak herkenning</string>
+    <string name="settings_audiosource">Geluidsbron</string>
+    <string name="settings_notification_sound">Meldingsgeluid</string>
+    <string name="save_wav">Bewaar .wav bestanden</string>
+    <string name="summary_save_wav">Bewaar een .wav bestand voor elke detectie in de Muziek map. Vanaf Android 12+</string>
+    <string name="language">Taal</string>
+    <string name="high_contrast_theme">Hoog contrast</string>
 </resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samples_zero">Ei ääntä: Mitään ääntä ei kuultu!</string>
+    <string name="ignore_gps_date">Jätä huomiotta sijainti ja päivämäärä</string>
+    <string name="latitude">Lev.</string>
+    <string name="longitude">Pit.</string>
+    <string name="dialog_Later_button">Ehkä myöhemmin</string>
+    <string name="dialog_StarOnGitHub">Pidätkö tästä sovelluksesta? Anna tähti GitHubissa tai osta kehittäjälle kahvi PayPalin kautta.</string>
+    <string name="download_model">Lataa malli</string>
+    <string name="download_model_text">whoBIRDin on ladattava BirdNET-malli (~ 30Mt). \n Kaupallinen käyttö kielletty \n(CC-BY-NC-SA 4.0 lisenssi)</string>
+    <string name="start">ALOITETAAN</string>
+    <string name="error_download">Latausvirhe</string>
+    <string name="error_audio_permission">Mikrofonin käyttöoikeutta ei ole myönnetty</string>
+    <string name="error_location_permission">Sijainnin käyttöoikeutta ei ole myönnetty</string>
+    <string name="show_images">Näytä kuvat</string>
+    <string name="clear_db">Havainnot poistettu</string>
+    <string name="detailed_list">Yksityiskohtaiset tiedot</string>
+    <string name="delete">Poistetaanko kaikki havainnot?</string>
+    <string name="share_app">Jaa sovellus</string>
+    <string name="settings_threshold">Raja-arvo [%]</string>
+    <string name="settings_highpass">Ylipäästösuodin [Hz]</string>
+    <string name="source_unprocessed">Käsittelemätön</string>
+    <string name="source_microphone">Mikrofoni</string>
+    <string name="source_voicerecognition">Äänentunnistus</string>
+    <string name="settings_audiosource">Äänilähde</string>
+    <string name="settings_notification_sound">Ilmoitusääni</string>
+    <string name="save_wav">Tallenna .wav tiedostot</string>
+    <string name="summary_save_wav">Tallentaa .wav-tiedoston jokaista havaintoa varten Musiikki-hakemistoon. Vaatii Android 12+</string>
+    <string name="language">Kieli</string>
+    <string name="high_contrast_theme">Suuri kontrasti</string>
+</resources>
