@@ -84,8 +84,6 @@ class SoundClassifier(
     val metaModelPath: String = "metaModel.tflite",
     /** The required audio sample rate in Hz.  */
     val sampleRate: Int = 48000,
-    /** Multiplier for audio samples  */
-    val warmupRuns: Int = 3,
     /** Probability value above which a class in the meta model is labeled as active (i.e., detected) the display. (default 0.01) */
     var metaProbabilityThreshold1: Float = 0.01f,  //min must be > 0
     var metaProbabilityThreshold2: Float = 0.008f,  //min must be > 0
@@ -135,6 +133,7 @@ class SoundClassifier(
   /** Used to hold the real-time probabilities predicted by the model for the output classes.  */
   private lateinit var predictionProbs: FloatArray
   private lateinit var metaPredictionProbs: FloatArray
+  private lateinit var metaPredictionProbsMax: FloatArray
 
   /** Latest prediction latency in milliseconds.  */
   private var latestPredictionLatencyMs = 0f
@@ -154,7 +153,6 @@ class SoundClassifier(
     loadAssetList(context)
     setupInterpreter(context)
     setupMetaInterpreter(context)
-    warmUpModel()
   }
 
   /**
@@ -336,43 +334,68 @@ class SoundClassifier(
       mBinding.gps.setText(mContext.getString(R.string.latitude)+": " + (round(lat*100.0)/100.0).toString() + " / " + mContext.getString(R.string.longitude) + ": " + (round(lon*100.0)/100).toString())
     }
 
-    val weekMeta = cos(Math.toRadians(week * 7.5)) + 1.0
+    val metaOutputBuffer = FloatBuffer.allocate(metaModelNumClasses)
 
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
+    val metaExtended= sharedPref.getBoolean("meta_extended", true)
+
+    if (metaExtended) { // Only run for all 48 weeks if option is set
+      metaPredictionProbsMax = FloatArray(metaModelNumClasses) { 0f }
+      for (weekindex in 1..48) {
+        val weekMeta = cos(Math.toRadians(weekindex * 7.5)) + 1.0
+
+        // Prepare input buffer
+        metaInputBuffer.put(0, lat)
+        metaInputBuffer.put(1, lon)
+        metaInputBuffer.put(2, weekMeta.toFloat())
+        metaInputBuffer.rewind()
+
+        // Run interpreter
+        metaOutputBuffer.clear()
+        meta_interpreter.run(metaInputBuffer, metaOutputBuffer)
+        metaOutputBuffer.rewind()
+        // Update max values
+        for (i in 0 until metaModelNumClasses) {
+          val value = metaOutputBuffer.get(i)
+          if (value > metaPredictionProbsMax[i]) {
+            metaPredictionProbsMax[i] = value
+          }
+        }
+      }
+    }
+
+    // Run for the current week
+    val weekMeta = cos(Math.toRadians(week * 7.5)) + 1.0
     metaInputBuffer.put(0, lat)
     metaInputBuffer.put(1, lon)
     metaInputBuffer.put(2, weekMeta.toFloat())
-    metaInputBuffer.rewind() // Reset position to beginning of buffer
-    val metaOutputBuffer = FloatBuffer.allocate(metaModelNumClasses)
-    metaOutputBuffer.rewind()
+    metaInputBuffer.rewind()
+
+    metaOutputBuffer.clear()
     meta_interpreter.run(metaInputBuffer, metaOutputBuffer)
     metaOutputBuffer.rewind()
-    metaOutputBuffer.get(metaPredictionProbs) // Copy data to metaPredictionProbs.
+    metaOutputBuffer.get(metaPredictionProbs)
 
-
-    for (i in metaPredictionProbs.indices) {
-      metaPredictionProbs[i] =
-        if (metaPredictionProbs[i] >= options.metaProbabilityThreshold1) {
-        1f
-      } else if (metaPredictionProbs[i] >= options.metaProbabilityThreshold2) {
-        0.8f
-      } else if (metaPredictionProbs[i] >= options.metaProbabilityThreshold3) {
-        0.5f
-      } else {
-        0f
+    // If extended, run threshold logic for both current and max arrays
+    if (metaExtended) {
+      for (i in metaPredictionProbs.indices) {
+        val blended = 0.5f * applyMetaThreshold(metaPredictionProbs[i]) +
+                0.5f * applyMetaThreshold(metaPredictionProbsMax[i])
+        metaPredictionProbs[i] = blended
+      }
+    } else {
+      for (i in metaPredictionProbs.indices) {
+        metaPredictionProbs[i] = applyMetaThreshold(metaPredictionProbs[i])
       }
     }
   }
 
-  private fun warmUpModel() {
-    generateDummyAudioInput(inputBuffer)
-    for (n in 0 until options.warmupRuns) {
-
-      // Create input and output buffers.
-      val outputBuffer = FloatBuffer.allocate(modelNumClasses)
-      inputBuffer.rewind()
-      outputBuffer.rewind()
-      interpreter.run(inputBuffer, outputBuffer)
-
+  private fun applyMetaThreshold(prob: Float): Float {
+    return when {
+      prob >= options.metaProbabilityThreshold1 -> 1f
+      prob >= options.metaProbabilityThreshold2 -> 0.8f
+      prob >= options.metaProbabilityThreshold3 -> 0.5f
+      else -> 0f
     }
   }
 

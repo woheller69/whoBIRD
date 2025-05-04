@@ -27,4 +27,6 @@
     <string name="summary_save_wav">Speichert eine .wav Datei für jede Beobachtung im Music Verzeichnis. Erfordert Android 12+</string>
     <string name="language">Sprache</string>
     <string name="high_contrast_theme">Hoher Kontrast</string>
+    <string name="settings_meta_extended">Gewichtetes Meta-Modell</string>
+    <string name="summary_meta_extended">Diese Methode benötigt bei Standortänderungen kurzzeitig mehr CPU-Ressourcen</string>
 </resources>

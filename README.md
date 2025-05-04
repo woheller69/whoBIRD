@@ -44,6 +44,13 @@ There you can also backup, share, or delete the database containing your observa
 
 **Threshold**: Set the minimum probability required for a detection to be displayed. Be cautious when lowering the threshold, as it may lead to an increase in false detections.
 
+**Weighted Meta Model**: In addition to running the meta model for the current week and location, this version computes the meta model predictions for all weeks of the year at the same location. 
+The final result is a 50/50 weighted average of:
+-The prediction for the current week, and
+-The maximum prediction across all weeks.
+
+This approach improves detection of migratory birds, especially when they arrive earlier or leave later than the typical migration period.
+
 **Save .wav files**: Save a .wav file for each detection in Music directory. Recordings in this directory are not deleted by the app. Make sure to clean up on your own. Requires Android 12+.
 
 WARNING: This option may consume a lot of space in storage.

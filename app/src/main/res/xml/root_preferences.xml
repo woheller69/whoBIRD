@@ -36,6 +36,13 @@
         />
 
     <SwitchPreferenceCompat
+        android:title="@string/settings_meta_extended"
+        android:key="meta_extended"
+        android:summary="@string/summary_meta_extended"
+        android:defaultValue="true"
+        />
+
+    <SwitchPreferenceCompat
         android:title="@string/settings_notification_sound"
         android:key="play_sound"
         android:defaultValue="false"

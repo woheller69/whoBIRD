@@ -28,4 +28,6 @@
     <string name="summary_save_wav">Saves a .wav file for each detection in Music directory. Requires Android 12+</string>
     <string name="language">Language</string>
     <string name="high_contrast_theme">High contrast</string>
+    <string name="settings_meta_extended">Weighted Meta Model</string>
+    <string name="summary_meta_extended">This method briefly requires more CPU resources when the location changes</string>
 </resources>
