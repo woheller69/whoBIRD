@@ -496,7 +496,6 @@ class SoundClassifier(
 
     var j = 0 // Indices for the circular buffer next write
 
-    Log.w(TAG, "recognitionPeriod:"+inferenceInterval)
     recognitionTask = Timer().scheduleAtFixedRate(inferenceInterval, inferenceInterval) task@{
       val outputBuffer = FloatBuffer.allocate(modelNumClasses)
       val recordingBuffer = ShortArray(modelInputLength)
