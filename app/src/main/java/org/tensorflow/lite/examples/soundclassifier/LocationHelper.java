@@ -13,7 +13,13 @@ import androidx.core.app.ActivityCompat;
 
 public class LocationHelper {
     private static Location oldLocation;
+    private static Location preciseLocation;
     private static LocationListener locationListenerGPS;
+    static {
+        preciseLocation = new Location("GPS");
+        preciseLocation.setLatitude(0.0f);
+        preciseLocation.setLongitude(0.0f);
+    }
 
     static void stopLocation(Context context){
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -28,6 +34,7 @@ public class LocationHelper {
             if (locationListenerGPS==null) locationListenerGPS = new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
+                    preciseLocation = location;
                     Location roundLoc = new Location(location);
                     roundLoc.setLatitude(Math.round(location.getLatitude() * 100.0) / 100.0);
                     roundLoc.setLongitude(Math.round(location.getLongitude() * 100.0) / 100.0);
@@ -67,4 +74,7 @@ public class LocationHelper {
         }
     }
 
+    public static Location getPreciseLocation(){
+        return preciseLocation;
+    }
 }

@@ -635,7 +635,8 @@ class SoundClassifier(
         else if (element.value < 0.65) tv.setBackgroundResource(R.drawable.oval_orange)
         else if (element.value < 0.8) tv.setBackgroundResource(R.drawable.oval_yellow)
         else tv.setBackgroundResource(R.drawable.oval_green)
-        database?.addEntry(label, lat, lon, element.index, element.value, timeInMillis)
+        val currentLocation = LocationHelper.getPreciseLocation()
+        database?.addEntry(label, currentLocation.latitude.toFloat(), currentLocation.longitude.toFloat(), element.index, element.value, timeInMillis)
         if (sharedPref.getBoolean("write_wav",false)) WavUtils.createWaveFile(timeInMillis, wavWriterBuffer, options.sampleRate,1,2)
         if (sharedPref.getBoolean("play_sound",false)) PlayNotification.playSound(mContext);
       }
