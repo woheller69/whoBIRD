@@ -627,7 +627,7 @@ class SoundClassifier(
         mBinding.webviewReload.setVisibility(View.GONE)
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
         if (sharedPref.getBoolean("show_spectrogram", false)){
-          if (spectrogramBuffer != null) mBinding.icon.setImageBitmap(MelSpectrogram.getMelBitmap(mContext, spectrogramBuffer, options.sampleRate))
+          if (spectrogramBuffer != null) mBinding.icon.setImageBitmap(MelSpectrogram.getMelBitmap(spectrogramBuffer, options.sampleRate))
           mBinding.icon.setScaleType(ScaleType.FIT_XY)
         }
       }

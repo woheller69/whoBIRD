@@ -4,11 +4,7 @@ import static java.lang.Math.cos;
 import static java.lang.Math.log10;
 import static java.lang.Math.sin;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-
-import androidx.preference.PreferenceManager;
 
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
@@ -22,7 +18,7 @@ public class MelSpectrogram {
     private static float[] melFilters = null;
     private static final Mel mel = new Mel();
 
-    public static Bitmap getMelBitmap(Context context, FloatBuffer audioBuffer, int sampleRate) {
+    public static Bitmap getMelBitmap(FloatBuffer audioBuffer, int sampleRate) {
         if (melFilters == null) melFilters = createMelFilterBank(N_FFT, sampleRate / 2, N_MEL);  //we are downsampling from 48000 to 24000Hz
         audioBuffer.rewind();
         int bufferLength = audioBuffer.remaining();
@@ -46,7 +42,7 @@ public class MelSpectrogram {
 
         float[] melSpectrogram = getMelSpectrogram(floatArray);
 
-        return calcMelSpectrogramBMP(context, melSpectrogram);
+        return calcMelSpectrogramBMP(melSpectrogram);
     }
 
 
@@ -219,7 +215,7 @@ public class MelSpectrogram {
     }
 
 
-    public static Bitmap calcMelSpectrogramBMP(Context context, float[] data) {
+    public static Bitmap calcMelSpectrogramBMP(float[] data) {
 
        /*  Layout of data is:
         [mel_0_frame_0, mel_0_frame_1, ..., mel_0_frame_N,
@@ -249,7 +245,6 @@ public class MelSpectrogram {
         float range = max - min;
         if (range == 0) range = 1;
 
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         int color = 0xFFFFFF;
 
         int baseRed = (color >> 16) & 0xFF;
