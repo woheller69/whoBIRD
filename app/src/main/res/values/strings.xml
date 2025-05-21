@@ -31,5 +31,7 @@
     <string name="high_contrast_theme">High contrast</string>
     <string name="settings_meta_extended">Weighted Meta Model</string>
     <string name="summary_meta_extended">This method briefly requires more CPU resources when the location changes</string>
+    <string name="show_spectrogram">Show spectrogram</string>
+    <string name="summary_show_spectrogram">High CPU load, not recommended on slow devices</string>
 </resources>
 

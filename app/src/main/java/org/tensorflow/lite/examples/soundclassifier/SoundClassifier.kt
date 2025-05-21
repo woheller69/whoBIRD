@@ -29,6 +29,7 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.webkit.WebSettings
+import android.widget.ImageView.ScaleType
 import android.widget.TextView
 import android.widget.Toast
 import androidx.preference.PreferenceManager
@@ -146,6 +147,7 @@ class SoundClassifier(
   /** Buffer that holds audio PCM sample that are fed to the TFLite model for inference.  */
   private lateinit var inputBuffer: FloatBuffer
   private lateinit var wavWriterBuffer: FloatBuffer
+  private lateinit var spectrogramBuffer: FloatBuffer
   private lateinit var metaInputBuffer: FloatBuffer
 
   init {
@@ -539,7 +541,8 @@ class SoundClassifier(
       interpreter.run(inputBuffer, outputBuffer)
       outputBuffer.rewind()
       outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
-      wavWriterBuffer = inputBuffer.duplicate();
+      wavWriterBuffer = inputBuffer.duplicate()
+      spectrogramBuffer = inputBuffer.duplicate()
 
       val probList = mutableListOf<Float>()
       if (mBinding.checkIgnoreMeta.isChecked){
@@ -583,6 +586,7 @@ class SoundClassifier(
         if (url == null || url == "about:blank") {
           mBinding.webview.setVisibility(View.GONE)
           mBinding.icon.setVisibility(View.VISIBLE)
+          mBinding.icon.setScaleType(ScaleType.CENTER)
           mBinding.webviewUrl.setText("")
           mBinding.webviewUrl.setVisibility(View.GONE)
           mBinding.webviewName.setText("")
@@ -619,6 +623,11 @@ class SoundClassifier(
         mBinding.webviewLatinname.setText("")
         mBinding.webviewLatinname.setVisibility(View.GONE)
         mBinding.webviewReload.setVisibility(View.GONE)
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
+        if (sharedPref.getBoolean("show_spectrogram", false)){
+          if (spectrogramBuffer != null) mBinding.icon.setImageBitmap(MelSpectrogram.getMelBitmap(mContext, spectrogramBuffer, options.sampleRate))
+          mBinding.icon.setScaleType(ScaleType.FIT_XY)
+        }
       }
     }
   }

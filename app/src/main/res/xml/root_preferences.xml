@@ -55,6 +55,12 @@
         android:defaultValue="false"
         />
 
+    <SwitchPreferenceCompat
+        android:title="@string/show_spectrogram"
+        android:key="show_spectrogram"
+        android:summary="@string/summary_show_spectrogram"
+        android:defaultValue="false"/>
+
     <Preference
         android:key="language"
         android:layout="@layout/language_button"/>
