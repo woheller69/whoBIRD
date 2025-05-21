@@ -32,6 +32,7 @@ import android.webkit.WebSettings
 import android.widget.ImageView.ScaleType
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
@@ -587,6 +588,7 @@ class SoundClassifier(
           mBinding.webview.setVisibility(View.GONE)
           mBinding.icon.setVisibility(View.VISIBLE)
           mBinding.icon.setScaleType(ScaleType.CENTER)
+          mBinding.icon.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.icon_large))
           mBinding.webviewUrl.setText("")
           mBinding.webviewUrl.setVisibility(View.GONE)
           mBinding.webviewName.setText("")
