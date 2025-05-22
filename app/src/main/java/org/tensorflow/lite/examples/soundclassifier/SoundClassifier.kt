@@ -574,7 +574,8 @@ class SoundClassifier(
   }
 
   private fun updateImage(max: IndexedValue<Float>?) {
-    if (mBinding.checkShowImages.isChecked) {
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
+    if (sharedPref.getBoolean("show_images", false)){
       Handler(Looper.getMainLooper()).post {
 
         val url =
@@ -625,7 +626,6 @@ class SoundClassifier(
         mBinding.webviewLatinname.setText("")
         mBinding.webviewLatinname.setVisibility(View.GONE)
         mBinding.webviewReload.setVisibility(View.GONE)
-        val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
         if (sharedPref.getBoolean("show_spectrogram", false)){
           if (spectrogramBuffer != null) mBinding.icon.setImageBitmap(MelSpectrogram.getMelBitmap(spectrogramBuffer, options.sampleRate))
           mBinding.icon.setScaleType(ScaleType.FIT_XY)

@@ -13,6 +13,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -104,6 +105,24 @@ Context mContext;
 
             });
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) preferenceScreen.removePreference(language);
+
+            SwitchPreferenceCompat showSpectrogramPref = findPreference("show_spectrogram");
+            SwitchPreferenceCompat showImagesPref = findPreference("show_images");
+            showSpectrogramPref.setOnPreferenceChangeListener((preference, newValue) -> {
+                if ((Boolean) newValue) {
+                    // If show_spectrogram is turned on, turn off show_images
+                    showImagesPref.setChecked(false);
+                }
+                return true; // Allow the change
+            });
+            showImagesPref.setOnPreferenceChangeListener((preference, newValue) -> {
+                if ((Boolean) newValue) {
+                    // If show_images is turned on, turn off show_spectrogram
+                    showSpectrogramPref.setChecked(false);
+                }
+                return true; // Allow the change
+            });
+
         }
     }
 }
