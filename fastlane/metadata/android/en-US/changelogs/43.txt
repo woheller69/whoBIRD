@@ -1,0 +1,7 @@
+Option to show spectrogram
+Improved meta model weighting
+Store precise location in database
+Tensorflow library upgrade
+Add date and time to exported zip filename
+Layout change
+Translations
