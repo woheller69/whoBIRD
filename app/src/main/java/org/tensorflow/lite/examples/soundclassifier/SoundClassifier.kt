@@ -52,6 +52,7 @@ import java.util.TimerTask
 import kotlin.concurrent.scheduleAtFixedRate
 import kotlin.math.ceil
 import kotlin.math.cos
+import kotlin.math.exp
 import kotlin.math.round
 import kotlin.math.sin
 
@@ -456,7 +457,7 @@ class SoundClassifier(
     Log.i(TAG, "Successfully started AudioRecord recording")
 
     // Start recognition (model inference) thread.
-    startRecognition()
+    startRecognitionLoop()
   }
 
   private fun loadAudio(audioBuffer: ShortArray): Int {
@@ -485,7 +486,7 @@ class SoundClassifier(
     return 0
   }
 
-  private fun startRecognition() {
+  private fun startRecognitionLoop() {
     if (modelInputLength <= 0 || modelNumClasses <= 0) {
       Log.e(TAG, "Switches: Cannot start recognition because model is unavailable.")
       return
@@ -536,41 +537,46 @@ class SoundClassifier(
         return@task
       }
 
-      val t0 = SystemClock.elapsedRealtimeNanos()
-      inputBuffer.rewind()
-      outputBuffer.rewind()
-      interpreter.run(inputBuffer, outputBuffer)
-      outputBuffer.rewind()
-      outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
-      wavWriterBuffer = inputBuffer.duplicate()
-      spectrogramBuffer = inputBuffer.duplicate()
-
-      val probList = mutableListOf<Float>()
-      if (mBinding.checkIgnoreMeta.isChecked){
-        for (value in predictionProbs) {
-          probList.add(1 / (1 + kotlin.math.exp(-value)))  //apply sigmoid
-        }
-      } else {
-        for (i in predictionProbs.indices) {
-          probList.add( metaPredictionProbs[i] / (1+kotlin.math.exp(-predictionProbs[i])) )  //apply sigmoid
-        }
+      if (mBinding.progressHorizontal.isIndeterminate) {   //if start/stop button set to "running"
+        inputBuffer.rewind()
+        wavWriterBuffer = inputBuffer.duplicate()
+        spectrogramBuffer = inputBuffer.duplicate()
+        recognizeAndDisplay(inputBuffer, outputBuffer)
       }
-
-      if (mBinding.progressHorizontal.isIndeterminate){  //if start/stop button set to "running"
-        probList.withIndex().also {
-          val max = it.maxByOrNull { entry -> entry.value }
-          val timeInMillis = System.currentTimeMillis()
-          updateTextView(max, mBinding.text1, timeInMillis)
-          updateImage(max)
-          //after finding the maximum probability and its corresponding label (max), we filter out that entry from the list of entries before finding the second highest probability (secondMax)
-          val secondMax = it.filterNot { entry -> entry == max }.maxByOrNull { entry -> entry.value }
-          updateTextView(secondMax,mBinding.text2,timeInMillis)
-        }
-      }
-
-      latestPredictionLatencyMs =
-        ((SystemClock.elapsedRealtimeNanos() - t0) / 1e6).toFloat()
     }
+  }
+
+  fun recognizeAndDisplay(inputBuffer: FloatBuffer, outputBuffer: FloatBuffer) {
+    val t0 = SystemClock.elapsedRealtimeNanos()
+    inputBuffer.rewind()
+    outputBuffer.rewind()
+    interpreter.run(inputBuffer, outputBuffer)
+    outputBuffer.rewind()
+    outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
+
+    val probList = mutableListOf<Float>()
+    if (mBinding.checkIgnoreMeta.isChecked) {
+      for (value in predictionProbs) {
+        probList.add(1 / (1 + exp(-value)))  //apply sigmoid
+      }
+    } else {
+      for (i in predictionProbs.indices) {
+        probList.add(metaPredictionProbs[i] / (1 + exp(-predictionProbs[i])))  //apply sigmoid
+      }
+    }
+
+    probList.withIndex().also {
+      val max = it.maxByOrNull { entry -> entry.value }
+      val timeInMillis = System.currentTimeMillis()
+      updateTextView(max, mBinding.text1, timeInMillis)
+      updateImage(max)
+      //after finding the maximum probability and its corresponding label (max), we filter out that entry from the list of entries before finding the second highest probability (secondMax)
+      val secondMax = it.filterNot { entry -> entry == max }.maxByOrNull { entry -> entry.value }
+      updateTextView(secondMax, mBinding.text2, timeInMillis)
+    }
+
+    latestPredictionLatencyMs =
+      ((SystemClock.elapsedRealtimeNanos() - t0) / 1e6).toFloat()
   }
 
   private fun updateImage(max: IndexedValue<Float>?) {
