@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Geen audio-ingang: Alle audiosamples zijn leeg!</string>
-    <string name="ignore_gps_date">Negeer locatie en datum</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Misschien later</string>

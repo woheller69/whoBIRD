@@ -105,27 +105,26 @@
                 android:background="@drawable/oval_color_accent_thin"
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
-                <LinearLayout
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textColor="?colorPrimary"
+                    android:textSize="20dp"
+                    android:id="@+id/check_ignore_meta_text"
+                    android:text="@string/meta_influence" />
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/meta_influence_slider"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start">
-                    <CheckBox
-                        android:id="@+id/check_ignore_meta"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:buttonTint="?colorPrimary"
-                        android:textColor="?colorPrimary" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:textColor="?colorPrimary"
-                        android:textSize="20dp"
-                        android:id="@+id/check_ignore_meta_text"
-                        android:text="@string/ignore_gps_date" />
-                </LinearLayout>
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:value="100"
+                    android:enabled="false"
+                    android:stepSize="1"
+                    android:valueFrom="1"
+                    android:valueTo="100" />
             </LinearLayout>
 
             <Space

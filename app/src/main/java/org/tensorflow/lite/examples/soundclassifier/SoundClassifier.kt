@@ -336,6 +336,7 @@ class SoundClassifier(
 
     Handler(Looper.getMainLooper()).post {
       mBinding.gps.setText(mContext.getString(R.string.latitude)+": " + (round(lat*100.0)/100.0).toString() + " / " + mContext.getString(R.string.longitude) + ": " + (round(lon*100.0)/100).toString())
+      mBinding.metaInfluenceSlider.isEnabled = true
     }
 
     val metaOutputBuffer = FloatBuffer.allocate(metaModelNumClasses)
@@ -554,15 +555,12 @@ class SoundClassifier(
     outputBuffer.rewind()
     outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
 
+    val metaInfluence = mBinding.metaInfluenceSlider.value / 100.0f
+
     val probList = mutableListOf<Float>()
-    if (mBinding.checkIgnoreMeta.isChecked) {
-      for (value in predictionProbs) {
-        probList.add(1 / (1 + exp(-value)))  //apply sigmoid
-      }
-    } else {
-      for (i in predictionProbs.indices) {
-        probList.add(metaPredictionProbs[i] / (1 + exp(-predictionProbs[i])))  //apply sigmoid
-      }
+    for (i in predictionProbs.indices) {
+      val modelProb = 1 / (1 + exp(-predictionProbs[i])) //apply sigmoid
+      probList.add(modelProb*(1-metaInfluence + metaInfluence* metaPredictionProbs[i]))
     }
 
     probList.withIndex().also {

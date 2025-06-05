@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name" translatable="false">whoBIRD</string>
     <string name="samples_zero">No audio input: All audio samples are zero!</string>
-    <string name="ignore_gps_date">Ignore location and date</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Maybe later</string>
@@ -33,5 +32,6 @@
     <string name="summary_meta_extended">This method briefly requires more CPU resources when the location changes</string>
     <string name="show_spectrogram">Show spectrogram</string>
     <string name="summary_show_spectrogram">High CPU load, not recommended on slow devices</string>
+    <string name="meta_influence">Location/Date influence</string>
 </resources>
 

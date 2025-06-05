@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">لا يوجد إدخال صوتي: جميع عينات الصوت تساوي صفرًا!</string>
-    <string name="ignore_gps_date">تجاهل الموقع والتاريخ</string>
     <string name="latitude">خط العرض</string>
     <string name="longitude">خط الطول</string>
     <string name="dialog_Later_button">ربما لاحقًا</string>

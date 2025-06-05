@@ -34,6 +34,7 @@ import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
+import com.google.android.material.slider.Slider
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
@@ -96,17 +97,12 @@ class MainActivity : BaseActivity() {
 
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
 
-    val isIgnoreLocationDateActive = sharedPref.getBoolean("main_ignore_meta", false)
-    binding.checkIgnoreMeta.isChecked = isIgnoreLocationDateActive
-    binding.checkIgnoreMeta.setOnClickListener { view ->
+    val metaModelInfluence = sharedPref.getFloat("meta_model_influence", 60.0f)
+    binding.metaInfluenceSlider.value = metaModelInfluence
+    binding.metaInfluenceSlider.addOnChangeListener { slider, value, fromUser ->
       val editor=sharedPref.edit()
-      if ((view as CompoundButton).isChecked) {
-        editor.putBoolean("main_ignore_meta", true)
-        editor.apply()
-      } else {
-        editor.putBoolean("main_ignore_meta", false)
-        editor.apply()
-      }
+      editor.putFloat("meta_model_influence", value)
+      editor.apply()
     }
 
     if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")

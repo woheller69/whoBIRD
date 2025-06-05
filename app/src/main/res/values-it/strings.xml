@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Nessun ingresso audio: Tutti i campioni audio sono vuoti!</string>
-    <string name="ignore_gps_date">Ignora posizione e data</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Forse più tardi</string>

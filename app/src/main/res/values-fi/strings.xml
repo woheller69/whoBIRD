@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Ei ääntä: Mitään ääntä ei kuultu!</string>
-    <string name="ignore_gps_date">Jätä huomiotta sijainti ja päivämäärä</string>
     <string name="latitude">Lev.</string>
     <string name="longitude">Pit.</string>
     <string name="dialog_Later_button">Ehkä myöhemmin</string>

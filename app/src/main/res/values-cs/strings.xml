@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Žádný zvukový vstup: Všechny zvukové vzorky jsou tiché!</string>
-    <string name="ignore_gps_date">Ignorovat polohu a datum</string>
     <string name="latitude">zem. š.</string>
     <string name="longitude">zem. d.</string>
     <string name="dialog_Later_button">Možná později</string>

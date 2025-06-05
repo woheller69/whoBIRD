@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Brak wejścia audio: Wyzerowano próbki dźwięku!</string>
-    <string name="ignore_gps_date">Ignoruj lokalizację i datę</string>
     <string name="latitude">Szer.</string>
     <string name="longitude">Dł.</string>
     <string name="dialog_Later_button">Może później</string>

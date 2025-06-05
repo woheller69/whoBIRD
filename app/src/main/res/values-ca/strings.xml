@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">No hi ha cap entrada d\'audio: Totes les mostres són nul·les!</string>
-    <string name="ignore_gps_date">Ignorar la posició i la data</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Potser més endavant</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Keine Audiodaten: Alle Werte sind Null!</string>
-    <string name="ignore_gps_date">Ort und Datum ignorieren</string>
     <string name="latitude">Lat</string>
     <string name="longitude">Lon</string>
     <string name="dialog_Later_button">Vielleicht später</string>
@@ -30,4 +29,5 @@
     <string name="high_contrast_theme">Hoher Kontrast</string>
     <string name="settings_meta_extended">Gewichtetes Meta-Modell</string>
     <string name="summary_meta_extended">Diese Methode benötigt bei Standortänderungen kurzzeitig mehr CPU-Ressourcen</string>
+    <string name="meta_influence">Einfluss von Ort und Datum</string>
 </resources>
