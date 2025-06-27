@@ -12,14 +12,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MelSpectrogram {
-    public static final int N_FFT = 800;
-    public static final int N_MEL = 40;
+    public static final int N_FFT_LORES = 800;
+    public static final int N_MEL_LORES = 40;
+    public static final int N_FFT_HIRES = 1600;
+    public static final int N_MEL_HIRES = 80;
+    public static int N_FFT = 0;
+    public static int N_MEL = 0;
     public static final int HOP_LENGTH = 960;
     private static float[] melFilters = null;
     private static final Mel mel = new Mel();
 
-    public static Bitmap getMelBitmap(FloatBuffer audioBuffer, int sampleRate) {
-        if (melFilters == null) melFilters = createMelFilterBank(N_FFT, sampleRate / 2, N_MEL);  //we are downsampling from 48000 to 24000Hz
+    public static Bitmap getMelBitmap(FloatBuffer audioBuffer, int sampleRate, boolean hiRes) {
+        N_FFT = hiRes ? N_FFT_HIRES : N_FFT_LORES;
+        N_MEL = hiRes ? N_MEL_HIRES : N_MEL_LORES;
+        
+        if (melFilters == null || melFilters.length != (N_FFT/2+1)*N_MEL)  melFilters = createMelFilterBank(N_FFT, sampleRate / 2, N_MEL);  //we are downsampling from 48000 to 24000Hz
+
         audioBuffer.rewind();
         int bufferLength = audioBuffer.remaining();
         float[] floatArray = new float[bufferLength / 2]; //half size for downsampling

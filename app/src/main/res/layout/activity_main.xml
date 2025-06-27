@@ -10,12 +10,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/icon"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:src="@drawable/icon_large" />
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_large" />
+            <ImageView
+                android:id="@+id/run_recognizer_button"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@id/icon"
+                android:visibility="gone"
+                android:src="@drawable/ic_search_24dp"
+                android:onClick="runRecognizer"/>
+            <ImageView
+                android:id="@+id/reset_button"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@id/icon"
+                android:visibility="gone"
+                android:src="@drawable/ic_reset_24dp"
+                android:onClick="runRecognizer"/>
+        </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,6 +104,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/range_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-16dp"
+                android:layout_marginEnd="-16dp"
+                android:valueFrom="0"
+                android:valueTo="100"
+                android:visibility="gone"
+                />
 
             <ProgressBar
                 android:id="@+id/progress_horizontal"

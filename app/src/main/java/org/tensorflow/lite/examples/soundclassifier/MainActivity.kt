@@ -30,11 +30,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
-import android.widget.CompoundButton
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
-import com.google.android.material.slider.Slider
+import com.google.android.material.slider.LabelFormatter.LABEL_GONE
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
@@ -46,6 +45,8 @@ class MainActivity : BaseActivity() {
     super.onCreate(savedInstanceState)
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
 
     //Set aspect ratio for webview and icon
     val width = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -61,6 +62,8 @@ class MainActivity : BaseActivity() {
     val paramsIcon: ViewGroup.LayoutParams = binding.icon.getLayoutParams() as ViewGroup.LayoutParams
     paramsIcon.height = (width / 1.8f).toInt()
 
+    binding.rangeSlider.labelBehavior = LABEL_GONE
+
     soundClassifier = SoundClassifier(this, binding, SoundClassifier.Options())
     binding.gps.setText(getString(R.string.latitude)+": --.-- / " + getString(R.string.longitude) + ": --.--" )
     binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
@@ -71,10 +74,19 @@ class MainActivity : BaseActivity() {
       if (binding.progressHorizontal.isIndeterminate) {
         binding.progressHorizontal.setIndeterminate(false)
         binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_record_24dp))
+        if (binding.icon.visibility == View.VISIBLE && sharedPref.getBoolean("show_spectrogram", false)){
+          binding.rangeSlider.visibility = View.VISIBLE
+          binding.runRecognizerButton.visibility = View.VISIBLE
+          binding.resetButton.visibility = View.VISIBLE
+          binding.rangeSlider.values = mutableListOf(0.0f, 100.0f)
+        }
       }
       else {
         binding.progressHorizontal.setIndeterminate(true)
         binding.fab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_pause_24dp))
+        binding.rangeSlider.visibility = View.GONE
+        binding.runRecognizerButton.visibility = View.GONE
+        binding.resetButton.visibility = View.GONE
       }
     }
     binding.bottomNavigationView.setOnItemSelectedListener { item ->
@@ -95,7 +107,7 @@ class MainActivity : BaseActivity() {
       true
     }
 
-    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+
 
     val metaModelInfluence = sharedPref.getFloat("meta_model_influence", 60.0f)
     binding.metaInfluenceSlider.value = metaModelInfluence
@@ -197,6 +209,35 @@ class MainActivity : BaseActivity() {
       }
       else -> return super.onOptionsItemSelected(item)
     }
+  }
+
+  fun runRecognizer(view: View) {
+    if (view == binding.resetButton) binding.rangeSlider.values = mutableListOf(0.0f, 100.0f)
+
+    binding.text1.setText("")
+    binding.text1.setBackgroundResource(0)
+    binding.text2.setText("")
+    binding.text2.setBackgroundResource(0)
+
+    val buffer = soundClassifier.getInputBufferSnapshot()
+    val N: Int = buffer.capacity()
+    // Ensure minPercentage <= maxPercentage
+    val currentValues = binding.rangeSlider.values
+    val minPercentage = currentValues[0]
+    val maxPercentage = currentValues[1]
+
+    // Calculate index bounds
+    val lowerIndex = Math.floor(minPercentage / 100.0 * N).toInt()
+    var upperIndex = Math.floor(maxPercentage / 100.0 * N).toInt()
+    upperIndex = Math.min(upperIndex, N) // Clamp to buffer size
+
+    // Zero out values outside the range
+    for (i in 0 until N) {
+      if (i < lowerIndex || i >= upperIndex) {
+        buffer.put(i, 0.0f)
+      }
+    }
+  soundClassifier.recognizeAndDisplay(buffer)
   }
 
 }

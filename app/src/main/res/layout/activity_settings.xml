@@ -6,17 +6,17 @@
     android:background="?colorSurfaceVariant"
     tools:context=".SettingsActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <FrameLayout
-        android:id="@+id/settings"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="56dp"/>
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <FrameLayout
+            android:id="@+id/settings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp"/>
+
+    </LinearLayout>
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"

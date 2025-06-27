@@ -148,8 +148,8 @@ class SoundClassifier(
 
   /** Buffer that holds audio PCM sample that are fed to the TFLite model for inference.  */
   private lateinit var inputBuffer: FloatBuffer
-  private lateinit var wavWriterBuffer: FloatBuffer
-  private lateinit var spectrogramBuffer: FloatBuffer
+  private lateinit var inputBufferSnapshot: FloatBuffer
+  private lateinit var recognizerWorkingBuffer: FloatBuffer
   private lateinit var metaInputBuffer: FloatBuffer
 
   init {
@@ -502,7 +502,7 @@ class SoundClassifier(
     var j = 0 // Indices for the circular buffer next write
 
     recognitionTask = Timer().scheduleAtFixedRate(inferenceInterval, inferenceInterval) task@{
-      val outputBuffer = FloatBuffer.allocate(modelNumClasses)
+
       val recordingBuffer = ShortArray(modelInputLength)
 
       // Load new audio samples
@@ -539,19 +539,22 @@ class SoundClassifier(
       }
 
       if (mBinding.progressHorizontal.isIndeterminate) {   //if start/stop button set to "running"
-        inputBuffer.rewind()
-        wavWriterBuffer = inputBuffer.duplicate()
-        spectrogramBuffer = inputBuffer.duplicate()
-        recognizeAndDisplay(inputBuffer, outputBuffer)
+
+        inputBufferSnapshot = deepCopy(inputBuffer) //create independent snapshot of inputBuffer
+
+        recognizeAndDisplay(inputBufferSnapshot)
       }
     }
   }
 
-  fun recognizeAndDisplay(inputBuffer: FloatBuffer, outputBuffer: FloatBuffer) {
+  fun recognizeAndDisplay(buffer: FloatBuffer) {
+    val outputBuffer = FloatBuffer.allocate(modelNumClasses)
     val t0 = SystemClock.elapsedRealtimeNanos()
-    inputBuffer.rewind()
+    recognizerWorkingBuffer = buffer.duplicate()
+    recognizerWorkingBuffer.rewind()
     outputBuffer.rewind()
-    interpreter.run(inputBuffer, outputBuffer)
+
+    interpreter.run(recognizerWorkingBuffer, outputBuffer)
     outputBuffer.rewind()
     outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
 
@@ -631,7 +634,7 @@ class SoundClassifier(
         mBinding.webviewLatinname.setVisibility(View.GONE)
         mBinding.webviewReload.setVisibility(View.GONE)
         if (sharedPref.getBoolean("show_spectrogram", false)){
-          if (spectrogramBuffer != null) mBinding.icon.setImageBitmap(MelSpectrogram.getMelBitmap(spectrogramBuffer, options.sampleRate))
+          mBinding.icon.setImageBitmap(MelSpectrogram.getMelBitmap(recognizerWorkingBuffer.duplicate(), options.sampleRate, !mBinding.progressHorizontal.isIndeterminate))
           mBinding.icon.setScaleType(ScaleType.FIT_XY)
         }
       }
@@ -652,7 +655,7 @@ class SoundClassifier(
         else tv.setBackgroundResource(R.drawable.oval_green)
         val currentLocation = LocationHelper.getPreciseLocation()
         database?.addEntry(label, currentLocation.latitude.toFloat(), currentLocation.longitude.toFloat(), element.index, element.value, timeInMillis)
-        if (sharedPref.getBoolean("write_wav",false)) WavUtils.createWaveFile(timeInMillis, wavWriterBuffer, options.sampleRate,1,2)
+        if (sharedPref.getBoolean("write_wav",false)) WavUtils.createWaveFile(timeInMillis, recognizerWorkingBuffer.duplicate(), options.sampleRate,1,2)
         if (sharedPref.getBoolean("play_sound",false)) PlayNotification.playSound(mContext);
       }
     } else {
@@ -661,6 +664,21 @@ class SoundClassifier(
         tv.setBackgroundResource(0)
       }
     }
+  }
+
+  fun getInputBufferSnapshot(): FloatBuffer{
+    return deepCopy(inputBufferSnapshot)
+  }
+
+  //Create an independent copy of a FloatBuffer
+  fun deepCopy(original: FloatBuffer): FloatBuffer {
+    val copy = FloatBuffer.allocate(original.capacity())     // Create a new buffer with the same capacity
+    val originalCopy = original.duplicate()     // Create a duplicate to safely manipulate position/limit
+    originalCopy.position(0)     // Reset to copy the full buffer content
+    originalCopy.limit(originalCopy.capacity())
+    copy.put(originalCopy)     // Copy data into the new buffer
+    copy.flip()     // Prepare the copy for reading
+    return copy
   }
 
   private fun String.toTitleCase() =

@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat;
 
 public class LocationHelper {
     private static Location oldLocation;
+    private static long oldLocationTime = 0;
     private static Location preciseLocation;
     private static LocationListener locationListenerGPS;
     static {
@@ -28,7 +29,10 @@ public class LocationHelper {
     }
 
     static void requestLocation(Context context, SoundClassifier soundClassifier) {
-        oldLocation = null;
+
+        if (System.currentTimeMillis() - oldLocationTime > 3 * 60 * 1000) {oldLocation = null; oldLocationTime = 0;}  //location older than 3 min -> reset
+        else soundClassifier.runMetaInterpreter(oldLocation);
+
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED && checkLocationProvider(context)) {
             LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
             if (locationListenerGPS==null) locationListenerGPS = new LocationListener() {
@@ -43,6 +47,7 @@ public class LocationHelper {
                             (roundLoc.getLongitude() != oldLocation.getLongitude())){
 
                         oldLocation = roundLoc;
+                        oldLocationTime = System.currentTimeMillis();
                         soundClassifier.runMetaInterpreter(roundLoc);
                     }
                 }
