@@ -1,0 +1,2 @@
+Select range from spectrogram
+Bugfix
