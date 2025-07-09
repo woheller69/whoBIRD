@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">whoBIRD</string>
+    <string name="samples_zero">Sem entrada de áudio: No audio input: todas as amostras estão zeradas!</string>
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lon</string>
+    <string name="dialog_Later_button">Talvez depois</string>
+    <string name="dialog_StarOnGitHub">Você gostou deste app? Considere marcá-lo com uma estrela no GitHub or comprar um cafézinho para o desenvolvedor, através do PayPal.</string>
+    <string name="download_model">Fazer download do modelo</string>
+    <string name="download_model_text">whoBIRD precisa fazer download do modelo do BirdNET (~ 30MB). \n Não é permitido usar o modelo para fins comerciais \n(Licença CC-BY-NC-SA 4.0)</string>
+    <string name="start">VAMOS!</string>
+    <string name="error_download">Erro no download</string>
+    <string name="error_audio_permission">Permissão para microfone não foi concedida</string>
+    <string name="error_location_permission">Permissão de localização não foi concedida</string>
+    <string name="show_images">Mostrar imagens</string>
+    <string name="clear_db">Observações foram apagadas</string>
+    <string name="detailed_list">Lista detalhada</string>
+    <string name="delete">Apagar todas as observações?</string>
+    <string name="share_app">Compartilhar este app</string>
+    <string name="settings_threshold">Limiar sonoro [%]</string>
+    <string name="settings_highpass">Filtro passa-alta [Hz]</string>
+    <string name="source_unprocessed">Não processada</string>
+    <string name="source_microphone">Microfone</string>
+    <string name="source_voicerecognition">Reconhecimento de voz</string>
+    <string name="settings_audiosource">Fonte de áudio</string>
+    <string name="settings_notification_sound">Som de notificação</string>
+    <string name="save_wav">Salvar arquivos .wav</string>
+    <string name="summary_save_wav">Salva um arquivo .wav para cada deteção, no seu diretório de Música. Necessita de versão do Android pelo menos 12.</string>
+    <string name="language">Idioma</string>
+    <string name="high_contrast_theme">Alto contraste</string>
+    <string name="settings_meta_extended">Meta modelo com pesos</string>
+    <string name="summary_meta_extended">Este modelo exige mais recurso de CPU durante um curto período de tempo quando a sua localização muda</string>
+    <string name="show_spectrogram">Mostrar espectrograma</string>
+    <string name="summary_show_spectrogram">Alto carga de CPU, não é recomendado para dispositivos mais lentos</string>
+    <string name="meta_influence">Influência do local e da data</string>
+</resources>
+
