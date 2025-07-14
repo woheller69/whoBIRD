@@ -27,4 +27,9 @@
     <string name="settings_highpass">Высокочастотный фильтр [Гц]</string>
     <string name="high_contrast_theme">Высокий контраст</string>
     <string name="language">Язык</string>
+    <string name="show_spectrogram">Показать спектрограмму</string>
+    <string name="summary_show_spectrogram">Высокая нагрузка на процессор, не рекомендуется на медленных устройствах</string>
+    <string name="meta_influence">Влияние местоположения/даты</string>
+    <string name="settings_meta_extended">Взвешенная мета модель</string>
+    <string name="summary_meta_extended">Этот метод кратковременно требует больше ресурса процессора при изменении местоположения</string>
 </resources>
