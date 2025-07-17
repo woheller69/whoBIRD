@@ -12,7 +12,7 @@
     <string name="error_audio_permission">Дозвіл на доступ до мікрофона не надано</string>
     <string name="error_location_permission">Доступ до місцеперебування не надано</string>
     <string name="show_images">Показати зображення</string>
-    <string name="clear_db">Спостереження видалено</string>
+    <string name="clear_db">Спостереження вилучено</string>
     <string name="detailed_list">Деталізований список</string>
     <string name="delete">Вилучити всі спостереження?</string>
     <string name="share_app">Поширити додаток</string>
