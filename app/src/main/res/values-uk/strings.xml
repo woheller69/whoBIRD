@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samples_zero">Відсутність аудіосигналу: всі аудіосигнали дорівнюють нулю!</string>
+    <string name="latitude">Широта</string>
+    <string name="longitude">Довгота</string>
+    <string name="dialog_Later_button">Можливо пізніше</string>
+    <string name="dialog_StarOnGitHub">Вам подобається цей застосунок? Будь ласка, поставте зірочку на GitHub, або купіть каву розробнику через PayPal.</string>
+    <string name="download_model">Завантажити модель</string>
+    <string name="download_model_text">whoBIRD потрібно завантажити BirdNET модель (~ 30MB). \n Дозволено для не комерційного використання\n(ліцензія CC-BY-NC-SA 4.0)</string>
+    <string name="start">Почнімо</string>
+    <string name="error_download">Помилка завантаження</string>
+    <string name="error_audio_permission">Дозвіл на доступ до мікрофона не надано</string>
+    <string name="error_location_permission">Доступ до місцеперебування не надано</string>
+    <string name="show_images">Показати зображення</string>
+    <string name="clear_db">Спостереження видалено</string>
+    <string name="detailed_list">Деталізований список</string>
+    <string name="delete">Вилучити всі спостереження?</string>
+    <string name="share_app">Поширити додаток</string>
+    <string name="settings_threshold">Поріг [%]</string>
+    <string name="settings_highpass">Фільтр високих частот [Гц]</string>
+    <string name="source_unprocessed">Необроблений</string>
+    <string name="source_microphone">Мікрофон</string>
+    <string name="source_voicerecognition">Розпізнавання голосу</string>
+    <string name="settings_audiosource">Джерело аудіо</string>
+    <string name="settings_notification_sound">Звук сповіщення</string>
+    <string name="save_wav">Зберегти .wav файли</string>
+    <string name="summary_save_wav">Зберігати .wav файл для кожного розпізнавання у каталог Музика. Потребує Android 12+</string>
+    <string name="language">Мова</string>
+    <string name="high_contrast_theme">Висока контрастність</string>
+    <string name="summary_meta_extended">Цей метод короткочасно вимагає більше ресурсів процесора, коли змінюється розташування</string>
+    <string name="show_spectrogram">Показати спектрограму</string>
+    <string name="summary_show_spectrogram">Високе навантаження на процесор, не рекомендується на повільних пристроях</string>
+    <string name="meta_influence">Вплив місця/дати</string>
+    <string name="settings_meta_extended">Зважена метамодель</string>
 </resources>
