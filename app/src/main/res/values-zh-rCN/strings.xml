@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="samples_zero">没有音频输入：所有音频样本都是零！</string>
+    <string name="latitude">纬度</string>
+    <string name="longitude">经度</string>
+    <string name="dialog_Later_button">以后再说</string>
+    <string name="download_model">下载模型</string>
+    <string name="download_model_text">whoBIRD 需要下载 BirdNET 模型 (~ 30MB). \n 禁止商业使用 \n(CC-BY-NC-SA 4.0 协议)</string>
+    <string name="start">让我们开始吧</string>
+    <string name="error_download">下载错误</string>
+    <string name="error_audio_permission">未授予麦克风权限</string>
+    <string name="error_location_permission">未授予位置权限</string>
+    <string name="show_images">显示图片</string>
+    <string name="clear_db">观察记录已删除</string>
+    <string name="detailed_list">详细列表</string>
+    <string name="delete">删除所有观察记录？</string>
+    <string name="share_app">分享应用</string>
+    <string name="settings_highpass">高通滤波器 [Hz]</string>
+    <string name="source_unprocessed">未处理</string>
+    <string name="source_microphone">麦克风</string>
+    <string name="source_voicerecognition">语音识别</string>
+    <string name="settings_audiosource">音频来源</string>
+    <string name="settings_notification_sound">提示声</string>
+    <string name="save_wav">保存 .wav 文件</string>
+    <string name="language">语言</string>
+    <string name="high_contrast_theme">高对比度</string>
+    <string name="settings_meta_extended">加权元模型</string>
+    <string name="show_spectrogram">显示频谱图</string>
+    <string name="summary_show_spectrogram">高CPU负载，不建议在性能较慢的设备上使用</string>
+    <string name="meta_influence">位置/日期影响</string>
+    <string name="settings_threshold">阈值 [%]</string>
+    <string name="dialog_StarOnGitHub">您喜欢这个应用吗？请在 GitHub 上给它一个星标，或者通过 PayPal 为开发者买杯咖啡。</string>
+    <string name="summary_save_wav">在 Music 文件夹中为每个检测保存一个.wav 文件。需要 Android 12及以上系统</string>
+    <string name="summary_meta_extended">当位置发生变化时，此方法会短暂地消耗更多的CPU资源</string>
 </resources>
