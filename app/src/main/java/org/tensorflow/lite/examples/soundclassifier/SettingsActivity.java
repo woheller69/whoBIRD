@@ -78,6 +78,7 @@ Context mContext;
                 sharedPreferences.edit().remove("play_sound").apply();
                 sharedPreferences.edit().remove("write_wav").apply();
                 sharedPreferences.edit().remove("theme").apply();
+                sharedPreferences.edit().remove("bluetooth").apply();
 
                 onCreatePreferences(savedInstanceState,rootKey);
                 return false;

@@ -440,14 +440,25 @@ class SoundClassifier(
     }
     Log.i(TAG, "bufferSize = $bufferSize")
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
-    audioRecord = AudioRecord(
-      // including MIC, UNPROCESSED, and CAMCORDER.
-      Integer.parseInt(sharedPref.getString("audio_source", MediaRecorder.AudioSource.UNPROCESSED.toString())!!),
-      options.sampleRate,
-      AudioFormat.CHANNEL_IN_MONO,
-      AudioFormat.ENCODING_PCM_16BIT,
-      bufferSize
-    )
+
+    val audioSource = Integer.parseInt(sharedPref.getString("audio_source", MediaRecorder.AudioSource.UNPROCESSED.toString())!!)
+    val sampleRate = options.sampleRate
+    val channelConfig = AudioFormat.CHANNEL_IN_MONO
+    val audioFormat = AudioFormat.ENCODING_PCM_16BIT
+
+    val audioRecordBuilder = AudioRecord.Builder()
+      .setAudioSource(audioSource)
+      .setAudioFormat(
+        AudioFormat.Builder()
+          .setSampleRate(sampleRate)
+          .setChannelMask(channelConfig)
+          .setEncoding(audioFormat)
+          .build()
+      )
+      .setBufferSizeInBytes(bufferSize)
+
+    audioRecord = audioRecordBuilder.build()
+
     if (audioRecord.state != AudioRecord.STATE_INITIALIZED) {
       Log.e(TAG, "AudioRecord failed to initialize")
       return
