@@ -18,8 +18,10 @@
 package org.tensorflow.lite.examples.soundclassifier
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -31,6 +33,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import com.google.android.material.slider.LabelFormatter.LABEL_GONE
@@ -125,6 +128,22 @@ class MainActivity : BaseActivity() {
 
   override fun onResume() {
     super.onResume()
+    val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+    if (sharedPref.getBoolean("bluetooth", false)){
+      if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+          requestPermissions(arrayOf(Manifest.permission.BLUETOOTH_CONNECT), REQUEST_PERMISSIONS)
+        }
+      }
+      audioManager.startBluetoothSco()
+      audioManager.isBluetoothScoOn = true
+    } else {
+      audioManager.stopBluetoothSco()
+      audioManager.isBluetoothScoOn = false
+    }
+
     LocationHelper.requestLocation(this, soundClassifier)
     if (!checkLocationPermission()){
       Toast.makeText(this, this.resources.getString(R.string.error_location_permission), Toast.LENGTH_SHORT).show()
@@ -141,6 +160,9 @@ class MainActivity : BaseActivity() {
     super.onPause()
     LocationHelper.stopLocation(this)
     if (soundClassifier.isRecording) soundClassifier.stop()
+    val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+    audioManager.stopBluetoothSco()
+    audioManager.isBluetoothScoOn = false
   }
 
   private fun checkMicrophonePermission(): Boolean {

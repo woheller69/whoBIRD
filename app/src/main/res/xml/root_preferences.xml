@@ -30,6 +30,11 @@
         app:title="@string/settings_audiosource"
         app:useSimpleSummaryProvider="true" />
 
+    <SwitchPreference
+        android:key="bluetooth"
+        android:title="@string/bluetooth_connection"
+        android:defaultValue="false"/>
+
     <org.tensorflow.lite.examples.soundclassifier.EditTextSeekBarPreference
         android:title="@string/settings_highpass"
         android:key="high_pass"

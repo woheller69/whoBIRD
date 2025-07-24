@@ -30,4 +30,5 @@
     <string name="settings_meta_extended">Gewichtetes Meta-Modell</string>
     <string name="summary_meta_extended">Diese Methode benötigt bei Standortänderungen kurzzeitig mehr CPU-Ressourcen</string>
     <string name="meta_influence">Einfluss von Ort und Datum</string>
+    <string name="bluetooth_connection">Bluetooth verwenden</string>
 </resources>
