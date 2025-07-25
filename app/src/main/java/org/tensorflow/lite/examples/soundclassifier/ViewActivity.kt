@@ -51,6 +51,8 @@ class ViewActivity : BaseActivity() {
         mContext = this
         setContentView(binding.root)
 
+        binding.bottomAppBar.setOnApplyWindowInsetsListener(null)
+        binding.bottomNavigationView.setOnApplyWindowInsetsListener(null)
         //Set aspect ratio for webview and icon
         val width = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             val windowMetrics = windowManager.currentWindowMetrics
@@ -213,7 +215,22 @@ class ViewActivity : BaseActivity() {
     /** Retrieve labels from "labels.txt" file */
     private fun loadLabels(context: Context) { //TODO: Refactor
         val localeList = context.resources.configuration.locales
-        val language = localeList.get(0).language
+        var language = localeList.get(0).language
+
+        if (language == "en") {
+            val country = localeList.get(0).country
+            language = when (country) {
+                "GB" -> "en_uk"
+                else -> "en"
+            }
+        } else if (language == "pt") {
+            val country = localeList.get(0).country
+            language = when (country) {
+                "BR" -> "pt_BR"
+                else -> "pt_PT"
+            }
+        }
+
         var filename = "labels"+"_${language}.txt"    // TODO: Common definition for all classes
 
         //Check if file exists
@@ -230,6 +247,8 @@ class ViewActivity : BaseActivity() {
             ex.printStackTrace()
             filename = "labels"+"_en.txt"
         }
+
+        Log.i("ViewActivity", filename)
 
         try {
             val reader =
