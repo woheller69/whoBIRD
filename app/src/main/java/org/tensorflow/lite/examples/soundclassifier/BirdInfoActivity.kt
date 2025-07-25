@@ -7,13 +7,9 @@ import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
-import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
 import android.webkit.WebSettings
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityBirdInfoBinding
@@ -41,6 +37,8 @@ class BirdInfoActivity : BaseActivity() {
         mContext = this
         setContentView(binding.root)
 
+        binding.bottomAppBar.setOnApplyWindowInsetsListener(null)
+        binding.bottomNavigationView.setOnApplyWindowInsetsListener(null)
         //Set aspect ratio for webview and icon
         val width = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             val windowMetrics = windowManager.currentWindowMetrics
@@ -190,7 +188,22 @@ class BirdInfoActivity : BaseActivity() {
     /** Retrieve labels from "labels.txt" file */
     private fun loadLabels(context: Context) { //TODO: Refactor
         val localeList = context.resources.configuration.locales
-        val language = localeList.get(0).language
+        var language = localeList.get(0).language
+
+        if (language == "en") {
+            val country = localeList.get(0).country
+            language = when (country) {
+                "GB" -> "en_uk"
+                else -> "en"
+            }
+        } else if (language == "pt") {
+            val country = localeList.get(0).country
+            language = when (country) {
+                "BR" -> "pt_BR"
+                else -> "pt_PT"
+            }
+        }
+
         var filename = "labels"+"_${language}.txt"    // TODO: Common definition for all classes
 
         //Check if file exists
@@ -207,6 +220,8 @@ class BirdInfoActivity : BaseActivity() {
             ex.printStackTrace()
             filename = "labels"+"_en.txt"
         }
+
+        Log.i("BirdInfoActivity", filename)
 
         try {
             val reader =

@@ -15,6 +15,7 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreferenceCompat;
 
+import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -32,7 +33,10 @@ Context mContext;
                     .replace(R.id.settings, new SettingsFragment())
                     .commit();
         }
+        BottomAppBar bottomAppBar = findViewById(R.id.bottomAppBar);
+        bottomAppBar.setOnApplyWindowInsetsListener(null);
         BottomNavigationView navigationView = findViewById(R.id.bottomNavigationView);
+        navigationView.setOnApplyWindowInsetsListener(null);
         navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

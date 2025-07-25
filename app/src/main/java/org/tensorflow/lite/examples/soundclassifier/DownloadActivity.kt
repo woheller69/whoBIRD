@@ -3,7 +3,6 @@ package org.tensorflow.lite.examples.soundclassifier
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityDownloadBinding
 
 class DownloadActivity  : BaseActivity() {

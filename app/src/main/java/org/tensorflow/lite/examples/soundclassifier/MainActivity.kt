@@ -49,6 +49,14 @@ class MainActivity : BaseActivity() {
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
+    //On Android 15, both BottomAppBar and BottomNavigationView automatically register WindowInsetsListeners that:
+    //Add extra padding for gesture navigation areas
+    //Increase the minimum height to accommodate system bars
+    //Modify layout behavior to "avoid" system UI (but overdo it)
+    //We do not need that, therefore set them "null"
+    binding.bottomAppBar.setOnApplyWindowInsetsListener(null)
+    binding.bottomNavigationView.setOnApplyWindowInsetsListener(null)
+
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
 
     //Set aspect ratio for webview and icon

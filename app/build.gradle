@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 34
-
+    compileSdk 35
+    android.buildFeatures.buildConfig true
     defaultConfig {
         applicationId "org.woheller69.whobird"
         minSdk 26
-        targetSdk 34
+        targetSdk 35
         versionCode 45
         versionName "4.5"
     }
@@ -49,10 +49,10 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.core:core-ktx:1.13.0"
-    implementation "androidx.appcompat:appcompat:1.6.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.7.0"
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-    implementation "com.google.android.material:material:1.11.0"
+    implementation "androidx.appcompat:appcompat:1.7.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.9.2"
+    implementation "androidx.constraintlayout:constraintlayout:2.2.1"
+    implementation "com.google.android.material:material:1.12.0"
     implementation 'com.google.ai.edge.litert:litert:1.2.0'
     implementation "androidx.preference:preference:1.2.1"
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
