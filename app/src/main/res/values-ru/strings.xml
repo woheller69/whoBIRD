@@ -32,4 +32,5 @@
     <string name="meta_influence">Влияние местоположения/даты</string>
     <string name="settings_meta_extended">Взвешенная мета модель</string>
     <string name="summary_meta_extended">Этот метод кратковременно требует больше ресурса процессора при изменении местоположения</string>
+    <string name="bluetooth_connection">Использовать Bluetooth</string>
 </resources>
