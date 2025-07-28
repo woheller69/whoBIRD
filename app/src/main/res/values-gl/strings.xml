@@ -32,4 +32,5 @@
     <string name="settings_highpass">Filtro de Frecuencia Alta [Hz]</string>
     <string name="summary_save_wav">Garda no directorio Music un ficheiro .wav para cada detección. Require Android 12+</string>
     <string name="summary_show_spectrogram">Alta carga da CPU, non se recomenda para dispositivos antigos</string>
+    <string name="bluetooth_connection">Usar Bluetooth</string>
 </resources>
