@@ -123,6 +123,11 @@ class ViewActivity : BaseActivity() {
         val isDetailedFilterActive = sharedPref.getBoolean("view_detailed", false)
         birdObservations = ArrayList(database.getAllBirdObservations(isDetailedFilterActive).sortedByDescending { it.millis } )  //Conversion between Java ArrayList and Kotlin ArrayList
 
+        //replace names with values from current language
+        for (birdObservation in birdObservations){
+            birdObservation.name = labelList.get(birdObservation.speciesId).split("_").last()
+        }
+
         adapter = RecyclerOverviewListAdapterObservations(applicationContext, birdObservations)
         binding.recyclerObservations.setAdapter(adapter)
         binding.recyclerObservations.setFocusable(false)
