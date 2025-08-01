@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lonx</string>
+    <string name="download_model">Descargar Mostras</string>
+    <string name="download_model_text">whoBird precisa descargar as mostras desde BirdNET (~30MB).\n Non se permite o uso comercial \n(Licenza CC-BY-NC-SA 4.0)</string>
+    <string name="start">IMOS ALÁ</string>
+    <string name="error_download">Erro ao descargar</string>
+    <string name="error_audio_permission">Non se concedeu acceso ao micrófono</string>
+    <string name="error_location_permission">Non se concedeu acceso á localización</string>
+    <string name="show_images">Mostrar imaxes</string>
+    <string name="clear_db">Borráronse as observacións</string>
+    <string name="detailed_list">Lista polo miúdo</string>
+    <string name="delete">Borrar todas as observacións?</string>
+    <string name="share_app">Compartir a app</string>
+    <string name="settings_threshold">Limiar [%]</string>
+    <string name="source_unprocessed">Sen procesar</string>
+    <string name="source_microphone">Micrófono</string>
+    <string name="source_voicerecognition">Recoñecemento da voz</string>
+    <string name="settings_audiosource">Orixe do audio</string>
+    <string name="settings_notification_sound">Son da notificación</string>
+    <string name="save_wav">Gardar ficheiros .wav</string>
+    <string name="language">Idioma</string>
+    <string name="high_contrast_theme">Alto contraste</string>
+    <string name="settings_meta_extended">Meta Modelo Ponderado</string>
+    <string name="summary_meta_extended">Este método require por un tempo curto máis recursos de CPU cando cambia a localización</string>
+    <string name="show_spectrogram">Mostrar espectograma</string>
+    <string name="meta_influence">Influencia da Localización/Data</string>
+    <string name="samples_zero">Sen audio para analizar: Hai cero mostras de audio!</string>
+    <string name="dialog_Later_button">Pode que máis tarde</string>
+    <string name="dialog_StarOnGitHub">Gústache esta app? Ponlle unha estrela en GitHub o convida á desenvolvedora a un café en PayPal.</string>
+    <string name="settings_highpass">Filtro de Frecuencia Alta [Hz]</string>
+    <string name="summary_save_wav">Garda no directorio Music un ficheiro .wav para cada detección. Require Android 12+</string>
+    <string name="summary_show_spectrogram">Alta carga da CPU, non se recomenda para dispositivos antigos</string>
+    <string name="bluetooth_connection">Usar Bluetooth</string>
+</resources>
