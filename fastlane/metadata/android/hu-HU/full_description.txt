@@ -1,0 +1,8 @@
+A whoBIRD a tökéletes madarász társ, amely a világ bármely pontján képes felismerni a madarakat a hangjuk alapján!
+A korszerű BirdNET projekt által működtetett whoBIRD világszerte több mint 6000 madárfaj kiterjedt adatbázisával büszkélkedhet.
+Fejlett gépi tanulási algoritmusok segítségével az alkalmazás pontosan azonosítja a madarakat egyedi hangjuk alapján.
+
+Ráadásul a whoBIRD teljesen az eszközödön végzi a varázslatot, internetkapcsolat nélkül.
+Ez azt jelenti, hogy bármikor, bárhol használhatod – legyen szó az erdő mélyéről vagy egy távoli tó partjáról.
+
+Az alkalmazás Android 9+ rendszert igényel

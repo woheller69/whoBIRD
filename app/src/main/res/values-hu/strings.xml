@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="latitude">Szél</string>
+    <string name="longitude">Hossz</string>
+    <string name="dialog_Later_button">Talán később</string>
+    <string name="samples_zero">Nincs hang bemenet: Minden hang minta csendes!</string>
+    <string name="dialog_StarOnGitHub">Tetszik ez az alkalmazás? Kérjük adj egy csillagot Githubon vagy vegyél a fejlesztőnek egy kávét PayPalon.</string>
+    <string name="download_model">Modell letöltése</string>
+    <string name="download_model_text">A whoBIRD-nek le kell töltenie a BirdNET modellt (~ 30MB). \n Kereskedelmi célú felhasználás nem engedélyezett.\n(CC-BY-NC-SA 4.0 licenc)</string>
+    <string name="start">KEZDJÜK</string>
+    <string name="error_download">Letöltési hiba</string>
+    <string name="error_audio_permission">Mikrofon hozzáférés nem engedélyezett</string>
+    <string name="error_location_permission">Helymeghatározási engedély nincs megadva</string>
+    <string name="show_images">Képek megjelenítése</string>
+    <string name="clear_db">Megfigyelések törölve</string>
+    <string name="detailed_list">Részletes lista</string>
+    <string name="delete">Törlöd az összes megfigyelést?</string>
+    <string name="share_app">Alkalmazás megosztása</string>
+    <string name="settings_threshold">Küszöbérték [%]</string>
+    <string name="settings_highpass">Felüláteresztő szűrő [Hz]</string>
+    <string name="source_unprocessed">Feldolgozatlan</string>
+    <string name="source_microphone">Mikrofon</string>
+    <string name="source_voicerecognition">Hangfelismerés</string>
+    <string name="settings_audiosource">Hang forrás</string>
+    <string name="settings_notification_sound">Értesítési hang</string>
+    <string name="save_wav">.wav fájlok elmentése</string>
+    <string name="summary_save_wav">Elment egy .wav fájlt minden egyes észleléskor a Music könyvtárba. Android 12+ szükséges hozzá</string>
+    <string name="language">Nyelv</string>
+    <string name="high_contrast_theme">Nagy kontraszt</string>
+    <string name="settings_meta_extended">Súlyozott metamodell</string>
+    <string name="summary_meta_extended">Ez a módszer a helyváltozáskor rövid ideig több CPU-erőforrást igényel</string>
+    <string name="show_spectrogram">Spektrogram megjelenítése</string>
+    <string name="summary_show_spectrogram">Magas CPU-terhelés, lassú eszközökön nem ajánlott</string>
+    <string name="meta_influence">Hely/Dátum befolyása</string>
+    <string name="bluetooth_connection">Bluetooth használata</string>
+</resources>
