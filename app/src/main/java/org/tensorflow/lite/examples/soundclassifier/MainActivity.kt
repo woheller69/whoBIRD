@@ -38,6 +38,7 @@ import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import com.google.android.material.slider.LabelFormatter.LABEL_GONE
 import org.tensorflow.lite.examples.soundclassifier.databinding.ActivityMainBinding
+import org.woheller69.freeDroidWarn.FreeDroidWarn
 
 class MainActivity : BaseActivity() {
 
@@ -127,7 +128,7 @@ class MainActivity : BaseActivity() {
       editor.putFloat("meta_model_influence", value)
       editor.apply()
     }
-
+    FreeDroidWarn.showWarningOnUpgrade(this, BuildConfig.VERSION_CODE)
     if (GithubStar.shouldShowStarDialog(this)) GithubStar.starDialog(this, "https://github.com/woheller69/whoBIRD")
 
     requestPermissions()
