@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Belki daha sonra</string>
     <string name="dialog_StarOnGitHub">Bu uygulamayı beğendiniz mi? Lütfen GitHub\'da yıldız verin veya geliştiriciye PayPal aracılığıyla bir kahve ısmarlayın.</string>
     <string name="download_model">Model İndir</string>
-    <string name="download_model_text">whoBIRD\'ün BirdNET modelini indirmesi gerekiyor (yaklaşık 30MB). \n Ticari kullanıma izin verilmez \n(CC-BY-NC-SA 4.0 lisansı)</string>
+    <string name="download_model_text">whoBIRD\'ün BirdNET modelini indirmesi gerekiyor (yaklaşık 39MB). \n Ticari kullanıma izin verilmez \n(CC-BY-NC-SA 4.0 lisansı)</string>
     <string name="start">BAŞLAYALIM</string>
     <string name="error_download">İndirme hatası</string>
     <string name="error_audio_permission">Mikrofon izni verilmedi</string>

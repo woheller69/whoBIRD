@@ -5,7 +5,7 @@
     <string name="longitude">经度</string>
     <string name="dialog_Later_button">以后再说</string>
     <string name="download_model">下载模型</string>
-    <string name="download_model_text">whoBIRD 需要下载 BirdNET 模型 (~ 30MB). \n 禁止商业使用 \n(CC-BY-NC-SA 4.0 协议)</string>
+    <string name="download_model_text">whoBIRD 需要下载 BirdNET 模型 (~ 39MB). \n 禁止商业使用 \n(CC-BY-NC-SA 4.0 协议)</string>
     <string name="start">让我们开始吧</string>
     <string name="error_download">下载错误</string>
     <string name="error_audio_permission">未授予麦克风权限</string>
