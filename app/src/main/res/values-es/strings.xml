@@ -6,9 +6,10 @@
     <string name="dialog_Later_button">Quizá más tarde</string>
     <string name="dialog_StarOnGitHub">¿Te gusta esta aplicación? Por favor, dale una estrella en GitHub o invita al desarrollador a un café via PayPal.</string>
     <string name="download_model">Descargar modelo</string>
-    <string name="download_model_text">whoBIRD necesita descargar el modelo BirdNET (~ 30MB). \n No se permite el uso comercial \n(licencia CC-BY-NC-SA 4.0)</string>
-    <string name="start">ADELANTE</string>
     <string name="error_download">Error al descargar</string>
+    <string name="download_model_text">whoBIRD necesita descargar el modelo BirdNET (~ 39MB). \n No se permite el uso comercial \n(licencia CC-BY-NC-SA 4.0)</string>
+    <string name="start">ADELANTE</string>
+    <string name="error_download">Errror de descarga</string>
     <string name="error_audio_permission">Permiso de micrófono no concedido</string>
     <string name="error_location_permission">Permiso de ubicación no concedido</string>
     <string name="show_images">Mostrar imágenes</string>
