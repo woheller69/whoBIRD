@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="samples_zero">Нет звукового входа: все образцы звука равны нулю!</string>
-    <string name="download_model_text">whoBIRD необходимо загрузить модель BirdNET (~ 30MB).\nКоммерческое использование запрещено.\n(CC-BY-NC-SA 4.0 license)</string>
+    <string name="download_model_text">whoBIRD необходимо загрузить модель BirdNET (~ 39MB).\nКоммерческое использование запрещено.\n(CC-BY-NC-SA 4.0 license)</string>
     <string name="latitude">Шир</string>
     <string name="longitude">Дол</string>
     <string name="dialog_Later_button">Может быть попозже</string>

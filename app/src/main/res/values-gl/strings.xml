@@ -3,7 +3,7 @@
     <string name="latitude">Lat</string>
     <string name="longitude">Lonx</string>
     <string name="download_model">Descargar Mostras</string>
-    <string name="download_model_text">whoBird precisa descargar as mostras desde BirdNET (~30MB).\n Non se permite o uso comercial \n(Licenza CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">whoBird precisa descargar as mostras desde BirdNET (~39MB).\n Non se permite o uso comercial \n(Licenza CC-BY-NC-SA 4.0)</string>
     <string name="start">IMOS ALÁ</string>
     <string name="error_download">Erro ao descargar</string>
     <string name="error_audio_permission">Non se concedeu acceso ao micrófono</string>

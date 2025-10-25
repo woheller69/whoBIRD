@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Misschien later</string>
     <string name="dialog_StarOnGitHub">Vind je deze app leuk? Geef een ster op GitHub of koop een kop koffie voor de ontwikkelaar via PayPal.</string>
     <string name="download_model">Download model</string>
-    <string name="download_model_text">whoBIRD moet het BirdNET model downloaden (~ 30MB). \n Commercieel gebruik niet toegestaan \n(CC-BY-NC-SA 4.0 licentie)</string>
+    <string name="download_model_text">whoBIRD moet het BirdNET model downloaden (~ 39MB). \n Commercieel gebruik niet toegestaan \n(CC-BY-NC-SA 4.0 licentie)</string>
     <string name="start">Daar gaan we</string>
     <string name="error_download">Download fout</string>
     <string name="error_audio_permission">Microfoon toegang niet verleend</string>

@@ -56,7 +56,7 @@
                     android:id="@+id/option32bit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="32bit (~55MB)"
+                    android:text="32bit (~63MB)"
                     android:textColor="?colorPrimary"/>
 
                 <ImageButton

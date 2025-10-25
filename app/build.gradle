@@ -10,8 +10,8 @@ android {
         applicationId "org.woheller69.whobird"
         minSdk 26
         targetSdk 35
-        versionCode 48
-        versionName "4.8"
+        versionCode 49
+        versionName "4.9"
     }
 
     lintOptions{
@@ -58,5 +58,5 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
     implementation "net.lingala.zip4j:zip4j:2.9.1"
     implementation 'uk.me.berndporr:iirj:1.7'
-    implementation 'com.github.woheller69:FreeDroidWarn:+'
+    implementation 'com.github.woheller69:FreeDroidWarn:V1.5'
 }

@@ -6,7 +6,7 @@
     <string name="samples_zero">Nincs hang bemenet: Minden hang minta csendes!</string>
     <string name="dialog_StarOnGitHub">Tetszik ez az alkalmazás? Kérjük adj egy csillagot Githubon vagy vegyél a fejlesztőnek egy kávét PayPalon.</string>
     <string name="download_model">Modell letöltése</string>
-    <string name="download_model_text">A whoBIRD-nek le kell töltenie a BirdNET modellt (~ 30MB). \n Kereskedelmi célú felhasználás nem engedélyezett.\n(CC-BY-NC-SA 4.0 licenc)</string>
+    <string name="download_model_text">A whoBIRD-nek le kell töltenie a BirdNET modellt (~ 39MB). \n Kereskedelmi célú felhasználás nem engedélyezett.\n(CC-BY-NC-SA 4.0 licenc)</string>
     <string name="start">KEZDJÜK</string>
     <string name="error_download">Letöltési hiba</string>
     <string name="error_audio_permission">Mikrofon hozzáférés nem engedélyezett</string>

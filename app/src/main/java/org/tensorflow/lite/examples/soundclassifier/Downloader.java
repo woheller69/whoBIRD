@@ -28,13 +28,14 @@ public class Downloader {
     static final String metaModelFILE = "metaModel.tflite";
     static final String model16URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
     static final String model32URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite";
-    static final String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_FP16.tflite";
+    static final String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_V2_FP16.tflite";
     static final String model16MD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
     static final String model32MD5 = "6c7c42106e56550fc8563adb31bc120e";
-    static final String metaModelMD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
+    static final String metaModelMD5 ="c12c2baafe4d1bb098e65291bfcb2f8c";
+    static final String metaModelV1MD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
     static long model16Size = 25932528;
     static final long model32Size = 51726412;
-    static final long metaModelSize = 7071440;
+    static final long metaModelSize = 14770468;
     static long downloadModelSize = 0;
     static long downloadMetaModelSize = 0;
     static boolean downloadModelFinished = false;
@@ -66,9 +67,9 @@ public class Downloader {
         }
 
         if (modelFile.exists() && !(calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5))){modelFile.delete(); downloadModelFinished = false;}
-        if (metaModelFile.exists() && !calcMetaModelMD5.equals(metaModelMD5)) {metaModelFile.delete();downloadMetaModelFinished = false;}
+        if (metaModelFile.exists() && (!calcMetaModelMD5.equals(metaModelMD5) && !calcMetaModelMD5.equals(metaModelV1MD5))) {metaModelFile.delete();downloadMetaModelFinished = false;}
 
-        return (calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5)) && calcMetaModelMD5.equals(metaModelMD5);
+        return (calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5)) && (calcMetaModelMD5.equals(metaModelMD5) || calcMetaModelMD5.equals(metaModelV1MD5));
     }
 
     public static void downloadModels(final Activity activity, ActivityDownloadBinding binding) {

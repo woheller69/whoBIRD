@@ -7,7 +7,7 @@
     <string name="dialog_Later_button">Maybe later</string>
     <string name="dialog_StarOnGitHub">Do you like this app? Please give a star on GitHub or buy the developer a coffee via PayPal.</string>
     <string name="download_model">Download Model</string>
-    <string name="download_model_text">whoBIRD needs to download the BirdNET model (~ 30MB). \n No commercial use allowed \n(CC-BY-NC-SA 4.0 license)</string>
+    <string name="download_model_text">whoBIRD needs to download the BirdNET model (~ 39MB). \n No commercial use allowed \n(CC-BY-NC-SA 4.0 license)</string>
     <string name="start">LET\'S GO</string>
     <string name="error_download">Download error</string>
     <string name="error_audio_permission">Microphone permission not granted</string>

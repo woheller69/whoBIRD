@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Можливо пізніше</string>
     <string name="dialog_StarOnGitHub">Вам подобається цей застосунок? Будь ласка, поставте зірочку на GitHub, або купіть каву розробнику через PayPal.</string>
     <string name="download_model">Завантажити модель</string>
-    <string name="download_model_text">whoBIRD потрібно завантажити BirdNET модель (~ 30MB). \n Дозволено для не комерційного використання\n(ліцензія CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">whoBIRD потрібно завантажити BirdNET модель (~ 39MB). \n Дозволено для не комерційного використання\n(ліцензія CC-BY-NC-SA 4.0)</string>
     <string name="start">Почнімо</string>
     <string name="error_download">Помилка завантаження</string>
     <string name="error_audio_permission">Дозвіл на доступ до мікрофона не надано</string>
