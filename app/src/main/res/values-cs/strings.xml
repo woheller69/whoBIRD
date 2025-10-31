@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Možná později</string>
     <string name="dialog_StarOnGitHub">Líbí se vám tato aplikace? Dejte prosím hvězdičku na GitHubu nebo kupte vývojáři kávu přes PayPal.</string>
     <string name="download_model">Stáhnout model</string>
-    <string name="download_model_text">whoBIRD potřebuje stáhnout model BirdNET (~ 30 MB). \n Komerční použití není povoleno \n(licence CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">whoBIRD potřebuje stáhnout model BirdNET (~ 39 MB). \n Komerční použití není povoleno \n(licence CC-BY-NC-SA 4.0)</string>
     <string name="start">SPUSTIT</string>
     <string name="error_download">Chybné stahování</string>
     <string name="error_audio_permission">Oprávnění k mikrofonu nebylo uděleno</string>
