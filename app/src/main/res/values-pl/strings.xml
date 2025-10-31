@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Może później</string>
     <string name="dialog_StarOnGitHub">Lubisz tę aplikację? Oznacz projekt gwiazdką na GitHub lub kup programistom kawę przez PayPal.</string>
     <string name="download_model">Pobierz model</string>
-    <string name="download_model_text">Należy pobrać model BirdNET (~30 MB). \n Wykorzystanie komercyjne wzbronione. \n(licencja CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">Należy pobrać model BirdNET (~39MB). \n Wykorzystanie komercyjne wzbronione. \n(licencja CC-BY-NC-SA 4.0)</string>
     <string name="start">ZACZYNAJMY</string>
     <string name="error_download">Błąd pobierania</string>
     <string name="error_audio_permission">Nie udzielono dostępu do mikrofonu</string>

@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Ehkä myöhemmin</string>
     <string name="dialog_StarOnGitHub">Pidätkö tästä sovelluksesta? Anna tähti GitHubissa tai osta kehittäjälle kahvi PayPalin kautta.</string>
     <string name="download_model">Lataa malli</string>
-    <string name="download_model_text">whoBIRDin on ladattava BirdNET-malli (~ 30Mt). \n Kaupallinen käyttö kielletty \n(CC-BY-NC-SA 4.0 lisenssi)</string>
+    <string name="download_model_text">whoBIRDin on ladattava BirdNET-malli (~ 39Mt). \n Kaupallinen käyttö kielletty \n(CC-BY-NC-SA 4.0 lisenssi)</string>
     <string name="start">ALOITETAAN</string>
     <string name="error_download">Latausvirhe</string>
     <string name="error_audio_permission">Mikrofonin käyttöoikeutta ei ole myönnetty</string>
