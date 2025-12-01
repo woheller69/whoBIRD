@@ -209,7 +209,7 @@ class SoundClassifier(
     if (language == "en") {
       val country = localeList.get(0).country
       language = when (country) {
-          "GB" -> "en_uk"
+          "GB", "AU", "NZ", "IE", "ZA" -> "en_uk"
           else -> "en"
       }
     } else if (language == "pt") {
