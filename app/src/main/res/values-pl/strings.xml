@@ -4,14 +4,14 @@
     <string name="latitude">Szer.</string>
     <string name="longitude">Dł.</string>
     <string name="dialog_Later_button">Może później</string>
-    <string name="dialog_StarOnGitHub">Lubisz tę aplikację? Oznacz projekt gwiazdką na GitHub lub kup programistom kawę przez PayPal.</string>
+    <string name="dialog_StarOnGitHub">Lubisz tę aplikację? Oznacz projekt gwiazdką na GitHub lub kup programiście kawę poprzez PayPal.</string>
     <string name="download_model">Pobierz model</string>
     <string name="download_model_text">Należy pobrać model BirdNET (~39MB). \n Wykorzystanie komercyjne wzbronione. \n(licencja CC-BY-NC-SA 4.0)</string>
     <string name="start">ZACZYNAJMY</string>
     <string name="error_download">Błąd pobierania</string>
     <string name="error_audio_permission">Nie udzielono dostępu do mikrofonu</string>
     <string name="error_location_permission">Nie udzielono dostępu do lokalizacji</string>
-    <string name="show_images">Pokaż obrazy</string>
+    <string name="show_images">Pokazuj obrazy</string>
     <string name="clear_db">Obserwacje usunięte</string>
     <string name="detailed_list">Szczegółowa lista</string>
     <string name="delete">Usunąć wszystkie obserwacje?</string>
@@ -23,13 +23,14 @@
     <string name="source_voicerecognition">Rozpoznawanie głosu</string>
     <string name="settings_audiosource">Źródło dźwięku</string>
     <string name="settings_notification_sound">Dźwięk powiadomień</string>
-    <string name="save_wav">Zapis .wav files</string>
+    <string name="save_wav">Zapisuj pliki .wav</string>
     <string name="summary_save_wav">Zapisuje plik .wav dla każdego wykrycia w katalogu Muzyka. Wymaga systemu Android 12+</string>
     <string name="language">Język</string>
     <string name="high_contrast_theme">Wysoki kontrast</string>
     <string name="settings_meta_extended">Ważony metamodel</string>
-    <string name="summary_meta_extended">Ta metoda na krótko wymaga więcej zasobów procesora, gdy zmienia się lokalizacja</string>
+    <string name="summary_meta_extended">Ta metoda chwilowo wymaga zwiększonych zasobów procesora, podczas zmiany lokalizacji</string>
     <string name="show_spectrogram">Wyświetlaj spektrogram</string>
     <string name="summary_show_spectrogram">Wysokie obciążenie procesora, niezalecane na wolnych urządzeniach</string>
-    <string name="meta_influence">Lokalizacja/Wpływ daty</string>
+    <string name="meta_influence">Wpływ lokalizacji/daty</string>
+    <string name="bluetooth_connection">Używaj Bluetooth</string>
 </resources>
