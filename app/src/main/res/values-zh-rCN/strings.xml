@@ -32,4 +32,5 @@
     <string name="dialog_StarOnGitHub">您喜欢这个应用吗？请在 GitHub 上给它一个星标，或者通过 PayPal 为开发者买杯咖啡。</string>
     <string name="summary_save_wav">在 Music 文件夹中为每个检测保存一个.wav 文件。需要 Android 12及以上系统</string>
     <string name="summary_meta_extended">当位置发生变化时，此方法会短暂地消耗更多的CPU资源</string>
+    <string name="bluetooth_connection">使用蓝牙</string>
 </resources>
