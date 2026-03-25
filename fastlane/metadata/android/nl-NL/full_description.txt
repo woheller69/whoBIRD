@@ -1,0 +1,8 @@
+whoBIRD is de ultieme metgezel voor vogelaars die vogels overal ter wereld aan hun geluid kan herkennen!
+whoBIRD maakt gebruik van het baanbrekende BirdNET-project en beschikt over een uitgebreide database met meer dan 6.000 vogelsoorten wereldwijd.
+Met behulp van geavanceerde algoritmen voor machine learning kan de app vogels nauwkeurig identificeren op basis van hun unieke geluiden.
+
+Bovendien doet whoBIRD al zijn werk volledig op je apparaat, zonder dat je een internetverbinding nodig hebt.
+Dit betekent dat je de app altijd en overal kunt gebruiken – of je nu diep in het bos bent of aan de oever van een afgelegen meer.
+
+De app vereist Android 9 of hoger
