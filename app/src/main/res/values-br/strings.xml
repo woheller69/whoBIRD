@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samples_zero">Enmont aodio ebet: goullo eo an holl standilhonoù son!</string>
+    <string name="latitude">Led.</string>
+    <string name="longitude">Hed.</string>
+    <string name="dialog_Later_button">Diwezhatoc\'h marteze</string>
+    <string name="dialog_StarOnGitHub">An arload-mañ a blij deoc\'h? Roit ur steredenn dezhañ war GitHub mar plij, pe prenit ur banne kafe d\'an diorroer dre bPayPal.</string>
+    <string name="download_model">Pellgargañ ar patrom</string>
+    <string name="download_model_text">whoBIRD en deus ezhomm da bellgargañ ar patrom BirdNET (~ 39MB). \n Implij kenwerzhel ebet aotreet\n(aotre CC-BY-NC-SA 4.0)</string>
+    <string name="start">TAN DE\'I</string>
+    <string name="error_download">Fazi pellgargañ</string>
+    <string name="error_audio_permission">N\'eo ket bet roet aotre d\'ar mikro</string>
+    <string name="error_location_permission">N\'eo ket bet roet aotre d\'al lec\'hiadur</string>
+    <string name="show_images">Diskouez ar skeudennoù</string>
+    <string name="clear_db">Diverket eo bet an arselladennoù</string>
+    <string name="detailed_list">Listenn munudet</string>
+    <string name="delete">Dilemel an holl arselladennoù?</string>
+    <string name="share_app">Rannañ an arload</string>
+    <string name="settings_threshold">Treuz [%]</string>
+    <string name="settings_highpass">High-Pass Filter [Hz]</string>
+    <string name="source_unprocessed">Nann-tretet</string>
+    <string name="source_microphone">Mikrofon</string>
+    <string name="source_voicerecognition">Anavezout ar vouezh</string>
+    <string name="settings_audiosource">Mammenn an aodio</string>
+    <string name="settings_notification_sound">Son ar gemennadenn</string>
+    <string name="save_wav">Enrollañ restroù .wav</string>
+    <string name="summary_save_wav">Enrollañ ur restr .wav evit pep diguzhadenn er renkell sonerezh. Android 12+ zo rekis</string>
+    <string name="language">Yezh</string>
+    <string name="high_contrast_theme">Dargemm uhel</string>
+    <string name="settings_meta_extended">Meta-model ponderet</string>
+    <string name="summary_meta_extended">An hentenn-mañ a implij muioc\'h a vammennoù CPU pa cheñch al lec\'hiadur</string>
+    <string name="show_spectrogram">Diskouez ar spektrogram</string>
+    <string name="summary_show_spectrogram">Karg CPU uhel, dizaliet evit an aparailhoù gorrek</string>
+    <string name="meta_influence">Levezon al lec\'h/deiziad</string>
+    <string name="bluetooth_connection">Implijit ar Bluetooth</string>
+</resources>

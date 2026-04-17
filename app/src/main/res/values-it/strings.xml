@@ -22,7 +22,15 @@
     <string name="source_microphone">Microfono</string>
     <string name="source_voicerecognition">Riconoscimento vocale</string>
     <string name="settings_audiosource">Sorgente audio</string>
-    <string name="settings_notification_sound">Notification sound</string>
-    <string name="save_wav">Save .wav files</string>
-    <string name="summary_save_wav">Saves a .wav file for each detection in Music directory. Requires Android 12+</string>
+    <string name="settings_notification_sound">Suono di notifica</string>
+    <string name="save_wav">Salva file .wav</string>
+    <string name="summary_save_wav">Salva un file .wav per ogni rilevamento nella directory Musica. Richiede Android 12+</string>
+    <string name="language">Lingua</string>
+    <string name="high_contrast_theme">Contrasto Alto</string>
+    <string name="settings_meta_extended">Metamodello ponderato</string>
+    <string name="summary_meta_extended">Questo metodo richiede temporaneamente più risorse della CPU quando la posizione cambia</string>
+    <string name="show_spectrogram">Mostra spettrogramma</string>
+    <string name="summary_show_spectrogram">Elevato utilizzo della CPU, non consigliato su dispositivi lenti</string>
+    <string name="meta_influence">Influenza di luogo e data</string>
+    <string name="bluetooth_connection">Usa Bluetooth</string>
 </resources>

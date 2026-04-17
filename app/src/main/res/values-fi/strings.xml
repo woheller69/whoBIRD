@@ -27,4 +27,10 @@
     <string name="summary_save_wav">Tallentaa .wav-tiedoston jokaista havaintoa varten Musiikki-hakemistoon. Vaatii Android 12+</string>
     <string name="language">Kieli</string>
     <string name="high_contrast_theme">Suuri kontrasti</string>
+    <string name="settings_meta_extended">Painotettu metamalli</string>
+    <string name="summary_meta_extended">Tämä menetelmä vaatii hetkellisesti enemmän prosessoritehoa sijainnin vaihtuessa</string>
+    <string name="show_spectrogram">Näytä spektrogrammi</string>
+    <string name="summary_show_spectrogram">Suuri prosessorin kuormitus, ei suositella hitaille laitteille</string>
+    <string name="meta_influence">Sijainnin/Päivämäärän vaikutus</string>
+    <string name="bluetooth_connection">Käytä Bluetoothia</string>
 </resources>
