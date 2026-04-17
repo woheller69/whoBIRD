@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.preference.Preference;
@@ -18,6 +19,8 @@ import androidx.preference.SwitchPreferenceCompat;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import org.woheller69.preferences.EditTextSwitchPreference;
 
 public class SettingsActivity extends BaseActivity {
 Context mContext;
@@ -128,6 +131,37 @@ Context mContext;
                 return true; // Allow the change
             });
 
+            EditTextSwitchPreference manualLocationValue = findPreference("manual_location_value");
+            manualLocationValue.setOnPreferenceChangeListener((preference, newValue) -> {
+                String newVal = newValue.toString();
+                if (isValidGPSFormat(newVal) && isValidGPSRange(newVal)) {
+                    return true;
+                } else {
+                    Toast.makeText(requireContext(),
+                            requireContext().getString(R.string.error_invalid_GPS), Toast.LENGTH_SHORT).show();
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+                    sharedPreferences.edit().remove("manual_location_value").apply();
+                    manualLocationValue.setText("0.000/0.000");
+                    return false;
+                }
+            });
+
+        }
+        private boolean isValidGPSFormat(String value) {
+            if (value == null || value.isEmpty()) return false;
+            return value.matches("^-?\\d+(\\.\\d+)?/-?\\d+(\\.\\d+)?$");
+        }
+
+        private boolean isValidGPSRange(String value) {
+            try {
+                String[] parts = value.split("/");
+                double lat = Double.parseDouble(parts[0]);
+                double lon = Double.parseDouble(parts[1]);
+                return lat >= -90 && lat <= 90 &&
+                        lon >= -180 && lon <= 180;
+            } catch (Exception e) {
+                return false;
+            }
         }
     }
 }
