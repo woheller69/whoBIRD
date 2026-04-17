@@ -2,6 +2,7 @@ package org.tensorflow.lite.examples.soundclassifier;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
+import androidx.preference.PreferenceManager;
 
 public class LocationHelper {
     private static Location oldLocation;
@@ -29,6 +31,20 @@ public class LocationHelper {
     }
 
     static void requestLocation(Context context, SoundClassifier soundClassifier) {
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        if (sharedPreferences.getBoolean("manual_location", false)){
+            String manualLocation = sharedPreferences.getString("manual_location_value", "0.000/0.000");
+            String lat = manualLocation.split("/")[0];
+            String lon = manualLocation.split("/")[1];
+            preciseLocation = new Location("GPS");
+            preciseLocation.setLatitude(Double.parseDouble(lat));
+            preciseLocation.setLongitude(Double.parseDouble(lon));
+            oldLocation = preciseLocation;
+            soundClassifier.runMetaInterpreter(oldLocation);
+            oldLocationTime = 0;
+            return;
+        }
 
         if (System.currentTimeMillis() - oldLocationTime > 3 * 60 * 1000) {oldLocation = null; oldLocationTime = 0;}  //location older than 3 min -> reset
         else soundClassifier.runMetaInterpreter(oldLocation);

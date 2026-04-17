@@ -71,6 +71,15 @@
         android:defaultValue="false"
         />
 
+    <org.woheller69.preferences.EditTextSwitchPreference
+        android:selectable="true"
+        app:useSimpleSummaryProvider="true"
+        android:key="manual_location_value"
+        app:SwitchKey="manual_location"
+        app:SwitchKeyDefaultValue="false"
+        android:defaultValue="0.000/0.000"
+        android:title="@string/manual_location" />
+
     <Preference
         android:key="language"
         android:layout="@layout/language_button"/>

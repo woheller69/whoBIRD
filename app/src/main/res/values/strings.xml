@@ -34,5 +34,6 @@
     <string name="summary_show_spectrogram">High CPU load, not recommended on slow devices</string>
     <string name="meta_influence">Location/Date influence</string>
     <string name="bluetooth_connection">Use Bluetooth</string>
+    <string name="manual_location">Set location</string>
 </resources>
 
