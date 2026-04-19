@@ -33,7 +33,6 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.webkit.WebSettings
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import com.google.android.material.slider.LabelFormatter.LABEL_GONE
@@ -141,11 +140,6 @@ class MainActivity : BaseActivity() {
 
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
     if (sharedPref.getBoolean("bluetooth", false)){
-      if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-          requestPermissions(arrayOf(Manifest.permission.BLUETOOTH_CONNECT), REQUEST_PERMISSIONS)
-        }
-      }
       audioManager.startBluetoothSco()
       audioManager.isBluetoothScoOn = true
     } else {
@@ -183,7 +177,8 @@ class MainActivity : BaseActivity() {
   }
 
   private fun checkLocationPermission(): Boolean {
-    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+    if (sharedPref.getBoolean("manual_location", false) || ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
       return true
     } else {
       return false
@@ -195,10 +190,21 @@ class MainActivity : BaseActivity() {
     if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
       perms.add(Manifest.permission.RECORD_AUDIO)
     }
-    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-      perms.add(Manifest.permission.ACCESS_COARSE_LOCATION)
-      perms.add(Manifest.permission.ACCESS_FINE_LOCATION)
+
+    val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+
+    if (!sharedPref.getBoolean("manual_location", false)
+      && ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        perms.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+        perms.add(Manifest.permission.ACCESS_FINE_LOCATION)
     }
+
+    if (sharedPref.getBoolean("bluetooth", false)
+      && ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED
+      && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        perms.add(Manifest.permission.BLUETOOTH_CONNECT)
+    }
+
     if (!perms.isEmpty()) requestPermissions(perms.toTypedArray(), REQUEST_PERMISSIONS)
   }
 
