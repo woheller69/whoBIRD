@@ -33,4 +33,6 @@
     <string name="summary_show_spectrogram">Hoge CPU-belasting, niet aangeraden op langzame apparaten</string>
     <string name="meta_influence">Locatie/datum-invloed</string>
     <string name="bluetooth_connection">Gebruik bluetooth</string>
+    <string name="error_invalid_GPS">Ongeldig GPS-formaat</string>
+    <string name="manual_location">Locatie instellen</string>
 </resources>
