@@ -33,4 +33,6 @@
     <string name="summary_show_spectrogram">Wysokie obciążenie procesora, niezalecane na wolnych urządzeniach</string>
     <string name="meta_influence">Wpływ lokalizacji/daty</string>
     <string name="bluetooth_connection">Używaj Bluetooth</string>
+    <string name="manual_location">Ustaw lokalizację</string>
+    <string name="error_invalid_GPS">Niewłaściwy format GPS</string>
 </resources>
