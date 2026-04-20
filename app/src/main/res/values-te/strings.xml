@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="samples_zero">ఆడియో ఇన్పుట్ లేదు: అన్ని ఆడియో నమూనాలు సున్నా!</string>
+    <string name="dialog_Later_button">బహుశా తరువాత</string>
+    <string name="dialog_StarOnGitHub">మీరు ఈ యాప్ను ఇష్టపడుతున్నారా? దయచేసి GitHub లో ఒక నక్షత్రం ఇవ్వండి లేదా డెవలపర్కి పేపాల్ ద్వారా కాఫీని కొనుగోలు చేయండి.</string>
+</resources>

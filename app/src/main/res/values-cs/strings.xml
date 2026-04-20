@@ -33,4 +33,6 @@
     <string name="settings_meta_extended">Vážený meta model</string>
     <string name="summary_meta_extended">Tato metoda krátce vyžaduje více prostředků CPU, když se změní poloha</string>
     <string name="bluetooth_connection">Použít Bluetooth</string>
+    <string name="manual_location">Nastavit lokaci</string>
+    <string name="error_invalid_GPS">Neplatný formát GPS</string>
 </resources>

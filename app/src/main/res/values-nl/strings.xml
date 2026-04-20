@@ -17,7 +17,7 @@
     <string name="delete">Alle observaties verwijderen?</string>
     <string name="share_app">Deel app</string>
     <string name="settings_threshold">Drempel [%]</string>
-    <string name="settings_highpass">High-Pass Filter [Hz]</string>
+    <string name="settings_highpass">Hoogdoorlaatfilter [Hz]</string>
     <string name="source_unprocessed">Onbewerkt</string>
     <string name="source_microphone">Microfoon</string>
     <string name="source_voicerecognition">Spraak herkenning</string>
@@ -27,4 +27,10 @@
     <string name="summary_save_wav">Bewaar een .wav bestand voor elke detectie in de Muziek map. Vanaf Android 12+</string>
     <string name="language">Taal</string>
     <string name="high_contrast_theme">Hoog contrast</string>
+    <string name="settings_meta_extended">Gewogen metamodel</string>
+    <string name="summary_meta_extended">Deze methode heeft tijdelijk meer CPU-capaciteit nodig wanneer de locatie veranderd</string>
+    <string name="show_spectrogram">Toon spectogram</string>
+    <string name="summary_show_spectrogram">Hoge CPU-belasting, niet aangeraden op langzame apparaten</string>
+    <string name="meta_influence">Locatie/datum-invloed</string>
+    <string name="bluetooth_connection">Gebruik bluetooth</string>
 </resources>
