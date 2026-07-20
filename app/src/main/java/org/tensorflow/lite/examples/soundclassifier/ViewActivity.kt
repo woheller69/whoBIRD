@@ -137,6 +137,7 @@ class ViewActivity : BaseActivity() {
                     WavUtils.playWaveFile(mContext, adapter.getMillis(position))
                     val url = if ( assetList[adapter.getSpeciesID(position)] != "NO_ASSET") {
                         "https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
+                        //"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/" + assetList[adapter.getSpeciesID(position)] + "/320"
                     } else {
                         "about:blank"
                     }

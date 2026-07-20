@@ -599,6 +599,7 @@ class SoundClassifier(
         val url =
           if (max!!.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
             "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+            //"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/" + assetList[max.index] + "/320"
           } else {
             mBinding.webview.url
           }
