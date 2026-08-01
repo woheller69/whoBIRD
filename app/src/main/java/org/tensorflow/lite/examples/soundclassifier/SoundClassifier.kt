@@ -506,7 +506,7 @@ class SoundClassifier(
     val sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext)
     val highPass = sharedPref.getInt("high_pass",0)
     val butterworth = Butterworth()
-    butterworth.highPass(6, 48000.0, highPass.toDouble())
+    butterworth.highPass(6, options.sampleRate*1.0, highPass.toDouble())
 
     val circularBuffer = ShortArray(modelInputLength)
 
