@@ -82,11 +82,13 @@ class SoundClassifier(
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
     val assetFile: String = "assets.txt",
     /** Path of the converted .tflite file, relative to the assets/ directory.  */
+    val convertFile: String = "convert.txt",
+    /** Path of the converted .tflite file, relative to the assets/ directory.  */
     val modelPath: String = "model.tflite",
     /** Path of the meta model .tflite file, relative to the assets/ directory.  */
     val metaModelPath: String = "metaModel.tflite",
     /** The required audio sample rate in Hz.  */
-    val sampleRate: Int = 48000,
+    val sampleRate: Int = 32000,
     /** Probability value above which a class in the meta model is labeled as active (i.e., detected) the display. (default 0.01) */
     var metaProbabilityThreshold1: Float = 0.01f,  //min must be > 0
     var metaProbabilityThreshold2: Float = 0.008f,  //min must be > 0
@@ -112,6 +114,8 @@ class SoundClassifier(
   /** Names of the model's output classes.  */
   lateinit var labelList: List<String>
 
+  lateinit var convertList: List<Int>
+
   /** Names of the model's output classes.  */
   lateinit var assetList: List<String>
 
@@ -135,6 +139,7 @@ class SoundClassifier(
 
   /** Used to hold the real-time probabilities predicted by the model for the output classes.  */
   private lateinit var predictionProbs: FloatArray
+  private lateinit var predictionProbsOld: FloatArray
   private lateinit var metaPredictionProbs: FloatArray
   private lateinit var metaPredictionProbsMax: FloatArray
 
@@ -155,6 +160,7 @@ class SoundClassifier(
   init {
     loadLabels(context)
     loadAssetList(context)
+    loadConvertList(context)
     setupInterpreter(context)
     setupMetaInterpreter(context)
   }
@@ -200,6 +206,24 @@ class SoundClassifier(
       Log.e(TAG, "Failed to read labels ${options.assetFile}: ${e.message}")
     }
   }
+
+  private fun loadConvertList(context: Context) {
+
+    try {
+      val reader =
+        BufferedReader(InputStreamReader(context.assets.open(options.convertFile)))
+      val wordList = mutableListOf<String>()
+      reader.useLines { lines ->
+        lines.forEach {
+          wordList.add(it.trim())
+        }
+      }
+      convertList = wordList.map { Integer.parseInt(it) }
+    } catch (e: IOException) {
+      Log.e(TAG, "Failed to read labels ${options.convertFile}: ${e.message}")
+    }
+  }
+
   
   /** Retrieve labels from "labels.txt" file */
   private fun loadLabels(context: Context) {
@@ -272,7 +296,8 @@ class SoundClassifier(
     // Inspect input and output specs.
     val inputShape = interpreter.getInputTensor(0).shape()
     Log.i(TAG, "TFLite model input shape: ${inputShape.contentToString()}")
-    modelInputLength = inputShape[1]
+    //modelInputLength = inputShape[1]
+    modelInputLength = 96000
 
     val outputShape = interpreter.getOutputTensor(0).shape()
     Log.i(TAG, "TFLite output shape: ${outputShape.contentToString()}")
@@ -325,6 +350,8 @@ class SoundClassifier(
     // Fill the array with 1 initially.
     metaPredictionProbs = FloatArray(metaModelNumClasses) { 1f }
     metaInputBuffer = FloatBuffer.allocate(metaModelInputLength)
+
+    predictionProbsOld = FloatArray(metaModelNumClasses) { Float.NaN }
 
   }
 
@@ -565,16 +592,29 @@ class SoundClassifier(
     recognizerWorkingBuffer.rewind()
     outputBuffer.rewind()
 
+    val newShape = intArrayOf(1, 96000)
+    interpreter.resizeInput(0, newShape)
+    interpreter.allocateTensors()
     interpreter.run(recognizerWorkingBuffer, outputBuffer)
     outputBuffer.rewind()
     outputBuffer.get(predictionProbs) // Copy data to predictionProbs.
 
+// 🔹 1. Clear buffer to prevent stale/NaN values
+    predictionProbsOld.fill(0f)
+
+// 🔹 2. Map new → old indices
+    for (newIdx in predictionProbs.indices) {
+      val oldIdx = convertList.indexOf(newIdx)
+      if (oldIdx in predictionProbsOld.indices) { // ✅ Handles -1 and out-of-bounds safely
+        predictionProbsOld[oldIdx] = predictionProbs[newIdx]
+      }
+    }
+
     val metaInfluence = mBinding.metaInfluenceSlider.value / 100.0f
 
     val probList = mutableListOf<Float>()
-    for (i in predictionProbs.indices) {
-      val modelProb = 1 / (1 + exp(-predictionProbs[i])) //apply sigmoid
-      probList.add(modelProb*(1-metaInfluence + metaInfluence* metaPredictionProbs[i]))
+    for (i in predictionProbsOld.indices) {
+      probList.add(predictionProbsOld[i]*( 1- metaInfluence + metaInfluence* metaPredictionProbs[i]))  //sigmoid obviously already applied.
     }
 
     probList.withIndex().also {

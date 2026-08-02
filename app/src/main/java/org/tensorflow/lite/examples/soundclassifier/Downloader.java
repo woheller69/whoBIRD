@@ -26,15 +26,12 @@ import java.security.NoSuchAlgorithmException;
 public class Downloader {
     static final String modelFILE = "model.tflite";
     static final String metaModelFILE = "metaModel.tflite";
-    static final String model16URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP16.tflite";
-    static final String model32URL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_Model_FP32.tflite";
+    static final String model16URL = "https://zenodo.org/records/20703646/files/BirdNET+_V3.0-preview3.1_Global_11K_FP16_pruned.tflite";
     static final String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_V2_FP16.tflite";
-    static final String model16MD5 = "b1c981fe261910b473b9b7eec9ebcd4e";
-    static final String model32MD5 = "6c7c42106e56550fc8563adb31bc120e";
+    static final String model16MD5 = "8bf01e90e2ddf043fc3c161bb0fbbb9e";
     static final String metaModelMD5 ="c12c2baafe4d1bb098e65291bfcb2f8c";
     static final String metaModelV1MD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
-    static long model16Size = 25932528;
-    static final long model32Size = 51726412;
+    static long model16Size = 70461476;
     static final long metaModelSize = 14770468;
     static long downloadModelSize = 0;
     static long downloadMetaModelSize = 0;
@@ -66,16 +63,16 @@ public class Downloader {
             }
         }
 
-        if (modelFile.exists() && !(calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5))){modelFile.delete(); downloadModelFinished = false;}
+        if (modelFile.exists() && !(calcModelMD5.equals(model16MD5))){modelFile.delete(); downloadModelFinished = false;}
         if (metaModelFile.exists() && (!calcMetaModelMD5.equals(metaModelMD5) && !calcMetaModelMD5.equals(metaModelV1MD5))) {metaModelFile.delete();downloadMetaModelFinished = false;}
 
-        return (calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5)) && (calcMetaModelMD5.equals(metaModelMD5) || calcMetaModelMD5.equals(metaModelV1MD5));
+        return (calcModelMD5.equals(model16MD5)) && (calcMetaModelMD5.equals(metaModelMD5) || calcMetaModelMD5.equals(metaModelV1MD5));
     }
 
     public static void downloadModels(final Activity activity, ActivityDownloadBinding binding) {
         checkModels(activity);
 
-        modelSize = binding.option32bit.isChecked() ? model32Size : model16Size;
+        modelSize = model16Size;
 
         binding.downloadProgress.setProgress(0);
         binding.downloadButton.setEnabled(false);
@@ -87,8 +84,7 @@ public class Downloader {
             Thread thread = new Thread(() -> {
                 try {
                     URL url;
-                    if (binding.option32bit.isChecked()) url = new URL(model32URL);
-                    else url = new URL(model16URL);
+                    url = new URL(model16URL);
 
                     Log.d("whoBIRD", "Download model");
 
@@ -125,7 +121,7 @@ public class Downloader {
                         throw new IOException();  //throw exception if there is no modelFile at this point
                     }
 
-                    if (!(calcModelMD5.equals(model16MD5) || calcModelMD5.equals(model32MD5) )){
+                    if (!(calcModelMD5.equals(model16MD5))){
                         modelFile.delete();
                         downloadModelFinished = false;
                         activity.runOnUiThread(() -> {

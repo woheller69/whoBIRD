@@ -26,7 +26,7 @@ public class MelSpectrogram {
         N_FFT = hiRes ? N_FFT_HIRES : N_FFT_LORES;
         N_MEL = hiRes ? N_MEL_HIRES : N_MEL_LORES;
         
-        if (melFilters == null || melFilters.length != (N_FFT/2+1)*N_MEL)  melFilters = createMelFilterBank(N_FFT, sampleRate / 2, N_MEL);  //we are downsampling from 48000 to 24000Hz
+        if (melFilters == null || melFilters.length != (N_FFT/2+1)*N_MEL)  melFilters = createMelFilterBank(N_FFT, sampleRate / 2, N_MEL);  //we are downsampling from 32000 to 16000Hz
 
         audioBuffer.rewind();
         int bufferLength = audioBuffer.remaining();

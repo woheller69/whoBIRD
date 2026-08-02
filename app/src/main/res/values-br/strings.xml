@@ -6,7 +6,7 @@
     <string name="dialog_Later_button">Diwezhatoc\'h marteze</string>
     <string name="dialog_StarOnGitHub">An arload-mañ a blij deoc\'h? Roit ur steredenn dezhañ war GitHub mar plij, pe prenit ur banne kafe d\'an diorroer dre bPayPal.</string>
     <string name="download_model">Pellgargañ ar patrom</string>
-    <string name="download_model_text">whoBIRD en deus ezhomm da bellgargañ ar patrom BirdNET (~ 39MB). \n Implij kenwerzhel ebet aotreet\n(aotre CC-BY-NC-SA 4.0)</string>
+    <string name="download_model_text">whoBIRD en deus ezhomm da bellgargañ ar patrom BirdNET (~ 85MB). \n Implij kenwerzhel ebet aotreet\n(aotre CC-BY-NC-SA 4.0)</string>
     <string name="start">TAN DE\'I</string>
     <string name="error_download">Fazi pellgargañ</string>
     <string name="error_audio_permission">N\'eo ket bet roet aotre d\'ar mikro</string>

@@ -7,7 +7,7 @@ android {
     compileSdk 35
     android.buildFeatures.buildConfig true
     defaultConfig {
-        applicationId "org.woheller69.whobird"
+        applicationId "org.woheller69.whobird3"
         minSdk 26
         targetSdk 35
         versionCode 54
