@@ -26,11 +26,11 @@ public class MelSpectrogram {
         N_FFT = hiRes ? N_FFT_HIRES : N_FFT_LORES;
         N_MEL = hiRes ? N_MEL_HIRES : N_MEL_LORES;
         
-        if (melFilters == null || melFilters.length != (N_FFT/2+1)*N_MEL)  melFilters = createMelFilterBank(N_FFT, sampleRate / 2, N_MEL);  //we are downsampling from 32000 to 16000Hz
+        if (melFilters == null || melFilters.length != (N_FFT/2+1)*N_MEL)  melFilters = createMelFilterBank(N_FFT, sampleRate, N_MEL);
 
         audioBuffer.rewind();
         int bufferLength = audioBuffer.remaining();
-        float[] floatArray = new float[bufferLength / 2]; //half size for downsampling
+        float[] floatArray = new float[bufferLength];
         float maxAbsValue = 0.0f;
 
         for (int i = 0; i < floatArray.length; i++) {
@@ -38,7 +38,6 @@ public class MelSpectrogram {
             if (Math.abs(floatArray[i]) > maxAbsValue) {
                 maxAbsValue = Math.abs(floatArray[i]);
             }
-            audioBuffer.get(); //skip next value for downsampling
         }
 
         // Normalize the samples
