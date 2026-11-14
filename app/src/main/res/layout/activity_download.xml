@@ -53,6 +53,17 @@
                     android:textSize="18dp"
                     android:text="@string/download_model_text" />
 
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="?colorPrimary"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:text="@string/download_model_restrictions" />
+
                 <ImageButton
                     android:id="@+id/download_button"
                     android:layout_width="wrap_content"
