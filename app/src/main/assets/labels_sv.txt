@@ -24,19 +24,19 @@ Accipiter bicolor_Tvåfärgad hök
 Accipiter cirrocephalus_Australisk sparvhök
 Accipiter cooperii_Coopers hök
 Accipiter fasciatus_Brun duvhök
-Accipiter gentilis_Duvhök
+Astur atricapillus_Duvhök
 Accipiter gularis_Tajgahök
 Accipiter hiogaster_Variabel duvhök
-Accipiter melanoleucus_Svart duvhök
+Astur melanoleucus_Svart duvhök
 Accipiter minullus_Dvärghök
 Accipiter nisus_Sparvhök
-Accipiter novaehollandiae_Grå duvhök
+Tachyspiza novaehollandiae_Grå duvhök
 Accipiter poliogaster_Gråbukig hök
 Accipiter soloensis_Kinesisk sparvhök
 Accipiter striatus_Amerikansk sparvhök/Vitbröstad hök/Inkahök/Rostbyxvråk
 Accipiter superciliosus_Tiny Hawk
 Accipiter tachiro_Afrikansk duvhök
-Accipiter trinotatus_Fläckstjärtad hök
+Tachyspiza trinotata_Fläckstjärtad hök
 Accipiter trivirgatus_Tofsduvhök
 Accipiter virgatus_Besra
 Aceros nipalensis_Rosthalsad näshornsfågel
@@ -708,7 +708,7 @@ Brachygalba lugubris_Brun jakamar
 Brachypodius eutilotus_Dunryggig bulbyl
 Brachypodius melanocephalos_Svarthuvad bulbyl
 Brachypodius melanoleucos_Svartvit bulbyl
-Brachypodius priocephalus_Gråhuvad bulbyl
+Microtarsus priocephalus_Gråhuvad bulbyl
 Brachypodius urostictus_Gulflikig bulbyl
 Brachypteryx cruralis_Himalayakortvinge
 Brachypteryx goodfellowi_Taiwankortvinge
@@ -824,7 +824,7 @@ Cacicus solitarius_Eremitkasik
 Cacicus uropygialis_Karmosingumpad kasik/Höglandskasik
 Cacomantis castaneiventris_Papuabuskgök
 Cacomantis flabelliformis_Australisk buskgök
-Cacomantis leucolophus_Vitkronad buskgök
+Caliechthrus leucolophus_Vitkronad buskgök
 Cacomantis merulinus_Sorgbuskgök
 Cacomantis pallidus_Blek buskgök
 Cacomantis passerinus_Indisk buskgök
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_Whiteheads brednäbb
 Calyptophilus frugivorus_Östlig snårtangara
 Calyptophilus tertius_Västlig snårtangara
 Calyptorhynchus banksii_Rödstjärtad sotkakadua
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_Glanssotkakadua
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_Grönryggig kamaroptera/Angolakamaroptera/Gråryggig kamaroptera
 Camaroptera chloronota_Olivkamaroptera
 Camaroptera superciliaris_Gulbrynad kamaroptera
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_Gråsvart myrfågel
 Cercomacroides parkeri_Parkers myrfågel
 Cercomacroides serva_Svart myrfågel
 Cercomacroides tyrannina_Brungrå myrfågel
-Cercotrichas barbata_Miomboträdnäktergal
-Cercotrichas coryphoeus_Karrooträdnäktergal
+Tychaedon barbata_Miomboträdnäktergal
+Tychaedon coryphoeus_Karrooträdnäktergal
 Cercotrichas galactotes_Trädnäktergal (galactotes)
 Cercotrichas hartlaubi_Savannträdnäktergal
 Cercotrichas leucophrys_Vitbrynad trädnäktergal
 Cercotrichas paena_Kalahariträdnäktergal
 Cercotrichas podobe_Svart trädnäktergal
-Cercotrichas quadrivirgata_Kanelträdnäktergal
-Cercotrichas signata_Natalträdnäktergal
+Tychaedon quadrivirgata_Kanelträdnäktergal
+Tychaedon signata_Natalträdnäktergal
 Certhia americana_Amerikansk trädkrypare
 Certhia brachydactyla_Trädgårdsträdkrypare
 Certhia discolor_Sikkimträdkrypare
@@ -1168,7 +1168,7 @@ Charadrius dubius_Mindre strandpipare
 Charadrius falklandicus_Patagonienpipare
 Charadrius hiaticula_Större strandpipare
 Charadrius javanicus_Javastrandpipare
-Charadrius leschenaultii_Ökenpipare
+Anarhynchus leschenaultii_Ökenpipare
 Charadrius melodus_Flöjtstrandpipare
 Charadrius modestus_Rostbröstpipare
 Charadrius mongolus_Mongolpipare
@@ -1238,10 +1238,10 @@ Chlorophonia musica_Antillereufonia
 Chlorophonia occipitalis_Blåkronad klorofonia
 Chlorophonia pyrrhophrys_Brunbukig klorofonia
 Chloropicus fuscescens_Kardinalspett
-Chloropicus goertae_Gulbukig askspett
+Dendropicos goertae_Gulbukig askspett
 Chloropicus griseocephalus_Olivspett
 Chloropicus namaquus_Namaquaspett
-Chloropicus spodocephalus_Rödbukig askspett
+Dendropicos spodocephalus_Rödbukig askspett
 Chloropsis aurifrons_Guldpannad bladfågel
 Chloropsis cochinchinensis_Blåvingad bladfågel
 Chloropsis cyanopogon_Grön bladfågel
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_Silvermås
 Chroicocephalus philadelphia_Trädmås
 Chroicocephalus ridibundus_Skrattmås
 Chroicocephalus serranus_Andinsk mås
-Chrysococcyx basalis_Horsfields glansgök
+Chalcites basalis_Horsfields glansgök
 Chrysococcyx caprius_Didrikglansgök
 Chrysococcyx cupreus_Afrikansk smaragdgök
 Chrysococcyx klaas_Klaasglansgök
-Chrysococcyx lucidus_Guldglansgök
+Chalcites lucidus_Guldglansgök
 Chrysococcyx maculatus_Asiatisk glansgök
-Chrysococcyx minutillus_Mindre glansgök
+Chalcites minutillus_Mindre glansgök
 Chrysococcyx osculans_Svartörad glansgök
 Chrysococcyx xanthorhynchus_Violglansgök
 Chrysocolaptes festivus_Vitnackad sultanspett
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_Savannblåkråka
 Coracias benghalensis_Indisk blåkråka
 Coracias caudatus_Lilabröstad blåkråka
 Coracias garrulus_Blåkråka
-Coracina caesia_Enfärgad gråfågel
+Ceblepyris caesius_Enfärgad gråfågel
 Coracina cinerea_Madagaskargråfågel
 Coracina lineata_Bandad gråfågel
 Coracina longicauda_Långstjärtad gråfågel
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_Jamaicakråka
 Corvus leucognaphalus_Hispaniolakråka
 Corvus macrorhynchos_Stornäbbad kråka/Indisk djungelkråka/östlig djungelkråka
 Corvus mellori_Småkorp
-Corvus monedula_Kaja
+Coloeus monedula_Kaja
 Corvus nasicus_Kubakråka
 Corvus orru_Torreskråka
 Corvus ossifragus_Fiskkråka
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_Lärklik snårlöpare
 Coryphospingus cucullatus_Röd krontangara
 Coryphospingus pileatus_Grå krontangara
 Corythaeola cristata_Jätteturako
-Corythaixoides concolor_Grå tofsturako
+Crinifer concolor_Grå tofsturako
 Corythaixoides leucogaster_Vitbukig tofsturako
 Corythopis delalandi_Sydlig myrpiplärka
 Corythopis torquatus_Nordlig myrpiplärka
 Corythornis cristatus_Malakitkungsfiskare
 Coscoroba coscoroba_Coscorobasvan
 Cossypha albicapillus_Vitkronad snårskvätta
-Cossypha anomala_Sotsnårskvätta
-Cossypha archeri_Albertinesnårskvätta
+Dessonornis anomalus_Sotsnårskvätta
+Dessonornis archeri_Albertinesnårskvätta
 Cossypha caffra_Kapsnårskvätta
 Cossypha cyanocampter_Blåskuldrad snårskvätta
 Cossypha dichroa_Svarthuvad snårskvätta
@@ -1625,7 +1625,7 @@ Cossypha heuglini_Vitbrynad snårskvätta
 Cossypha humeralis_Vitstrupig snårskvätta
 Cossypha natalensis_Rosthuvad snårskvätta
 Cossypha niveicapilla_Rostnackad snårskvätta
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_Höglandssnårskvätta
 Coturnicops noveboracensis_Gulrall
 Coturnix coromandelica_Regnvaktel
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_Sundaflugsnappare
 Cyornis concretus_Vitstjärtad flugsnappare
 Cyornis glaucicomans_Kinesisk flugsnappare
 Cyornis hainanus_Koboltflugsnappare
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_Ockrabröstad flugsnappare
 Cyornis omissus_Sulawesiflugsnappare/Tanahjampeaflugsnappare
 Cyornis pallidipes_Ghatsflugsnappare
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_Rödskuldrad ara
 Diuca diuca_Diucatangara
 Dives dives_Sångtrupial
 Dives warczewiczi_Busktrupial
-Dog_Dog
+Canis familiaris_Dog
 Dolichonyx oryzivorus_Bobolink
 Donacobius atricapilla_Donakobius
 Donacospiza albifrons_Rörtangara
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_Svartryggig dunrygg
 Dryoscopus gambensis_Nordlig dunrygg
-Dryotriorchis spectabilis_Kongoormörn
+Circaetus spectabilis_Kongoormörn
 Dubusia castaneoventris_Kastanjebukig bergtangara
 Dubusia taeniata_Silverbrynad bergtangara
 Ducula aenea_Grön kejsarduva
@@ -2106,18 +2106,18 @@ Emberiza impetuani_Karroosparv
 Emberiza lathami_Tofssparv
 Emberiza leucocephalos_Tallsparv
 Emberiza melanocephala_Svarthuvad sparv
-Emberiza pallasi_Dvärgsävsparv
+Schoeniclus pallasi_Dvärgsävsparv
 Emberiza pusilla_Dvärgsparv
 Emberiza rustica_Videsparv
 Emberiza sahari_Hussparv
-Emberiza schoeniclus_Sävsparv
+Schoeniclus schoeniclus_Sävsparv
 Emberiza spodocephala_Gråhuvad sparv
 Emberiza stewarti_Svarthakad sparv
 Emberiza striolata_Bergsparv
 Emberiza sulphurata_Svavelsparv
 Emberiza tahapisi_Zebrasparv
 Emberiza tristrami_Tristramsparv
-Emberiza variabilis_Blågrå sparv
+Schoeniclus variabilis_Blågrå sparv
 Emberiza yessoensis_Amursävsparv
 Emberizoides herbicola_Kilstjärtad grästangara
 Emberizoides ypiranganus_Gråkindad grästangara
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_Svartpannad eldvävare
 Euplectes hordeaceus_Svartvingad eldvävare
 Euplectes orix_Sydlig eldvävare
 Euplectes progne_Långstjärtad vidafink
-Eupodotis afra_Svarttrapp
-Eupodotis afraoides_Vitvingad trapp
+Afrotis afra_Svarttrapp
+Afrotis afraoides_Vitvingad trapp
 Eupodotis caerulescens_Blåtrapp
-Eupodotis ruficrista_Sydlig tofstrapp
+Lophotis ruficrista_Sydlig tofstrapp
 Eupodotis senegalensis_Vitbukig trapp
-Eupodotis vigorsii_Karrootrapp
+Heterotetrax vigorsii_Karrootrapp
 Eupsittula aurea_Guldpannad parakit
 Eupsittula cactorum_Kaktusparakit
 Eupsittula canicularis_Elfenbensparakit
@@ -2630,10 +2630,10 @@ Gyps fulvus_Gåsgam
 Gyps himalayensis_Snögam
 Gypsophila brevicaudata_Kortstjärtad smygtimalia
 Gypsophila rufipectus_Rostbröstad smygtimalia
-Habia atrimaxillaris_Svartkindad myrtangara
-Habia cristata_Kardinalmyrtangara
-Habia fuscicauda_Rödstrupig myrtangara
-Habia gutturalis_Sotfärgad myrtangara
+Driophlox atrimaxillaris_Svartkindad myrtangara
+Driophlox cristata_Kardinalmyrtangara
+Driophlox fuscicauda_Rödstrupig myrtangara
+Driophlox gutturalis_Sotfärgad myrtangara
 Habia rubica_Röd myrtangara
 Haematopus ater_Sydamerikansk strandskata
 Haematopus bachmani_Klippstrandskata
@@ -2662,12 +2662,12 @@ Halcyon pileata_Svarthuvad kungsfiskare
 Halcyon senegalensis_Savannkungsfiskare
 Halcyon smyrnensis_Smyrnakungsfiskare (smyrnensis)
 Haliaeetus albicilla_Havsörn
-Haliaeetus humilis_Mindre fiskörn
-Haliaeetus ichthyaetus_Gråhuvad fiskörn
+Icthyophaga humilis_Mindre fiskörn
+Icthyophaga ichthyaetus_Gråhuvad fiskörn
 Haliaeetus leucocephalus_Vithövdad havsörn
-Haliaeetus leucogaster_Vitbukig havsörn
+Icthyophaga leucogaster_Vitbukig havsörn
 Haliaeetus pelagicus_Jättehavsörn
-Haliaeetus vocifer_Skrikhavsörn
+Icthyophaga vocifer_Skrikhavsörn
 Haliastur indus_Brahminglada
 Haliastur sphenurus_Visselglada
 Hapalocrex flaviventer_Gulbröstad sumphöna
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_Fijicettia
 Horornis seebohmi_Luzoncettia
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_Oceanlöpare
 Hydrobates leucorhous_Klykstjärtad stormsvala
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_Gråbukig myrsmyg
 Ithaginis cruentus_Blodfasan
 Ixobrychus cinnamomeus_Kanelrördrom
 Ixobrychus dubius_Svartryggig dvärgrördrom
-Ixobrychus eurhythmus_Schrencks dvärgrördrom
+Botaurus eurhythmus_Schrencks dvärgrördrom
 Ixobrychus exilis_Amerikansk dvärgrördrom
 Ixobrychus flavicollis_Svart rördrom
 Ixobrychus involucris_Strimryggig dvärgrördrom
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_Ockrabukig tyrann
 Mionectes olivaceus_Olivstrimmig tyrann (olivaceus)
 Mionectes rufiventris_Gråhuvad tyrann
 Mionectes striaticollis_Streckbröstad tyrann
-Mirafra affinis_Jerdonlärka
+Plocealauda affinis_Jerdonlärka
 Mirafra africana_Rödnackad lärka
 Mirafra apiata_Klapplärka
-Mirafra assamica_Bengallärka
+Plocealauda assamica_Bengallärka
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_Boerlärka
-Mirafra erythrocephala_Indokinesisk lärka
-Mirafra erythroptera_Indisk lärka
+Plocealauda erythrocephala_Indokinesisk lärka
+Plocealauda erythroptera_Indisk lärka
 Mirafra fasciolata_Kastanjettlärka
 Mirafra javanica_Singing Bushlark
 Mirafra passerina_Monoton lärka
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_Vitstjärtad rosttrast
 Neocossyphus rufus_Rödstjärtad rosttrast
 Neoctantes niger_Helikoniamyrtörnskata
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_Vanuatuvisslare
 Pachycephala cinerea_Mangrovevisslare
 Pachycephala flavifrons_Samoavisslare
 Pachycephala fuliginosa_Västaustralisk visslare
-Pachycephala fulvotincta_Orangebröstad visslare
+Pachycephala calliope_Orangebröstad visslare
 Pachycephala griseonota_Gråbrun/Kanelbröstad visslare
 Pachycephala homeyeri_Brunbröstad visslare
 Pachycephala hypoxantha_Borneovisslare
@@ -4312,7 +4312,7 @@ Penelope purpurascens_Tofsguan
 Penelope superciliaris_Blåkindad guan
 Penelopides affinis_Mindanaonäshornsfågel
 Penelopina nigra_Bergguan
-Peneothello cyanus_Skiffersydhake
+Melanodryas cyanus_Skiffersydhake
 Peneothello sigillata_Vitvingad sydhake
 Percnostola arenarum_Allpahuayomyrfågel
 Percnostola rufifrons_Svartkronad myrfågel
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_Brungumpad dvärgtyrann
 Phyllomyias virescens_Grönaktig dvärgtyrann
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_Alagoasdvärgtyrann
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_Ecuadordvärgtyrann
 Phylloscartes kronei_Restingadvärgtyrann
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_Oustalets dvärgtyrann
 Phylloscartes parkeri_Rostkindad dvärgtyrann
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_Minasgeraisdvärgtyrann
 Phylloscartes superciliaris_Rödbrynad dvärgtyrann
 Phylloscartes sylviolus_Brunringad dvärgtyrann
@@ -4860,7 +4860,7 @@ Porphyriops melanops_Fläcksidig rörhöna
 Porzana carolina_Karolinasumphöna
 Porzana porzana_Småfläckig sumphöna
 Porzana spiloptera_Fläckvingad sumphöna
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_Fläckig piggstjärt
 Premnornis guttuliger_Rostvingad piggstjärt
 Primolius auricollis_Gulnackad ara
@@ -5018,7 +5018,7 @@ Psittacula krameri_Halsbandsparakit
 Psittacula longicauda_Långstjärtad parakit
 Psittacus erithacus_Grå/Västlig jako
 Psittinus cyanurus_Blåryggig papegoja
-Psittiparus gularis_Gråhuvad papegojnäbb
+Paradoxornis gularis_Gråhuvad papegojnäbb
 Psophia crepitans_Gråvingad trumpetare
 Psophia leucoptera_Vitvingad trumpetare
 Psophia viridis_Mörkvingad trumpetare
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_Svarthuvad brokvireo
 Pteruthius xanthochlorus_Grön brokvireo
 Ptilinopus iozonus_Orangebukig fruktduva
-Ptilinopus magnificus_Wompoofruktduva
+Megaloprepia magnifica_Wompoofruktduva
 Ptilinopus melanospilus_Svartnackad fruktduva
-Ptilinopus occipitalis_Ockrabröstrad fruktduva
+Ramphiculus occipitalis_Ockrabröstrad fruktduva
 Ptilinopus pelewensis_Palaufruktduva
 Ptilinopus porphyraceus_Tongafruktduva
 Ptilinopus regina_Rosenkronad fruktduva
@@ -5938,11 +5938,11 @@ Tchagra senegalus_Svartkronad tchagra
 Tchagra tchagra_Kaptchagra
 Teledromas fuscus_Sandtapakul
 Telespiza ultima_Nihoafink
-Telophorus bocagei_Vitpannad busktörnskata
+Chlorophoneus bocagei_Vitpannad busktörnskata
 Telophorus dohertyi_Rödpannad busktörnskata
 Telophorus nigrifrons_Svartpannad busktörnskata
 Telophorus olivaceus_Olivbusktörnskata
-Telophorus sulfureopectus_Orangebröstad busktörnskata
+Chlorophoneus sulfureopectus_Orangebröstad busktörnskata
 Telophorus viridis_Rubinbusktörnskata
 Telophorus zeylonus_Gulstrupig busktörnskata
 Temnurus temnurus_Klyvstjärtad skata
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_Kalifornisk härmtrast
 Toxostoma rufum_Rödbrun härmtrast
 Trachyphonus darnaudii_D'Arnauds barbett
 Trachyphonus erythrocephalus_Termitbarbett
-Trachyphonus purpuratus_Gulnäbbad barbett
+Trachylaemus goffinii_Gulnäbbad barbett
 Trachyphonus vaillantii_Tofsbarbett
 Tregellasia capito_Blekgul sydhake
 Treron affinis_Malabargrönduva
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_Borneostubbstjärt
 Urothraupis stolzmanni_Sottangara
 Urotriorchis macrourus_Långstjärtad hök
 Vanellus armatus_Smedvipa
-Vanellus cayanus_Brokpipare
+Hoploxypterus cayanus_Brokpipare
 Vanellus chilensis_Sydamerikansk vipa
 Vanellus cinereus_Gråhuvad vipa
 Vanellus coronatus_Kronvipa

@@ -24,19 +24,19 @@ Accipiter bicolor_ruostehousuhaukka
 Accipiter cirrocephalus_ruosteniskahaukka
 Accipiter cooperii_kyyhkyhaukka
 Accipiter fasciatus_australiankanahaukka
-Accipiter gentilis_kanahaukka
+Astur atricapillus_kanahaukka
 Accipiter gularis_idänvarpushaukka
 Accipiter hiogaster_punakanahaukka
-Accipiter melanoleucus_mustakanahaukka
+Astur melanoleucus_mustakanahaukka
 Accipiter minullus_afrikanvarpushaukka
 Accipiter nisus_varpushaukka
-Accipiter novaehollandiae_vaaleakanahaukka
+Tachyspiza novaehollandiae_vaaleakanahaukka
 Accipiter poliogaster_amazoniankanahaukka
 Accipiter soloensis_sammakkohaukka
 Accipiter striatus_amerikanvarpushaukka
 Accipiter superciliosus_kolibrihaukka
 Accipiter tachiro_afrikanlintuhaukka
-Accipiter trinotatus_liskovarpushaukka
+Tachyspiza trinotata_liskovarpushaukka
 Accipiter trivirgatus_töyhtölintuhaukka
 Accipiter virgatus_ruostevarpushaukka
 Aceros nipalensis_kiilasarvinokka
@@ -708,7 +708,7 @@ Brachygalba lugubris_ruskojakamari
 Brachypodius eutilotus_Puff-backed Bulbul
 Brachypodius melanocephalos_Black-headed Bulbul
 Brachypodius melanoleucos_Black-and-white Bulbul
-Brachypodius priocephalus_harmaakaulusbulbuli
+Microtarsus priocephalus_harmaakaulusbulbuli
 Brachypodius urostictus_Yellow-wattled Bulbul
 Brachypteryx cruralis_Himalayan Shortwing
 Brachypteryx goodfellowi_Taiwan Shortwing
@@ -824,7 +824,7 @@ Cacicus solitarius_Solitary Black Cacique
 Cacicus uropygialis_punaperäkasikki
 Cacomantis castaneiventris_papuankäki
 Cacomantis flabelliformis_Fan-tailed Cuckoo
-Cacomantis leucolophus_White-crowned Koel
+Caliechthrus leucolophus_White-crowned Koel
 Cacomantis merulinus_valittajakäki
 Cacomantis pallidus_Pallid Cuckoo
 Cacomantis passerinus_harmaakäki
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_smaragdiharlekiini
 Calyptophilus frugivorus_rotkotangara
 Calyptophilus tertius_lännenrotkotangara
 Calyptorhynchus banksii_punapyrstökakadu
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_kiiltokakadu
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_lyijykerttu
 Camaroptera chloronota_viherlyijykerttu
 Camaroptera superciliaris_keltalyijykerttu
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_Blackish Antbird
 Cercomacroides parkeri_Parker's Antbird
 Cercomacroides serva_Black Antbird
 Cercomacroides tyrannina_Dusky Antbird
-Cercotrichas barbata_viiksiruostepyrstö
-Cercotrichas coryphoeus_kapinruostepyrstö
+Tychaedon barbata_viiksiruostepyrstö
+Tychaedon coryphoeus_kapinruostepyrstö
 Cercotrichas galactotes_ruostepyrstö
 Cercotrichas hartlaubi_ruskoruostepyrstö
 Cercotrichas leucophrys_viiruruostepyrstö
 Cercotrichas paena_kalaharinruostepyrstö
 Cercotrichas podobe_mustaruostepyrstö
-Cercotrichas quadrivirgata_matkijaruostepyrstö
-Cercotrichas signata_rantaruostepyrstö
+Tychaedon quadrivirgata_matkijaruostepyrstö
+Tychaedon signata_rantaruostepyrstö
 Certhia americana_amerikanpuukiipijä
 Certhia brachydactyla_etelänpuukiipijä
 Certhia discolor_harmaarintakiipijä
@@ -1168,7 +1168,7 @@ Charadrius dubius_pikkutylli
 Charadrius falklandicus_patagoniantylli
 Charadrius hiaticula_tylli
 Charadrius javanicus_jaavantylli
-Charadrius leschenaultii_aavikkotylli
+Anarhynchus leschenaultii_aavikkotylli
 Charadrius melodus_huilutylli
 Charadrius modestus_rusorintatylli
 Charadrius mongolus_ylänkötylli
@@ -1238,10 +1238,10 @@ Chlorophonia musica_Antillean Euphonia
 Chlorophonia occipitalis_malakiittimarjukka
 Chlorophonia pyrrhophrys_ruskovatsamarjukka
 Chloropicus fuscescens_Cardinal Woodpecker
-Chloropicus goertae_African Gray Woodpecker
+Dendropicos goertae_African Gray Woodpecker
 Chloropicus griseocephalus_Olive Woodpecker
 Chloropicus namaquus_täpläotsatikkanen
-Chloropicus spodocephalus_Mountain Gray Woodpecker
+Dendropicos spodocephalus_Mountain Gray Woodpecker
 Chloropsis aurifrons_kultaotsalehvi
 Chloropsis cochinchinensis_sinisiipilehvi
 Chloropsis cyanopogon_pikkuviherlehvi
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_hopealokki
 Chroicocephalus philadelphia_kuusilokki
 Chroicocephalus ridibundus_naurulokki
 Chroicocephalus serranus_andienlokki
-Chrysococcyx basalis_Horsfield's Bronze-Cuckoo
+Chalcites basalis_Horsfield's Bronze-Cuckoo
 Chrysococcyx caprius_kuparikäki
 Chrysococcyx cupreus_smaragdikäki
 Chrysococcyx klaas_malakiittikäki
-Chrysococcyx lucidus_Shining Bronze-Cuckoo
+Chalcites lucidus_Shining Bronze-Cuckoo
 Chrysococcyx maculatus_jadekäki
-Chrysococcyx minutillus_Little Bronze-Cuckoo
+Chalcites minutillus_Little Bronze-Cuckoo
 Chrysococcyx osculans_Black-eared Cuckoo
 Chrysococcyx xanthorhynchus_ametistikäki
 Chrysocolaptes festivus_intiantikka
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_abessiniansininärhi
 Coracias benghalensis_intiansininärhi
 Coracias caudatus_savannisininärhi
 Coracias garrulus_sininärhi
-Coracina caesia_Gray Cuckooshrike
+Ceblepyris caesius_Gray Cuckooshrike
 Coracina cinerea_Madagascar Cuckooshrike
 Coracina lineata_keltasilmäkäpinkäinen
 Coracina longicauda_huppukäpinkäinen
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_jamaikanvaris
 Corvus leucognaphalus_hispaniolanvaris
 Corvus macrorhynchos_paksunokkavaris
 Corvus mellori_pikkukorppi
-Corvus monedula_naakka
+Coloeus monedula_naakka
 Corvus nasicus_kuubanvaris
 Corvus orru_räpäyttäjävaris
 Corvus ossifragus_kalastajavaris
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_kiuruorneero
 Coryphospingus cucullatus_tulisirkkunen
 Coryphospingus pileatus_tulikruunusirkkunen
 Corythaeola cristata_keisariturako
-Corythaixoides concolor_töyhtöturako
+Crinifer concolor_töyhtöturako
 Corythaixoides leucogaster_White-bellied Go-away-bird
 Corythopis delalandi_oliivimaanappari
 Corythopis torquatus_maanappari
 Corythornis cristatus_malakiittikalastaja
 Coscoroba coscoroba_ankkajoutsen
 Cossypha albicapillus_isopunatasku
-Cossypha anomala_harmaapunatasku
-Cossypha archeri_kongonpunatasku
+Dessonornis anomalus_harmaapunatasku
+Dessonornis archeri_kongonpunatasku
 Cossypha caffra_matkijapunatasku
 Cossypha cyanocampter_jokipunatasku
 Cossypha dichroa_pyövelipunatasku
@@ -1625,7 +1625,7 @@ Cossypha heuglini_puistopunatasku
 Cossypha humeralis_piikkipunatasku
 Cossypha natalensis_punatasku
 Cossypha niveicapilla_tiheikköpunatasku
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_pensaspunatasku
 Coturnicops noveboracensis_kultarääkkiäinen
 Coturnix coromandelica_aroviiriäinen
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_sundansinisieppo
 Cyornis concretus_viirupyrstösieppo
 Cyornis glaucicomans_Chinese Blue Flycatcher
 Cyornis hainanus_bambusinisieppo
-Cyornis hoevelli_celebesinsinisieppo
+Eumyias hoevelli_celebesinsinisieppo
 Cyornis olivaceus_viidakkosieppo
 Cyornis omissus_Sulawesi Blue Flycatcher
 Cyornis pallidipes_ghatinsinisieppo
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_pikkuara
 Diuca diuca_tuhkasirkku
 Dives dives_lauluturpiaali
 Dives warczewiczi_peltolauluturpiaali
-Dog_Koira
+Canis familiaris_Koira
 Dolichonyx oryzivorus_heinäturpiaali
 Donacobius atricapilla_mustapääpeukaloinen
 Donacospiza albifrons_ruokosirkku
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_huiskulepinkäinen
 Dryoscopus gambensis_isohuiskulepinkäinen
-Dryotriorchis spectabilis_kongonkäärmehaukka
+Circaetus spectabilis_kongonkäärmehaukka
 Dubusia castaneoventris_kanelitangara
 Dubusia taeniata_bambutangara
 Ducula aenea_viherkeisarikyyhky
@@ -2106,18 +2106,18 @@ Emberiza impetuani_Lark-like Bunting
 Emberiza lathami_Crested Bunting
 Emberiza leucocephalos_mäntysirkku
 Emberiza melanocephala_mustapääsirkku
-Emberiza pallasi_pikkupajusirkku
+Schoeniclus pallasi_pikkupajusirkku
 Emberiza pusilla_pikkusirkku
 Emberiza rustica_pohjansirkku
 Emberiza sahari_House Bunting
-Emberiza schoeniclus_pajusirkku
+Schoeniclus schoeniclus_pajusirkku
 Emberiza spodocephala_harmaapääsirkku
 Emberiza stewarti_mustakurkkusirkku
 Emberiza striolata_Striolated Bunting
 Emberiza sulphurata_Yellow Bunting
 Emberiza tahapisi_Cinnamon-breasted Bunting
 Emberiza tristrami_Tristram's Bunting
-Emberiza variabilis_Gray Bunting
+Schoeniclus variabilis_Gray Bunting
 Emberiza yessoensis_Ochre-rumped Bunting
 Emberizoides herbicola_pyrstösirkku
 Emberizoides ypiranganus_pikkupyrstösirkku
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_punaperäpiispa
 Euplectes hordeaceus_Black-winged Bishop
 Euplectes orix_punapiispa
 Euplectes progne_laahuspiispa
-Eupodotis afra_Black Bustard
-Eupodotis afraoides_White-quilled Bustard
+Afrotis afra_Black Bustard
+Afrotis afraoides_White-quilled Bustard
 Eupodotis caerulescens_sinitrappi
-Eupodotis ruficrista_Red-crested Bustard
+Lophotis ruficrista_Red-crested Bustard
 Eupodotis senegalensis_valkovatsatrappi
-Eupodotis vigorsii_Karoo Bustard
+Heterotetrax vigorsii_Karoo Bustard
 Eupsittula aurea_persikka-aratti
 Eupsittula cactorum_kaktusaratti
 Eupsittula canicularis_termiittiaratti
@@ -2630,10 +2630,10 @@ Gyps fulvus_hanhikorppikotka
 Gyps himalayensis_himalajankorppikotka
 Gypsophila brevicaudata_Streaked Wren-Babbler
 Gypsophila rufipectus_Rusty-breasted Wren-Babbler
-Habia atrimaxillaris_costaricanmuurahaistangara
-Habia cristata_töyhtömuurahaistangara
-Habia fuscicauda_muurahaistangara
-Habia gutturalis_nokimuurahaistangara
+Driophlox atrimaxillaris_costaricanmuurahaistangara
+Driophlox cristata_töyhtömuurahaistangara
+Driophlox fuscicauda_muurahaistangara
+Driophlox gutturalis_nokimuurahaistangara
 Habia rubica_kruunumuurahaistangara
 Haematopus ater_chilenmeriharakka
 Haematopus bachmani_alaskanmeriharakka
@@ -2662,12 +2662,12 @@ Halcyon pileata_mustapääkalastaja
 Halcyon senegalensis_afrikanmetsäkalastaja
 Halcyon smyrnensis_smyrnankalastaja
 Haliaeetus albicilla_merikotka
-Haliaeetus humilis_pikkukalakotka
-Haliaeetus ichthyaetus_isokalakotka
+Icthyophaga humilis_pikkukalakotka
+Icthyophaga ichthyaetus_isokalakotka
 Haliaeetus leucocephalus_valkopäämerikotka
-Haliaeetus leucogaster_valkomerikotka
+Icthyophaga leucogaster_valkomerikotka
 Haliaeetus pelagicus_kuningasmerikotka
-Haliaeetus vocifer_kiljumerikotka
+Icthyophaga vocifer_kiljumerikotka
 Haliastur indus_bramiinihaukka
 Haliastur sphenurus_viheltäjähaukka
 Hapalocrex flaviventer_keltarintahuitti
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_fidzinsilkkikerttunen
 Horornis seebohmi_luzoninsilkkikerttunen
 Horornis vulcanius_sundansilkkikerttunen
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_madeirankeiju
 Hydrobates leucorhous_myrskykeiju
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_harmaakurkkumuuranen
 Ithaginis cruentus_verifasaani
 Ixobrychus cinnamomeus_kanelipikkuhaikara
 Ixobrychus dubius_Black-backed Bittern
-Ixobrychus eurhythmus_kastanjapikkuhaikara
+Botaurus eurhythmus_kastanjapikkuhaikara
 Ixobrychus exilis_amerikanpikkuhaikara
 Ixobrychus flavicollis_mustapikkuhaikara
 Ixobrychus involucris_viirupikkuhaikara
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_vihernappaaja
 Mionectes olivaceus_viiruvihernappaaja
 Mionectes rufiventris_harmaapäänappaaja
 Mionectes striaticollis_vuorivihernappaaja
-Mirafra affinis_srilankanpensaskiuru
+Plocealauda affinis_srilankanpensaskiuru
 Mirafra africana_punaniskakiuru
 Mirafra apiata_kapinräikkäkiuru
-Mirafra assamica_aasianpensaskiuru
+Plocealauda assamica_aasianpensaskiuru
 Mirafra cantillans_savannikiuru
 Mirafra cheniana_valkokurkkukiuru
-Mirafra erythrocephala_indokiinanpensaskiuru
-Mirafra erythroptera_intianpensaskiuru
+Plocealauda erythrocephala_indokiinanpensaskiuru
+Plocealauda erythroptera_intianpensaskiuru
 Mirafra fasciolata_räikkäkiuru
 Mirafra javanica_riisisavannikiuru
 Mirafra passerina_kalaharinkiuru
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_muurahaisrastas
 Neocossyphus rufus_punamuurahaisrastas
 Neoctantes niger_pikipuumuura
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_Vanuatu Whistler
 Pachycephala cinerea_aasianviheltäjä
 Pachycephala flavifrons_samoanviheltäjä
 Pachycephala fuliginosa_Western Whistler
-Pachycephala fulvotincta_jaavanviheltäjä
+Pachycephala calliope_jaavanviheltäjä
 Pachycephala griseonota_molukkienlyijyviheltäjä
 Pachycephala homeyeri_visayasinviheltäjä
 Pachycephala hypoxantha_borneonviheltäjä
@@ -4312,7 +4312,7 @@ Penelope purpurascens_isosaku
 Penelope superciliaris_ruostesaku
 Penelopides affinis_Mindanao Hornbill
 Penelopina nigra_ylänkösaku
-Peneothello cyanus_nokipensassieppo
+Melanodryas cyanus_nokipensassieppo
 Peneothello sigillata_vuoripensassieppo
 Percnostola arenarum_harmaalakkimuura
 Percnostola rufifrons_mustalakkimuura
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_ruosteperänapsija
 Phyllomyias virescens_viherlehtinapsija
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_pitkäpyrstönapsija
-Phylloscartes difficilis_brasiliannapsija
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_brasiliannapsija
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_ecuadorinnapsija
 Phylloscartes kronei_saopaulonrannikkonapsija
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_keltarillinapsija
 Phylloscartes parkeri_kanelinapsija
-Phylloscartes paulista_saopaulonnapsija
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_saopaulonnapsija
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_minasgeraisinnapsija
 Phylloscartes superciliaris_ruskokulmanapsija
 Phylloscartes sylviolus_ruskonaamanapsija
@@ -4860,7 +4860,7 @@ Porphyriops melanops_Spot-flanked Gallinule
 Porzana carolina_amerikanhuitti
 Porzana porzana_luhtahuitti
 Porzana spiloptera_pampahuitti
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_Spotted Barbtail
 Premnornis guttuliger_Rusty-winged Barbtail
 Primolius auricollis_sepelara
@@ -5018,7 +5018,7 @@ Psittacula krameri_kauluskaija
 Psittacula longicauda_pitkäpyrstökaija
 Psittacus erithacus_harmaapapukaija
 Psittinus cyanurus_palmukaija
-Psittiparus gularis_latvuskekonokka
+Paradoxornis gularis_latvuskekonokka
 Psophia crepitans_kyssäkurki
 Psophia leucoptera_perunkyssäkurki
 Psophia viridis_brasiliankyssäkurki
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_himalajanvireo
 Pteruthius rufiventer_ruskokuvevireo
 Pteruthius xanthochlorus_vuorivireo
 Ptilinopus iozonus_oranssivatsakyyhky
-Ptilinopus magnificus_loistohedelmäkyyhky
+Megaloprepia magnifica_loistohedelmäkyyhky
 Ptilinopus melanospilus_mustaniskakyyhky
-Ptilinopus occipitalis_keltarintakyyhky
+Ramphiculus occipitalis_keltarintakyyhky
 Ptilinopus pelewensis_palaunhedelmäkyyhky
 Ptilinopus porphyraceus_purppuralakkikyyhky
 Ptilinopus regina_kuningatarhedelmäkyyhky
@@ -5938,11 +5938,11 @@ Tchagra senegalus_pensaslepinkäinen
 Tchagra tchagra_kapinpensaslepinkäinen
 Teledromas fuscus_hietatapakulo
 Telespiza ultima_nihoanpalila
-Telophorus bocagei_Gray-green Bushshrike
+Chlorophoneus bocagei_Gray-green Bushshrike
 Telophorus dohertyi_punaotsalepinkäinen
 Telophorus nigrifrons_Black-fronted Bushshrike
 Telophorus olivaceus_Olive Bushshrike
-Telophorus sulfureopectus_Sulphur-breasted Bushshrike
+Chlorophoneus sulfureopectus_Sulphur-breasted Bushshrike
 Telophorus viridis_loistolepinkäinen
 Telophorus zeylonus_keltakulmalepinkäinen
 Temnurus temnurus_okapyrstöharakka
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_kaliforniansirppimatkija
 Toxostoma rufum_ruostesirppimatkija
 Trachyphonus darnaudii_maaseppä
 Trachyphonus erythrocephalus_helmiseppä
-Trachyphonus purpuratus_Yellow-billed Barbet
+Trachylaemus goffinii_Yellow-billed Barbet
 Trachyphonus vaillantii_kirjoseppä
 Tregellasia capito_kermasieppo
 Treron affinis_Gray-fronted Green-Pigeon
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_borneontöpökerttunen
 Urothraupis stolzmanni_frakkisirkku
 Urotriorchis macrourus_viuhkahaukka
 Vanellus armatus_seppähyyppä
-Vanellus cayanus_tyllihyyppä
+Hoploxypterus cayanus_tyllihyyppä
 Vanellus chilensis_eteläamerikanhyyppä
 Vanellus cinereus_huppuhyyppä
 Vanellus coronatus_kruunuhyyppä

@@ -24,19 +24,19 @@ Accipiter bicolor_jastrab dvojfarebný
 Accipiter cirrocephalus_jastrab goliernatý
 Accipiter cooperii_jastrab čiapočkatý
 Accipiter fasciatus_jastrab pásikavý
-Accipiter gentilis_jastrab veľký
+Astur atricapillus_jastrab veľký
 Accipiter gularis_jastrab japonský
 Accipiter hiogaster_jastrab hrdzavobruchý
-Accipiter melanoleucus_jastrab čierno-biely
+Astur melanoleucus_jastrab čierno-biely
 Accipiter minullus_jastrab krahulček
 Accipiter nisus_jastrab krahulec
-Accipiter novaehollandiae_jastrab menlivý
+Tachyspiza novaehollandiae_jastrab menlivý
 Accipiter poliogaster_jastrab sivobruchý
 Accipiter soloensis_jastrab čínsky
 Accipiter striatus_jastrab čiarkový
 Accipiter superciliosus_Tiny Hawk
 Accipiter tachiro_jastrab tachiro
-Accipiter trinotatus_jastrab trojškvrnový
+Tachyspiza trinotata_jastrab trojškvrnový
 Accipiter trivirgatus_jastrab chochlatý
 Accipiter virgatus_jastrab besra
 Aceros nipalensis_zobákorožec hrdzavý
@@ -708,7 +708,7 @@ Brachygalba lugubris_jagavec hnedý
 Brachypodius eutilotus_bylbyl vlnený
 Brachypodius melanocephalos_bylbyl čiernohlavý
 Brachypodius melanoleucos_bylbyl bielokrídly
-Brachypodius priocephalus_bylbyl žltočelý
+Microtarsus priocephalus_bylbyl žltočelý
 Brachypodius urostictus_bylbyl žltooký
 Brachypteryx cruralis_kratokrídlec indigový
 Brachypteryx goodfellowi_kratokrídlec taiwanský
@@ -824,7 +824,7 @@ Cacicus solitarius_trupiál samotársky
 Cacicus uropygialis_trupiál hôrny
 Cacomantis castaneiventris_kukučka hnedobruchá
 Cacomantis flabelliformis_kukučka škoricová
-Cacomantis leucolophus_kukučka bielotemenná
+Caliechthrus leucolophus_kukučka bielotemenná
 Cacomantis merulinus_kukučka nariekavá
 Cacomantis pallidus_kukučka bledá
 Cacomantis passerinus_kukučka sivobruchá
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_kosmatec čiernohrdlý
 Calyptophilus frugivorus_haitka bielobruchá
 Calyptophilus tertius_haitka húštinová
 Calyptorhynchus banksii_kakadu tmavý
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_kakadu hnedohlavý
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_penička mekotavá
 Camaroptera chloronota_penička olivová
 Camaroptera superciliaris_penička obočnatá
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_mravcovka sivočierna
 Cercomacroides parkeri_mravcovka Parkerova
 Cercomacroides serva_mravcovka čierna
 Cercomacroides tyrannina_mravcovka tmavá
-Cercotrichas barbata_žltorítka bradatá
-Cercotrichas coryphoeus_žltorítka hvízdavá
+Tychaedon barbata_žltorítka bradatá
+Tychaedon coryphoeus_žltorítka hvízdavá
 Cercotrichas galactotes_žltorítka ryšavá
 Cercotrichas hartlaubi_žltorítka hnedochrbtá
 Cercotrichas leucophrys_žltorítka savanová
 Cercotrichas paena_žltorítka púštna
 Cercotrichas podobe_žltorítka čierna
-Cercotrichas quadrivirgata_žltorítka fúzatá
-Cercotrichas signata_žltorítka hnedá
+Tychaedon quadrivirgata_žltorítka fúzatá
+Tychaedon signata_žltorítka hnedá
 Certhia americana_kôrovník lesný
 Certhia brachydactyla_kôrovník krátkoprstý
 Certhia discolor_kôrovník himalájsky
@@ -1168,7 +1168,7 @@ Charadrius dubius_kulík riečny
 Charadrius falklandicus_kulík dvojpásy
 Charadrius hiaticula_kulík piesočný
 Charadrius javanicus_kulík jávsky
-Charadrius leschenaultii_kulík veľkozobý
+Anarhynchus leschenaultii_kulík veľkozobý
 Charadrius melodus_kulík pískavý
 Charadrius modestus_kulík sivolíci
 Charadrius mongolus_kulík krátkozobý
@@ -1238,10 +1238,10 @@ Chlorophonia musica_organista spevavý
 Chlorophonia occipitalis_organista horský
 Chlorophonia pyrrhophrys_organista pestrý
 Chloropicus fuscescens_ďateľ kardinálsky
-Chloropicus goertae_ďateľ sivý
+Dendropicos goertae_ďateľ sivý
 Chloropicus griseocephalus_ďateľ olivový
 Chloropicus namaquus_ďateľ fúzatý
-Chloropicus spodocephalus_ďateľ sivohlavý
+Dendropicos spodocephalus_ďateľ sivohlavý
 Chloropsis aurifrons_zelenáčik zlatočelý
 Chloropsis cochinchinensis_zelenáčik jávsky
 Chloropsis cyanopogon_zelenáčik modrofúzy
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_čajka striebrohlavá
 Chroicocephalus philadelphia_čajka čiernozobá
 Chroicocephalus ridibundus_čajka smejivá
 Chroicocephalus serranus_čajka červenonohá
-Chrysococcyx basalis_kukučka bronzová
+Chalcites basalis_kukučka bronzová
 Chrysococcyx caprius_kukučka zlatá
 Chrysococcyx cupreus_kukučka zelená
 Chrysococcyx klaas_kukučka zeleno-biela
-Chrysococcyx lucidus_kukučka lesklá
+Chalcites lucidus_kukučka lesklá
 Chrysococcyx maculatus_kukučka smaragdová
-Chrysococcyx minutillus_kukučka zelenohlavá
+Chalcites minutillus_kukučka zelenohlavá
 Chrysococcyx osculans_kukučka čiernosluchá
 Chrysococcyx xanthorhynchus_kukučka ametystová
 Chrysocolaptes festivus_zlatoš bielochrbtý
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_krakľa pláštiková
 Coracias benghalensis_krakľa hnedastá
 Coracias caudatus_krakľa vidlochvostá
 Coracias garrulus_krakľa belasá
-Coracina caesia_húseničiarka sivá
+Ceblepyris caesius_húseničiarka sivá
 Coracina cinerea_húseničiarka kapucňová
 Coracina lineata_húseničiarka žltooká
 Coracina longicauda_húseničiarka družná
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_vrana jamajská
 Corvus leucognaphalus_vrana karibská
 Corvus macrorhynchos_vrana hrubozobá
 Corvus mellori_krkavec družný
-Corvus monedula_kavka tmavá
+Coloeus monedula_kavka tmavá
 Corvus nasicus_vrana antilská
 Corvus orru_vrana orru
 Corvus ossifragus_vrana rybárska
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_chochlička behavá
 Coryphospingus cucullatus_sangara červená
 Coryphospingus pileatus_sangara sivá
 Corythaeola cristata_koko veľký
-Corythaixoides concolor_halasník sivý
+Crinifer concolor_halasník sivý
 Corythaixoides leucogaster_halasník bielobruchý
 Corythopis delalandi_kariča hnedochrbtá
 Corythopis torquatus_kariča tmavochrbtá
 Corythornis cristatus_rybárik chochlatý
 Coscoroba coscoroba_koskoroba biela
 Cossypha albicapillus_drozdík veľký
-Cossypha anomala_akalat olivkastý
-Cossypha archeri_akalat bambusový
+Dessonornis anomalus_akalat olivkastý
+Dessonornis archeri_akalat bambusový
 Cossypha caffra_akalat záhradný
 Cossypha cyanocampter_drozdík modrokrídly
 Cossypha dichroa_drozdík spevavý
@@ -1625,7 +1625,7 @@ Cossypha heuglini_drozdík stužkatý
 Cossypha humeralis_akalat bielohrdlý
 Cossypha natalensis_drozdík červenohlavý
 Cossypha niveicapilla_drozdík čiapočkatý
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_drozdík hájový
 Coturnicops noveboracensis_chriašteľ okrový
 Coturnix coromandelica_prepelica dažďová
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_niltava veľkozobá
 Cyornis concretus_niltava bielochvostá
 Cyornis glaucicomans_niltava čínska
 Cyornis hainanus_niltava spevavá
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_niltava okrovoprsá
 Cyornis omissus_niltava celebeská
 Cyornis pallidipes_niltava bledonohá
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_ara modročelá
 Diuca diuca_tangara dijuka
 Dives dives_vlhovec spevavý
 Dives warczewiczi_vlhovec krovinový
-Dog_Dog
+Canis familiaris_Dog
 Dolichonyx oryzivorus_bobolink ryžový
 Donacobius atricapilla_angu mokraďový
 Donacospiza albifrons_maričiar škoricový
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_páperník strakoší
 Dryoscopus gambensis_páperník savanový
-Dryotriorchis spectabilis_hadiar dlhochvostý
+Circaetus spectabilis_hadiar dlhochvostý
 Dubusia castaneoventris_tangara hnedobruchá
 Dubusia taeniata_tangara bambusová
 Ducula aenea_plodožer bronzový
@@ -2106,18 +2106,18 @@ Emberiza impetuani_strnádka škovránčia
 Emberiza lathami_strnádka chochlatá
 Emberiza leucocephalos_strnádka bielohlavá
 Emberiza melanocephala_strnádka čiernohlavá
-Emberiza pallasi_strnádka golierikatá
+Schoeniclus pallasi_strnádka golierikatá
 Emberiza pusilla_strnádka malá
 Emberiza rustica_strnádka roľná
 Emberiza sahari_strnádka domová
-Emberiza schoeniclus_strnádka trstinová
+Schoeniclus schoeniclus_strnádka trstinová
 Emberiza spodocephala_strnádka olivová
 Emberiza stewarti_strnádka čiernohrdlá
 Emberiza striolata_strnádka pásikavá
 Emberiza sulphurata_strnádka japonská
 Emberiza tahapisi_strnádka škoricová
 Emberiza tristrami_strnádka tajgová
-Emberiza variabilis_strnádka sivá
+Schoeniclus variabilis_strnádka sivá
 Emberiza yessoensis_strnádka hrdzavokrká
 Emberizoides herbicola_tráviarka klinochvostá
 Emberizoides ypiranganus_tráviarka mokrinová
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_tkáčik pestrý
 Euplectes hordeaceus_tkáčik ohnivý
 Euplectes orix_tkáčik plavokrídly
 Euplectes progne_tkáčik kohútí
-Eupodotis afra_drop čiernokrídly
-Eupodotis afraoides_drop bielosluchý
+Afrotis afra_drop čiernokrídly
+Afrotis afraoides_drop bielosluchý
 Eupodotis caerulescens_drop modrý
-Eupodotis ruficrista_drop hrdzavochochlatý
+Lophotis ruficrista_drop hrdzavochochlatý
 Eupodotis senegalensis_drop červenkastý
-Eupodotis vigorsii_drop sivokrký
+Heterotetrax vigorsii_drop sivokrký
 Eupsittula aurea_klinochvost zlatočelý
 Eupsittula cactorum_klinochvost kaktusový
 Eupsittula canicularis_klinochvost malý
@@ -2630,10 +2630,10 @@ Gyps fulvus_sup bielohlavý
 Gyps himalayensis_sup snežný
 Gypsophila brevicaudata_dudroš orieščí
 Gypsophila rufipectus_dudroš hôrny
-Habia atrimaxillaris_habia čiernolíca
-Habia cristata_habia chochlatá
-Habia fuscicauda_habia červenohrdlá
-Habia gutturalis_habia sivochrbtá
+Driophlox atrimaxillaris_habia čiernolíca
+Driophlox cristata_habia chochlatá
+Driophlox fuscicauda_habia červenohrdlá
+Driophlox gutturalis_habia sivochrbtá
 Habia rubica_habia karmínová
 Haematopus ater_lastúrničiar černastý
 Haematopus bachmani_lastúrničiar čierny
@@ -2662,12 +2662,12 @@ Halcyon pileata_rybárikovec stromový
 Halcyon senegalensis_rybárikovec belasý
 Halcyon smyrnensis_rybárikovec hnedohlavý
 Haliaeetus albicilla_orliak morský
-Haliaeetus humilis_orliak malý
-Haliaeetus ichthyaetus_orliak rybár
+Icthyophaga humilis_orliak malý
+Icthyophaga ichthyaetus_orliak rybár
 Haliaeetus leucocephalus_orliak bielohlavý
-Haliaeetus leucogaster_orliak bielobruchý
+Icthyophaga leucogaster_orliak bielobruchý
 Haliaeetus pelagicus_orliak hrubozobý
-Haliaeetus vocifer_orliak jasnohlasý
+Icthyophaga vocifer_orliak jasnohlasý
 Haliastur indus_haja brahmanská
 Haliastur sphenurus_haja hvízdavá
 Hapalocrex flaviventer_chriašteľ žltkastý
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_cetia tmavá
 Horornis seebohmi_cetia filipínska
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_víchrovníček černastý
 Hydrobates leucorhous_víchrovníček severský
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_batara podrastová
 Ithaginis cruentus_vrchár krvavý
 Ixobrychus cinnamomeus_bučiačik škoricový
 Ixobrychus dubius_bučiačik austrálsky
-Ixobrychus eurhythmus_bučiačik gaštanový
+Botaurus eurhythmus_bučiačik gaštanový
 Ixobrychus exilis_bučiak malý
 Ixobrychus flavicollis_bučiačik tmavý
 Ixobrychus involucris_bučiačik pásikavý
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_kariča okrovobruchá
 Mionectes olivaceus_kariča olivová
 Mionectes rufiventris_kariča kapucňová
 Mionectes striaticollis_kariča čiarková
-Mirafra affinis_škovránok škvrnitý
+Plocealauda affinis_škovránok škvrnitý
 Mirafra africana_škovránok hnedotylový
 Mirafra apiata_škovránok rapotavý
-Mirafra assamica_škovránok hrdzavokrídly
+Plocealauda assamica_škovránok hrdzavokrídly
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_škovránok napodobiteľ
-Mirafra erythrocephala_škovránok suchomilný
-Mirafra erythroptera_škovránok úhorový
+Plocealauda erythrocephala_škovránok suchomilný
+Plocealauda erythroptera_škovránok úhorový
 Mirafra fasciolata_škovránok tlieskavý
 Mirafra javanica_škovránok škoricový
 Mirafra passerina_škovránok vrabčí
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_drozdovec bielochvostý
 Neocossyphus rufus_drozdovec červenochvostý
 Neoctantes niger_pralesníček člnkozobý
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_hlaváčik vanuatský
 Pachycephala cinerea_hlaváčik mangrovový
 Pachycephala flavifrons_hlaváčik diadémový
 Pachycephala fuliginosa_hlaváčik západný
-Pachycephala fulvotincta_hlaváčik plavý
+Pachycephala calliope_hlaváčik plavý
 Pachycephala griseonota_hlaváčik pustovnícky
 Pachycephala homeyeri_hlaváčik hnedkavý
 Pachycephala hypoxantha_hlaváčik šafranový
@@ -4312,7 +4312,7 @@ Penelope purpurascens_šuan chochlatý
 Penelope superciliaris_šuan krikľavý
 Penelopides affinis_zobákorožec mindanajský
 Penelopina nigra_morkovec horský
-Peneothello cyanus_mucholovka spevavá
+Melanodryas cyanus_mucholovka spevavá
 Peneothello sigillata_mucholovka bielokrídla
 Percnostola arenarum_mravcovka loretská
 Percnostola rufifrons_mravcovka tmavohlavá
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_moskytár andský
 Phyllomyias virescens_moskytár zelenochrbtý
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_kariča dlhochvostá
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_kariča ekvádorská
 Phylloscartes kronei_kariča pobrežná
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_kariča zlatooká
 Phylloscartes parkeri_kariča podhorská
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_kariča hrdzavočelá
 Phylloscartes superciliaris_kariča bielolíca
 Phylloscartes sylviolus_kariča červenooká
@@ -4860,7 +4860,7 @@ Porphyriops melanops_sliepočka prskaná
 Porzana carolina_chriašť čiernobradý
 Porzana porzana_chriašť bodkovaný
 Porzana spiloptera_chriašteľ škvrnitokrídly
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_ostnár škvrnitý
 Premnornis guttuliger_pípavka hrdzavokrídla
 Primolius auricollis_ara goliernatá
@@ -5018,7 +5018,7 @@ Psittacula krameri_alexander malý
 Psittacula longicauda_alexander dlhochvostý
 Psittacus erithacus_papagáj sivý (žako)
 Psittinus cyanurus_ladniak červenozobý
-Psittiparus gularis_sutora sivohlavá
+Paradoxornis gularis_sutora sivohlavá
 Psophia crepitans_trubač agami
 Psophia leucoptera_trubač bielokrídly
 Psophia viridis_trubač zelenokrídly
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_strakoška čiernohlavá
 Pteruthius xanthochlorus_strakoška zelená
 Ptilinopus iozonus_pestroš zelený
-Ptilinopus magnificus_pestroš vznešený
+Megaloprepia magnifica_pestroš vznešený
 Ptilinopus melanospilus_pestroš čiernotylový
-Ptilinopus occipitalis_pestroš punaj
+Ramphiculus occipitalis_pestroš punaj
 Ptilinopus pelewensis_pestroš sivokrký
 Ptilinopus porphyraceus_pestroš čiapočkatý
 Ptilinopus regina_pestroš korunkatý
@@ -5938,11 +5938,11 @@ Tchagra senegalus_čagra krátkokrídla
 Tchagra tchagra_čagra krovinová
 Teledromas fuscus_piesočník plavý
 Telespiza ultima_havajčan skalný
-Telophorus bocagei_mäsiarik bieločelý
+Chlorophoneus bocagei_mäsiarik bieločelý
 Telophorus dohertyi_mäsiarik červenočelý
 Telophorus nigrifrons_mäsiarik čiernočelý
 Telophorus olivaceus_mäsiarik olivový
-Telophorus sulfureopectus_mäsiarik zlatý
+Chlorophoneus sulfureopectus_mäsiarik zlatý
 Telophorus viridis_mäsiarik lužný
 Telophorus zeylonus_mäsiarik záhradný
 Temnurus temnurus_strakaňa bambusová
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_drozdec kosákovitý
 Toxostoma rufum_drozdec červenkavý
 Trachyphonus darnaudii_perlavec d‘Arnaudov
 Trachyphonus erythrocephalus_perlavec červenohlavý
-Trachyphonus purpuratus_perlavec žltozobý
+Trachylaemus goffinii_perlavec žltozobý
 Trachyphonus vaillantii_perlavec čiernochrbtý
 Tregellasia capito_mucholovka žltkavá
 Treron affinis_trerón sivočelý
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_cetia bornejská
 Urothraupis stolzmanni_pinkovec bielohrdlý
 Urotriorchis macrourus_jastrabec chvostnatý
 Vanellus armatus_cíbik čiernochrbtý
-Vanellus cayanus_kulich diadémový
+Hoploxypterus cayanus_kulich diadémový
 Vanellus chilensis_cíbik čiernočelý
 Vanellus cinereus_cíbik sivohlavý
 Vanellus coronatus_cíbik korunkatý

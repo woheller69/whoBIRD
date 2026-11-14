@@ -24,19 +24,19 @@ Accipiter bicolor_Épervier bicolore
 Accipiter cirrocephalus_Épervier à collier roux
 Accipiter cooperii_Épervier de Cooper
 Accipiter fasciatus_Autour australien
-Accipiter gentilis_Autour des palombes
+Astur atricapillus_Autour des palombes
 Accipiter gularis_Épervier du Japon
 Accipiter hiogaster_Autour variable
-Accipiter melanoleucus_Autour noir
+Astur melanoleucus_Autour noir
 Accipiter minullus_Épervier minule
 Accipiter nisus_Épervier d'Europe
-Accipiter novaehollandiae_Autour blanc
+Tachyspiza novaehollandiae_Autour blanc
 Accipiter poliogaster_Autour à ventre gris
 Accipiter soloensis_Épervier de Horsfield
 Accipiter striatus_Épervier brun
 Accipiter superciliosus_Tiny Hawk
 Accipiter tachiro_Autour tachiro
-Accipiter trinotatus_Épervier à queue tachetée
+Tachyspiza trinotata_Épervier à queue tachetée
 Accipiter trivirgatus_Autour huppé
 Accipiter virgatus_Épervier besra
 Aceros nipalensis_Calao à cou roux
@@ -708,7 +708,7 @@ Brachygalba lugubris_Jacamar brun
 Brachypodius eutilotus_Bulbul laineux
 Brachypodius melanocephalos_Bulbul cap-nègre
 Brachypodius melanoleucos_Bulbul demi-deuil
-Brachypodius priocephalus_Bulbul colombar
+Microtarsus priocephalus_Bulbul colombar
 Brachypodius urostictus_Bulbul à lunettes jaunes
 Brachypteryx cruralis_Brachyptère de l'Himalaya
 Brachypteryx goodfellowi_Brachyptère de Taïwan
@@ -824,7 +824,7 @@ Cacicus solitarius_Cassique solitaire
 Cacicus uropygialis_Cassique à dos rouge
 Cacomantis castaneiventris_Coucou à poitrine rousse
 Cacomantis flabelliformis_Coucou à éventail
-Cacomantis leucolophus_Coucou à calotte blanche
+Caliechthrus leucolophus_Coucou à calotte blanche
 Cacomantis merulinus_Coucou plaintif
 Cacomantis pallidus_Coucou pâle
 Cacomantis passerinus_Coucou à tête grise
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_Eurylaime de Whitehead
 Calyptophilus frugivorus_Konichon dominicain
 Calyptophilus tertius_Konichon d'Haïti
 Calyptorhynchus banksii_Cacatoès banksien
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_Cacatoès de Latham
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_Camaroptère à tête grise
 Camaroptera chloronota_Camaroptère à dos vert
 Camaroptera superciliaris_Camaroptère à sourcils jaunes
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_Grisin noirâtre
 Cercomacroides parkeri_Grisin de Graves
 Cercomacroides serva_Grisin noir
 Cercomacroides tyrannina_Grisin sombre
-Cercotrichas barbata_Agrobate barbu
-Cercotrichas coryphoeus_Agrobate coryphée
+Tychaedon barbata_Agrobate barbu
+Tychaedon coryphoeus_Agrobate coryphée
 Cercotrichas galactotes_Agrobate roux
 Cercotrichas hartlaubi_Agrobate à dos brun
 Cercotrichas leucophrys_Agrobate à dos roux
 Cercotrichas paena_Agrobate du Kalahari
 Cercotrichas podobe_Agrobate podobé
-Cercotrichas quadrivirgata_Agrobate à moustaches
-Cercotrichas signata_Agrobate brun
+Tychaedon quadrivirgata_Agrobate à moustaches
+Tychaedon signata_Agrobate brun
 Certhia americana_Grimpereau brun
 Certhia brachydactyla_Grimpereau des jardins
 Certhia discolor_Grimpereau discolore
@@ -1168,7 +1168,7 @@ Charadrius dubius_Pluvier petit-gravelot
 Charadrius falklandicus_Pluvier des Falkland
 Charadrius hiaticula_Pluvier grand-gravelot
 Charadrius javanicus_Pluvier de Java
-Charadrius leschenaultii_Pluvier de Leschenault
+Anarhynchus leschenaultii_Pluvier de Leschenault
 Charadrius melodus_Pluvier siffleur
 Charadrius modestus_Pluvier de d'Urville
 Charadrius mongolus_Pluvier de Mongolie
@@ -1238,10 +1238,10 @@ Chlorophonia musica_Organiste louis-d'or
 Chlorophonia occipitalis_Organiste à calotte bleue
 Chlorophonia pyrrhophrys_Organiste à ventre brun
 Chloropicus fuscescens_Pic cardinal
-Chloropicus goertae_Pic goertan
+Dendropicos goertae_Pic goertan
 Chloropicus griseocephalus_Pic olive
 Chloropicus namaquus_Pic barbu
-Chloropicus spodocephalus_Pic spodocéphale
+Dendropicos spodocephalus_Pic spodocéphale
 Chloropsis aurifrons_Verdin à front d'or
 Chloropsis cochinchinensis_Verdin à tête jaune
 Chloropsis cyanopogon_Verdin barbe-bleue
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_Mouette argentée
 Chroicocephalus philadelphia_Mouette de Bonaparte
 Chroicocephalus ridibundus_Mouette rieuse
 Chroicocephalus serranus_Mouette des Andes
-Chrysococcyx basalis_Coucou de Horsfield
+Chalcites basalis_Coucou de Horsfield
 Chrysococcyx caprius_Coucou didric
 Chrysococcyx cupreus_Coucou foliotocol
 Chrysococcyx klaas_Coucou de Klaas
-Chrysococcyx lucidus_Coucou éclatant
+Chalcites lucidus_Coucou éclatant
 Chrysococcyx maculatus_Coucou émeraude
-Chrysococcyx minutillus_Coucou menu
+Chalcites minutillus_Coucou menu
 Chrysococcyx osculans_Coucou oreillard
 Chrysococcyx xanthorhynchus_Coucou violet
 Chrysocolaptes festivus_Pic de Goa
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_Rollier d'Abyssinie
 Coracias benghalensis_Rollier indien
 Coracias caudatus_Rollier à longs brins
 Coracias garrulus_Rollier d'Europe
-Coracina caesia_Échenilleur gris
+Ceblepyris caesius_Échenilleur gris
 Coracina cinerea_Échenilleur malgache
 Coracina lineata_Échenilleur linéolé
 Coracina longicauda_Échenilleur à longue queue
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_Corneille de Jamaïque
 Corvus leucognaphalus_Corneille d'Hispaniola
 Corvus macrorhynchos_Corbeau à gros bec
 Corvus mellori_Petit Corbeau
-Corvus monedula_Choucas des tours
+Coloeus monedula_Choucas des tours
 Corvus nasicus_Corneille de Cuba
 Corvus orru_Corbeau de Torres
 Corvus ossifragus_Corneille de rivage
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_Annumbi alouette
 Coryphospingus cucullatus_Araguira rougeâtre
 Coryphospingus pileatus_Araguira gris
 Corythaeola cristata_Touraco géant
-Corythaixoides concolor_Touraco concolore
+Crinifer concolor_Touraco concolore
 Corythaixoides leucogaster_Touraco à ventre blanc
 Corythopis delalandi_Corythopis de Delalande
 Corythopis torquatus_Corythopis à collier
 Corythornis cristatus_Martin-pêcheur huppé
 Coscoroba coscoroba_Coscoroba blanc
 Cossypha albicapillus_Cossyphe à calotte blanche
-Cossypha anomala_Cossyphe à flancs olive
-Cossypha archeri_Cossyphe d'Archer
+Dessonornis anomalus_Cossyphe à flancs olive
+Dessonornis archeri_Cossyphe d'Archer
 Cossypha caffra_Cossyphe du Cap
 Cossypha cyanocampter_Cossyphe à ailes bleues
 Cossypha dichroa_Cossyphe choriste
@@ -1625,7 +1625,7 @@ Cossypha heuglini_Cossyphe de Heuglin
 Cossypha humeralis_Cossyphe à gorge blanche
 Cossypha natalensis_Cossyphe à calotte rousse
 Cossypha niveicapilla_Cossyphe à calotte neigeuse
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_Cossyphe de Rüppell
 Coturnicops noveboracensis_Râle jaune
 Coturnix coromandelica_Caille nattée
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_Gobemouche à grand bec
 Cyornis concretus_Gobemouche à queue blanche
 Cyornis glaucicomans_Gobemouche du Yunnan
 Cyornis hainanus_Gobemouche de Hainan
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_Gobemouche à dos olive
 Cyornis omissus_Gobemouche des Célèbes
 Cyornis pallidipes_Gobemouche à ventre blanc
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_Ara noble
 Diuca diuca_Diuca gris
 Dives dives_Quiscale chanteur
 Dives warczewiczi_Quiscale buissonnier
-Dog_Dog
+Canis familiaris_Dog
 Dolichonyx oryzivorus_Goglu des prés
 Donacobius atricapilla_Donacobe à miroir
 Donacospiza albifrons_Donacospize des marais
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_Cubla boule-de-neige
 Dryoscopus gambensis_Cubla de Gambie
-Dryotriorchis spectabilis_Serpentaire du Congo
+Circaetus spectabilis_Serpentaire du Congo
 Dubusia castaneoventris_Tangara à ventre marron
 Dubusia taeniata_Tangara à poitrine fauve
 Ducula aenea_Carpophage de Pauline
@@ -2106,18 +2106,18 @@ Emberiza impetuani_Bruant des rochers
 Emberiza lathami_Bruant huppé
 Emberiza leucocephalos_Bruant à calotte blanche
 Emberiza melanocephala_Bruant mélanocéphale
-Emberiza pallasi_Bruant de Pallas
+Schoeniclus pallasi_Bruant de Pallas
 Emberiza pusilla_Bruant nain
 Emberiza rustica_Bruant rustique
 Emberiza sahari_Bruant du Sahara
-Emberiza schoeniclus_Bruant des roseaux
+Schoeniclus schoeniclus_Bruant des roseaux
 Emberiza spodocephala_Bruant masqué
 Emberiza stewarti_Bruant de Stewart
 Emberiza striolata_Bruant striolé
 Emberiza sulphurata_Bruant du Japon
 Emberiza tahapisi_Bruant cannelle
 Emberiza tristrami_Bruant de Tristram
-Emberiza variabilis_Bruant gris
+Schoeniclus variabilis_Bruant gris
 Emberiza yessoensis_Bruant de Yéso
 Emberizoides herbicola_Grand Tardivole
 Emberizoides ypiranganus_Petit Tardivole
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_Euplecte franciscain
 Euplectes hordeaceus_Euplecte monseigneur
 Euplectes orix_Euplecte ignicolore
 Euplectes progne_Euplecte à longue queue
-Eupodotis afra_Outarde korhaan
-Eupodotis afraoides_Outarde à miroir blanc
+Afrotis afra_Outarde korhaan
+Afrotis afraoides_Outarde à miroir blanc
 Eupodotis caerulescens_Outarde plombée
-Eupodotis ruficrista_Outarde houppette
+Lophotis ruficrista_Outarde houppette
 Eupodotis senegalensis_Outarde du Sénégal
-Eupodotis vigorsii_Outarde de Vigors
+Heterotetrax vigorsii_Outarde de Vigors
 Eupsittula aurea_Conure couronnée
 Eupsittula cactorum_Conure des cactus
 Eupsittula canicularis_Conure à front rouge
@@ -2630,10 +2630,10 @@ Gyps fulvus_Vautour fauve
 Gyps himalayensis_Vautour de l'Himalaya
 Gypsophila brevicaudata_Turdinule à queue courte
 Gypsophila rufipectus_Turdinule de Sumatra
-Habia atrimaxillaris_Habia à joues noires
-Habia cristata_Habia à crête rouge
-Habia fuscicauda_Habia à gorge rouge
-Habia gutturalis_Habia fuligineux
+Driophlox atrimaxillaris_Habia à joues noires
+Driophlox cristata_Habia à crête rouge
+Driophlox fuscicauda_Habia à gorge rouge
+Driophlox gutturalis_Habia fuligineux
 Habia rubica_Habia à couronne rouge
 Haematopus ater_Huîtrier noir
 Haematopus bachmani_Huîtrier de Bachman
@@ -2662,12 +2662,12 @@ Halcyon pileata_Martin-chasseur à coiffe noire
 Halcyon senegalensis_Martin-chasseur du Sénégal
 Halcyon smyrnensis_Martin-chasseur de Smyrne
 Haliaeetus albicilla_Pygargue à queue blanche
-Haliaeetus humilis_Pygargue nain
-Haliaeetus ichthyaetus_Pygargue à tête grise
+Icthyophaga humilis_Pygargue nain
+Icthyophaga ichthyaetus_Pygargue à tête grise
 Haliaeetus leucocephalus_Pygargue à tête blanche
-Haliaeetus leucogaster_Pygargue blagre
+Icthyophaga leucogaster_Pygargue blagre
 Haliaeetus pelagicus_Pygargue empereur
-Haliaeetus vocifer_Pygargue vocifer
+Icthyophaga vocifer_Pygargue vocifer
 Haliastur indus_Milan sacré
 Haliastur sphenurus_Milan siffleur
 Hapalocrex flaviventer_Marouette à sourcils blancs
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_Bouscarle des Fidji
 Horornis seebohmi_Bouscarle de Luçon
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_Océanite de Castro
 Hydrobates leucorhous_Océanite cul-blanc
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_Myrmidon de Hauxwell
 Ithaginis cruentus_Ithagine ensanglantée
 Ixobrychus cinnamomeus_Blongios cannelle
 Ixobrychus dubius_Blongios d'Australie
-Ixobrychus eurhythmus_Blongios de Schrenck
+Botaurus eurhythmus_Blongios de Schrenck
 Ixobrychus exilis_Petit Blongios
 Ixobrychus flavicollis_Blongios à cou jaune
 Ixobrychus involucris_Blongios varié
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_Pipromorphe roussâtre
 Mionectes olivaceus_Pipromorphe olive
 Mionectes rufiventris_Pipromorphe à ventre roux
 Mionectes striaticollis_Pipromorphe strié
-Mirafra affinis_Alouette du Deccan
+Plocealauda affinis_Alouette du Deccan
 Mirafra africana_Alouette à nuque rousse
 Mirafra apiata_Alouette bateleuse
-Mirafra assamica_Alouette d'Assam
+Plocealauda assamica_Alouette d'Assam
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_Alouette mélodieuse
-Mirafra erythrocephala_Alouette d'Indochine
-Mirafra erythroptera_Alouette à ailes rousses
+Plocealauda erythrocephala_Alouette d'Indochine
+Plocealauda erythroptera_Alouette à ailes rousses
 Mirafra fasciolata_Alouette fasciée
 Mirafra javanica_Alouette de Java
 Mirafra passerina_Alouette monotone
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_Néocossyphe à queue blanche
 Neocossyphus rufus_Néocossyphe à queue rousse
 Neoctantes niger_Batara des fourrés
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_Siffleur mélanésien
 Pachycephala cinerea_Siffleur cendré
 Pachycephala flavifrons_Siffleur des Samoa
 Pachycephala fuliginosa_Siffleur occidental
-Pachycephala fulvotincta_Siffleur à poitrine fauve
+Pachycephala calliope_Siffleur à poitrine fauve
 Pachycephala griseonota_Siffleur terne
 Pachycephala homeyeri_Siffleur de Blasius
 Pachycephala hypoxantha_Siffleur de Bornéo
@@ -4312,7 +4312,7 @@ Penelope purpurascens_Pénélope panachée
 Penelope superciliaris_Pénélope péoa
 Penelopides affinis_Calao de Mindanao
 Penelopina nigra_Pénélope pajuil
-Peneothello cyanus_Miro gris-bleu
+Melanodryas cyanus_Miro gris-bleu
 Peneothello sigillata_Miro à ailes blanches
 Percnostola arenarum_Alapi du varillal
 Percnostola rufifrons_Alapi à tête noire
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_Tyranneau à croupion fauve
 Phyllomyias virescens_Tyranneau verdin
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_Tyranneau de Cecilia
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_Tyranneau d'Équateur
 Phylloscartes kronei_Tyranneau de Krone
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_Tyranneau d'Oustalet
 Phylloscartes parkeri_Tyranneau de Parker
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_Tyranneau de Minas Gerais
 Phylloscartes superciliaris_Tyranneau à sourcils roux
 Phylloscartes sylviolus_Tyranneau sylvain
@@ -4860,7 +4860,7 @@ Porphyriops melanops_Gallinule à face noire
 Porzana carolina_Marouette de Caroline
 Porzana porzana_Marouette ponctuée
 Porzana spiloptera_Marouette maillée
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_Anabasitte tachetée
 Premnornis guttuliger_Premnornis à gouttelettes
 Primolius auricollis_Ara à collier jaune
@@ -5018,7 +5018,7 @@ Psittacula krameri_Perruche à collier
 Psittacula longicauda_Perruche à longs brins
 Psittacus erithacus_Perroquet jaco
 Psittinus cyanurus_Perruche à croupion bleu
-Psittiparus gularis_Paradoxornis à tête grise
+Paradoxornis gularis_Paradoxornis à tête grise
 Psophia crepitans_Agami trompette
 Psophia leucoptera_Agami à ailes blanches
 Psophia viridis_Agami vert
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_Allotrie à ventre roux
 Pteruthius xanthochlorus_Allotrie verte
 Ptilinopus iozonus_Ptilope à ventre orange
-Ptilinopus magnificus_Ptilope magnifique
+Megaloprepia magnifica_Ptilope magnifique
 Ptilinopus melanospilus_Ptilope turgris
-Ptilinopus occipitalis_Ptilope batilde
+Ramphiculus occipitalis_Ptilope batilde
 Ptilinopus pelewensis_Ptilope des Palau
 Ptilinopus porphyraceus_Ptilope de Clémentine
 Ptilinopus regina_Ptilope à diadème
@@ -5938,11 +5938,11 @@ Tchagra senegalus_Tchagra à tête noire
 Tchagra tchagra_Tchagra du Cap
 Teledromas fuscus_Tourco sable
 Telespiza ultima_Psittirostre de Nihoa
-Telophorus bocagei_Gonolek à front blanc
+Chlorophoneus bocagei_Gonolek à front blanc
 Telophorus dohertyi_Gonolek de Doherty
 Telophorus nigrifrons_Gonolek à front noir
 Telophorus olivaceus_Gonolek olive
-Telophorus sulfureopectus_Gonolek soufré
+Chlorophoneus sulfureopectus_Gonolek soufré
 Telophorus viridis_Gonolek vert
 Telophorus zeylonus_Gonolek bacbakiri
 Temnurus temnurus_Témia temnure
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_Moqueur de Californie
 Toxostoma rufum_Moqueur roux
 Trachyphonus darnaudii_Barbican d'Arnaud
 Trachyphonus erythrocephalus_Barbican à tête rouge
-Trachyphonus purpuratus_Barbican pourpré
+Trachylaemus goffinii_Barbican pourpré
 Trachyphonus vaillantii_Barbican promépic
 Tregellasia capito_Miro jaunâtre
 Treron affinis_Colombar des Ghats
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_Bouscarle de Bornéo
 Urothraupis stolzmanni_Urotangara de Stolzmann
 Urotriorchis macrourus_Autour à longue queue
 Vanellus armatus_Vanneau armé
-Vanellus cayanus_Vanneau de Cayenne
+Hoploxypterus cayanus_Vanneau de Cayenne
 Vanellus chilensis_Vanneau téro
 Vanellus cinereus_Vanneau à tête grise
 Vanellus coronatus_Vanneau couronné

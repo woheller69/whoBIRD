@@ -24,19 +24,19 @@ Accipiter bicolor_Roodbroeksperwer
 Accipiter cirrocephalus_Grijskopsperwer
 Accipiter cooperii_Coopers Sperwer
 Accipiter fasciatus_Australische Havik
-Accipiter gentilis_Havik
+Astur atricapillus_Havik
 Accipiter gularis_Kleine Sperwer
 Accipiter hiogaster_Grijs-rode Havik
-Accipiter melanoleucus_Zwarte Havik
+Astur melanoleucus_Zwarte Havik
 Accipiter minullus_Oost-Afrikaanse Dwergsperwer
 Accipiter nisus_Sperwer
-Accipiter novaehollandiae_Grijze Havik
+Tachyspiza novaehollandiae_Grijze Havik
 Accipiter poliogaster_Zuid-Amerikaanse Havik
 Accipiter soloensis_Chinese Sperwer
 Accipiter striatus_Amerikaanse Sperwer
 Accipiter superciliosus_Tiny Hawk
 Accipiter tachiro_Afrikaanse Havik
-Accipiter trinotatus_Vlekstaartsperwer
+Tachyspiza trinotata_Vlekstaartsperwer
 Accipiter trivirgatus_Kuifhavik
 Accipiter virgatus_Besrasperwer
 Aceros nipalensis_Himalayajaarvogel
@@ -708,7 +708,7 @@ Brachygalba lugubris_Bruinkeelglansvogel
 Brachypodius eutilotus_Donsrugbuulbuul
 Brachypodius melanocephalos_Zwartkopbuulbuul
 Brachypodius melanoleucos_Zwart-witte Buulbuul
-Brachypodius priocephalus_Grijskopbuulbuul
+Microtarsus priocephalus_Grijskopbuulbuul
 Brachypodius urostictus_Geellelbuulbuul
 Brachypteryx cruralis_Himalayan Shortwing
 Brachypteryx goodfellowi_Taiwan Shortwing
@@ -824,7 +824,7 @@ Cacicus solitarius_Zwarte Buidelspreeuw
 Cacicus uropygialis_Bloedstuit-buidelspreeuw
 Cacomantis castaneiventris_Roestbuikkoekoek
 Cacomantis flabelliformis_Waaierstaartkoekoek
-Cacomantis leucolophus_Witkapkoekoek
+Caliechthrus leucolophus_Witkapkoekoek
 Cacomantis merulinus_Piet-van-Vliet
 Cacomantis pallidus_Vale Koekoek
 Cacomantis passerinus_Grijsbuik-Piet-van-Vliet
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_Zwartkeelsmaragdbreedbek
 Calyptophilus frugivorus_Oostelijke Tapuittangare
 Calyptophilus tertius_Westelijke Tapuittangare
 Calyptorhynchus banksii_Roodstaartraafkaketoe
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_Bruine Raafkaketoe
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_Mekker-camaroptera
 Camaroptera chloronota_Olijfgroene Camaroptera
 Camaroptera superciliaris_Geelbrauwcamaroptera
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_Moerasmiervogel
 Cercomacroides parkeri_Parkers Miervogel
 Cercomacroides serva_Zwarte Miervogel
 Cercomacroides tyrannina_Tiranmiervogel
-Cercotrichas barbata_Baardwaaierstaart
-Cercotrichas coryphoeus_Karoowaaierstaart
+Tychaedon barbata_Baardwaaierstaart
+Tychaedon coryphoeus_Karoowaaierstaart
 Cercotrichas galactotes_Rosse Waaierstaart
 Cercotrichas hartlaubi_Bruinrugwaaierstaart
 Cercotrichas leucophrys_Witbrauwwaaierstaart
 Cercotrichas paena_Kalahariwaaierstaart
 Cercotrichas podobe_Zwarte Waaierstaart
-Cercotrichas quadrivirgata_Streepkopwaaierstaart
-Cercotrichas signata_Bruine Waaierstaart
+Tychaedon quadrivirgata_Streepkopwaaierstaart
+Tychaedon signata_Bruine Waaierstaart
 Certhia americana_Amerikaanse Boomkruiper
 Certhia brachydactyla_Boomkruiper
 Certhia discolor_Bruinkeelboomkruiper
@@ -1168,7 +1168,7 @@ Charadrius dubius_Kleine Plevier
 Charadrius falklandicus_Falklandplevier
 Charadrius hiaticula_Bontbekplevier
 Charadrius javanicus_Javaanse Strandplevier
-Charadrius leschenaultii_Woestijnplevier
+Anarhynchus leschenaultii_Woestijnplevier
 Charadrius melodus_Dwergplevier
 Charadrius modestus_Patagonische Plevier
 Charadrius mongolus_Mongoolse Plevier
@@ -1238,10 +1238,10 @@ Chlorophonia musica_Antillenorganist
 Chlorophonia occipitalis_Blauwkruinorganist
 Chlorophonia pyrrhophrys_Zwartbrauworganist
 Chloropicus fuscescens_Kardinaalspecht
-Chloropicus goertae_Grijsgroene Specht
+Dendropicos goertae_Grijsgroene Specht
 Chloropicus griseocephalus_Olijfspecht
 Chloropicus namaquus_Baardspecht
-Chloropicus spodocephalus_Ethiopische Grijsgroene Specht
+Dendropicos spodocephalus_Ethiopische Grijsgroene Specht
 Chloropsis aurifrons_Goudvoorhoofdbladvogel
 Chloropsis cochinchinensis_Blauwvleugelbladvogel
 Chloropsis cyanopogon_Blauwbaardbladvogel
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_Silver Gull
 Chroicocephalus philadelphia_Kleine Kokmeeuw
 Chroicocephalus ridibundus_Kokmeeuw
 Chroicocephalus serranus_Andesmeeuw
-Chrysococcyx basalis_Horsfields Bronskoekoek
+Chalcites basalis_Horsfields Bronskoekoek
 Chrysococcyx caprius_Diederikkoekoek
 Chrysococcyx cupreus_Smaragdkoekoek
 Chrysococcyx klaas_Klaas' Koekoek
-Chrysococcyx lucidus_Gouden Bronskoekoek
+Chalcites lucidus_Gouden Bronskoekoek
 Chrysococcyx maculatus_Gevlekte Bronskoekoek
-Chrysococcyx minutillus_Kleine Bronskoekoek
+Chalcites minutillus_Kleine Bronskoekoek
 Chrysococcyx osculans_Zwartoorkoekoek
 Chrysococcyx xanthorhynchus_Amethistkoekoek
 Chrysocolaptes festivus_Witnekspecht
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_Sahelscharrelaar
 Coracias benghalensis_Indian Roller
 Coracias caudatus_Vorkstaartscharrelaar
 Coracias garrulus_Scharrelaar
-Coracina caesia_Bosrupsvogel
+Ceblepyris caesius_Bosrupsvogel
 Coracina cinerea_Madagaskar-rupsvogel (Madagascar)
 Coracina lineata_Geeloogrupsvogel
 Coracina longicauda_Langstaartrupsvogel
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_Jamaicaanse Kraai
 Corvus leucognaphalus_Witnekkraai
 Corvus macrorhynchos_Dikbekkraai
 Corvus mellori_Kleine Raaf
-Corvus monedula_Kauw
+Coloeus monedula_Kauw
 Corvus nasicus_Cubaanse Kraai
 Corvus orru_Australische Kraai
 Corvus ossifragus_Viskraai
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_Leeuwerikstruikloper
 Coryphospingus cucullatus_Rode Kroongors
 Coryphospingus pileatus_Grijze Kroongors
 Corythaeola cristata_Reuzentoerako
-Corythaixoides concolor_Vale Toerako
+Crinifer concolor_Vale Toerako
 Corythaixoides leucogaster_Witbuiktoerako
 Corythopis delalandi_Delalandes Piepertiran
 Corythopis torquatus_Geringde Piepertiran
 Corythornis cristatus_Malachietijsvogel
 Coscoroba coscoroba_Coscoroba
 Cossypha albicapillus_Schubkaplawaaimaker
-Cossypha anomala_Bruinflankjanfrederik
-Cossypha archeri_Archers Janfrederik
+Dessonornis anomalus_Bruinflankjanfrederik
+Dessonornis archeri_Archers Janfrederik
 Cossypha caffra_Kaapse Lawaaimaker
 Cossypha cyanocampter_Blauwschouderlawaaimaker
 Cossypha dichroa_Choristerlawaaimaker
@@ -1625,7 +1625,7 @@ Cossypha heuglini_Witbrauwlawaaimaker
 Cossypha humeralis_Witkeellawaaimaker
 Cossypha natalensis_Roodkoplawaaimaker
 Cossypha niveicapilla_Witkruinlawaaimaker
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_Rüppells Lawaaimaker
 Coturnicops noveboracensis_Gele Ral
 Coturnix coromandelica_Regenkwartel
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_Breedsnavelniltava
 Cyornis concretus_Witstaartniltava
 Cyornis glaucicomans_Chinese Blue Flycatcher
 Cyornis hainanus_Hainanniltava
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_Olijfrugjunglevliegenvanger
 Cyornis omissus_Sulawesiniltava
 Cyornis pallidipes_Keralaniltava
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_Roodschouderara
 Diuca diuca_Gewone Diucagors
 Dives dives_Rouwtroepiaal
 Dives warczewiczi_Struiktroepiaal
-Dog_Dog
+Canis familiaris_Dog
 Dolichonyx oryzivorus_Bobolink
 Donacobius atricapilla_Zwartkopdonacobius
 Donacospiza albifrons_Witbrauwgrasgors
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_Poederdonsklauwier
 Dryoscopus gambensis_Gambiapoederdonsklauwier
-Dryotriorchis spectabilis_Congolese Slangenarend
+Circaetus spectabilis_Congolese Slangenarend
 Dubusia castaneoventris_Bruinbuikbergtangare
 Dubusia taeniata_Zilverbrauwbergtangare
 Ducula aenea_Groene Muskaatduif
@@ -2106,18 +2106,18 @@ Emberiza impetuani_Leeuwerikgors
 Emberiza lathami_Kuifgors
 Emberiza leucocephalos_Witkopgors
 Emberiza melanocephala_Zwartkopgors
-Emberiza pallasi_Pallas' Rietgors
+Schoeniclus pallasi_Pallas' Rietgors
 Emberiza pusilla_Dwerggors
 Emberiza rustica_Bosgors
 Emberiza sahari_Huisgors
-Emberiza schoeniclus_Rietgors
+Schoeniclus schoeniclus_Rietgors
 Emberiza spodocephala_Black-faced Bunting (spodocephala/sordida)
 Emberiza stewarti_Stewarts Gors
 Emberiza striolata_Gestreepte Gors
 Emberiza sulphurata_Zwavelgors
 Emberiza tahapisi_Zevenstrepengors
 Emberiza tristrami_Tristrams Gors
-Emberiza variabilis_Bamboegors
+Schoeniclus variabilis_Bamboegors
 Emberiza yessoensis_Japanse Rietgors
 Emberizoides herbicola_Wigstaartgrasgors
 Emberizoides ypiranganus_Kleine Grasgors
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_Oranje Wever
 Euplectes hordeaceus_Roodvoorhoofdwever
 Euplectes orix_Grenadierwever
 Euplectes progne_Hanenstaartwidavink
-Eupodotis afra_Zwarte Trap
-Eupodotis afraoides_Botswanatrap
+Afrotis afra_Zwarte Trap
+Afrotis afraoides_Botswanatrap
 Eupodotis caerulescens_Blauwe Trap
-Eupodotis ruficrista_Zuid-Afrikaanse Kuiftrap
+Lophotis ruficrista_Zuid-Afrikaanse Kuiftrap
 Eupodotis senegalensis_Senegaltrap
-Eupodotis vigorsii_Zwartkintrap
+Heterotetrax vigorsii_Zwartkintrap
 Eupsittula aurea_Goudvoorhoofdparkiet
 Eupsittula cactorum_Cactusparkiet
 Eupsittula canicularis_Ivooraratinga
@@ -2630,10 +2630,10 @@ Gyps fulvus_Vale Gier
 Gyps himalayensis_Himalayagier
 Gypsophila brevicaudata_Kortstaartsluiptimalia
 Gypsophila rufipectus_Sumatraanse Sluiptimalia
-Habia atrimaxillaris_Zwartwangmiertangare
-Habia cristata_Roodkuifmiertangare
-Habia fuscicauda_Roodkeelmiertangare
-Habia gutturalis_Grijsrugmiertangare
+Driophlox atrimaxillaris_Zwartwangmiertangare
+Driophlox cristata_Roodkuifmiertangare
+Driophlox fuscicauda_Roodkeelmiertangare
+Driophlox gutturalis_Grijsrugmiertangare
 Habia rubica_Rode Miertangare
 Haematopus ater_Zuid-Amerikaanse Zwarte Scholekster
 Haematopus bachmani_Noord-Amerikaanse Zwarte Scholekster
@@ -2662,12 +2662,12 @@ Halcyon pileata_Zwartkapijsvogel
 Halcyon senegalensis_Senegalijsvogel
 Halcyon smyrnensis_Smyrnaijsvogel
 Haliaeetus albicilla_Zeearend
-Haliaeetus humilis_Kleine Rivierarend
-Haliaeetus ichthyaetus_Grote Rivierarend
+Icthyophaga humilis_Kleine Rivierarend
+Icthyophaga ichthyaetus_Grote Rivierarend
 Haliaeetus leucocephalus_Amerikaanse Zeearend
-Haliaeetus leucogaster_Witbuikzeearend
+Icthyophaga leucogaster_Witbuikzeearend
 Haliaeetus pelagicus_Stellers Zeearend
-Haliaeetus vocifer_Afrikaanse Zeearend
+Icthyophaga vocifer_Afrikaanse Zeearend
 Haliastur indus_Brahmaanse Wouw
 Haliastur sphenurus_Wigstaartwouw
 Hapalocrex flaviventer_Geelbuikporseleinhoen
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_Fijistruikzanger
 Horornis seebohmi_Luzonstruikzanger
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_Madeirastormvogeltje
 Hydrobates leucorhous_Vaal Stormvogeltje
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_Grijsbuikmiersluiper
 Ithaginis cruentus_Bloedfazant
 Ixobrychus cinnamomeus_Rossige Woudaap
 Ixobrychus dubius_Zwartrugwoudaap
-Ixobrychus eurhythmus_Mantsjoerijse Woudaap
+Botaurus eurhythmus_Mantsjoerijse Woudaap
 Ixobrychus exilis_Amerikaanse Woudaap
 Ixobrychus flavicollis_Zwarte Woudaap
 Ixobrychus involucris_Gestreepte Woudaap
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_Okerbuikpipratiran
 Mionectes olivaceus_Olive-striped Flycatcher (Olive-streaked)
 Mionectes rufiventris_Grijskappipratiran
 Mionectes striaticollis_Streepnekpipratiran
-Mirafra affinis_Jerdons Leeuwerik
+Plocealauda affinis_Jerdons Leeuwerik
 Mirafra africana_Roodnekleeuwerik
 Mirafra apiata_Klapperleeuwerik
-Mirafra assamica_Bengaalse Leeuwerik
+Plocealauda assamica_Bengaalse Leeuwerik
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_Spotleeuwerik
-Mirafra erythrocephala_Indochinese Struikleeuwerik
-Mirafra erythroptera_Roodvleugelleeuwerik
+Plocealauda erythrocephala_Indochinese Struikleeuwerik
+Plocealauda erythroptera_Roodvleugelleeuwerik
 Mirafra fasciolata_Oostelijke Klapperleeuwerik
 Mirafra javanica_Singing Bushlark
 Mirafra passerina_Musleeuwerik
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_Witstaartlijster
 Neocossyphus rufus_Roodstaartlijster
 Neoctantes niger_Zwarte Dikbekmiervogel
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_Melanesische Fluiter
 Pachycephala cinerea_Mangrovefluiter
 Pachycephala flavifrons_Diadeemfluiter
 Pachycephala fuliginosa_Western Whistler
-Pachycephala fulvotincta_Roestborstfluiter
+Pachycephala calliope_Roestborstfluiter
 Pachycephala griseonota_Molukse Fluiter
 Pachycephala homeyeri_Bruinborstfluiter
 Pachycephala hypoxantha_Borneofluiter
@@ -4312,7 +4312,7 @@ Penelope purpurascens_Kuifsjakohoen
 Penelope superciliaris_Witvoorhoofdsjakohoen
 Penelopides affinis_Mindanaoneushoornvogel
 Penelopina nigra_Berggoean
-Peneothello cyanus_Leizwarte Struikvliegenvanger
+Melanodryas cyanus_Leizwarte Struikvliegenvanger
 Peneothello sigillata_Witvleugelstruikvliegenvanger
 Percnostola arenarum_Allpahuayomiervogel
 Percnostola rufifrons_Roetkopmiervogel
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_Goudstuitvliegenpikker
 Phyllomyias virescens_Groene Vliegenpikker
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_Langstaartlooftiran
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_Ecuadoraanse Looftiran
 Phylloscartes kronei_Restingalooftiran
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_Oustalets Looftiran
 Phylloscartes parkeri_Parkers Looftiran
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_Minas-Geraislooftiran
 Phylloscartes superciliaris_Roodbrauwlooftiran
 Phylloscartes sylviolus_Bruinringlooftiran
@@ -4860,7 +4860,7 @@ Porphyriops melanops_Zwartkopwaterhoen
 Porzana carolina_Soraral
 Porzana porzana_Porseleinhoen
 Porzana spiloptera_Dunfords Dwergral
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_Vlekborstboomloper
 Premnornis guttuliger_Roestvleugelboomloper
 Primolius auricollis_Geelnekara
@@ -5018,7 +5018,7 @@ Psittacula krameri_Halsbandparkiet
 Psittacula longicauda_Langstaartparkiet
 Psittacus erithacus_Grijze Roodstaartpapegaai
 Psittinus cyanurus_Blauwrugpapegaai
-Psittiparus gularis_Grijskopdiksnavelmees
+Paradoxornis gularis_Grijskopdiksnavelmees
 Psophia crepitans_Trompetvogel
 Psophia leucoptera_Witvleugeltrompetvogel
 Psophia viridis_Groenvleugeltrompetvogel
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_Zwartkopklauwiertimalia
 Pteruthius xanthochlorus_Groene Briltimalia
 Ptilinopus iozonus_Oranjebuikjufferduif
-Ptilinopus magnificus_Wompoejufferduif
+Megaloprepia magnifica_Wompoejufferduif
 Ptilinopus melanospilus_Zwartnekjufferduif
-Ptilinopus occipitalis_Geelborstjufferduif
+Ramphiculus occipitalis_Geelborstjufferduif
 Ptilinopus pelewensis_Palaujufferduif
 Ptilinopus porphyraceus_Crimson-crowned Fruit-Dove
 Ptilinopus regina_Swainsons Jufferduif
@@ -5938,11 +5938,11 @@ Tchagra senegalus_Zwartkruintsjagra
 Tchagra tchagra_Kaapse Tsjagra
 Teledromas fuscus_Bruine Galito
 Telespiza ultima_Nihoavink
-Telophorus bocagei_Grijze Bosklauwier
+Chlorophoneus bocagei_Grijze Bosklauwier
 Telophorus dohertyi_Doherty's Bosklauwier
 Telophorus nigrifrons_Reichenows Bosklauwier
 Telophorus olivaceus_Olijfgroene Bosklauwier
-Telophorus sulfureopectus_Oranje Bosklauwier
+Chlorophoneus sulfureopectus_Oranje Bosklauwier
 Telophorus viridis_Bonte Bosklauwier
 Telophorus zeylonus_Bokmakierieklauwier
 Temnurus temnurus_Trapstaartekster
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_Californische Spotlijster
 Toxostoma rufum_Rosse Spotlijster
 Trachyphonus darnaudii_D'Arnauds Baardvogel
 Trachyphonus erythrocephalus_Vuurkopbaardvogel
-Trachyphonus purpuratus_Geelsnavelbaardvogel
+Trachylaemus goffinii_Geelsnavelbaardvogel
 Trachyphonus vaillantii_Kuifbaardvogel
 Tregellasia capito_Bleekgele Vliegenvanger
 Treron affinis_Indiase Papegaaiduif
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_Borneostruikzanger
 Urothraupis stolzmanni_Zwartrugvinktangare
 Urotriorchis macrourus_Langstaarthavik
 Vanellus armatus_Smidsplevier
-Vanellus cayanus_Cayennekievit
+Hoploxypterus cayanus_Cayennekievit
 Vanellus chilensis_Chileense Kievit
 Vanellus cinereus_Grijskopkievit
 Vanellus coronatus_Diadeemkievit

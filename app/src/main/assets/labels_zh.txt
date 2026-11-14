@@ -24,19 +24,19 @@ Accipiter bicolor_双色鹰
 Accipiter cirrocephalus_领雀鹰
 Accipiter cooperii_库氏鹰
 Accipiter fasciatus_褐鹰
-Accipiter gentilis_Northern Goshawk
+Astur atricapillus_Northern Goshawk
 Accipiter gularis_日本松雀鹰
 Accipiter hiogaster_杂色鹰
-Accipiter melanoleucus_Black Goshawk
+Astur melanoleucus_Black Goshawk
 Accipiter minullus_非洲小雀鹰
 Accipiter nisus_雀鹰
-Accipiter novaehollandiae_Gray Goshawk
+Tachyspiza novaehollandiae_Gray Goshawk
 Accipiter poliogaster_灰腹鹰
 Accipiter soloensis_赤腹鹰
 Accipiter striatus_纹腹鹰
 Accipiter superciliosus_侏鹰
 Accipiter tachiro_非洲鹰
-Accipiter trinotatus_Spot-tailed Goshawk
+Tachyspiza trinotata_Spot-tailed Goshawk
 Accipiter trivirgatus_凤头鹰
 Accipiter virgatus_松雀鹰
 Aceros nipalensis_棕颈犀鸟
@@ -708,7 +708,7 @@ Brachygalba lugubris_褐鹟䴕
 Brachypodius eutilotus_凤头褐鹎
 Brachypodius melanocephalos_黑头鹎
 Brachypodius melanoleucos_黑白鹎
-Brachypodius priocephalus_灰头鹎
+Microtarsus priocephalus_灰头鹎
 Brachypodius urostictus_黄肉垂鹎
 Brachypteryx cruralis_喜山短翅鸫
 Brachypteryx goodfellowi_台湾短翅鸫
@@ -824,7 +824,7 @@ Cacicus solitarius_黑酋长鹂
 Cacicus uropygialis_亚热带酋长鹂
 Cacomantis castaneiventris_栗胸杜鹃
 Cacomantis flabelliformis_扇尾杜鹃
-Cacomantis leucolophus_White-crowned Koel
+Caliechthrus leucolophus_White-crowned Koel
 Cacomantis merulinus_八声杜鹃
 Cacomantis pallidus_淡色杜鹃
 Cacomantis passerinus_灰腹杜鹃
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_黑喉绿阔嘴鸟
 Calyptophilus frugivorus_东䳭唐纳雀
 Calyptophilus tertius_西䳭唐纳雀
 Calyptorhynchus banksii_红尾凤头鹦鹉
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_辉凤头鹦鹉
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_绿背拱翅莺
 Camaroptera chloronota_绿拱翅莺
 Camaroptera superciliaris_黄眉拱翅莺
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_淡黑蚁鸟
 Cercomacroides parkeri_帕氏蚁鸟
 Cercomacroides serva_黑蚁鸟
 Cercomacroides tyrannina_暗蚁鸟
-Cercotrichas barbata_须薮鸲
-Cercotrichas coryphoeus_栗腹薮鸲
+Tychaedon barbata_须薮鸲
+Tychaedon coryphoeus_栗腹薮鸲
 Cercotrichas galactotes_棕薮鸲
 Cercotrichas hartlaubi_褐背薮鸲
 Cercotrichas leucophrys_白眉薮鸲
 Cercotrichas paena_沙薮鸲
 Cercotrichas podobe_黑薮鸲
-Cercotrichas quadrivirgata_东须薮鸲
-Cercotrichas signata_褐薮鸲
+Tychaedon quadrivirgata_东须薮鸲
+Tychaedon signata_褐薮鸲
 Certhia americana_美洲旋木雀
 Certhia brachydactyla_短趾旋木雀
 Certhia discolor_褐喉旋木雀
@@ -1168,7 +1168,7 @@ Charadrius dubius_金眶鸻
 Charadrius falklandicus_双斑鸻
 Charadrius hiaticula_剑鸻
 Charadrius javanicus_爪哇鸻
-Charadrius leschenaultii_Greater Sand-Plover
+Anarhynchus leschenaultii_Greater Sand-Plover
 Charadrius melodus_笛鸻
 Charadrius modestus_棕胸鸻
 Charadrius mongolus_Lesser Sand-Plover
@@ -1238,10 +1238,10 @@ Chlorophonia musica_蓝头歌雀
 Chlorophonia occipitalis_蓝冠绿雀
 Chlorophonia pyrrhophrys_栗胸绿雀
 Chloropicus fuscescens_暗红啄木鸟
-Chloropicus goertae_African Gray Woodpecker
+Dendropicos goertae_African Gray Woodpecker
 Chloropicus griseocephalus_非洲灰啄木鸟
 Chloropicus namaquus_须啄木鸟
-Chloropicus spodocephalus_Mountain Gray Woodpecker
+Dendropicos spodocephalus_Mountain Gray Woodpecker
 Chloropsis aurifrons_金额叶鹎
 Chloropsis cochinchinensis_爪哇叶鹎
 Chloropsis cyanopogon_小绿叶鹎
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_澳洲红嘴鸥
 Chroicocephalus philadelphia_伯氏鸥
 Chroicocephalus ridibundus_红嘴鸥
 Chroicocephalus serranus_安第斯鸥
-Chrysococcyx basalis_Horsfield's Bronze-Cuckoo
+Chalcites basalis_Horsfield's Bronze-Cuckoo
 Chrysococcyx caprius_白眉金鹃
 Chrysococcyx cupreus_黄腹金鹃
 Chrysococcyx klaas_白腹金鹃
-Chrysococcyx lucidus_Shining Bronze-Cuckoo
+Chalcites lucidus_Shining Bronze-Cuckoo
 Chrysococcyx maculatus_翠金鹃
-Chrysococcyx minutillus_Little Bronze-Cuckoo
+Chalcites minutillus_Little Bronze-Cuckoo
 Chrysococcyx osculans_黑耳金鹃
 Chrysococcyx xanthorhynchus_紫金鹃
 Chrysocolaptes festivus_黑腰啄木鸟
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_蓝头佛法僧
 Coracias benghalensis_西棕胸佛法僧
 Coracias caudatus_紫胸佛法僧
 Coracias garrulus_蓝胸佛法僧
-Coracina caesia_Gray Cuckooshrike
+Ceblepyris caesius_Gray Cuckooshrike
 Coracina cinerea_马岛鹃鵙
 Coracina lineata_黄眼鹃鵙
 Coracina longicauda_黑冠鹃鵙
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_牙买加乌鸦
 Corvus leucognaphalus_美洲白颈鸦
 Corvus macrorhynchos_大嘴乌鸦
 Corvus mellori_小渡鸦
-Corvus monedula_Eurasian Jackdaw
+Coloeus monedula_Eurasian Jackdaw
 Corvus nasicus_古巴鸦
 Corvus orru_澳洲鸦
 Corvus ossifragus_鱼鸦
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_拟鹨灌丛雀
 Coryphospingus cucullatus_红冠雀
 Coryphospingus pileatus_红顶雀
 Corythaeola cristata_蓝蕉鹃
-Corythaixoides concolor_Gray Go-away-bird
+Crinifer concolor_Gray Go-away-bird
 Corythaixoides leucogaster_白腹灰蕉鹃
 Corythopis delalandi_南美蚁鹨
 Corythopis torquatus_环蚁鹨
 Corythornis cristatus_冠翠鸟
 Coscoroba coscoroba_扁嘴天鹅
 Cossypha albicapillus_白顶歌䳭
-Cossypha anomala_Olive-flanked Robin-Chat
-Cossypha archeri_Archer's Robin-Chat
+Dessonornis anomalus_Olive-flanked Robin-Chat
+Dessonornis archeri_Archer's Robin-Chat
 Cossypha caffra_黄喉歌䳭
 Cossypha cyanocampter_蓝肩歌䳭
 Cossypha dichroa_南非歌䳭
@@ -1625,7 +1625,7 @@ Cossypha heuglini_白眉歌䳭
 Cossypha humeralis_白喉歌䳭
 Cossypha natalensis_红顶歌䳭
 Cossypha niveicapilla_白冠歌䳭
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_卢氏歌䳭
 Coturnicops noveboracensis_北美花田鸡
 Coturnix coromandelica_黑胸鹌鹑
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_大嘴仙鹟
 Cyornis concretus_白尾蓝仙鹟
 Cyornis glaucicomans_中华仙鹟
 Cyornis hainanus_海南蓝仙鹟
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_绿背林鹟
 Cyornis omissus_苏拉威西蓝仙鹟
 Cyornis pallidipes_白腹仙鹟
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_红肩金刚鹦鹉
 Diuca diuca_迪卡雀
 Dives dives_艳拟鹂
 Dives warczewiczi_丛拟鹂
-Dog_Dog
+Canis familiaris_Dog
 Dolichonyx oryzivorus_刺歌雀
 Donacobius atricapilla_黑顶鹪莺
 Donacospiza albifrons_长尾芦雀
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_黑背蓬背鵙
 Dryoscopus gambensis_蓬背鵙
-Dryotriorchis spectabilis_刚果蛇雕
+Circaetus spectabilis_刚果蛇雕
 Dubusia castaneoventris_栗腹唐纳雀
 Dubusia taeniata_淡胸山裸鼻雀
 Ducula aenea_绿皇鸠
@@ -2106,18 +2106,18 @@ Emberiza impetuani_淡岩鹀
 Emberiza lathami_凤头鹀
 Emberiza leucocephalos_白头鹀
 Emberiza melanocephala_黑头鹀
-Emberiza pallasi_苇鹀
+Schoeniclus pallasi_苇鹀
 Emberiza pusilla_小鹀
 Emberiza rustica_田鹀
 Emberiza sahari_家鹀
-Emberiza schoeniclus_芦鹀
+Schoeniclus schoeniclus_芦鹀
 Emberiza spodocephala_灰头鹀
 Emberiza stewarti_白顶鹀
 Emberiza striolata_黑纹鹀
 Emberiza sulphurata_硫黄鹀
 Emberiza tahapisi_朱胸鹀
 Emberiza tristrami_白眉鹀
-Emberiza variabilis_灰鹀
+Schoeniclus variabilis_灰鹀
 Emberiza yessoensis_红颈苇鹀
 Emberizoides herbicola_楔尾草鹀
 Emberizoides ypiranganus_小草鹀
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_橙巧织雀
 Euplectes hordeaceus_黑翅巧织雀
 Euplectes orix_红巧织雀
 Euplectes progne_长尾巧织雀
-Eupodotis afra_Black Bustard
-Eupodotis afraoides_White-quilled Bustard
+Afrotis afra_Black Bustard
+Afrotis afraoides_White-quilled Bustard
 Eupodotis caerulescens_蓝鸨
-Eupodotis ruficrista_Red-crested Bustard
+Lophotis ruficrista_Red-crested Bustard
 Eupodotis senegalensis_白腹鸨
-Eupodotis vigorsii_Karoo Bustard
+Heterotetrax vigorsii_Karoo Bustard
 Eupsittula aurea_粉额鹦哥
 Eupsittula cactorum_仙人掌鹦哥
 Eupsittula canicularis_橙额鹦哥
@@ -2630,10 +2630,10 @@ Gyps fulvus_兀鹫
 Gyps himalayensis_高山兀鹫
 Gypsophila brevicaudata_短尾鹪鹛
 Gypsophila rufipectus_苏门答腊鹪鹛
-Habia atrimaxillaris_Black-cheeked Ant-Tanager
-Habia cristata_Crested Ant-Tanager
-Habia fuscicauda_Red-throated Ant-Tanager
-Habia gutturalis_Sooty Ant-Tanager
+Driophlox atrimaxillaris_Black-cheeked Ant-Tanager
+Driophlox cristata_Crested Ant-Tanager
+Driophlox fuscicauda_Red-throated Ant-Tanager
+Driophlox gutturalis_Sooty Ant-Tanager
 Habia rubica_红头蚁唐纳雀
 Haematopus ater_南美黑蛎鹬
 Haematopus bachmani_北美黑蛎鹬
@@ -2662,12 +2662,12 @@ Halcyon pileata_蓝翡翠
 Halcyon senegalensis_非洲林翡翠
 Halcyon smyrnensis_白胸翡翠
 Haliaeetus albicilla_白尾海雕
-Haliaeetus humilis_Lesser Fish-Eagle
-Haliaeetus ichthyaetus_Gray-headed Fish-Eagle
+Icthyophaga humilis_Lesser Fish-Eagle
+Icthyophaga ichthyaetus_Gray-headed Fish-Eagle
 Haliaeetus leucocephalus_白头海雕
-Haliaeetus leucogaster_White-bellied Sea-Eagle
+Icthyophaga leucogaster_White-bellied Sea-Eagle
 Haliaeetus pelagicus_虎头海雕
-Haliaeetus vocifer_African Fish-Eagle
+Icthyophaga vocifer_African Fish-Eagle
 Haliastur indus_栗鸢
 Haliastur sphenurus_啸鸢
 Hapalocrex flaviventer_黄胸田鸡
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_斐济树莺
 Horornis seebohmi_菲律宾树莺
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_斑腰叉尾海燕
 Hydrobates leucorhous_白腰叉尾海燕
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_淡喉蚁鹩
 Ithaginis cruentus_血雉
 Ixobrychus cinnamomeus_栗苇鳽
 Ixobrychus dubius_黑背苇鳽
-Ixobrychus eurhythmus_Schrenck's Bittern
+Botaurus eurhythmus_Schrenck's Bittern
 Ixobrychus exilis_姬苇鳽
 Ixobrychus flavicollis_黑鳽
 Ixobrychus involucris_纹背苇鳽
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_赭腹霸鹟
 Mionectes olivaceus_灰橄榄绿纹霸鹟
 Mionectes rufiventris_灰冠霸鹟
 Mionectes striaticollis_纹颈霸鹟
-Mirafra affinis_Jerdon's Bushlark
+Plocealauda affinis_Jerdon's Bushlark
 Mirafra africana_棕颈歌百灵
 Mirafra apiata_振翅歌百灵
-Mirafra assamica_Bengal Bushlark
+Plocealauda assamica_Bengal Bushlark
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_南非歌百灵
-Mirafra erythrocephala_Indochinese Bushlark
-Mirafra erythroptera_Indian Bushlark
+Plocealauda erythrocephala_Indochinese Bushlark
+Plocealauda erythroptera_Indian Bushlark
 Mirafra fasciolata_东振翅歌百灵
 Mirafra javanica_歌百灵
 Mirafra passerina_雀歌百灵
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_白尾蚁鸫
 Neocossyphus rufus_红尾蚁鸫
 Neoctantes niger_黑丛蚁鵙
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_美岛啸鹟
 Pachycephala cinerea_红树啸鹟
 Pachycephala flavifrons_黄额啸鹟
 Pachycephala fuliginosa_西方啸鹟
-Pachycephala fulvotincta_帝汶啸鹟
+Pachycephala calliope_帝汶啸鹟
 Pachycephala griseonota_褐啸鹟
 Pachycephala homeyeri_白臀啸鹟
 Pachycephala hypoxantha_加里啸鹟
@@ -4312,7 +4312,7 @@ Penelope purpurascens_紫冠雉
 Penelope superciliaris_眉纹冠雉
 Penelopides affinis_棉岛犀鸟
 Penelopina nigra_山冠雉
-Peneothello cyanus_蓝灰薮鹟
+Melanodryas cyanus_蓝灰薮鹟
 Peneothello sigillata_白翅薮鹟
 Percnostola arenarum_栗腹蚁鸟
 Percnostola rufifrons_黑头蚁鸟
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_褐腰小霸鹟
 Phyllomyias virescens_绿色小霸鹟
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_长尾姬霸鹟
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_厄瓜多尔姬霸鹟
 Phylloscartes kronei_雷斯姬霸鹟
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_欧氏姬霸鹟
 Phylloscartes parkeri_棕脸姬霸鹟
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_米州姬霸鹟
 Phylloscartes superciliaris_棕额姬霸鹟
 Phylloscartes sylviolus_栗环姬霸鹟
@@ -4860,7 +4860,7 @@ Porphyriops melanops_斑胁水鸡
 Porzana carolina_黑脸田鸡
 Porzana porzana_斑胸田鸡
 Porzana spiloptera_点翅田鸡
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_点斑尾雀
 Premnornis guttuliger_锈翅斑尾雀
 Primolius auricollis_金领金刚鹦鹉
@@ -5018,7 +5018,7 @@ Psittacula krameri_红领绿鹦鹉
 Psittacula longicauda_长尾鹦鹉
 Psittacus erithacus_非洲灰鹦鹉
 Psittinus cyanurus_蓝腰鹦鹉
-Psittiparus gularis_Gray-headed Parrotbill
+Paradoxornis gularis_Gray-headed Parrotbill
 Psophia crepitans_灰翅喇叭声鹤
 Psophia leucoptera_白翅喇叭声鹤
 Psophia viridis_绿翅喇叭声鹤
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_棕腹鵙鹛
 Pteruthius xanthochlorus_淡绿鵙鹛
 Ptilinopus iozonus_橙腹果鸠
-Ptilinopus magnificus_巨果鸠
+Megaloprepia magnifica_巨果鸠
 Ptilinopus melanospilus_黑项果鸠
-Ptilinopus occipitalis_栗耳果鸠
+Ramphiculus occipitalis_栗耳果鸠
 Ptilinopus pelewensis_帕劳果鸠
 Ptilinopus porphyraceus_紫顶果鸠
 Ptilinopus regina_粉顶果鸠
@@ -5938,11 +5938,11 @@ Tchagra senegalus_黑冠红翅鵙
 Tchagra tchagra_南非红翅鵙
 Teledromas fuscus_沙色窜鸟
 Telespiza ultima_尼岛拟管舌雀
-Telophorus bocagei_Gray-green Bushshrike
+Chlorophoneus bocagei_Gray-green Bushshrike
 Telophorus dohertyi_杜氏丛鵙
 Telophorus nigrifrons_黑额丛鵙
 Telophorus olivaceus_暗绿丛鵙
-Telophorus sulfureopectus_Sulphur-breasted Bushshrike
+Chlorophoneus sulfureopectus_Sulphur-breasted Bushshrike
 Telophorus viridis_四色丛鵙
 Telophorus zeylonus_南非丛鵙
 Temnurus temnurus_塔尾树鹊
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_加州弯嘴嘲鸫
 Toxostoma rufum_褐弯嘴嘲鸫
 Trachyphonus darnaudii_东非拟啄木鸟
 Trachyphonus erythrocephalus_红黄拟啄木鸟
-Trachyphonus purpuratus_黄嘴拟啄木鸟
+Trachylaemus goffinii_黄嘴拟啄木鸟
 Trachyphonus vaillantii_南非拟啄木鸟
 Tregellasia capito_淡黄歌鸲鹟
 Treron affinis_灰额绿鸠
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_印尼短尾莺
 Urothraupis stolzmanni_黑背丛雀
 Urotriorchis macrourus_非洲长尾鹰
 Vanellus armatus_黑背麦鸡
-Vanellus cayanus_Pied Lapwing
+Hoploxypterus cayanus_Pied Lapwing
 Vanellus chilensis_凤头距翅麦鸡
 Vanellus cinereus_灰头麦鸡
 Vanellus coronatus_冕麦鸡

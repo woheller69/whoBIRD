@@ -24,19 +24,19 @@ Accipiter bicolor_Bicolored Hawk
 Accipiter cirrocephalus_Collared Sparrowhawk
 Accipiter cooperii_Cooper's Hawk
 Accipiter fasciatus_Brown Goshawk
-Accipiter gentilis_Голям ястреб
+Astur atricapillus_Голям ястреб
 Accipiter gularis_Japanese Sparrowhawk
 Accipiter hiogaster_Variable Goshawk
-Accipiter melanoleucus_Black Goshawk
+Astur melanoleucus_Black Goshawk
 Accipiter minullus_Little Sparrowhawk
 Accipiter nisus_Малък ястреб
-Accipiter novaehollandiae_Gray Goshawk
+Tachyspiza novaehollandiae_Gray Goshawk
 Accipiter poliogaster_Gray-bellied Hawk
 Accipiter soloensis_Chinese Sparrowhawk
 Accipiter striatus_Sharp-shinned Hawk
 Accipiter superciliosus_Tiny Hawk
 Accipiter tachiro_African Goshawk
-Accipiter trinotatus_Spot-tailed Goshawk
+Tachyspiza trinotata_Spot-tailed Goshawk
 Accipiter trivirgatus_Crested Goshawk
 Accipiter virgatus_Besra
 Aceros nipalensis_Rufous-necked Hornbill
@@ -708,7 +708,7 @@ Brachygalba lugubris_Brown Jacamar
 Brachypodius eutilotus_Puff-backed Bulbul
 Brachypodius melanocephalos_Black-headed Bulbul
 Brachypodius melanoleucos_Black-and-white Bulbul
-Brachypodius priocephalus_Gray-headed Bulbul
+Microtarsus priocephalus_Gray-headed Bulbul
 Brachypodius urostictus_Yellow-wattled Bulbul
 Brachypteryx cruralis_Himalayan Shortwing
 Brachypteryx goodfellowi_Taiwan Shortwing
@@ -824,7 +824,7 @@ Cacicus solitarius_Solitary Black Cacique
 Cacicus uropygialis_Scarlet-rumped Cacique
 Cacomantis castaneiventris_Chestnut-breasted Cuckoo
 Cacomantis flabelliformis_Fan-tailed Cuckoo
-Cacomantis leucolophus_White-crowned Cuckoo
+Caliechthrus leucolophus_White-crowned Cuckoo
 Cacomantis merulinus_Plaintive Cuckoo
 Cacomantis pallidus_Pallid Cuckoo
 Cacomantis passerinus_Gray-bellied Cuckoo
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_Whitehead's Broadbill
 Calyptophilus frugivorus_Eastern Chat-Tanager
 Calyptophilus tertius_Western Chat-Tanager
 Calyptorhynchus banksii_Red-tailed Black-Cockatoo
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_Glossy Black-Cockatoo
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_Green-backed Camaroptera
 Camaroptera chloronota_Olive-green Camaroptera
 Camaroptera superciliaris_Yellow-browed Camaroptera
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_Blackish Antbird
 Cercomacroides parkeri_Parker's Antbird
 Cercomacroides serva_Black Antbird
 Cercomacroides tyrannina_Dusky Antbird
-Cercotrichas barbata_Miombo Scrub-Robin
-Cercotrichas coryphoeus_Karoo Scrub-Robin
+Tychaedon barbata_Miombo Scrub-Robin
+Tychaedon coryphoeus_Karoo Scrub-Robin
 Cercotrichas galactotes_Трънковче
 Cercotrichas hartlaubi_Brown-backed Scrub-Robin
 Cercotrichas leucophrys_Red-backed Scrub-Robin
 Cercotrichas paena_Kalahari Scrub-Robin
 Cercotrichas podobe_Черно трънковче
-Cercotrichas quadrivirgata_Bearded Scrub-Robin
-Cercotrichas signata_Brown Scrub-Robin
+Tychaedon quadrivirgata_Bearded Scrub-Robin
+Tychaedon signata_Brown Scrub-Robin
 Certhia americana_Американска дърволазка
 Certhia brachydactyla_Градинска дърволазка
 Certhia discolor_Сикимска дърволазка
@@ -1168,7 +1168,7 @@ Charadrius dubius_Речен дъждосвирец
 Charadrius falklandicus_Two-banded Plover
 Charadrius hiaticula_Пясъчен дъждосвирец
 Charadrius javanicus_Javan Plover
-Charadrius leschenaultii_Greater Sand-Plover
+Anarhynchus leschenaultii_Greater Sand-Plover
 Charadrius melodus_Piping Plover
 Charadrius modestus_Rufous-chested Dotterel
 Charadrius mongolus_Lesser Sand-Plover
@@ -1238,10 +1238,10 @@ Chlorophonia musica_Hispaniolan Euphonia
 Chlorophonia occipitalis_Blue-crowned Chlorophonia
 Chlorophonia pyrrhophrys_Chestnut-breasted Chlorophonia
 Chloropicus fuscescens_Cardinal Woodpecker
-Chloropicus goertae_African Gray Woodpecker
+Dendropicos goertae_African Gray Woodpecker
 Chloropicus griseocephalus_Olive Woodpecker
 Chloropicus namaquus_Bearded Woodpecker
-Chloropicus spodocephalus_Mountain Gray Woodpecker
+Dendropicos spodocephalus_Mountain Gray Woodpecker
 Chloropsis aurifrons_Golden-fronted Leafbird
 Chloropsis cochinchinensis_Javan Leafbird
 Chloropsis cyanopogon_Lesser Green Leafbird
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_Австралийска чайка
 Chroicocephalus philadelphia_Бонапартова чайка
 Chroicocephalus ridibundus_Речна чайка
 Chroicocephalus serranus_Андска чайка
-Chrysococcyx basalis_Horsfield's Bronze-Cuckoo
+Chalcites basalis_Horsfield's Bronze-Cuckoo
 Chrysococcyx caprius_Dideric Cuckoo
 Chrysococcyx cupreus_African Emerald Cuckoo
 Chrysococcyx klaas_Klaas's Cuckoo
-Chrysococcyx lucidus_Shining Bronze-Cuckoo
+Chalcites lucidus_Shining Bronze-Cuckoo
 Chrysococcyx maculatus_Asian Emerald Cuckoo
-Chrysococcyx minutillus_Little Bronze-Cuckoo
+Chalcites minutillus_Little Bronze-Cuckoo
 Chrysococcyx osculans_Black-eared Cuckoo
 Chrysococcyx xanthorhynchus_Violet Cuckoo
 Chrysocolaptes festivus_White-naped Woodpecker
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_Абисинска синявица
 Coracias benghalensis_Бенгалска синявица
 Coracias caudatus_Опашата синявица
 Coracias garrulus_Европейска синявица
-Coracina caesia_Gray Cuckooshrike
+Ceblepyris caesius_Gray Cuckooshrike
 Coracina cinerea_Madagascar Cuckooshrike
 Coracina lineata_Barred Cuckooshrike
 Coracina longicauda_Hooded Cuckooshrike
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_Jamaican Crow
 Corvus leucognaphalus_White-necked Crow
 Corvus macrorhynchos_Large-billed Crow
 Corvus mellori_Little Raven
-Corvus monedula_Чавка
+Coloeus monedula_Чавка
 Corvus nasicus_Cuban Crow
 Corvus orru_Torresian Crow
 Corvus ossifragus_Fish Crow
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_Lark-like Brushrunner
 Coryphospingus cucullatus_Red-crested Finch
 Coryphospingus pileatus_Pileated Finch
 Corythaeola cristata_Great Blue Turaco
-Corythaixoides concolor_Gray Go-away-bird
+Crinifer concolor_Gray Go-away-bird
 Corythaixoides leucogaster_White-bellied Go-away-bird
 Corythopis delalandi_Southern Antpipit
 Corythopis torquatus_Ringed Antpipit
 Corythornis cristatus_Malachite Kingfisher
 Coscoroba coscoroba_Гъши лебед
 Cossypha albicapillus_White-crowned Robin-Chat
-Cossypha anomala_Olive-flanked Robin-Chat
-Cossypha archeri_Archer's Robin-Chat
+Dessonornis anomalus_Olive-flanked Robin-Chat
+Dessonornis archeri_Archer's Robin-Chat
 Cossypha caffra_Cape Robin-Chat
 Cossypha cyanocampter_Blue-shouldered Robin-Chat
 Cossypha dichroa_Chorister Robin-Chat
@@ -1625,7 +1625,7 @@ Cossypha heuglini_White-browed Robin-Chat
 Cossypha humeralis_White-throated Robin-Chat
 Cossypha natalensis_Red-capped Robin-Chat
 Cossypha niveicapilla_Snowy-crowned Robin-Chat
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_Rüppell's Robin-Chat
 Coturnicops noveboracensis_Yellow Rail
 Coturnix coromandelica_Rain Quail
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_Sunda Blue Flycatcher
 Cyornis concretus_White-tailed Flycatcher
 Cyornis glaucicomans_Chinese Blue Flycatcher
 Cyornis hainanus_Hainan Blue Flycatcher
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_Fulvous-chested Jungle Flycatcher
 Cyornis omissus_Sulawesi Blue Flycatcher
 Cyornis pallidipes_White-bellied Blue Flycatcher
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_Малък гвиански ара
 Diuca diuca_Diuca Finch
 Dives dives_Melodious Blackbird
 Dives warczewiczi_Scrub Blackbird
-Dog_Dog
+Canis familiaris_Dog
 Dolichonyx oryzivorus_Bobolink
 Donacobius atricapilla_Black-capped Donacobius
 Donacospiza albifrons_Long-tailed Reed Finch
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_Black-backed Puffback
 Dryoscopus gambensis_Northern Puffback
-Dryotriorchis spectabilis_Congo Serpent-Eagle
+Circaetus spectabilis_Congo Serpent-Eagle
 Dubusia castaneoventris_Chestnut-bellied Mountain Tanager
 Dubusia taeniata_Buff-breasted Mountain Tanager
 Ducula aenea_Green Imperial-Pigeon
@@ -2106,18 +2106,18 @@ Emberiza impetuani_Чучулигова овесарка
 Emberiza lathami_Качулата овесарка
 Emberiza leucocephalos_Белоглава овесарка
 Emberiza melanocephala_Черноглава овесарка
-Emberiza pallasi_Полярна овесарка
+Schoeniclus pallasi_Полярна овесарка
 Emberiza pusilla_Малка овесарка
 Emberiza rustica_Белогуша овесарка
 Emberiza sahari_Сахарска овесарка
-Emberiza schoeniclus_Тръстикова овесарка
+Schoeniclus schoeniclus_Тръстикова овесарка
 Emberiza spodocephala_Чернолика овесарка
 Emberiza stewarti_Туркменска овесарка
 Emberiza striolata_Пъстроглава овесарка
 Emberiza sulphurata_Японска жълта овесарка
 Emberiza tahapisi_Планинска овесарка
 Emberiza tristrami_Тристрамова овесарка
-Emberiza variabilis_Камчатска овесарка
+Schoeniclus variabilis_Камчатска овесарка
 Emberiza yessoensis_Японска тръстикова овесарка
 Emberizoides herbicola_Wedge-tailed Grass-Finch
 Emberizoides ypiranganus_Lesser Grass-Finch
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_Northern Red Bishop
 Euplectes hordeaceus_Black-winged Bishop
 Euplectes orix_Ориксов тъкач
 Euplectes progne_Long-tailed Widowbird
-Eupodotis afra_Black Bustard
-Eupodotis afraoides_White-quilled Bustard
+Afrotis afra_Black Bustard
+Afrotis afraoides_White-quilled Bustard
 Eupodotis caerulescens_Blue Bustard
-Eupodotis ruficrista_Red-crested Bustard
+Lophotis ruficrista_Red-crested Bustard
 Eupodotis senegalensis_White-bellied Bustard
-Eupodotis vigorsii_Karoo Bustard
+Heterotetrax vigorsii_Karoo Bustard
 Eupsittula aurea_Оранжевоока аратинга
 Eupsittula cactorum_Кактусова аратинга
 Eupsittula canicularis_Оранжевочела аратинга
@@ -2630,10 +2630,10 @@ Gyps fulvus_Белоглав лешояд
 Gyps himalayensis_Хималайски лешояд
 Gypsophila brevicaudata_Streaked Wren-Babbler
 Gypsophila rufipectus_Rusty-breasted Wren-Babbler
-Habia atrimaxillaris_Black-cheeked Ant-Tanager
-Habia cristata_Crested Ant-Tanager
-Habia fuscicauda_Red-throated Ant-Tanager
-Habia gutturalis_Sooty Ant-Tanager
+Driophlox atrimaxillaris_Black-cheeked Ant-Tanager
+Driophlox cristata_Crested Ant-Tanager
+Driophlox fuscicauda_Red-throated Ant-Tanager
+Driophlox gutturalis_Sooty Ant-Tanager
 Habia rubica_Red-crowned Ant-Tanager
 Haematopus ater_Blackish Oystercatcher
 Haematopus bachmani_Black Oystercatcher
@@ -2662,12 +2662,12 @@ Halcyon pileata_Black-capped Kingfisher
 Halcyon senegalensis_Woodland Kingfisher
 Halcyon smyrnensis_Белогръдо земеродно рибарче
 Haliaeetus albicilla_Морски орел
-Haliaeetus humilis_Lesser Fish-Eagle
-Haliaeetus ichthyaetus_Gray-headed Fish-Eagle
+Icthyophaga humilis_Lesser Fish-Eagle
+Icthyophaga ichthyaetus_Gray-headed Fish-Eagle
 Haliaeetus leucocephalus_Белоглав орел
-Haliaeetus leucogaster_White-bellied Sea-Eagle
+Icthyophaga leucogaster_White-bellied Sea-Eagle
 Haliaeetus pelagicus_Стелеров морски орел
-Haliaeetus vocifer_African Fish-Eagle
+Icthyophaga vocifer_African Fish-Eagle
 Haliastur indus_Браминска каня
 Haliastur sphenurus_Whistling Kite
 Hapalocrex flaviventer_Yellow-breasted Crake
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_Fiji Bush Warbler
 Horornis seebohmi_Philippine Bush Warbler
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Human non-vocal
-Human vocal_Human vocal
+Homo sapiens_Human vocal
 Human whistle_Human whistle
 Hydrobates castro_Мадейранска вълнолюбка
 Hydrobates leucorhous_Северна вълнолюбка
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_Plain-throated Antwren
 Ithaginis cruentus_Blood Pheasant
 Ixobrychus cinnamomeus_Канелен малък воден бик
 Ixobrychus dubius_Австралийски малък воден бик
-Ixobrychus eurhythmus_Амурски малък воден бик
+Botaurus eurhythmus_Амурски малък воден бик
 Ixobrychus exilis_Американски малък воден бик
 Ixobrychus flavicollis_Черен малък воден бик
 Ixobrychus involucris_Южноамерикански малък воден бик
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_Ochre-bellied Flycatcher
 Mionectes olivaceus_Olive-streaked Flycatcher
 Mionectes rufiventris_Gray-hooded Flycatcher
 Mionectes striaticollis_Streak-necked Flycatcher
-Mirafra affinis_Jerdon's Bushlark
+Plocealauda affinis_Jerdon's Bushlark
 Mirafra africana_Rufous-naped Lark
 Mirafra apiata_Cape Clapper Lark
-Mirafra assamica_Bengal Bushlark
+Plocealauda assamica_Bengal Bushlark
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_Melodious Lark
-Mirafra erythrocephala_Indochinese Bushlark
-Mirafra erythroptera_Indian Bushlark
+Plocealauda erythrocephala_Indochinese Bushlark
+Plocealauda erythroptera_Indian Bushlark
 Mirafra fasciolata_Eastern Clapper Lark
 Mirafra javanica_Singing Bushlark
 Mirafra passerina_Monotonous Lark
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_White-tailed Ant-Thrush
 Neocossyphus rufus_Red-tailed Ant-Thrush
 Neoctantes niger_Black Bushbird
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_Vanuatu Whistler
 Pachycephala cinerea_Mangrove Whistler
 Pachycephala flavifrons_Samoan Whistler
 Pachycephala fuliginosa_Western Whistler
-Pachycephala fulvotincta_Rusty-breasted Whistler
+Pachycephala calliope_Rusty-breasted Whistler
 Pachycephala griseonota_Drab Whistler
 Pachycephala homeyeri_White-vented Whistler
 Pachycephala hypoxantha_Bornean Whistler
@@ -4312,7 +4312,7 @@ Penelope purpurascens_Crested Guan
 Penelope superciliaris_Rusty-margined Guan
 Penelopides affinis_Mindanao Hornbill
 Penelopina nigra_Highland Guan
-Peneothello cyanus_Blue-gray Robin
+Melanodryas cyanus_Blue-gray Robin
 Peneothello sigillata_White-winged Robin
 Percnostola arenarum_Allpahuayo Antbird
 Percnostola rufifrons_Black-headed Antbird
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_Tawny-rumped Tyrannulet
 Phyllomyias virescens_Greenish Tyrannulet
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_Alagoas Tyrannulet
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_Ecuadorian Tyrannulet
 Phylloscartes kronei_Restinga Tyrannulet
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_Oustalet's Tyrannulet
 Phylloscartes parkeri_Cinnamon-faced Tyrannulet
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_Minas Gerais Tyrannulet
 Phylloscartes superciliaris_Rufous-browed Tyrannulet
 Phylloscartes sylviolus_Bay-ringed Tyrannulet
@@ -4860,7 +4860,7 @@ Porphyriops melanops_Spot-flanked Gallinule
 Porzana carolina_Каролинска пъструшка
 Porzana porzana_Голяма пъструшка
 Porzana spiloptera_Dot-winged Crake
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_Spotted Barbtail
 Premnornis guttuliger_Rusty-winged Barbtail
 Primolius auricollis_Златен ара
@@ -5018,7 +5018,7 @@ Psittacula krameri_Малък огърличен папагал
 Psittacula longicauda_Дългоопашат александър
 Psittacus erithacus_Обикновено жако
 Psittinus cyanurus_Blue-rumped Parrot
-Psittiparus gularis_Gray-headed Parrotbill
+Paradoxornis gularis_Gray-headed Parrotbill
 Psophia crepitans_Gray-winged Trumpeter
 Psophia leucoptera_Pale-winged Trumpeter
 Psophia viridis_Dark-winged Trumpeter
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_Black-headed Shrike-Babbler
 Pteruthius xanthochlorus_Green Shrike-Babbler
 Ptilinopus iozonus_Orange-bellied Fruit-Dove
-Ptilinopus magnificus_Wompoo Fruit-Dove
+Megaloprepia magnifica_Wompoo Fruit-Dove
 Ptilinopus melanospilus_Black-naped Fruit-Dove
-Ptilinopus occipitalis_Yellow-breasted Fruit-Dove
+Ramphiculus occipitalis_Yellow-breasted Fruit-Dove
 Ptilinopus pelewensis_Palau Fruit-Dove
 Ptilinopus porphyraceus_Crimson-crowned Fruit-Dove
 Ptilinopus regina_Rose-crowned Fruit-Dove
@@ -5938,11 +5938,11 @@ Tchagra senegalus_Сенегалска чагра
 Tchagra tchagra_Southern Tchagra
 Teledromas fuscus_Sandy Gallito
 Telespiza ultima_Nihoa Finch
-Telophorus bocagei_Gray-green Bushshrike
+Chlorophoneus bocagei_Gray-green Bushshrike
 Telophorus dohertyi_Doherty's Bushshrike
 Telophorus nigrifrons_Black-fronted Bushshrike
 Telophorus olivaceus_Olive Bushshrike
-Telophorus sulfureopectus_Sulphur-breasted Bushshrike
+Chlorophoneus sulfureopectus_Sulphur-breasted Bushshrike
 Telophorus viridis_Four-colored Bushshrike
 Telophorus zeylonus_Bokmakierie
 Temnurus temnurus_Ratchet-tailed Treepie
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_California Thrasher
 Toxostoma rufum_Brown Thrasher
 Trachyphonus darnaudii_D'Arnaud's Barbet
 Trachyphonus erythrocephalus_Red-and-yellow Barbet
-Trachyphonus purpuratus_Yellow-billed Barbet
+Trachylaemus goffinii_Yellow-billed Barbet
 Trachyphonus vaillantii_Crested Barbet
 Tregellasia capito_Pale-yellow Robin
 Treron affinis_Gray-fronted Green-Pigeon
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_Bornean Stubtail
 Urothraupis stolzmanni_Black-backed Bush Tanager
 Urotriorchis macrourus_Long-tailed Hawk
 Vanellus armatus_Blacksmith Lapwing
-Vanellus cayanus_Pied Lapwing
+Hoploxypterus cayanus_Pied Lapwing
 Vanellus chilensis_Southern Lapwing
 Vanellus cinereus_Gray-headed Lapwing
 Vanellus coronatus_Crowned Lapwing

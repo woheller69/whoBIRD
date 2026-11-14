@@ -26,12 +26,12 @@ import java.security.NoSuchAlgorithmException;
 public class Downloader {
     static final String modelFILE = "model.tflite";
     static final String metaModelFILE = "metaModel.tflite";
-    static final String model16URL = "https://zenodo.org/records/20703646/files/BirdNET+_V3.0-preview3.1_Global_11K_FP16_pruned.tflite";
+    static final String model16URL = "https://zenodo.org/records/24162518/files/BirdNET+_V3.0_Global_12K_FP16_pruned.tflite";
     static final String metaModelURL = "https://raw.githubusercontent.com/woheller69/whoBIRD-TFlite/master/BirdNET_GLOBAL_6K_V2.4_MData_Model_V2_FP16.tflite";
-    static final String model16MD5 = "8bf01e90e2ddf043fc3c161bb0fbbb9e";
+    static final String model16MD5 = "3efd27ebf17a14996035564c4f4b944e";
     static final String metaModelMD5 ="c12c2baafe4d1bb098e65291bfcb2f8c";
     static final String metaModelV1MD5 ="f1a078ae0f244a1ff5a8f1ccb645c805";
-    static long model16Size = 70461476;
+    static long model16Size = 70884524;
     static final long metaModelSize = 14770468;
     static long downloadModelSize = 0;
     static long downloadMetaModelSize = 0;

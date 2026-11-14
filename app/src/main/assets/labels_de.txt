@@ -24,19 +24,19 @@ Accipiter bicolor_Zweifarbhabicht
 Accipiter cirrocephalus_Halsringsperber
 Accipiter cooperii_Rundschwanzhabicht
 Accipiter fasciatus_Bänderhabicht
-Accipiter gentilis_Habicht
+Astur atricapillus_Habicht
 Accipiter gularis_Trillersperber
 Accipiter hiogaster_Inselhabicht
-Accipiter melanoleucus_Dominohabicht
+Astur melanoleucus_Dominohabicht
 Accipiter minullus_Zwergsperber
 Accipiter nisus_Sperber
-Accipiter novaehollandiae_Grauhabicht
+Tachyspiza novaehollandiae_Grauhabicht
 Accipiter poliogaster_Graubauchhabicht
 Accipiter soloensis_Froschsperber
 Accipiter striatus_Eckschwanzsperber
 Accipiter superciliosus_Tiny Hawk
 Accipiter tachiro_Afrikahabicht
-Accipiter trinotatus_Fleckschwanzsperber
+Tachyspiza trinotata_Fleckschwanzsperber
 Accipiter trivirgatus_Schopfhabicht
 Accipiter virgatus_Besrasperber
 Aceros nipalensis_Nepalhornvogel
@@ -708,7 +708,7 @@ Brachygalba lugubris_Braunbrust-Glanzvogel
 Brachypodius eutilotus_Flauschrückenbülbül
 Brachypodius melanocephalos_Schwarzkopfbülbül
 Brachypodius melanoleucos_Trauerbülbül
-Brachypodius priocephalus_Graukopfbülbül
+Microtarsus priocephalus_Graukopfbülbül
 Brachypodius urostictus_Gelbbrillenbülbül
 Brachypteryx cruralis_Himalaja-Bergkurzflügel
 Brachypteryx goodfellowi_Taiwan-Bergkurzflügel
@@ -824,7 +824,7 @@ Cacicus solitarius_Stahlkassike
 Cacicus uropygialis_Zinnoberbürzelkassike
 Cacomantis castaneiventris_Rostbauchkuckuck
 Cacomantis flabelliformis_Fächerschwanzkuckuck
-Cacomantis leucolophus_Weißscheitelkuckuck
+Caliechthrus leucolophus_Weißscheitelkuckuck
 Cacomantis merulinus_Klagekuckuck
 Cacomantis pallidus_Blasskuckuck
 Cacomantis passerinus_Graubauchkuckuck
@@ -898,9 +898,9 @@ Calyptomena whiteheadi_Schwarzkehl-Breitrachen
 Calyptophilus frugivorus_Dominikanerschmätzertangare
 Calyptophilus tertius_Haitischmätzertangare
 Calyptorhynchus banksii_Rotschwanz-Rabenkakadu
-Calyptorhynchus funereus_Yellow-tailed Black-Cockatoo
+Zanda funerea_Yellow-tailed Black-Cockatoo
 Calyptorhynchus lathami_Braunkopf-Rabenkakadu
-Calyptorhynchus latirostris_Carnaby's Black-Cockatoo
+Zanda latirostris_Carnaby's Black-Cockatoo
 Camaroptera brachyura_Grünmantel-Bogenflügel
 Camaroptera chloronota_Olivbogenflügel
 Camaroptera superciliaris_Gelbbrauen-Bogenflügel
@@ -1101,15 +1101,15 @@ Cercomacroides nigrescens_Schwarzgrau-Ameisenfänger
 Cercomacroides parkeri_Parkerameisenfänger
 Cercomacroides serva_Schwarzbrust-Ameisenfänger
 Cercomacroides tyrannina_Grauameisenfänger
-Cercotrichas barbata_Bartheckensänger
-Cercotrichas coryphoeus_Karooheckensänger
+Tychaedon barbata_Bartheckensänger
+Tychaedon coryphoeus_Karooheckensänger
 Cercotrichas galactotes_Heckensänger
 Cercotrichas hartlaubi_Hartlaubheckensänger
 Cercotrichas leucophrys_Weißbrauen-Heckensänger
 Cercotrichas paena_Kalahariheckensänger
 Cercotrichas podobe_Rußheckensänger
-Cercotrichas quadrivirgata_Streifenkopf-Heckensänger
-Cercotrichas signata_Natalheckensänger
+Tychaedon quadrivirgata_Streifenkopf-Heckensänger
+Tychaedon signata_Natalheckensänger
 Certhia americana_Amerikabaumläufer
 Certhia brachydactyla_Gartenbaumläufer
 Certhia discolor_Sikkimbaumläufer
@@ -1168,7 +1168,7 @@ Charadrius dubius_Flussregenpfeifer
 Charadrius falklandicus_Falkland-Regenpfeifer
 Charadrius hiaticula_Sandregenpfeifer
 Charadrius javanicus_Javaregenpfeifer
-Charadrius leschenaultii_Wüstenregenpfeifer
+Anarhynchus leschenaultii_Wüstenregenpfeifer
 Charadrius melodus_Flötenregenpfeifer
 Charadrius modestus_Rotbrust-Regenpfeifer
 Charadrius mongolus_Mongolenregenpfeifer
@@ -1238,10 +1238,10 @@ Chlorophonia musica_Hispaniolaorganist
 Chlorophonia occipitalis_Blauscheitelorganist
 Chlorophonia pyrrhophrys_Schwarzbrauenorganist
 Chloropicus fuscescens_Kardinalspecht
-Chloropicus goertae_Graubrustspecht
+Dendropicos goertae_Graubrustspecht
 Chloropicus griseocephalus_Goldrückenspecht
 Chloropicus namaquus_Namaspecht
-Chloropicus spodocephalus_Graukopfspecht
+Dendropicos spodocephalus_Graukopfspecht
 Chloropsis aurifrons_Goldstirn-Blattvogel
 Chloropsis cochinchinensis_Javablattvogel
 Chloropsis cyanopogon_Blaubart-Blattvogel
@@ -1276,13 +1276,13 @@ Chroicocephalus novaehollandiae_Silberkopfmöwe
 Chroicocephalus philadelphia_Bonapartemöwe
 Chroicocephalus ridibundus_Lachmöwe
 Chroicocephalus serranus_Andenmöwe
-Chrysococcyx basalis_Rotschwanzkuckuck
+Chalcites basalis_Rotschwanzkuckuck
 Chrysococcyx caprius_Goldkuckuck
 Chrysococcyx cupreus_Smaragdkuckuck
 Chrysococcyx klaas_Klaaskuckuck
-Chrysococcyx lucidus_Glanzbronzekuckuck
+Chalcites lucidus_Glanzbronzekuckuck
 Chrysococcyx maculatus_Prachtkuckuck
-Chrysococcyx minutillus_Grünscheitel-Bronzekuckuck
+Chalcites minutillus_Grünscheitel-Bronzekuckuck
 Chrysococcyx osculans_Schwarzohrkuckuck
 Chrysococcyx xanthorhynchus_Amethystkuckuck
 Chrysocolaptes festivus_Goldschulterspecht
@@ -1553,7 +1553,7 @@ Coracias abyssinicus_Senegalracke
 Coracias benghalensis_Bengalenracke
 Coracias caudatus_Gabelracke
 Coracias garrulus_Blauracke
-Coracina caesia_Waldraupenfänger
+Ceblepyris caesius_Waldraupenfänger
 Coracina cinerea_Madagaskarraupenfänger
 Coracina lineata_Gelbaugen-Raupenfänger
 Coracina longicauda_Langschwanz-Raupenfänger
@@ -1590,7 +1590,7 @@ Corvus jamaicensis_Jamaikakrähe
 Corvus leucognaphalus_Antillenkrähe
 Corvus macrorhynchos_Dschungelkrähe
 Corvus mellori_Gesellschaftskrähe
-Corvus monedula_Dohle
+Coloeus monedula_Dohle
 Corvus nasicus_Kubakrähe
 Corvus orru_Torreskrähe
 Corvus ossifragus_Fischkrähe
@@ -1609,15 +1609,15 @@ Coryphistera alaudina_Chacobuschläufer
 Coryphospingus cucullatus_Rothaubentangare
 Coryphospingus pileatus_Silberhaubentangare
 Corythaeola cristata_Riesenturako
-Corythaixoides concolor_Graulärmvogel
+Crinifer concolor_Graulärmvogel
 Corythaixoides leucogaster_Weißbauch-Lärmvogel
 Corythopis delalandi_Schwarzbrusttyrann
 Corythopis torquatus_Brustbandtyrann
 Corythornis cristatus_Haubenzwergfischer
 Coscoroba coscoroba_Coscorobaschwan
 Cossypha albicapillus_Weißscheitelrötel
-Cossypha anomala_Olivflankenrötel
-Cossypha archeri_Ruwenzorirötel
+Dessonornis anomalus_Olivflankenrötel
+Dessonornis archeri_Ruwenzorirötel
 Cossypha caffra_Kaprötel
 Cossypha cyanocampter_Blauschulterrötel
 Cossypha dichroa_Spottrötel
@@ -1625,7 +1625,7 @@ Cossypha heuglini_Weißbrauenrötel
 Cossypha humeralis_Weißkehlrötel
 Cossypha natalensis_Natalrötel
 Cossypha niveicapilla_Schneescheitelrötel
-Cossypha polioptera_Gray-winged Robin-Chat
+Sheppardia polioptera_Gray-winged Robin-Chat
 Cossypha semirufa_Braunrückenrötel
 Coturnicops noveboracensis_Gelbralle
 Coturnix coromandelica_Regenwachtel
@@ -1810,7 +1810,7 @@ Cyornis caerulatus_Sundablauschnäpper
 Cyornis concretus_Weißschwanz-Blauschnäpper
 Cyornis glaucicomans_Chinablauschnäpper
 Cyornis hainanus_Hainanblauschnäpper
-Cyornis hoevelli_Blue-fronted Flycatcher
+Eumyias hoevelli_Blue-fronted Flycatcher
 Cyornis olivaceus_Olivrücken-Dschungelschnäpper
 Cyornis omissus_Sulawesiblauschnäpper
 Cyornis pallidipes_Keralablauschnäpper
@@ -1947,7 +1947,7 @@ Diopsittaca nobilis_Zwergara
 Diuca diuca_Diucaammertangare
 Dives dives_Trauerstärling
 Dives warczewiczi_Buschstärling
-Dog_Hund
+Canis familiaris_Hund
 Dolichonyx oryzivorus_Reisstärling
 Donacobius atricapilla_Rohrspötter
 Donacospiza albifrons_Riedammertangare
@@ -2010,7 +2010,7 @@ Dryophytes squirellus_Squirrel Treefrog
 Dryophytes versicolor_Gray Treefrog
 Dryoscopus cubla_Schwarzmantel-Schneeballwürger
 Dryoscopus gambensis_Gambia-Schneeballwürger
-Dryotriorchis spectabilis_Kongoschlangenadler
+Circaetus spectabilis_Kongoschlangenadler
 Dubusia castaneoventris_Orangebauch-Bergtangare
 Dubusia taeniata_Silberbrauen-Bergtangare
 Ducula aenea_Bronzefruchttaube
@@ -2106,18 +2106,18 @@ Emberiza impetuani_Lerchenammer
 Emberiza lathami_Haubenammer
 Emberiza leucocephalos_Fichtenammer
 Emberiza melanocephala_Kappenammer
-Emberiza pallasi_Pallasammer
+Schoeniclus pallasi_Pallasammer
 Emberiza pusilla_Zwergammer
 Emberiza rustica_Waldammer
 Emberiza sahari_Hausammer
-Emberiza schoeniclus_Rohrammer
+Schoeniclus schoeniclus_Rohrammer
 Emberiza spodocephala_Maskenammer
 Emberiza stewarti_Silberkopfammer
 Emberiza striolata_Wüstenammer
 Emberiza sulphurata_Schwefelammer
 Emberiza tahapisi_Bergammer
 Emberiza tristrami_Tristramammer
-Emberiza variabilis_Bambusammer
+Schoeniclus variabilis_Bambusammer
 Emberiza yessoensis_Mandschurenammer
 Emberizoides herbicola_Keilschwanz-Grastangare
 Emberizoides ypiranganus_Olivmantel-Grastangare
@@ -2257,12 +2257,12 @@ Euplectes franciscanus_Feuerweber
 Euplectes hordeaceus_Flammenweber
 Euplectes orix_Oryxweber
 Euplectes progne_Hahnenschweifweber
-Eupodotis afra_Gackeltrappe
-Eupodotis afraoides_Weißflügeltrappe
+Afrotis afra_Gackeltrappe
+Afrotis afraoides_Weißflügeltrappe
 Eupodotis caerulescens_Blautrappe
-Eupodotis ruficrista_Rotschopftrappe
+Lophotis ruficrista_Rotschopftrappe
 Eupodotis senegalensis_Senegaltrappe
-Eupodotis vigorsii_Knarrtrappe
+Heterotetrax vigorsii_Knarrtrappe
 Eupsittula aurea_Goldstirnsittich
 Eupsittula cactorum_Kaktussittich
 Eupsittula canicularis_Elfenbeinsittich
@@ -2630,10 +2630,10 @@ Gyps fulvus_Gänsegeier
 Gyps himalayensis_Schneegeier
 Gypsophila brevicaudata_Stutzschwanzdrossling
 Gypsophila rufipectus_Kastanienbauchdrossling
-Habia atrimaxillaris_Schwarzwangenkardinal
-Habia cristata_Scharlachhaubenkardinal
-Habia fuscicauda_Rotkehlkardinal
-Habia gutturalis_Graurückenkardinal
+Driophlox atrimaxillaris_Schwarzwangenkardinal
+Driophlox cristata_Scharlachhaubenkardinal
+Driophlox fuscicauda_Rotkehlkardinal
+Driophlox gutturalis_Graurückenkardinal
 Habia rubica_Karmesinkardinal
 Haematopus ater_Chileausternfischer
 Haematopus bachmani_Klippenausternfischer
@@ -2662,12 +2662,12 @@ Halcyon pileata_Kappenliest
 Halcyon senegalensis_Senegalliest
 Halcyon smyrnensis_Braunliest
 Haliaeetus albicilla_Seeadler
-Haliaeetus humilis_Braunschwanz-Seeadler
-Haliaeetus ichthyaetus_Graukopf-Seeadler
+Icthyophaga humilis_Braunschwanz-Seeadler
+Icthyophaga ichthyaetus_Graukopf-Seeadler
 Haliaeetus leucocephalus_Weißkopf-Seeadler
-Haliaeetus leucogaster_Weißbauch-Seeadler
+Icthyophaga leucogaster_Weißbauch-Seeadler
 Haliaeetus pelagicus_Riesenseeadler
-Haliaeetus vocifer_Schreiseeadler
+Icthyophaga vocifer_Schreiseeadler
 Haliastur indus_Brahmanenmilan
 Haliastur sphenurus_Keilschwanzmilan
 Hapalocrex flaviventer_Gelbbrust-Sumpfhuhn
@@ -2817,7 +2817,7 @@ Horornis ruficapilla_Fidschiseidensänger
 Horornis seebohmi_Luzonseidensänger
 Horornis vulcanius_Sunda Bush Warbler
 Human non-vocal_Mensch Geräusch
-Human vocal_Mensch Stimme
+Homo sapiens_Mensch Stimme
 Human whistle_Mensch Pfeifen
 Hydrobates castro_Madeirawellenläufer
 Hydrobates leucorhous_Wellenläufer
@@ -2971,7 +2971,7 @@ Isleria hauxwelli_Graubauch-Ameisenschlüpfer
 Ithaginis cruentus_Blutfasan
 Ixobrychus cinnamomeus_Zimtdommel
 Ixobrychus dubius_Schwarzmanteldommel
-Ixobrychus eurhythmus_Mandschurendommel
+Botaurus eurhythmus_Mandschurendommel
 Ixobrychus exilis_Indianerdommel
 Ixobrychus flavicollis_Schwarzdommel
 Ixobrychus involucris_Streifendommel
@@ -3602,14 +3602,14 @@ Mionectes oleagineus_Ockerbauch-Pipratyrann
 Mionectes olivaceus_Olivkopf-Pipratyrann
 Mionectes rufiventris_Graukopf-Pipratyrann
 Mionectes striaticollis_Graukappen-Pipratyrann
-Mirafra affinis_Jerdonlerche
+Plocealauda affinis_Jerdonlerche
 Mirafra africana_Kurzhaubenlerche
 Mirafra apiata_Grasklapperlerche
-Mirafra assamica_Bengalenlerche
+Plocealauda assamica_Bengalenlerche
 Mirafra cantillans_Singing Bushlark
 Mirafra cheniana_Spottlerche
-Mirafra erythrocephala_Indochinalerche
-Mirafra erythroptera_Rotflügellerche
+Plocealauda erythrocephala_Indochinalerche
+Plocealauda erythroptera_Rotflügellerche
 Mirafra fasciolata_Ostklapperlerche
 Mirafra javanica_Horsfieldlerche
 Mirafra passerina_Sperlingslerche
@@ -3871,8 +3871,8 @@ Neoconocephalus bivocatus_False Robust Conehead
 Neoconocephalus ensiger_Sword-bearing Conehead
 Neoconocephalus retusus_Round-tipped Conehead
 Neoconocephalus robustus_Robust Conehead
-Neocossyphus finschi_Finsch's Flycatcher-Thrush
-Neocossyphus fraseri_Rufous Flycatcher-Thrush
+Stizorhina finschi_Finsch's Flycatcher-Thrush
+Stizorhina fraseri_Rufous Flycatcher-Thrush
 Neocossyphus poensis_Weißschwanz-Fuchsdrossel
 Neocossyphus rufus_Rotschwanz-Fuchsdrossel
 Neoctantes niger_Buschameisenwürger
@@ -4166,7 +4166,7 @@ Pachycephala chlorura_Melanesiendickkopf
 Pachycephala cinerea_Schnäpperdickkopf
 Pachycephala flavifrons_Diademdickkopf
 Pachycephala fuliginosa_Ramsaydickkopf
-Pachycephala fulvotincta_Goldbauch-Dickkopf
+Pachycephala calliope_Goldbauch-Dickkopf
 Pachycephala griseonota_Molukkendickkopf
 Pachycephala homeyeri_Braunbrust-Dickkopf
 Pachycephala hypoxantha_Borneodickkopf
@@ -4312,7 +4312,7 @@ Penelope purpurascens_Haubenguan
 Penelope superciliaris_Weißstirnguan
 Penelopides affinis_Tariktikhornvogel
 Penelopina nigra_Schluchtenguan
-Peneothello cyanus_Schieferdickichtschnäpper
+Melanodryas cyanus_Schieferdickichtschnäpper
 Peneothello sigillata_Spiegeldickichtschnäpper
 Percnostola arenarum_Einfarb-Ameisenvogel
 Percnostola rufifrons_Schwarzscheitel-Ameisenvogel
@@ -4512,16 +4512,16 @@ Phyllomyias uropygialis_Zimtbürzel-Kleintyrann
 Phyllomyias virescens_Grünrücken-Kleintyrann
 Phyllopalpus pulchellus_Handsome Trig
 Phylloscartes ceciliae_Alagoaslaubtyrann
-Phylloscartes difficilis_Serra do Mar Tyrannulet
-Phylloscartes eximius_Southern Bristle-Tyrant
+Pogonotriccus difficilis_Serra do Mar Tyrannulet
+Pogonotriccus eximius_Southern Bristle-Tyrant
 Phylloscartes gualaquizae_Graukronen-Laubtyrann
 Phylloscartes kronei_Uferlaubtyrann
-Phylloscartes lanyoni_Antioquia Bristle-Tyrant
-Phylloscartes ophthalmicus_Marble-faced Bristle-Tyrant
+Pogonotriccus lanyoni_Antioquia Bristle-Tyrant
+Pogonotriccus ophthalmicus_Marble-faced Bristle-Tyrant
 Phylloscartes oustaleti_Gelbohr-Laubtyrann
 Phylloscartes parkeri_Zimtgesicht-Laubtyrann
-Phylloscartes paulista_Sao Paulo Tyrannulet
-Phylloscartes poecilotis_Variegated Bristle-Tyrant
+Pogonotriccus paulista_Sao Paulo Tyrannulet
+Pogonotriccus poecilotis_Variegated Bristle-Tyrant
 Phylloscartes roquettei_Gelbbürzel-Laubtyrann
 Phylloscartes superciliaris_Weißwangen-Laubtyrann
 Phylloscartes sylviolus_Rostring-Laubtyrann
@@ -4860,7 +4860,7 @@ Porphyriops melanops_Maskenteichhuhn
 Porzana carolina_Carolinasumpfhuhn
 Porzana porzana_Tüpfelsumpfhuhn
 Porzana spiloptera_Fleckensumpfhuhn
-Power tools_Power tools
+Power tool_Power tools
 Premnoplex brunnescens_Hellkehl-Stachelschwanz
 Premnornis guttuliger_Rostschwingen-Blattspäher
 Primolius auricollis_Halsbandara
@@ -5018,7 +5018,7 @@ Psittacula krameri_Halsbandsittich
 Psittacula longicauda_Langschwanzsittich
 Psittacus erithacus_Graupapagei
 Psittinus cyanurus_Rotachselpapagei
-Psittiparus gularis_Graukopf-Papageimeise
+Paradoxornis gularis_Graukopf-Papageimeise
 Psophia crepitans_Grauflügel-Trompetervogel
 Psophia leucoptera_Weißflügel-Trompetervogel
 Psophia viridis_Grünflügel-Trompetervogel
@@ -5087,9 +5087,9 @@ Pteruthius ripleyi_Himalayan Shrike-Babbler
 Pteruthius rufiventer_Rotbauch-Würgervireo
 Pteruthius xanthochlorus_Grünwürgervireo
 Ptilinopus iozonus_Orangebauch-Fruchttaube
-Ptilinopus magnificus_Purpurbrust-Fruchttaube
+Megaloprepia magnifica_Purpurbrust-Fruchttaube
 Ptilinopus melanospilus_Schwarznacken-Fruchttaube
-Ptilinopus occipitalis_Gelbbrust-Fruchttaube
+Ramphiculus occipitalis_Gelbbrust-Fruchttaube
 Ptilinopus pelewensis_Palaufruchttaube
 Ptilinopus porphyraceus_Purpurscheitel-Fruchttaube
 Ptilinopus regina_Königsfruchttaube
@@ -5938,11 +5938,11 @@ Tchagra senegalus_Senegaltschagra
 Tchagra tchagra_Kaptschagra
 Teledromas fuscus_Fahltapaculo
 Telespiza ultima_Nihoakleidervogel
-Telophorus bocagei_Bocagewürger
+Chlorophoneus bocagei_Bocagewürger
 Telophorus dohertyi_Rotstirnwürger
 Telophorus nigrifrons_Graustirnwürger
 Telophorus olivaceus_Olivwürger
-Telophorus sulfureopectus_Orangebrustwürger
+Chlorophoneus sulfureopectus_Orangebrustwürger
 Telophorus viridis_Doppelbandwürger
 Telophorus zeylonus_Bokmakiriwürger
 Temnurus temnurus_Leiterschwanzelster
@@ -6119,7 +6119,7 @@ Toxostoma redivivum_Kalifornienspottdrossel
 Toxostoma rufum_Rotspottdrossel
 Trachyphonus darnaudii_Ohrfleck-Bartvogel
 Trachyphonus erythrocephalus_Flammenkopf-Bartvogel
-Trachyphonus purpuratus_Gelbschnabel-Bartvogel
+Trachylaemus goffinii_Gelbschnabel-Bartvogel
 Trachyphonus vaillantii_Haubenbartvogel
 Tregellasia capito_Graugesichtschnäpper
 Treron affinis_Graustirn-Grüntaube
@@ -6346,7 +6346,7 @@ Urosphena whiteheadi_Borneostutzschwanz
 Urothraupis stolzmanni_Weißkehltangare
 Urotriorchis macrourus_Langschwanzhabicht
 Vanellus armatus_Schmiedekiebitz
-Vanellus cayanus_Cayennekiebitz
+Hoploxypterus cayanus_Cayennekiebitz
 Vanellus chilensis_Bronzekiebitz
 Vanellus cinereus_Graukopfkiebitz
 Vanellus coronatus_Kronenkiebitz
