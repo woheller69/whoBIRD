@@ -114,6 +114,8 @@ class SoundClassifier(
   /** Names of the model's output classes.  */
   lateinit var labelList: List<String>
 
+  private lateinit var eBirdList: List<String>
+
   lateinit var convertList: List<Int>
 
   /** Names of the model's output classes.  */
@@ -160,6 +162,7 @@ class SoundClassifier(
   init {
     loadLabels(context)
     loadAssetList(context)
+    loadEbirdList(context)
     loadConvertList(context)
     setupInterpreter(context)
     setupMetaInterpreter(context)
@@ -224,7 +227,24 @@ class SoundClassifier(
     }
   }
 
-  
+  /** Retrieve eBird taxonomy list from "taxo_code" file */
+  private fun loadEbirdList(context: Context) {
+
+    try {
+      val reader =
+        BufferedReader(InputStreamReader(context.assets.open("taxo_code.txt")))
+      val wordList = mutableListOf<String>()
+      reader.useLines { lines ->
+        lines.forEach {
+          wordList.add(it.trim())
+        }
+      }
+      eBirdList = wordList.map { it }
+    } catch (e: IOException) {
+      Log.e("ViewActivity", "Failed to read labels ${"taxo_code.txt"}: ${e.message}")
+    }
+  }
+
   /** Retrieve labels from "labels.txt" file */
   private fun loadLabels(context: Context) {
     val localeList = context.resources.configuration.locales
@@ -637,8 +657,9 @@ class SoundClassifier(
       Handler(Looper.getMainLooper()).post {
 
         val url =
-          if (max!!.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") {
-            "https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
+          if (max!!.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") { //Todo: only use valid ebird codes
+            "https://birdnet.cornell.edu/taxonomy/api/image/" + eBirdList[max.index] + "?size=medium"
+            //"https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
             //"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/" + assetList[max.index] + "/320"
           } else {
             mBinding.webview.url
@@ -660,6 +681,8 @@ class SoundClassifier(
           if (mBinding.webview.url != url) {
             mBinding.webview.setVisibility(View.INVISIBLE)
             mBinding.webview.settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK)
+            mBinding.webview.settings.setUseWideViewPort(true)
+            mBinding.webview.setInitialScale(1)
             mBinding.webview.loadUrl("javascript:document.open();document.close();")  //clear view
             mBinding.webview.loadUrl(url)
             mBinding.webviewUrl.setText(url)

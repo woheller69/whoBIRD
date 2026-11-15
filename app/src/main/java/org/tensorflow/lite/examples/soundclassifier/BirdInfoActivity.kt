@@ -56,8 +56,10 @@ class BirdInfoActivity : BaseActivity() {
         binding.webview.setWebViewClient(object : MlWebViewClient(this) {})
         binding.webview.settings.setDomStorageEnabled(true)
         binding.webview.settings.setJavaScriptEnabled(true)
-        binding.webview.settings.setBuiltInZoomControls(true);
-        binding.webview.settings.setDisplayZoomControls(false);
+        binding.webview.settings.setBuiltInZoomControls(true)
+        binding.webview.settings.setDisplayZoomControls(false)
+        binding.webview.settings.setUseWideViewPort(true)
+        binding.webview.setInitialScale(1)
 
         val linearLayoutManager = LinearLayoutManager(this)
         binding.recyclerObservations.setLayoutManager(linearLayoutManager)
@@ -97,8 +99,9 @@ class BirdInfoActivity : BaseActivity() {
         binding.recyclerObservations.addOnItemTouchListener(
             RecyclerItemClickListener(baseContext, binding.recyclerObservations, object : RecyclerItemClickListener.OnItemClickListener {
                 override fun onItemClick(view: View?, position: Int) {
-                    val url = if ( assetList[adapter.getSpeciesID(position)] != "NO_ASSET") {
-                        "https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
+                    val url = if ( assetList[adapter.getSpeciesID(position)] != "NO_ASSET") { //Todo: only use valid ebird codes
+                        "https://birdnet.cornell.edu/taxonomy/api/image/" + eBirdList[adapter.getSpeciesID(position)] + "?size=medium"
+                        //"https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
                         //"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/" + assetList[adapter.getSpeciesID(position)] + "/320"
                     } else {
                         "about:blank"
