@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Сова біла
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Пугач віргінський
-Bubulcus ibis_Чапля єгипетська
+Ardea ibis_Чапля єгипетська
 Bucanetes githagineus_Снігар туркменський
 Buccanodon duchaillui_Барбіон червоноголовий
 Bucco capensis_Лінивка рудоголова

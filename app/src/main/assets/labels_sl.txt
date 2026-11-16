@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Snežna sova
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Ameriška velika uharica
-Bubulcus ibis_Kravja čaplja
+Ardea ibis_Kravja čaplja
 Bucanetes githagineus_Trobentar
 Buccanodon duchaillui_Yellow-spotted Barbet
 Bucco capensis_Collared Puffbird

@@ -748,7 +748,7 @@ Bubo nipalensis_täplävatsahuuhkaja
 Bubo scandiacus_tunturipöllö
 Bubo sumatranus_sundanhuuhkaja
 Bubo virginianus_amerikanhuuhkaja
-Bubulcus ibis_lehmähaikara
+Ardea ibis_lehmähaikara
 Bucanetes githagineus_aavikkotulkku
 Buccanodon duchaillui_ampiaisseppä
 Bucco capensis_ruskopäälaiskuri

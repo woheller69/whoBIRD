@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Kar Baykuşu
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Amerika Puhusu
-Bubulcus ibis_Sığır Balıkçılı
+Ardea ibis_Sığır Balıkçılı
 Bucanetes githagineus_Küçük Alamecek
 Buccanodon duchaillui_Sarı Benekli Barbet
 Bucco capensis_Boyunlu Pufkuşu

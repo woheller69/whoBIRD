@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Белая сова
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Виргинский филин
-Bubulcus ibis_Египетская цапля
+Ardea ibis_Египетская цапля
 Bucanetes githagineus_Толстоклювый пустынный вьюрок
 Buccanodon duchaillui_Пятнистая либия
 Bucco capensis_Ошейниковая пуховка

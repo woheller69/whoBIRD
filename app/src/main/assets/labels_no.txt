@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_snøugle
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_amerikahubro
-Bubulcus ibis_kuhegre
+Ardea ibis_kuhegre
 Bucanetes githagineus_trompeterfink
 Buccanodon duchaillui_skjellskjeggfugl
 Bucco capensis_rusthodedovenfugl

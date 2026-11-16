@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Полярна сова
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Вирджински бухал
-Bubulcus ibis_Западна биволска чапла
+Ardea ibis_Западна биволска чапла
 Bucanetes githagineus_Червеноклюна чинка
 Buccanodon duchaillui_Yellow-spotted Barbet
 Bucco capensis_Collared Puffbird

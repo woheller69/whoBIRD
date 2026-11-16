@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Coruja-das-neves
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Jacurutu
-Bubulcus ibis_Cattle Egret
+Ardea ibis_Cattle Egret
 Bucanetes githagineus_Trombeteiro
 Buccanodon duchaillui_Yellow-spotted barbet
 Bucco capensis_Rapazinho-de-colar

@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Fjälluggla
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Virginiauv
-Bubulcus ibis_Kohäger/Orientkohäger
+Ardea ibis_Kohäger/Orientkohäger
 Bucanetes githagineus_Ökentrumpetare
 Buccanodon duchaillui_Gulfläckig barbett
 Bucco capensis_Halsbandströgfågel

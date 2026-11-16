@@ -748,7 +748,7 @@ Bubo nipalensis_Pegava crnooka buljina
 Bubo scandiacus_Snežna sova
 Bubo sumatranus_Sumatranska crnooka buljina
 Bubo virginianus_Američka buljina
-Bubulcus ibis_Čaplja govedarka
+Ardea ibis_Čaplja govedarka
 Bucanetes githagineus_Zeba trubačica
 Buccanodon duchaillui_Žutopegi barbet
 Bucco capensis_Ogrličasti puf

@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Sneeuwuil
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Amerikaanse Oehoe
-Bubulcus ibis_Koereiger
+Ardea ibis_Koereiger
 Bucanetes githagineus_Woestijnvink
 Buccanodon duchaillui_Geelvlekbaardvogel
 Bucco capensis_Gekraagde Baardkoekoek

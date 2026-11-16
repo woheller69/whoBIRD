@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Harfang des neiges
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Grand-duc d'Amérique
-Bubulcus ibis_Héron garde-boeufs
+Ardea ibis_Héron garde-boeufs
 Bucanetes githagineus_Roselin githagine
 Buccanodon duchaillui_Barbican à taches jaunes
 Bucco capensis_Tamatia à collier

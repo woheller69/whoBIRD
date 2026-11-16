@@ -748,7 +748,7 @@ Bubo nipalensis_Duc del Nepal
 Bubo scandiacus_Duc Blanc
 Bubo sumatranus_Duc d'Indonèsia
 Bubo virginianus_Duc Americà
-Bubulcus ibis_Esplugabous
+Ardea ibis_Esplugabous
 Bucanetes githagineus_Pinsà Trompeter
 Buccanodon duchaillui_Barbut Pintat Oriental
 Bucco capensis_Barbacoll de Collar

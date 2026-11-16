@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_bijela sova
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_američka ušara
-Bubulcus ibis_Western Cattle Egret
+Ardea ibis_Western Cattle Egret
 Bucanetes githagineus_zeba trubačica
 Buccanodon duchaillui_Yellow-spotted Barbet
 Bucco capensis_Collared Puffbird

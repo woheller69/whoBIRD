@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Schneeeule
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Virginiauhu
-Bubulcus ibis_Kuhreiher
+Ardea ibis_Kuhreiher
 Bucanetes githagineus_Wüstengimpel
 Buccanodon duchaillui_Gelbfleck-Bartvogel
 Bucco capensis_Halsband-Faulvogel

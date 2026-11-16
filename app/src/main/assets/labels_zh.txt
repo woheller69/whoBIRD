@@ -748,7 +748,7 @@ Bubo nipalensis_林雕鸮
 Bubo scandiacus_雪鸮
 Bubo sumatranus_马来雕鸮
 Bubo virginianus_美洲雕鸮
-Bubulcus ibis_Cattle Egret
+Ardea ibis_Cattle Egret
 Bucanetes githagineus_沙雀
 Buccanodon duchaillui_黄斑拟啄木鸟
 Bucco capensis_领蓬头䴕

@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_Χιονόγλαυκα
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_Αμερικανικός Μπούφος
-Bubulcus ibis_(Δυτικός) Γελαδάρης
+Ardea ibis_(Δυτικός) Γελαδάρης
 Bucanetes githagineus_Ερημοπύρρουλας
 Buccanodon duchaillui_Yellow-spotted Barbet
 Bucco capensis_Collared Puffbird

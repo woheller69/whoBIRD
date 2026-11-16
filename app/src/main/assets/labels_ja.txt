@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_シロフクロウ
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_アメリカワシミミズク
-Bubulcus ibis_アマサギ
+Ardea ibis_アマサギ
 Bucanetes githagineus_ナキマシコ
 Buccanodon duchaillui_キミミヒメゴシキドリ
 Bucco capensis_アカガオオオガシラ

@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_sovice sněžní
 Bubo sumatranus_Barred Eagle-Owl
 Bubo virginianus_výr virginský
-Bubulcus ibis_volavka rusohlavá
+Ardea ibis_volavka rusohlavá
 Bucanetes githagineus_hýl trubač
 Buccanodon duchaillui_vousáček žlutoskvrnný
 Bucco capensis_lenivka obojková

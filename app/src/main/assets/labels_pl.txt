@@ -748,7 +748,7 @@ Bubo nipalensis_Spot-bellied Eagle-Owl
 Bubo scandiacus_puchacz śnieżny
 Bubo sumatranus_puchacz malajski
 Bubo virginianus_puchacz wirginijski
-Bubulcus ibis_czapla złotawa
+Ardea ibis_czapla złotawa
 Bucanetes githagineus_gilak pustynny
 Buccanodon duchaillui_wąsalik
 Bucco capensis_drzym obrożny
