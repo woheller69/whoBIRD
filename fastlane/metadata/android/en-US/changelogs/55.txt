@@ -1,0 +1,6 @@
+WARNING: This version needs to download a new model (~70MB)!
+WARNING: This version can be slower due to bigger model!
+
+Update for new BirdNET V3.0 model
+(better detection but no support for additional species currently)
+Change source for image downloads to BirdNET taxonomy API
