@@ -657,8 +657,8 @@ class SoundClassifier(
       Handler(Looper.getMainLooper()).post {
 
         val url =
-          if (max!!.value > options.displayImageThreshold && assetList[max.index] != "NO_ASSET") { //Todo: only use valid ebird codes
-            "https://birdnet.cornell.edu/taxonomy/api/image/" + eBirdList[max.index] + "?size=medium"
+          if (max!!.value > options.displayImageThreshold && !eBirdList[max.index].startsWith("t-")) {
+            "https://birdnet.cornell.edu/taxonomy/api/image/" + eBirdList[max.index]
             //"https://macaulaylibrary.org/asset/" + assetList[max.index] + "/embed"
             //"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/" + assetList[max.index] + "/320"
           } else {

@@ -137,8 +137,8 @@ class ViewActivity : BaseActivity() {
             RecyclerItemClickListener(baseContext, binding.recyclerObservations, object : RecyclerItemClickListener.OnItemClickListener {
                 override fun onItemClick(view: View?, position: Int) {
                     WavUtils.playWaveFile(mContext, adapter.getMillis(position))
-                    val url = if ( assetList[adapter.getSpeciesID(position)] != "NO_ASSET") { //Todo: only use valid ebird codes
-                        "https://birdnet.cornell.edu/taxonomy/api/image/" + eBirdList[adapter.getSpeciesID(position)] + "?size=medium"
+                    val url = if ( !eBirdList[adapter.getSpeciesID(position)].startsWith("t-")) {
+                        "https://birdnet.cornell.edu/taxonomy/api/image/" + eBirdList[adapter.getSpeciesID(position)]
                         //"https://macaulaylibrary.org/asset/" + assetList[adapter.getSpeciesID(position)] + "/embed"
                         //"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/" + assetList[adapter.getSpeciesID(position)] + "/320"
                     } else {
