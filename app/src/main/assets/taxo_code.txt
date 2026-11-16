@@ -1947,7 +1947,7 @@ resmac2
 codfin1
 melbla1
 scrbla1
-dogdog
+t-dogdog
 boboli
 bkcdon
 ltrfin1
@@ -2141,7 +2141,7 @@ acafly
 gryfly
 croslf1
 varfly
-engine
+t-engine
 auspar1
 slbpar1
 whcfor5
@@ -2150,7 +2150,7 @@ slbfor1
 blasol1
 whesol1
 blfhon1
-envrnm
+t-envrnm
 galah
 yebgro1
 japgro1
@@ -2323,7 +2323,7 @@ ultfly1
 slbfly2
 lipfly1
 korfly1
-frwrks
+t-frwrks
 blkjac1
 whnjac1
 bbwtyr1
@@ -2607,7 +2607,7 @@ golpar3
 yelcar1
 stttyr2
 guicuc1
-gungun
+t-gungun
 cregui3
 whiter3
 prsowl
@@ -2816,9 +2816,9 @@ bfbwar1
 fibwar1
 phbwar1
 subwar4
-humnov
-humvoc
-humwhi
+t-humnov
+t-humvoc
+t-humwhi
 barpet
 lcspet
 swspet
@@ -3925,7 +3925,7 @@ junhao1
 y00839
 walhae1
 mouhae1
-nocall
+t-nocall
 bronun1
 gycnun1
 rubnun1
@@ -4860,7 +4860,7 @@ spfgal1
 sora
 spocra1
 dowcra1
-powtoo
+t-powtoo
 spobar1
 ruwbar1
 yecmac
@@ -5558,7 +5558,7 @@ sttant3
 dumant1
 esmant1
 dumant3
-siren1
+t-siren1
 whrsir1
 siryst3
 sibsir1
